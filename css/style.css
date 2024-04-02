@@ -16,52 +16,15 @@
 }
 /*** Back To Top Fin ***/
 
-/*** Boutons Début ***/
-.btn {
-  font-weight: 500;
-  transition: 0.5s;
-}
-
-.btn.btn-primary,
-.btn.btn-secondary {
-  color: #ffffff;
-}
-
-.btn-square {
-  width: 38px;
-  height: 38px;
-}
-
-.btn-sm-square {
-  width: 32px;
-  height: 32px;
-}
-
-.btn-lg-square {
-  width: 48px;
-  height: 48px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: normal;
-}
-/*** Boutons Fin ***/
-
 /*** Navbar Début ***/
 .navbar {
   background-color: white;
 }
 
-.navbar.sticky-top {
+/* .navbar.sticky-top {
   top: -100px;
   transition: 0.5s;
-}
+} */
 
 .navbar .navbar-brand {
   display: flex;
@@ -179,74 +142,7 @@
 .d-none {
   display: none !important;
 }
-
-.btn-play {
-  position: relative;
-  display: block;
-  box-sizing: content-box;
-  width: 16px;
-  height: 26px;
-  border-radius: 100%;
-  border: none;
-  outline: none !important;
-  padding: 18px 20px 20px 28px;
-  background: #ffffff;
-}
-
-.btn-play:before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  display: block;
-  width: 60px;
-  height: 60px;
-  background: #ffffff;
-  border-radius: 100%;
-  animation: pulse-border 1500ms ease-out infinite;
-}
-
-.btn-play:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  display: block;
-  width: 60px;
-  height: 60px;
-  background: #ffffff;
-  border-radius: 100%;
-  transition: all 200ms;
-}
-
-.btn-play span {
-  display: block;
-  position: relative;
-  z-index: 3;
-  width: 0;
-  height: 0;
-  left: -1px;
-  border-left: 16px solid var(--primary);
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-}
-/*** Header Début ***/
-/* 
-@keyframes pulse-border {
-  0% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
-    opacity: 0;
-  }
-} */
+/*** Header Fin ***/
 
 /*** Modale Vidéo Début ***/
 .modal-video .modal-dialog {
@@ -275,37 +171,10 @@
 }
 /*** Modale Vidéo Fin ***/
 
-/*** Img Border Début ***/
-.img-border {
-  position: relative;
-  height: 100%;
-  min-height: 400px;
-}
-
-.img-border::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 3rem;
-  bottom: 3rem;
-  border: 5px solid var(--primary);
-}
-
-.img-border img {
-  position: absolute;
-  top: 3rem;
-  left: 3rem;
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
-  object-fit: cover;
-}
-/*** Img Border Fin ***/
-
 /*** Section Chiffres Début ***/
 .facts {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../assets/img/animals/jungle/arc-an-jungle-cover.jpg) center center
+    url(/web-am/dev.studi/arcadia/assets/img/animals/jungle/arc-an-jungle-cover.jpg) center center
       no-repeat;
   background-size: cover;
 }
@@ -314,7 +183,7 @@
 /*** Section Horaires Début ***/
 .visiting-hours {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../assets/img/animals/savane/arc-an-savane-papillion.jpg) center center
+    url(/web-am/dev.studi/arcadia/assets/img/animals/savane/arc-an-savane-papillion.jpg) center center
       no-repeat;
   background-size: cover;
 }
@@ -446,7 +315,7 @@
 /*** Footer Début ***/
 .footer {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../assets/img/animals/savane/arc-an-savane-rhinoceros.jpg) center center
+    url(/web-am/dev.studi/arcadia/assets/img/animals/jungle/arc-an-jungle-cover.jpg) center center
       no-repeat;
   background-size: cover;
 }
