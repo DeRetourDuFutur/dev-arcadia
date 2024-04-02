@@ -23,7 +23,7 @@ include('../../inc/header.php');
         >
         
           <div class="ms-4">
-                     <p class="text-white mb-0">Déjà inscrit(e) ? Connectez-vous ici</p>
+                     <p class="text-white mb-0">Déjà inscrit(e) ? <a href="/web-am/dev.studi/arcadia/pages/auth/compte.php" class="text-white">Connectez-vous ici</a></p>
                      <br>
             <p class="text-white mb-0">Pas encore de compte ? Inscrivez-vous ici</p>
           </div>

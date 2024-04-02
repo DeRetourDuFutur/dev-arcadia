@@ -1,9 +1,11 @@
 <?php
-include('../inc/header.php');
+include('../../inc/header.php');
 ?>
 
-Page Compte/Membre ICI
+<div class="container">
+  <h3>ESPACE CONNEXION ICI</h3>
+</div>
 
 <?php
-include('../inc/footer.php');
+include('../../inc/footer.php');
 ?>
