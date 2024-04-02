@@ -7,7 +7,7 @@
         <div class="row g-5">
           <div class="col-lg-3 col-md-6">
             <h5 class="text-light mb-4">Adresse</h5>
-            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Arcadia</p>
+            <p class="mb-2"><a href="https://www.google.com/maps/place/For%C3%AAt+de+Broceliande,+Val+sans+Retour/@48.004798,-2.288173,16z/data=!4m6!3m5!1s0x480fb38fd5df5933:0x23f241c31b5da661!8m2!3d48.0047975!4d-2.2881727!16s%2Fg%2F11b7hk4_j7?hl=fr&entry=ttu" target="_blank"><i class="fa fa-map-marker-alt me-3"></i></a>Arcadia</p>
             <p class="mb-2">
               Forêt de Brocéliande <br />Rue Neuve <br />
               - Val sans retour -<br />
@@ -21,7 +21,7 @@
               <i class="fa fa-phone-alt me-3"></i>+33 2 88 88 88 88
             </p>
             <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>contact@arcadia.com
+            <a href="/web-am/dev.studi/arcadia/pages/informations.php#contact"><i class="fa fa-envelope me-3"></a></i>contact@arcadia.com
             </p>
             <div class="d-flex pt-2">
               <a class="btn btn-outline-light btn-social" href=""

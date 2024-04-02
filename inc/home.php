@@ -10,8 +10,7 @@
         </h1>
         <p class="mb-4">
           Le Zoo Arcadia est situé en France, près de la forêt de Brocéliande
-          (en Bretagne). Depuis 1960, <br />
-          le parc héberge tout un panel d’animaux, répartis sur 3 domaines : la
+          (en Bretagne). Depuis 1960, le parc héberge tout un panel d’animaux, répartis sur 3 domaines : la
           Savane, la Jungle et les Marais. <br /><br />
           Ici,
           <span class="text-primary"

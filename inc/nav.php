@@ -22,7 +22,7 @@
           <a href="/web-am/dev.studi/arcadia/pages/animaux.php" class="nav-item nav-link">Nos Animaux</a>
           <a href="/web-am/dev.studi/arcadia/pages/informations.php" class="nav-item nav-link">Informations</a>
         </div>
-        <a href="#" class="btn btn-primary"
+        <a href="/web-am/dev.studi/arcadia/pages/auth/espace.php" class="btn btn-primary"
           >Accès réservé<i class="fa fa-arrow-right ms-3"></i
         ></a>
       </div>
