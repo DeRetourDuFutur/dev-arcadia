@@ -55,6 +55,7 @@
 
     <!-- Template Stylesheet -->
     <link href="/web-am/dev.studi/arcadia/css/style.css" rel="stylesheet" />
+    <link href="/web-am/dev.studi/arcadia/css/animaux.css" rel="stylesheet" />
     <link href="/web-am/dev.studi/arcadia/css/memory.css" rel="stylesheet" />
 
     <!-- Librairie CSS FontAwesome -->

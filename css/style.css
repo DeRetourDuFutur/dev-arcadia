@@ -1,10 +1,12 @@
-/********** Template CSS **********/
+/*** Reset Début ***/
 :root {
   --primary: #2eb872;
   --light: #f3f4f5;
   --dark: #282f34;
 }
+/*** Reset Fin ***/
 
+/*** Back To Top Début ***/
 .back-to-top {
   position: fixed;
   display: none;
@@ -12,22 +14,9 @@
   bottom: 45px;
   z-index: 99;
 }
+/*** Back To Top Fin ***/
 
-/*** Spinner ***/
-#spinner {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
-  z-index: 99999;
-}
-
-#spinner.show {
-  transition: opacity 0.5s ease-out, visibility 0s linear 0s;
-  visibility: visible;
-  opacity: 1;
-}
-
-/*** Button ***/
+/*** Boutons Début ***/
 .btn {
   font-weight: 500;
   transition: 0.5s;
@@ -62,8 +51,9 @@
   justify-content: center;
   font-weight: normal;
 }
+/*** Boutons Fin ***/
 
-/*** Navbar ***/
+/*** Navbar Début ***/
 .navbar {
   background-color: white;
 }
@@ -140,8 +130,9 @@
     opacity: 1;
   }
 }
+/*** Navbar Fin ***/
 
-/*** Header ***/
+/*** Header Début ***/
 .header-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url() center center no-repeat;
@@ -158,7 +149,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/img/animals/savane/arc-an-savane-lion1.jpg");
+    background-image: url("/web-am/dev.studi/arcadia/assets/img/animals/savane/arc-an-savane-lion1.jpg");
     background-size: cover;
     filter: brightness(0.3);
   }
@@ -166,7 +157,6 @@
 
 * {
   /* Positionner tous les éléments devant le ::before */
-
   position: relative;
 }
 
@@ -244,7 +234,8 @@
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
 }
-
+/*** Header Début ***/
+/* 
 @keyframes pulse-border {
   0% {
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
@@ -255,8 +246,9 @@
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
     opacity: 0;
   }
-}
+} */
 
+/*** Modale Vidéo Début ***/
 .modal-video .modal-dialog {
   position: relative;
   max-width: 800px;
@@ -281,8 +273,9 @@
   background: #000000;
   opacity: 1;
 }
+/*** Modale Vidéo Fin ***/
 
-/*** Img Border ***/
+/*** Img Border Début ***/
 .img-border {
   position: relative;
   height: 100%;
@@ -307,15 +300,18 @@
   height: calc(100% - 3rem);
   object-fit: cover;
 }
+/*** Img Border Fin ***/
 
-/*** Chiffres ***/
+/*** Section Chiffres Début ***/
 .facts {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../assets/img/animals/jungle/arc-an-jungle-cover.jpg) center center
       no-repeat;
   background-size: cover;
 }
+/*** Section Chiffres Fin ***/
 
+/*** Section Horaires Début ***/
 .visiting-hours {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../assets/img/animals/savane/arc-an-savane-papillion.jpg) center center
@@ -344,8 +340,9 @@
 .visiting-hours .table tr:last-child td {
   border: none;
 }
+/*** Section Horaires Fin ***/
 
-/*** Testimonial ***/
+/*** Section Testimonials Début ***/
 .testimonial-carousel::before {
   position: absolute;
   content: "";
@@ -444,210 +441,7 @@
 .testimonial-carousel .owl-nav .owl-next:hover {
   color: var(--dark);
 }
-
-.portfolio {
-  background: #ffffff;
-}
-
-.portfolio .grid__item {
-  max-width: 100%;
-  margin-bottom: 0;
-  opacity: 1;
-  transition: all 1s ease;
-}
-
-.portfolio .grid__item.hide {
-  opacity: 0;
-  max-width: 0;
-  padding: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.portfolio-filters .grid__item {
-  max-width: 50%;
-  margin-bottom: 0;
-}
-
-.portfolio-filters a {
-  color: white;
-  background: var(--primary);
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.portfolio-filters a.active {
-  color: #ffffff;
-  background: #055042;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.grid__item {
-  flex-grow: 1;
-  flex-shrink: 0;
-  width: 100%;
-  padding: 1rem;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2.625) {
-  .grid__item-photo {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .grid__item-photo {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .grid__item {
-    max-width: 50%;
-  }
-}
-
-.modal {
-  visibility: hidden;
-  opacity: 0;
-  position: fixed;
-  z-index: 4;
-  transform: scale(0);
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-  transition: all 0.5s;
-}
-
-.show.modal {
-  transform: scale(1);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal__content {
-  background-color: #ffffff;
-  height: 100vh;
-  padding: 5rem 1rem;
-  overflow: auto;
-  text-align: left;
-}
-
-.modal img {
-  margin-bottom: 2rem;
-}
-
-.modal__title {
-  margin: 0 0 2rem;
-}
-
-.modal__close {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  background: none;
-  border: 1px solid #eee;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  font-size: 3.1rem;
-  color: #666;
-  cursor: pointer;
-}
-
-.modal .grid__item {
-  max-width: 100%;
-  margin-bottom: 0;
-  opacity: 1;
-  transition: all 1s ease;
-}
-
-@media screen and (max-width: 749px) {
-  .portfolio a {
-    font-size: 1.4rem;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .portfolio .grid__item {
-    max-width: 33.3333%;
-  }
-
-  .portfolio-filters .grid__item {
-    max-width: 25%;
-  }
-
-  .modal__content {
-    padding: 3rem;
-  }
-
-  .modal .grid__item {
-    max-width: 50%;
-  }
-}
-
-.card {
-  background: #fff;
-  text-transform: uppercase;
-  position: relative;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
-  border: 1px solid #eee;
-  overflow: hidden;
-}
-
-.card__inner {
-  padding: 2rem;
-}
-
-.card__title {
-  margin: 0 0 1rem;
-  font-size: 1.6rem;
-}
-
-.card__overlay {
-  background: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  top: 0;
-
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  top: 110%;
-  transition: all 0.3s;
-}
-
-.card__overlay a {
-  font-size: 4.5rem;
-  color: #fff;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.card:hover .card__overlay {
-  top: 0;
-}
-
-@media screen and (min-width: 750px) {
-  .d-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 2rem;
-  }
-}
-
-
+/*** Section Testimonials Fin ***/
 
 /*** Footer Début ***/
 .footer {

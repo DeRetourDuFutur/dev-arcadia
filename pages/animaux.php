@@ -28,9 +28,10 @@ include('../inc/header.php');
           </li>
         </ul>
         <!-- Menu Sélection par filtres des animaux Fin -->
-        <!-- Affichage des Cartes Modales Animaux Début -->
+
+
+         <!-- Affichage Carte Savane Début -->
         <div class="grid">
-          <!-- Affichage Carte Savane Début -->
           <div class="grid__item">
             <div class="card" data-category="savane">
               <img
