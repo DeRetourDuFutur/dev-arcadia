@@ -1,7 +1,7 @@
 <?php
 include('../inc/header.php');
 ?>
-<!-- Contact Début -->
+<!-- Informations Début -->
 <div class="container-xxl py-5">
   <div class="container">
     <div class="row g-4 mb-5">
@@ -96,6 +96,8 @@ include('../inc/header.php');
       </div>
     </div>
     <!-- Horaires Fin -->
+
+    <!-- Section Contact Début -->
     <div class="row g-5">
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
         <p><span class="text-primary me-2">#</span>Contactez-nous</p>
@@ -104,64 +106,72 @@ include('../inc/header.php');
           réservation ? Nous sommes à votre écoute !
         </h5>
 
- 
- <!-- Formulaire de contact Début -->
-        <form id="contact" onsubmit="return verifForm(this)">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control bg-light border-0"
-                  id="name"
-                  placeholder="Votre Nom"
-                />
-                <label for="name">Votre Nom</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input
-                  type="email"
-                  class="form-control bg-light border-0"
-                  id="email"
-                  placeholder="Votre Email"
-                />
-                <label for="email">Votre Email</label>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control bg-light border-0"
-                  id="subject"
-                  placeholder="Objet"
-                />
-                <label for="subject">Objet</label>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-floating">
-                <textarea
-                  class="form-control bg-light border-0"
-                  placeholder="Leave a message here"
-                  id="message"
-                  style="height: 100px"
-                ></textarea>
-                <label for="message">Message</label>
-              </div>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-primary w-100 py-3" type="submit">
-                Envoyer le message
-              </button>
-            </div>
-          </div>
-           <div class="erreur"></div>
-        </form>
+  <!-- Formulaire de contact Début -->
+  <form id="contact">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control bg-light border-0"
+          id="name"
+          placeholder="Votre Nom"
+          onkeyup="validateName(this)"
+        />
+        <label for="name">Votre Nom</label>
+        <span class="invalid-feedback" id="name-error"></span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control bg-light border-0"
+          id="email"
+          placeholder="Votre Email"
+          onkeyup="validateEmail(this)"
+        />
+        <label for="email">Votre Email</label>
+        <span class="invalid-feedback" id="email-error"></span>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control bg-light border-0"
+          id="subject"
+          placeholder="Objet"
+          onkeyup="validateSubject(this)"
+        />
+        <label for="subject">Objet</label>
+        <span class="invalid-feedback" id="subject-error"></span>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-floating">
+        <textarea
+          class="form-control bg-light border-0"
+          placeholder="Laissez un message ici"
+          id="message"
+          style="height: 100px"
+          onkeyup="validateMessage(this)" ></textarea>
+        <label for="message">Message</label>
+        <span class="invalid-feedback" id="message-error"></span> </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary w-100 py-3" type="submit" disabled id="submit-btn">
+        Envoyer le message
+      </button>
+    </div>
+  </div>
+  <div class="erreur"></div>
+</form>
         <!-- Formulaire de contact Fin -->
       </div>
+   <!-- Section Contact Fin -->
+
+   <!-- Affichage Carte Google Maps Début -->
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
         <div class="h-100" style="min-height: 400px">
           <iframe
@@ -179,10 +189,12 @@ include('../inc/header.php');
           >
         </div>
       </div>
+         <!-- Affichage Carte Google Maps Fin -->
+
     </div>
   </div>
 </div>
-<!-- Contact Fin -->
+<!-- Informations Fin -->
 <?php
 include('../inc/footer.php');
 ?>

@@ -11,10 +11,10 @@
   };
   spinner();
 
-  // Initiate the wowjs
+  // Initialiser le WOW.js
   new WOW().init();
 
-  // Sticky Navbar
+  // Sticky Navbar Début
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
       $(".sticky-top").addClass("shadow-sm").css("top", "0px");
@@ -22,8 +22,9 @@
       $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
     }
   });
+  // Sticky Navbar Fin
 
-  // Back to top button
+  // Back To Top Début
   $(window).scroll(function () {
     if ($(this).scrollTop() > 200) {
       $(".back-to-top").fadeIn("slow");
@@ -35,14 +36,16 @@
     $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     return false;
   });
+// Back To Top Fin
 
-  // Facts counter
+  // Chiffres Début
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 2000,
   });
+ // Chiffres Fin
 
-  // Header carousel
+  // Header Carousel Début
   $(".header-carousel").owlCarousel({
     autoplay: true,
     smartSpeed: 1000,
@@ -55,12 +58,9 @@
       '<i class="bi bi-chevron-right"></i>',
     ],
   });
-
-  
-
+ // Header Carousel Fin
  
-
-  // Testimonials carousel
+  // Témoignages Carousel Début
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
     smartSpeed: 20000,
@@ -81,8 +81,9 @@
       },
     },
   });
+  // Témoignages Carousel Fin
 
-  // Modal Video
+    // Modale Vidéo (hero) Début
   var $videoSrc;
   $(".btn-play").click(function () {
     $videoSrc = $(this).data("src");
@@ -98,3 +99,4 @@
     $("#video").attr("src", $videoSrc);
   });
 })(jQuery);
+  // Modale Vidéo (hero) Fin

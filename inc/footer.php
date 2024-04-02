@@ -115,6 +115,7 @@
     <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/jquery.js"> </script>
     <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/memory.js"> </script>
     <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/animaux.js"> </script>
+    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/contact.js"> </script>
   </body>
   <!-- BODY Fin -->
   </html>
