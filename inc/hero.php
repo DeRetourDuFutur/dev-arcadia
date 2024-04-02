@@ -10,7 +10,7 @@
                 type="button"
                 class="btn-play"
                 data-bs-toggle="modal"
-                data-src="/web-am/dev.studi/arcadia/assets/vid/lions.mp4"
+                data-src="/web-am/dev.studi/arcadia/assets/vid/suricates.mp4"
                 data-bs-target="#modalVideoAnimaux"
               >
                 <span></span>
@@ -50,7 +50,7 @@
         <div class="ratio ratio-16x9">
           <iframe
             class="embed-responsive-item"
-            src="/web-am/dev.studi/arcadia/assets/vid/lions.mp4"
+            src="/web-am/dev.studi/arcadia/assets/vid/suricates.mp4"
             id="video"
             allowfullscreen
             allowscriptaccess="always"
