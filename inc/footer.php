@@ -97,25 +97,27 @@
     ></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+    <script
+ src="https://code.jquery.com/jquery-3.5.1.js"
+ integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+ crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/web-am/dev.studi/arcadia/lib/wow/wow.min.js"></script>
     <script src="/web-am/dev.studi/arcadia/lib/easing/easing.min.js"></script>
     <script src="/web-am/dev.studi/arcadia/lib/waypoints/waypoints.min.js"></script>
     <script src="/web-am/dev.studi/arcadia/lib/counterup/counterup.min.js"></script>
     <script src="/web-am/dev.studi/arcadia/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <script src="/web-am/dev.studi/arcadia/lib/owlcarousel/owl.carousel.min.js"></script>
-
     <script src="/web-am/dev.studi/arcadia/lib/lightbox/js/lightbox.min.js"></script>
  
     <!-- Template Javascript -->
     <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/main.js"></script>
     <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/morpion.js"></script>
-    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/jquery.js"> </script>
-    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/memory.js"> </script>
-    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/animaux.js"> </script>
-    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/contact.js"> </script>
+    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/jquery.js"></script>
+    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/memory.js"></script>
+    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/animaux.js"></script>
+    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/contact.js"></script>
+    <script type="text/javascript" src="/web-am/dev.studi/arcadia/js/modale.js"></script>
   </body>
   <!-- BODY Fin -->
   </html>

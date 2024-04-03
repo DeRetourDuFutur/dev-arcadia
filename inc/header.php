@@ -9,13 +9,7 @@
       name="description"
       content="Bienvenue dans l'univers d'Arcadia, le plus grand zoo écologique en Europe. Venez visiter nos 3 domaines (Savane, Jungle & Marais) et rencontrer nos 2 760 animaux !"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-       <!-- Favicon -->
+           <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="/web-am/dev.studi/arcadia/assets/ico/favicon.ico?v=1"
@@ -57,6 +51,7 @@
     <link href="/web-am/dev.studi/arcadia/css/style.css" rel="stylesheet" />
     <link href="/web-am/dev.studi/arcadia/css/animaux.css" rel="stylesheet" />
     <link href="/web-am/dev.studi/arcadia/css/memory.css" rel="stylesheet" />
+    <link href="/web-am/dev.studi/arcadia/css/modales.css" rel="stylesheet" />
 
     <!-- Librairie CSS FontAwesome -->
     <link href="/web-am/dev.studi/arcadia/assets/fonts/fa/css/all.min.css" rel="stylesheet" />
