@@ -1,129 +1,82 @@
 <?php
 include('../inc/header.php');
 ?>
-<!-- Services Début -->
-<div class="container-xxl py-5">
-  <div class="container">
-    <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-      <div class="col-lg-6">
-        <p><span class="text-primary me-2">#</span>Nos Services</p>
-        <h1 class="display-5 mb-0">
+
+<?php
+// **Définir les variables de connexion à la base de données**
+$host = "mysql-dev-am.alwaysdata.net";
+$database = "dev-am_bdd-studi";
+$username = "dev-am";
+$password = "UnstoppABLE!2908!KOP!pwd-alw"; // **Remplacez par votre mot de passe réel**
+$port = "3306";
+
+// **Se connecter à la base de données**
+// **Utiliser mysqli à la place de mysql (obsolète)**
+$mysqli = new mysqli($host, $username, $password, $database, $port);
+
+// **Vérifier la connexion**
+if ($mysqli->connect_errno) {
+  echo "Échec de la connexion à la base de données : " . $mysqli->connect_error;
+  exit();
+}
+// **Préparer la requête**
+// **Sélectionner tous les champs de la table "services"**
+$sql = "SELECT * FROM services";
+
+// **Exécuter la requête**
+// **L'objet `stmt` n'est pas défini**
+$result = $mysqli->query($sql);
+
+// **Vérifier le résultat**
+if (!$result) {
+  echo "Échec de la requête : " . $mysqli->error;
+  exit();
+}
+?>
+<?php
+// Services Début
+echo "<div class=\"container-xxl py-5\">";
+ echo "<div class=\"container\">";
+ echo "<div class=\"row g-5 mb-5 wow fadeInUp\" data-wow-delay=\"0.1s\">";
+   echo "<div class=\"col-lg-6\">";
+   echo "<p><span class=\"text-primary me-2\">#</span>Nos Services</p>";
+    echo "<h1 class=\"display-5 mb-0\">
           Services réservés aux
-          <span class="text-primary">Arcadien(ne)s</span>
-        </h1>
-      </div>
-      <div class="col-lg-6">
-        <div
-          class="bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5"
-        >
-          <i class="fa fa-3x fa-mobile-alt text-white"></i>
-          <div class="ms-4">
-            <p class="text-white mb-0">Pour plus d'informations, appelez le</p>
-            <h2 class="text-white mb-0">+ 33 2 88 88 88 88</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row gy-5 gx-4">
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.1s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-2.png" alt="Icon" />
-        <h5 class="mb-3">Parking gratuit</h5>
-        <span
-          >Vous pourrez stationner votre véhicule dans notre parking privé, à
-          l'abri des regards indiscrets et totalement sécurisé, 24h/24.</span
-        >
-      </div>
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.3s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-3.png" alt="Icon" />
-        <h5 class="mb-3">Photos avec nos animaux</h5>
-        <span
-          >Vous souhaitez immortaliser vos instants magiques avec nos animaux ?
-          Rien de plus simple, il vous suffit de venir à l'accueil dès votre
-          arrivée afin de réserver une séance photo avec l'un de nos
-          photographes !</span
-        >
-      </div>
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.5s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-4.png" alt="Icon" />
-        <h5 class="mb-3">Guide de visite</h5>
-        <span
-          >Vous pouvez, si vous le souhaitez, demander à être accompagné(e) par
-          l'un(e) de nos guides. Vous découvrirez alors notre Zoo comme vous ne
-          l'avez jamais visité !</span
-        >
-      </div>
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.7s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-9.png" alt="Icon" />
-        <h5 class="mb-3">Tour en petit train</h5>
-        <span
-          >Un zoo sans un "petit train" ne serait pas un zoo n'est-ce-pas ? Alors venez profiter de la nature et de la compagnie des animaux, tranquillement installé(e) sur nos sièges tout confort. Emarquez vers Arcadia !</span
-        >
-      </div>
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.1s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-6.png" alt="Icon" />
-        <h5 class="mb-3">Boutiques & Souvenirs</h5>
-        <span
-          >Vous souhaitez repartir avec un petit (ou un grand ?)
-          souvenir de notre zoo ? Visitez nos deux boutiques dédiées qui vous
-          attendront avec leurs lots de surprises, pour petits et grands !</span
-        >
-      </div>
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.3s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-5.png" alt="Icon" />
-       <h5 class="mb-3">Nouriture & Boissons</h5>
-        <span
-          >Chez nous, il n'y a pas que les animaux qui ont besoin de manger et
-          boire ! Alors vous aussi, profitez de nos nombreux spots pour vous
-          rafraichir, grignoter un morceau ou même déjeuner en famille. Il y en
-          a pour tous les gouts !
-        </span> 
-      </div>
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.5s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-8.png" alt="Icon" />
-        <h5 class="mb-3">Aires de jeux/repos</h5>
-        <span
-          >De nombreuses aires de jeux sont à votre disposition dans nos 3
-          domaines (Savane, Marais et Jungle). Vous souhaitez faire une pause fraicheur, à l'ombre ? De nombreuses
-          aires de repos sont également à votre disposition.</span
-        >
-      </div>
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
-        data-wow-delay="0.7s"
-      >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-7.png" alt="Icon" />
-       <h5 class="mb-3">Wi-Fi gratuit (Haut Débit)</h5>
-        <span
-          >Le Wi-Fi est disponible gratuitement sur tout le complexe. Nous vous
-          demandons simplement de ne pas en "abuser", surtout dans nos toilettes
-          publiques ;-)</span
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Services Fin -->
+          <span class=\"text-primary\">Arcadien(ne)s</span>
+        </h1>";
+    echo "</div>";
+     echo "<div class=\"col-lg-6\">";
+       echo "<div
+          class=\"bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5\"
+        >";
+          echo "<i class=\"fa fa-3x fa-mobile-alt text-white\"></i>";
+         echo "<div class=\"ms-4\">";
+           echo "<p class=\"text-white mb-0\">Informations au</p>";
+           echo "<h2 class=\"text-white mb-0\">+ 33 2 88 88 88 88</h2>";
+          echo "</div>";
+        echo "</div>";
+     echo "</div>";
+    echo "</div>";
+    ?>
+<!-- Récupérer toutes les valeurs et utiliser une boucle while pour parcourir les résultats -->
+<?php while ($row = $result->fetch_assoc()) {
+  // **Afficher les valeurs de chaque ligne**
+echo "<div class=\"row gy-5 gx-4\">";
+  echo "<div class=\"col-lg-3 col-md-4 col-sm-6 wow fadeInUp\" data-wow-delay=\"0.1s\">";
+      echo "<img class=\"img-fluid mb-3\" src=\"" . $row["ico"] . "\" alt=\"" . $row["titre"] . "\" />";
+      echo "<h5 class=\"mb-3\">" . $row["titre"] . "</h5>";
+      echo "<span>" . $row["texte"] . "</span>";
+  echo "</div>";
+echo "<br/>";
+ echo "</div>";
+}
+// Services Fin 
+// **Fermer les ressources**
+$result->close();
+$mysqli->close();
+
+?>
+
 <?php
 include('../inc/testimonials.php');
 ?>
