@@ -51,7 +51,7 @@ echo "<div class=\"container-xxl py-5\">";
               >";
         echo "<i class=\"fa fa-3x fa-mobile-alt text-white\"></i>";
         echo "<div class=\"ms-4\">";
-          echo "<p class=\"text-white mb-0\">Une demande partioculière ?</p>";
+          echo "<p class=\"text-white mb-0\">Une demande particulière ?</p>";
           echo "<h2 class=\"text-white mb-0\">+ 33 2 88 88 88 88</h2>";
         echo "</div>";
         echo "</div>";
@@ -78,9 +78,12 @@ echo "<div class=\"container-xxl py-5\">";
 // ** Fermer les ressources **
 $result->close();
 $mysqli->close();
-
 ?>
-
+<?php
+echo "</div>";
+echo "</div>";
+echo "</div>";
+?>
 <?php
 include('../inc/testimonials.php');
 ?>
