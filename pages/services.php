@@ -3,31 +3,31 @@ include('../inc/header.php');
 ?>
 
 <?php
-// **Définir les variables de connexion à la base de données**
+// ** Définir les variables de connexion à la base de données **
 $host = "mysql-dev-am.alwaysdata.net";
 $database = "dev-am_bdd-studi";
 $username = "dev-am";
-$password = "UnstoppABLE!2908!KOP!pwd-alw"; // **Remplacez par votre mot de passe réel**
+$password = "UnstoppABLE!2908!KOP!pwd-alw"; 
 $port = "3306";
 
-// **Se connecter à la base de données**
-// **Utiliser mysqli à la place de mysql (obsolète)**
+// ** Se connecter à la base de données **
+// ** Utiliser mysqli à la place de mysql (obsolète) **
 $mysqli = new mysqli($host, $username, $password, $database, $port);
 
-// **Vérifier la connexion**
+// ** Vérifier la connexion **
 if ($mysqli->connect_errno) {
   echo "Échec de la connexion à la base de données : " . $mysqli->connect_error;
   exit();
 }
-// **Préparer la requête**
-// **Sélectionner tous les champs de la table "services"**
+// ** Préparer la requête **
+// ** Sélectionner tous les champs de la table "services" **
 $sql = "SELECT * FROM services";
 
-// **Exécuter la requête**
-// **L'objet `stmt` n'est pas défini**
+// ** Exécuter la requête **
+// ** L'objet `stmt` n'est pas défini **
 $result = $mysqli->query($sql);
 
-// **Vérifier le résultat**
+// ** Vérifier le résultat **
 if (!$result) {
   echo "Échec de la requête : " . $mysqli->error;
   exit();
@@ -60,7 +60,7 @@ echo "<div class=\"container-xxl py-5\">";
 
     // Try-catch block for error handling (optional)
     try {
-      // **Assuming database connection and $result is set**
+      // ** Assuming database connection and $result is set **
       while ($row = $result->fetch_assoc()) {
         echo "<div class=\"row gy-5 gx-4\">";
           echo "<div class=\"col-lg-3 col-md-4 col-sm-6 wow fadeInUp\" data-wow-delay=\"0.1s\">";
@@ -75,7 +75,7 @@ echo "<div class=\"container-xxl py-5\">";
     }
 
 // Services Fin
-// **Fermer les ressources**
+// ** Fermer les ressources **
 $result->close();
 $mysqli->close();
 
