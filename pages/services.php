@@ -65,13 +65,10 @@ include('../inc/header.php');
         class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
         data-wow-delay="0.7s"
       >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-5.png" alt="Icon" />
-        <h5 class="mb-3">Nouriture & Boissons</h5>
+        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-9.png" alt="Icon" />
+        <h5 class="mb-3">Tour en petit train</h5>
         <span
-          >Chez nous, il n'y a pas que les animaux qui ont besoin de manger et
-          boire ! Alors vous aussi, profitez de nos nombreux spots pour vous
-          rafraichir, grignoter un morceau ou même déjeuner en famille. Il y en
-          a pour tous les gouts !</span
+          >Un zoo sans un "petit train" ne serait pas un zoo n'est-ce-pas ? Alors venez profiter de la nature et de la compagnie des animaux, tranquillement installé(e) sur nos sièges tout confort. Emarquez vers Arcadia !</span
         >
       </div>
       <div
@@ -90,35 +87,38 @@ include('../inc/header.php');
         class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
         data-wow-delay="0.3s"
       >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-7.png" alt="Icon" />
-        <h5 class="mb-3">Wi-Fi gratuit (Haut Débit)</h5>
+        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-5.png" alt="Icon" />
+       <h5 class="mb-3">Nouriture & Boissons</h5>
         <span
-          >Le Wi-Fi est disponible gratuitement sur tout le complexe. Nous vous
-          demandons simplement de ne pas en "abuser", surtout dans nos toilettes
-          publiques ;-)</span
-        >
+          >Chez nous, il n'y a pas que les animaux qui ont besoin de manger et
+          boire ! Alors vous aussi, profitez de nos nombreux spots pour vous
+          rafraichir, grignoter un morceau ou même déjeuner en famille. Il y en
+          a pour tous les gouts !
+        </span> 
       </div>
       <div
         class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
         data-wow-delay="0.5s"
       >
         <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-8.png" alt="Icon" />
-        <h5 class="mb-3">Aires de jeux</h5>
+        <h5 class="mb-3">Aires de jeux/repos</h5>
         <span
           >De nombreuses aires de jeux sont à votre disposition dans nos 3
-          domaines (Savane, Marais et Jungle).</span
+          domaines (Savane, Marais et Jungle). Vous souhaitez faire une pause fraicheur, à l'ombre ? De nombreuses
+          aires de repos sont également à votre disposition.</span
         >
       </div>
       <div
         class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp"
         data-wow-delay="0.7s"
       >
-        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-9.png" alt="Icon" />
-        <h5 class="mb-3">Aires de repos</h5>
+        <img class="img-fluid mb-3" src="/web-am/dev.studi/arcadia/assets/ico/icon-7.png" alt="Icon" />
+       <h5 class="mb-3">Wi-Fi gratuit (Haut Débit)</h5>
         <span
-          >Vous souhaitez faire une pause fraicheur, à l'ombre ? De nombreuses
-          aires de repos sont également à votre disposition.
-        </span>
+          >Le Wi-Fi est disponible gratuitement sur tout le complexe. Nous vous
+          demandons simplement de ne pas en "abuser", surtout dans nos toilettes
+          publiques ;-)</span
+        >
       </div>
     </div>
   </div>
