@@ -1,12 +1,12 @@
 const cards = [
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory1.jpg",
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory2.jpg",
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory3.jpg",
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory4.jpg",
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory5.jpg",
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory6.jpg",
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory7.jpg",
-  "/web-am/dev.studi/arcadia/assets/img/memory-game/arc-an-memory8.jpg",
+  "assets/img/memory-game/arc-an-memory1.jpg",
+  "assets/img/memory-game/arc-an-memory2.jpg",
+  "assets/img/memory-game/arc-an-memory3.jpg",
+  "assets/img/memory-game/arc-an-memory4.jpg",
+  "assets/img/memory-game/arc-an-memory5.jpg",
+  "assets/img/memory-game/arc-an-memory6.jpg",
+  "assets/img/memory-game/arc-an-memory7.jpg",
+  "assets/img/memory-game/arc-an-memory8.jpg",
 ];
 const gameBoard = document.getElementById("game-board");
 let selectedCards = [];

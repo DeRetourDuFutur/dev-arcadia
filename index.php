@@ -32,5 +32,8 @@ include('pages/visite.php');
 include('pages/livre.php');
 ?>
 <?php
+include('pages/jeux.php');
+?>
+<?php
 include('inc/footer.php');
 ?>

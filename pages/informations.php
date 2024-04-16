@@ -24,7 +24,7 @@
             </p>
             <h5 class="mb-0">+33 2 88 88 88 88</h5>
             de 10h00 à 19h00 <br /><br />
-            <span class="text-primary">Sauf pendant les heures de sieste, </span>pour ne pas déranger nos animaux !
+            <span class="text-primary">Evitez les heures de sieste, </span>pour ne pas déranger nos animaux !
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
             </p>
             <h5 class="mb-0">contact@arcadia.com</h5>
             <br />
-            <span class="text-primary">Ajoutez notre adresse à votre répertoire,</span>pour être sûr de recevoir nos communications. <br />
+            <span class="text-primary">Ajoutez notre adresse à votre répertoire,</span> pour être sûr de recevoir nos communications. <br />
           </div>
         </div>
       </div>

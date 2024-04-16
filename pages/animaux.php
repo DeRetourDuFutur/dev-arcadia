@@ -19,7 +19,7 @@
                 <img class="img-fluid" src="assets/img/animal-md-1.jpg" alt="" />
                 <div class="animal-text p-4">
                   <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Elephant</h5>
+                  <h5 class="text-white mb-0">Cervidés</h5>
                 </div>
               </div>
             </a>
@@ -30,7 +30,7 @@
                 <img class="img-fluid" src="assets/img/animal-lg-1.jpg" alt="" />
                 <div class="animal-text p-4">
                   <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Elephant</h5>
+                  <h5 class="text-white mb-0">Lémuriens</h5>
                 </div>
               </div>
             </a>
@@ -45,7 +45,7 @@
                 <img class="img-fluid" src="assets/img/animal-lg-2.jpg" alt="" />
                 <div class="animal-text p-4">
                   <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Elephant</h5>
+                  <h5 class="text-white mb-0">Mascotte</h5>
                 </div>
               </div>
             </a>
@@ -56,7 +56,7 @@
                 <img class="img-fluid" src="assets/img/animal-md-2.jpg" alt="" />
                 <div class="animal-text p-4">
                   <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Elephant</h5>
+                  <h5 class="text-white mb-0">Zèbres</h5>
                 </div>
               </div>
             </a>
@@ -71,7 +71,7 @@
                 <img class="img-fluid" src="assets/img/animal-md-3.jpg" alt="" />
                 <div class="animal-text p-4">
                   <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Elephant</h5>
+                  <h5 class="text-white mb-0">Eléphants</h5>
                 </div>
               </div>
             </a>
@@ -82,7 +82,7 @@
                 <img class="img-fluid" src="assets/img/animal-lg-3.jpg" alt="" />
                 <div class="animal-text p-4">
                   <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Elephant</h5>
+                  <h5 class="text-white mb-0">Girafes</h5>
                 </div>
               </div>
             </a>
