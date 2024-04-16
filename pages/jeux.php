@@ -1,14 +1,12 @@
 <?php
-include('../inc/header.php');
+include('inc/header.php');
 ?>
-
-<!-- Jeu Memory Début -->
-<div class="container">
+<!-- sectionJeux.début -->
+<div class="container" id="jeux">
   <h2 class="text-center">Le Jeu de Mémoire</h2>
 <div id="game-board"></div>
 </div>
-<!-- Jeu Memory Fin -->
-
+<!-- sectionJeux.fin -->
 <?php
-include('../inc/footer.php');
+include('inc/footer.php');
 ?>

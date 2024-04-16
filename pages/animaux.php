@@ -1,141 +1,95 @@
-<?php
-include('../inc/header.php');
-?>
-
-<!-- Portfolio Animaux Début -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Les animaux d'Arcadia</h2>
-          <p>
-            Répartis en 3 habitats (La Savane, La Jungle & Les Marais), nos
-            animaux sont au nombre de 2 760. Venez les rencontrer !
-          </p>
-        </div>
-        <!-- Menu Sélection par filtres des animaux Début -->
-        <ul class="grid portfolio-filters list-unstyled">
-          <li class="grid__item">
-            <a href="#" class="active" data-filter="all">Tous les animaux</a>
-          </li>
-          <li class="grid__item">
-            <a href="#" data-filter="savane">La Savane</a>
-          </li>
-          <li class="grid__item">
-            <a href="#" data-filter="jungle">La Jungle</a>
-          </li>
-          <li class="grid__item">
-            <a href="#" data-filter="marais">Les Marais</a>
-          </li>
-        </ul>
-        <!-- Menu Sélection par filtres des animaux Fin -->
-
-
-         <!-- Affichage Carte Savane Début -->
-        <div class="grid">
-          <div class="grid__item">
-            <div class="card" data-category="savane">
-              <img
-                src="/web-am/dev.studi/arcadia/assets/img/animals/savane/arc-an-savane-cover.jpg"
-                loading="lazy"
-                width="100%"
-                height="243"
-                alt="La Savane"
-                class="card__image"
-              />
-              <div class="card__inner">
-                <h3 class="card__title">La Savane</h3>
-                <p class="category">Voir les animaux</p>
-              </div>
-              <div class="card__overlay">
-                <a href="#" class="card__link" data-id="modal-savane">+</a>
-              </div>
-            </div>
-            <!-- Affichage Carte Savane Fin -->
-
-            <!-- Affichage Modale Savane Début -->
-            <div class="modal" id="modal-savane">
-              <button class="modal__close">&times;</button>
-
-              <div class="modal__content">
-                <div class="container">
-                  <div class="grid">Savane - Photos ici</div>
+<!-- sectionAnimaux.début -->
+<div class="container-xxl py-5" id="animaux">
+  <div class="container">
+    <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-lg-6">
+        <p><span class="text-primary me-2">#</span>Nos Animaux</p>
+        <h1 class="display-5 mb-0">Rencontrez tous les <span class="text-primary">animaux</span> d'Arcadia</h1>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <a class="btn btn-primary py-3 px-5" href="#animaux">Voir plus d'animaux</a>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="row g-4">
+          <div class="col-12">
+            <a class="animal-item" href="assets/img/animal-md-1.jpg" data-lightbox="animal">
+              <div class="position-relative">
+                <img class="img-fluid" src="assets/img/animal-md-1.jpg" alt="" />
+                <div class="animal-text p-4">
+                  <p class="text-white small text-uppercase mb-0">Animal</p>
+                  <h5 class="text-white mb-0">Elephant</h5>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
-          <!-- Affichage Modale Savane Fin -->
-
-          <!-- Affichage Carte Jungle Début -->
-          <div class="grid__item">
-            <div class="card" data-category="jungle">
-              <img
-                src="/web-am/dev.studi/arcadia/assets/img/animals/jungle/arc-an-jungle-cover.jpg"
-                loading="lazy"
-                width="100%"
-                height="243"
-                alt="La Jungle"
-                class="card__image"
-              />
-              <div class="card__inner">
-                <h3 class="card__title">La Jungle</h3>
-                <p class="category">Voir les animaux</p>
-              </div>
-              <div class="card__overlay">
-                <a href="#" class="card__link" data-id="modal-jungle">+</a>
-              </div>
-            </div>
-            <!-- Affichage Carte Jungle Fin -->
-
-            <!-- Affichage Modale Jungle Début -->
-            <div class="modal" id="modal-jungle">
-              <button class="modal__close">&times;</button>
-
-              <div class="modal__content">
-                <div class="container">
-                  <div class="grid">Jungle - Photos ici</div>
+          <div class="col-12">
+            <a class="animal-item" href="assets/img/animal-lg-1.jpg" ndata-lightbox="animal">
+              <div class="position-relative">
+                <img class="img-fluid" src="assets/img/animal-lg-1.jpg" alt="" />
+                <div class="animal-text p-4">
+                  <p class="text-white small text-uppercase mb-0">Animal</p>
+                  <h5 class="text-white mb-0">Elephant</h5>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
-          <!-- Affichage Modale Jungle Fin -->
-
-          <!-- Affichage Carte Marais Début -->
-          <div class="grid__item">
-            <div class="card" data-category="marais">
-              <img
-                src="/web-am/dev.studi/arcadia/assets/img/animals/marais/arc-an-marais-cover.jpg"
-                loading="lazy"
-                width="100%"
-                height="243"
-                alt="Les Marais"
-                class="card__image"
-              />
-              <div class="card__inner">
-                <h3 class="card__title">Les Marais</h3>
-                <p class="category">Voir les animaux</p>
-              </div>
-              <div class="card__overlay">
-                <a href="#" class="card__link" data-id="modal-marais">+</a>
-              </div>
-            </div>
-            <!-- Affichage Carte Marais Fin -->
-
-            <!-- Affichage Modale Marais Début -->
-            <div class="modal" id="modal-marais">
-              <button class="modal__close">&times;</button>
-
-              <div class="modal__content">
-                <div class="container">
-                  <div class="grid">Marais - Photos ici</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Affichage Modale Marais Fin -->
         </div>
       </div>
-    </section>
-    <!-- Portfolio Animaux Fin -->
-<?php
-include('../inc/footer.php');
-?>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="row g-4">
+          <div class="col-12">
+            <a class="animal-item" href="assets/img/animal-lg-2.jpg" data-lightbox="animal">
+              <div class="position-relative">
+                <img class="img-fluid" src="assets/img/animal-lg-2.jpg" alt="" />
+                <div class="animal-text p-4">
+                  <p class="text-white small text-uppercase mb-0">Animal</p>
+                  <h5 class="text-white mb-0">Elephant</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12">
+            <a class="animal-item" href="assets/img/animal-md-2.jpg" data-lightbox="animal">
+              <div class="position-relative">
+                <img class="img-fluid" src="assets/img/animal-md-2.jpg" alt="" />
+                <div class="animal-text p-4">
+                  <p class="text-white small text-uppercase mb-0">Animal</p>
+                  <h5 class="text-white mb-0">Elephant</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row g-4">
+          <div class="col-12">
+            <a class="animal-item" href="assets/img/animal-md-3.jpg" data-lightbox="animal">
+              <div class="position-relative">
+                <img class="img-fluid" src="assets/img/animal-md-3.jpg" alt="" />
+                <div class="animal-text p-4">
+                  <p class="text-white small text-uppercase mb-0">Animal</p>
+                  <h5 class="text-white mb-0">Elephant</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12">
+            <a class="animal-item" href="assets/img/animal-lg-3.jpg" data-lightbox="animal">
+              <div class="position-relative">
+                <img class="img-fluid" src="assets/img/animal-lg-3.jpg" alt="" />
+                <div class="animal-text p-4">
+                  <p class="text-white small text-uppercase mb-0">Animal</p>
+                  <h5 class="text-white mb-0">Elephant</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- sectionAnimaux.fin -->
