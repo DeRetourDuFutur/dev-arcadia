@@ -10,7 +10,7 @@
 }
 
 .card {
-  background-color: #597758;
+  background-color: #074c04;
   border-radius: 5px;
   cursor: pointer;
 
@@ -35,7 +35,7 @@
 }
 
 .card.matched {
-  border: solid 4px green;
+  border: solid 4px rgb(117, 240, 117);
   box-sizing: border-box;
   cursor: default;
 }
