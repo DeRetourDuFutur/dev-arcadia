@@ -43,7 +43,7 @@
           <p>
             Je connais cet endroit depuis des années et je n'ai jamais été déçu. Les animaux sont bien traités et les installations sont toujours propres. Je recommande la visite guidée pour une expérience encore plus immersive.
           </p>
-          <h5 class="mb-1">José D.</h5>
+          <h5 class="mb-1">José M.</h5>
           <span class="fst-italic">Client fidèle</span>
         </div>
       </div>
