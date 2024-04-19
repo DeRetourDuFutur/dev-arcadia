@@ -14,23 +14,23 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="row g-4">
           <div class="col-12">
-            <a class="animal-item" href="assets/img/animal-md-1.jpg" data-lightbox="animal">
+            <a class="animal-item" href="assets/img/animals/animal-md-1.jpg" data-lightbox="animal">
               <div class="position-relative">
-                <img class="img-fluid" src="assets/img/animal-md-1.jpg" alt="" />
+                <img class="img-fluid" src="assets/img/animals/animal-md-1.jpg" alt="" />
                 <div class="animal-text p-4">
-                  <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Cervidés</h5>
+                  <p class="text-white small text-uppercase mb-0">Marais</p>
+                  <h5 class="text-white mb-0">Lézard</h5>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-12">
-            <a class="animal-item" href="assets/img/animal-lg-1.jpg" ndata-lightbox="animal">
+            <a class="animal-item" href="assets/img/animals/animal-lg-1.jpg" data-lightbox="animal">
               <div class="position-relative">
-                <img class="img-fluid" src="assets/img/animal-lg-1.jpg" alt="" />
+                <img class="img-fluid" src="assets/img/animals/animal-lg-1.jpg" alt="" />
                 <div class="animal-text p-4">
-                  <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Lémuriens</h5>
+                  <p class="text-white small text-uppercase mb-0">Jungle</p>
+                  <h5 class="text-white mb-0">Lémurien</h5>
                 </div>
               </div>
             </a>
@@ -40,23 +40,23 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="row g-4">
           <div class="col-12">
-            <a class="animal-item" href="assets/img/animal-lg-2.jpg" data-lightbox="animal">
+            <a class="animal-item" href="assets/img/animals/animal-lg-2.jpg" data-lightbox="animal">
               <div class="position-relative">
-                <img class="img-fluid" src="assets/img/animal-lg-2.jpg" alt="" />
+                <img class="img-fluid" src="assets/img/animals/animal-lg-2.jpg" alt="" />
                 <div class="animal-text p-4">
-                  <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Mascotte</h5>
+                  <p class="text-white small text-uppercase mb-0">Savane</p>
+                  <h5 class="text-white mb-0">Lion</h5>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-12">
-            <a class="animal-item" href="assets/img/animal-md-2.jpg" data-lightbox="animal">
+            <a class="animal-item" href="assets/img/animals/animal-md-2.jpg" data-lightbox="animal">
               <div class="position-relative">
-                <img class="img-fluid" src="assets/img/animal-md-2.jpg" alt="" />
+                <img class="img-fluid" src="assets/img/animals/animal-md-2.jpg" alt="" />
                 <div class="animal-text p-4">
-                  <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Zèbres</h5>
+                  <p class="text-white small text-uppercase mb-0">Jungle</p>
+                  <h5 class="text-white mb-0">Tigre</h5>
                 </div>
               </div>
             </a>
@@ -66,22 +66,22 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
         <div class="row g-4">
           <div class="col-12">
-            <a class="animal-item" href="assets/img/animal-md-3.jpg" data-lightbox="animal">
+            <a class="animal-item" href="assets/img/animals/animal-md-3.jpg" data-lightbox="animal">
               <div class="position-relative">
-                <img class="img-fluid" src="assets/img/animal-md-3.jpg" alt="" />
+                <img class="img-fluid" src="assets/img/animals/animal-md-3.jpg" alt="" />
                 <div class="animal-text p-4">
-                  <p class="text-white small text-uppercase mb-0">Animal</p>
-                  <h5 class="text-white mb-0">Eléphants</h5>
+                  <p class="text-white small text-uppercase mb-0">Savane</p>
+                  <h5 class="text-white mb-0">Eléphant</h5>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-12">
-            <a class="animal-item" href="assets/img/animal-lg-3.jpg" data-lightbox="animal">
+            <a class="animal-item" href="assets/img/animals/animal-lg-3.jpg" data-lightbox="animal">
               <div class="position-relative">
-                <img class="img-fluid" src="assets/img/animal-lg-3.jpg" alt="" />
+                <img class="img-fluid" src="assets/img/animals/animal-lg-3.jpg" alt="" />
                 <div class="animal-text p-4">
-                  <p class="text-white small text-uppercase mb-0">Animal</p>
+                  <p class="text-white small text-uppercase mb-0">Savane</p>
                   <h5 class="text-white mb-0">Girafes</h5>
                 </div>
               </div>

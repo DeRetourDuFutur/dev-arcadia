@@ -8,7 +8,7 @@
       <div class="testimonial-item text-center">
         <img
         class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-        src="assets/img/testimonial-1.jpg"
+        src="assets/img/livre/testimonial-1.jpg"
         style="width: 100px; height: 100px"
         />
         <div class="testimonial-text rounded text-center p-4">
@@ -22,7 +22,7 @@
       <div class="testimonial-item text-center">
         <img
         class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-        src="assets/img/testimonial-2.jpg"
+        src="assets/img/livre/testimonial-2.jpg"
         style="width: 100px; height: 100px"
         />
         <div class="testimonial-text rounded text-center p-4">
@@ -36,7 +36,7 @@
       <div class="testimonial-item text-center">
         <img
         class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-        src="assets/img/testimonial-3.jpg"
+        src="assets/img/livre/testimonial-3.jpg"
         style="width: 100px; height: 100px"
         />
         <div class="testimonial-text rounded text-center p-4">
@@ -50,7 +50,7 @@
       <div class="testimonial-item text-center">
         <img
         class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4"
-        src="assets/img/testimonial-4.jpg"
+        src="assets/img/livre/testimonial-4.jpg"
         style="width: 100px; height: 100px"
         />
         <div class="testimonial-text rounded text-center p-4">

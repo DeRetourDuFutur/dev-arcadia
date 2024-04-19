@@ -20,7 +20,7 @@
         <div class="h-100 bg-light d-flex align-items-center p-5">
           <div class="ms-4">
             <p class="mb-2">
-              <span class="text-primary me-2"><i class="fa fa-phone-alt text-primary"></i></span>Appelez-nous
+              <span class="text-primary me-2"><a href="tel:+33288888888" class="text-white"><i class="fa fa-phone-alt text-primary"></i></a></span>Appelez-nous
             </p>
             <h5 class="mb-0">+33 2 88 88 88 88</h5>
             de 10h00 à 19h00 <br /><br />
@@ -36,7 +36,7 @@
             </p>
             <h5 class="mb-0">contact@arcadia.com</h5>
             <br />
-            <span class="text-primary">Ajoutez notre adresse à votre répertoire,</span> pour être sûr de recevoir nos communications. <br />
+            <span class="text-primary">Ajoutez notre adresse à votre répertoire,</span> pour être sûr de recevoir nos communications.<br />
           </div>
         </div>
       </div>

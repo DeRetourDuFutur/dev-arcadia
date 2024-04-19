@@ -4,7 +4,7 @@
     <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
       <div class="header-bg h-100 d-flex flex-column justify-content-center p-5">
         <h1 class="display-4 text-light mb-5">
-          Vivez l'Aventure en famille à Arcadia !
+          Vivez une aventure <br> en famille à <span class="text-primary">Arcadia !</span>
         </h1>
         <div class="d-flex align-items-center pt-4 animated slideInDown">
           <a href="#about" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">En savoir +</a>
@@ -16,12 +16,16 @@
           data-bs-target="#videoModal">
           <span></span>
           </button>
-          <h6 class="text-white m-0 ms-4 d-none d-sm-block">Présentation</h6>
+          <h6 class="text-white m-0 ms-4 d-none d-sm-block">Un petit aperçu ?</h6>
         </div>
       </div>
     </div>
+    <!-- sectionCarouselHome.début -->
     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
       <div class="owl-carousel header-carousel">
+        <div class="owl-carousel-item">
+          <img class="img-fluid" src="assets/img/home-slider/arcadia.jpg" alt="Zoo Arcadia" />
+        </div>        
         <div class="owl-carousel-item">
           <img class="img-fluid" src="assets/img/home-slider/jungle1.jpg" alt="La Jungle - Lémuriens" />
         </div>
@@ -51,16 +55,15 @@
         </div>       
       </div>
     </div>
+<!-- sectionCarouselHome.fin -->
   </div>
 </div>
-<!-- sectionHome.fin -->
-
 <!-- sectionModaleVidéo.début -->
 <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content rounded-0">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">La belle vie à Arcadia
+        <h3 class="modal-title" id="exampleModalLabel">La vie est belle à Arcadia
           <i class="fas fa-paw text-primary me-3"></i></h3>
         <button
         type="button"
@@ -69,19 +72,35 @@
         aria-label="Close">
         </button>
       </div>
+      <!-- sectionCarouselVideos.début -->
       <div class="modal-body">
-        <!-- 16:9 aspect ratio -->
-        <div class="ratio ratio-16x9">
-          <iframe
-          class="embed-responsive-item"
-          src=""
-          id="video"
-          allowfullscreen
-          allowscriptaccess="always"
-          allow="autoplay">
-          </iframe>
+        <div class="owl-carousel-item">
+          <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item" src="assets/vid/girafes.mp4" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="owl-carousel-item">
+          <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item" src="assets/vid/lions.mp4" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="owl-carousel-item">
+          <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item" src="assets/vid/gorille.mp4" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="owl-carousel-item">
+          <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item" src="assets/vid/suricates.mp4" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="owl-carousel-item">
+          <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item" src="assets/vid/ours.mp4" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
+      <!-- sectionCarouselVideos.fin -->
     </div>
   </div>
 </div>
