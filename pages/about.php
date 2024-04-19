@@ -5,7 +5,7 @@
       <div class="fadeInUp" data-wow-delay="0.1s">
         <p><span class="text-primary me-2">#</span>Bienvenue chez Arcadia</p>
         <h1 class="display-5 mb-4">Plongez au cœur de la nature sauvage  <span class="text-primary">au Zoo Arcadia</span></h1>
-        <p class="mb-4" style="text-align:justify">
+        <p class="mb-4 about-content-text">
           <span class="text-primary"><b>Un havre de paix pour la faune et la flore</b></span>
           <br>
           Niché au cœur de la Bretagne, à proximité de la légendaire forêt de Brocéliande, le <span class="text-primary"><b>Zoo Arcadia</b></span> vous invite à un voyage extraordinaire à travers la faune et la flore de notre planète. Depuis 1960, notre parc animalier s'engage à offrir un refuge à une multitude d'espèces animales, réparties aujourd'hui sur trois vastes domaines : la Savane, la Jungle et les Marais.

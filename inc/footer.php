@@ -59,10 +59,15 @@
   </div>  
 </div>
 <!-- sectionFooter.fin -->
-<!-- sectionBackToTop.début -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-<!-- sectionBackToTop.fin -->
 
+<!-- sectionBackToTop.début -->
+<!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<!-- sectionBackToTop.fin -->
+<!-- Pre Loader -->
+    <div id="loader" class="show">
+      <div class="loader"></div>
+    </div>
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
