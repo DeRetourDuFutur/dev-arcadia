@@ -28,6 +28,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/menu.css" rel="stylesheet" />
+    <link href="css/animaux.css" rel="stylesheet" />
     <link href="css/memory.css" rel="stylesheet" />
     <!--
       <link href="css/slider.css" rel="stylesheet" />
@@ -38,6 +40,8 @@
     <link href="assets/fonts/fa/css/all.min.css" rel="stylesheet" />
     <!-- Librairie JS FontAwesome -->
     <script defer src="assets/fonts/fa/js/all.js"></script>
+    <script defer src="js/menu.js"></script>
+    <script defer src="js/animaux.js"></script>
     <title>Bienvenue dans l'univers d'Arcadia</title>
 </head>
   <!-- sectionHead.fin -->

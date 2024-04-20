@@ -4,18 +4,12 @@
     <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="col-lg-6">
         <p><span class="text-primary me-2">#</span>Nos services</p>
-        <h1 class="display-5 mb-0">Services proposés aux <span class="text-primary">Arcadien(ne)s</span></h1>
-        <p><span class="text-primary me-2"><i class="fa-solid fa-circle-info fa-1x"></i></span>Cliquez sur chaque icone du service pour voir un aperçu</p>
+        <h1 class="display-5 mb-0">Services proposés aux <span class="text-primary">Arcadien(ne)s</span></h1>       
       </div>
-      
       <div class="col-lg-6">
-        <div class="bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5">
-          <i class="fa fa-3x fa-mobile-alt text-white"></i>
-          <div class="ms-4">
-            <p class="text-white mb-0">Une demande particulière ?</p>
-            <!-- <h2 class="text-white mb-0">+33 2 88 88 88 88</h2> -->
-            <h2 class="text-white mb-0"><a href="tel:+33288888888" class="text-white">+33 2 88 88 88 88</a></h2>
-            </div>
+        <div class="bg-primary h-25 d-flex align-items-center pt-5 py-5 px-5 px-sm-5">
+          <i class="fa-solid fa-circle-info fa-2x text-white"></i>
+          <span class="text-white">Cliquez sur chaque icone du service pour voir un aperçu</span>
         </div>
       </div>
     </div>
