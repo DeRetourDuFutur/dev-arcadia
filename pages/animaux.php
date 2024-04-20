@@ -22,24 +22,78 @@
     <div class="grid-animaux">
       <div class="grid-animaux__item">
         <div class="card-animaux" data-category="savane">
-          <img src="assets/img/animals/savane/arc-an-savane-cover.jpg" loading="lazy" width="365" height="243" alt="La Savane" class="card-animaux__image">
+          <img src="assets/img/animals/arc-an-savane-cover-pic.jpg" loading="lazy" width="365" height="243" alt="La Savane" class="card-animaux__image">
           <div class="card-animaux__inner">
             <h3 class="card-animaux__title">La Savane</h3>
-            <p class="category">Tous les animaux de la Savane</p>
+            <p class="category">Voir les photos</p>
           </div>
           <div class="card-animaux__overlay">
-            <a href="#" class="card-animaux__link" data-id="modal-animaux-savane">+</a>
+            <a href="#" class="card-animaux__link" data-id="modal-animaux-savane-photos"><i class="fa-regular fa-images text-primary fa-2x"></i></a>
           </div>
         </div>
-        <div class="modal-animaux" id="modal-animaux-savane">
+        <div class="modal-animaux" id="modal-animaux-savane-photos">
           <button class="modal-animaux__close">&times;</button>
           <div class="modal-animaux__content">
             <div class="container-animaux">
               <div class="grid-animaux">
                 <div class="grid-animaux__item">
-                  <h4 class="modal-animaux__title h2">Les animaux de  la Savane</h4>
+                  <h4 class="modal-animaux__title h2">Les animaux de la Savane</h4>
                   <p class="category">
-                    Texte présentation Savane
+                    <i class="fa-regular fa-images text-primary fa-2x"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-animaux__item">
+        <div class="card-animaux" data-category="savane">
+          <img src="assets/img/animals/arc-an-savane-cover-vid.jpg" loading="lazy" width="365" height="243" alt="La Savane" class="card-animaux__image">
+          <div class="card-animaux__inner">
+            <h3 class="card-animaux__title">La Savane</h3>
+            <p class="category">Voir les vidéos</p>
+          </div>
+          <div class="card-animaux__overlay">
+            <a href="#" class="card-animaux__link" data-id="modal-animaux-savane-videos"><i class="fa-solid fa-video text-primary fa-2x"></i></a>
+          </div>
+        </div>
+        <div class="modal-animaux" id="modal-animaux-savane-videos">
+          <button class="modal-animaux__close">&times;</button>
+          <div class="modal-animaux__content">
+            <div class="container-animaux">
+              <div class="grid-animaux">
+                <div class="grid-animaux__item">
+                  <h4 class="modal-animaux__title h2">Les animaux de la Savane</h4>
+                  <p class="category">
+                    <i class="fa-solid fa-video text-primary fa-2x"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <div class="grid-animaux__item">
+        <div class="card-animaux" data-category="jungle">
+          <img src="assets/img/animals/arc-an-jungle-cover-pic.jpg" loading="lazy" width="365" height="243" alt="La Jungle" class="card-animaux__image">
+          <div class="card-animaux__inner">
+            <h3 class="card-animaux__title">La Jungle</h3>
+            <p class="category">Voir les photos</p>
+          </div>
+          <div class="card-animaux__overlay">
+            <a href="#" class="card-animaux__link" data-id="modal-animaux-jungle-photos"><i class="fa-regular fa-images text-primary fa-2x"></i></a>
+          </div>
+        </div>
+        <div class="modal-animaux" id="modal-animaux-jungle-photos">
+          <button class="modal-animaux__close">&times;</button>
+          <div class="modal-animaux__content">
+            <div class="container-animaux">
+              <div class="grid-animaux">
+                <div class="grid-animaux__item">
+                  <h4 class="modal-animaux__title h2">Les animaux de la Jungle</h4>
+                  <p class="category">
+                    <i class="fa-regular fa-images text-primary fa-2x"></i>
                   </p>
                 </div>
               </div>
@@ -49,43 +103,43 @@
       </div>
       <div class="grid-animaux__item">
         <div class="card-animaux" data-category="jungle">
-          <img src="assets/img/animals/jungle/arc-an-jungle-cover.jpg" loading="lazy" width="365" height="243" alt="La Jungle" class="card-animaux__image">
+          <img src="assets/img/animals/arc-an-jungle-cover-vid.jpg" loading="lazy" width="365" height="243" alt="La Jungle" class="card-animaux__image">
           <div class="card-animaux__inner">
             <h3 class="card-animaux__title">La Jungle</h3>
-            <p class="category">Tous les animaux de la Jungle</p>
+            <p class="category">Voir les vidéos</p>
           </div>
           <div class="card-animaux__overlay">
-            <a href="#" class="card-animaux__link" data-id="modal-animaux-jungle">+</a>
+            <a href="#" class="card-animaux__link" data-id="modal-animaux-jungle-videos"><i class="fa-solid fa-video text-primary fa-2x"></i></a>
           </div>
         </div>
-        <div class="modal-animaux" id="modal-animaux-jungle">
+        <div class="modal-animaux" id="modal-animaux-jungle-videos">
           <button class="modal-animaux__close">&times;</button>
           <div class="modal-animaux__content">
             <div class="container-animaux">
               <div class="grid-animaux">
                 <div class="grid-animaux__item">
-                  <h4 class="modal-animaux__title h2">Les animaux de  la Jungle</h4>
+                  <h4 class="modal-animaux__title h2">Les animaux de la Jungle</h4>
                   <p class="category">
-                    Texte présentation Jungle
+                    <i class="fa-solid fa-video text-primary fa-2x"></i>
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div>      
       <div class="grid-animaux__item">
         <div class="card-animaux" data-category="marais">
-          <img src="assets/img/animals/marais/arc-an-marais-cover.jpg" loading="lazy" width="365" height="243" alt="La Jungle" class="card-animaux__image">
+          <img src="assets/img/animals/arc-an-marais-cover-pic.jpg" loading="lazy" width="365" height="243" alt="La Jungle" class="card-animaux__image">
           <div class="card-animaux__inner">
             <h3 class="card-animaux__title">Les Marais</h3>
-            <p class="category">Tous les animaux des Marais</p>
+            <p class="category">Voir les photos</p>
           </div>
           <div class="card-animaux__overlay">
-            <a href="#" class="card-animaux__link" data-id="modal-animaux-marais">+</a>
+            <a href="#" class="card-animaux__link" data-id="modal-animaux-marais-photos"><i class="fa-regular fa-images text-primary fa-2x"></i></a>
           </div>
         </div>
-        <div class="modal-animaux" id="modal-animaux-marais">
+        <div class="modal-animaux" id="modal-animaux-marais-photos">
           <button class="modal-animaux__close">&times;</button>
           <div class="modal-animaux__content">
             <div class="container-animaux">
@@ -93,7 +147,7 @@
                 <div class="grid-animaux__item">
                   <h4 class="modal-animaux__title h2">Les animaux des Marais</h4>
                   <p class="category">
-                    Texte présentation Marais
+                    <i class="fa-regular fa-images text-primary fa-2x"></i>
                   </p>
                 </div>
               </div>
@@ -101,6 +155,33 @@
           </div>
         </div>
       </div>
+<div class="grid-animaux__item">
+        <div class="card-animaux" data-category="marais">
+          <img src="assets/img/animals/arc-an-marais-cover-vid.jpg" loading="lazy" width="365" height="243" alt="La Jungle" class="card-animaux__image">
+          <div class="card-animaux__inner">
+            <h3 class="card-animaux__title">Les Marais</h3>
+            <p class="category">Voir les vidéos</p>
+          </div>
+          <div class="card-animaux__overlay">
+            <a href="#" class="card-animaux__link" data-id="modal-animaux-marais-videos"><i class="fa-solid fa-video text-primary fa-2x"></i></a>
+          </div>
+        </div>
+        <div class="modal-animaux" id="modal-animaux-marais-videos">
+          <button class="modal-animaux__close">&times;</button>
+          <div class="modal-animaux__content">
+            <div class="container-animaux">
+              <div class="grid-animaux">
+                <div class="grid-animaux__item">
+                  <h4 class="modal-animaux__title h2">Les animaux des Marais</h4>
+                  <p class="category">
+                    <i class="fa-solid fa-video text-primary fa-2x"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
     </div>
   </div>
 </div>
