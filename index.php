@@ -20,7 +20,7 @@ include('pages/chiffres.php');
 include('pages/services.php');
 ?>
 <?php
-include('pages/animaux.php');
+include('pages/slider-animals.php');
 ?>
 <?php
 include('pages/informations.php');

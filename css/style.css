@@ -385,7 +385,7 @@
 }
 
 /*** Animal ***/
-.animal-item {
+/* .animal-item {
   position: relative;
   display: block;
 }
@@ -408,7 +408,7 @@
 .animal-item:hover .animal-text {
   opacity: 1;
   padding-bottom: 20px !important;
-}
+}  */
 
 /*** Membership ***/
 .membership-item {

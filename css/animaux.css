@@ -196,6 +196,11 @@ section {
   overflow: hidden;
 }
 
+.card-animaux img {
+  width: 100%;
+  height: max-content;
+}
+
 .card-animaux__inner {
   padding: 2rem;
 }

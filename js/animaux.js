@@ -20,15 +20,6 @@ function tabsFilters() {
         return;
       }
 
-      console.log("tutu");
-      // ne sera pas pris en compte !
-      /*if (filter !== elem) {
-        projet.parentNode.classList.add('hide');
-      } else {
-        projet.parentNode.classList.remove('hide');
-      }*/
-
-      // option pour les plus motivés - opérateur ternaire
       filter !== elem
         ? projet.parentNode.classList.add("hide")
         : projet.parentNode.classList.remove("hide");
@@ -67,11 +58,11 @@ function showProjectDetails() {
     });
   });
 
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      hideModals();
-    });
-  });
+  // btns.forEach((btn) => {
+  //   btn.addEventListener("click", (event) => {
+  //     hideModals();
+  //   });
+  // });
 }
 
 showProjectDetails();

@@ -81,7 +81,8 @@
 <!-- Template Javascript -->
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/menu.js"></script>
-<script type="text/javascript" src="js/animaux.js"></script>
+<script type="text/javascript" src="js/slider-animals.js"></script>
+<!-- <script type="text/javascript" src="js/animaux.js"></script> -->
 <script type="text/javascript" src="js/memory.js"></script>
 </body>
 </html>
