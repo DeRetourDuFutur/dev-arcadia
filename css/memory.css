@@ -1,5 +1,4 @@
-/* Création du style CSS */
-
+/* Jeu de Mémoire | Début */
 #game-board {
   display: grid;
   grid-template-columns: repeat(4, 100px);
@@ -8,34 +7,29 @@
   margin: 30px auto;
   justify-content: center;
 }
-
 .card {
-  background-color: #074c04;
+  background-color: var(--primary);
   border-radius: 5px;
   cursor: pointer;
-
-  /*animation*/
+  /* Animation */
   transform: rotateY(0deg);
   transition: all 0.5s;
 }
-
 .card .card-content {
   opacity: 0;
   transition: all 0.3s;
   min-height: fit-content;
 }
-
 .card.flip .card-content {
   opacity: 1;
   max-width: 100%;
 }
-
 .card.flip {
   transform: rotateY(180deg);
 }
-
 .card.matched {
-  border: solid 4px rgb(117, 240, 117);
+  border: solid 4px var(--secondary);
   box-sizing: border-box;
   cursor: default;
 }
+/* Jeu de Mémoire | Fin */

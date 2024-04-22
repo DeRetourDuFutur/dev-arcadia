@@ -1,0 +1,18 @@
+#menu {
+  display: none;
+}
+
+#burger-menu {
+  display: block;
+}
+
+/* Media query to adjust styles for smaller screens */
+@media (max-width: 768px) {
+  #menu {
+    display: none;
+  }
+
+  #burger-menu {
+    display: block;
+  }
+}

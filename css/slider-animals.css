@@ -1,8 +1,7 @@
-/* sliderAnimals.début */
+/*** Slider Animaux | Début ***/
 .slider-animals {
   width: auto;
   height: 100vh;
-  /* margin-top: -50px; */
   overflow: hidden;
   position: relative;
 }
@@ -53,7 +52,8 @@
   .list-slider-animals
   .item-slider-animals
   .topic-slider-animals {
-  color: #f78f35;
+  color: var(--secondary);
+  margin-left: -5px;
 }
 .slider-animals
   .list-slider-animals
@@ -85,7 +85,6 @@
   border: 1px solid #fff;
   color: #eee;
 }
-/* thumbail */
 
 @media (max-width: 767.98px) {
   .thumbnail-slider-animals .item-slider-animals {
@@ -132,7 +131,7 @@
 .description-slider-animals {
   font-weight: 300;
 }
-/* arrows */
+
 .arrows-slider-animals {
   position: absolute;
   top: 80%;
@@ -148,10 +147,11 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: #f78f35;
+  background-color: var(--primary);
   border: none;
   color: #fff;
   font-family: monospace;
+  font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
 }
@@ -172,7 +172,6 @@
   color: #000;
 }
 
-/* animation */
 .slider-animals .list-slider-animals .item-slider-animals:nth-child(1) {
   z-index: 1;
 }
@@ -244,7 +243,7 @@
   .buttons-slider-animals {
   animation-delay: 1.8s !important;
 }
-/* create animation when next click */
+
 .slider-animals.next
   .list-slider-animals
   .item-slider-animals:nth-child(1)
@@ -292,14 +291,12 @@
   }
 }
 
-/* running time */
-
 .slider-animals .time-slider-animals {
   position: absolute;
   z-index: 1000;
   width: 0%;
-  height: 3px;
-  background-color: #f1683a;
+  height: 5px;
+  background-color: var(--primary);
   left: 0;
   top: 0;
 }
@@ -316,8 +313,6 @@
     width: 0;
   }
 }
-
-/* prev click */
 
 .slider-animals.prev .list-slider-animals .item-slider-animals:nth-child(2) {
   z-index: 2;
@@ -403,4 +398,4 @@
     font-size: 30px;
   }
 }
-/* sliderAnimals.fin */
+/*** Slider Animaux | Fin ***/

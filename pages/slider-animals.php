@@ -12,9 +12,7 @@
             <!-- <div class="title-slider-animals">DOMAINE</div> -->
             <div class="topic-slider-animals">SAVANE</div>
             <div class="des-slider-animals">
-              Explorez la savane et découvrez les animaux qui la peuplent :
-              lions, éléphants, girafes, zèbres, rhinocéros, guépards, hyènes,
-              hippopotames, singes, buffles, etc.
+              Décourvrez notre domaine entièrement dédié à la faune et la flore de la Savane
             </div>
             <div class="buttons-slider-animals">
               <button>Explorer</button>
@@ -31,8 +29,7 @@
             <!-- <div class="title-slider-animals">DOMAINE</div> -->
             <div class="topic-slider-animals">JUNGLE</div>
             <div class="des-slider-animals">
-              Explorez la jungle et découvrez les animaux qui la peuplent :
-              tigres, singes, serpents, lézards, insectes, etc.
+              Décourvrez notre domaine entièrement dédié à la faune et la flore de la Jungle
             </div>
             <div class="buttons-slider-animals">
               <button>Explorer</button>
@@ -49,9 +46,7 @@
             <!-- <div class="title-slider-animals">DOMAINE</div> -->
             <div class="topic-slider-animals">MARAIS</div>
             <div class="des-slider-animals">
-              Explorez les Marais et découvrez les animaux qui la peuplent : les
-              crocodiles, les serpents, les lézards, les grenouilles, les
-              tigres, etc.
+              Décourvrez notre domaine entièrement dédié à la faune et la flore des Marais
               <div class="buttons-slider-animals">
                 <button>Explorer</button>
               </div>

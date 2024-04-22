@@ -1,12 +1,13 @@
-/*** Reset Début ***/
+/*** Reset | Début ***/
 :root {
   --primary: #2eb872;
+  --secondary: #f78f35;
   --light: #f3f4f5;
   --dark: #282f34;
 }
-/*** Reset Fin ***/
+/*** Reset | Fin ***/
 
-/*** Back To Top Début ***/
+/*** Back To Top | Début ***/
 .back-to-top {
   position: fixed;
   display: none;
@@ -14,9 +15,9 @@
   bottom: 45px;
   z-index: 99;
 }
-/*** Back To Top Fin ***/
+/*** Back To Top | Fin ***/
 
-/*** Spinner Début ***/
+/*** Spinner | Début ***/
 #spinner {
   opacity: 0;
   visibility: hidden;
@@ -29,9 +30,9 @@
   visibility: visible;
   opacity: 1;
 }
-/*** Spinner Fin ***/
+/*** Spinner | Fin ***/
 
-/*** Button ***/
+/*** Buttons | Début ***/
 .btn {
   font-weight: 500;
   transition: 0.5s;
@@ -66,8 +67,9 @@
   justify-content: center;
   font-weight: normal;
 }
+/*** Buttons | Fin ***/
 
-/*** Navbar ***/
+/*** Navbar | Début ***/
 .navbar.sticky-top {
   top: -100px;
   transition: 0.5s;
@@ -132,16 +134,17 @@
     visibility: hidden;
     transition: 0.5s;
   }
-
-  .navbar .nav-item:hover .dropdown-menu {
-    top: 100%;
-    visibility: visible;
-    transition: 0.5s;
-    opacity: 1;
-  }
 }
 
-/*** Header ***/
+.navbar .nav-item:hover .dropdown-menu {
+  top: 100%;
+  visibility: visible;
+  transition: 0.5s;
+  opacity: 1;
+}
+/*** Navbar | Fin ***/
+
+/*** Header | Début ***/
 .header-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../assets/img/home/bg-zoo.jpg) center center no-repeat;
@@ -202,6 +205,7 @@
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
 }
+/*** Header | Fin ***/
 
 @keyframes pulse-border {
   0% {
@@ -215,6 +219,7 @@
   }
 }
 
+/*** Modales | Début ***/
 .modal-video .modal-dialog {
   position: relative;
   max-width: 800px;
@@ -239,7 +244,9 @@
   background: #000000;
   opacity: 1;
 }
+/*** Modales | Début ***/
 
+/*** Carousel | Début ***/
 .header-carousel .owl-nav {
   position: absolute;
   width: 350px;
@@ -312,8 +319,9 @@
 .breadcrumb-item + .breadcrumb-item::before {
   color: var(--light);
 }
+/*** Carousel | Fin ***/
 
-/*** Img Border ***/
+/*** Img Border | Début  ***/
 .img-border {
   position: relative;
   height: 100%;
@@ -338,7 +346,22 @@
   height: calc(100% - 3rem);
   object-fit: cover;
 }
+/*** Img Border | Fin  ***/
 
+/*** Services | Début ***/
+.img-services {
+  height: 150px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.pic-services {
+  height: 50px;
+}
+
+/*** Services | Fin ***/
+
+/*** About | Début  ***/
 .about-content-text {
   text-align: justify;
 }
@@ -348,14 +371,21 @@
     text-align: left;
   }
 }
+/*** About | Fin  ***/
 
-/*** Facts & Visiting Hours ***/
+/*** Chiffres | Début ***/
 .facts {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../assets/img/home/bg-1.jpg) center center no-repeat;
   background-size: cover;
 }
+.facts i {
+  color: var(--orange);
+}
 
+/*** Chiffres | Fin ***/
+
+/*** Visites | Début ***/
 .visiting-hours {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../assets/img/home/bg-visites.jpg) center center no-repeat;
@@ -383,34 +413,9 @@
 .visiting-hours .table tr:last-child td {
   border: none;
 }
+/*** Visites | Fin ***/
 
-/*** Animal ***/
-/* .animal-item {
-  position: relative;
-  display: block;
-}
-
-.animal-item .animal-text {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 100px !important;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.animal-item:hover .animal-text {
-  opacity: 1;
-  padding-bottom: 20px !important;
-}  */
-
-/*** Membership ***/
+/*** Membres | Début ***/
 .membership-item {
   padding: 45px 30px;
   color: #ffffff;
@@ -431,8 +436,9 @@
   color: transparent;
   -webkit-text-stroke: 2px var(--primary);
 }
+/*** Membres | Fin ***/
 
-/*** Testimonial ***/
+/*** Testimonials | Début  ***/
 .testimonial-carousel::before {
   position: absolute;
   content: "";
@@ -531,8 +537,9 @@
 .testimonial-carousel .owl-nav .owl-next:hover {
   color: var(--dark);
 }
+/*** Testimonials | Fin  ***/
 
-/*** Footer ***/
+/*** Footer | Début ***/
 .footer {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../assets/img/home/bg-2.jpg) center center no-repeat;
@@ -594,3 +601,4 @@
 .footer .copyright a:hover {
   color: var(--primary);
 }
+/*** Footer | Fin ***/

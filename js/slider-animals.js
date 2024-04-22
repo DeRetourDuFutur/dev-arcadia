@@ -1,4 +1,4 @@
-//step 1: get DOM
+/*** Slider Animaux | Début ***/
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
 
@@ -16,7 +16,7 @@ let timeDom = document.querySelector(".slider-animals .time-slider-animals");
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
-let timeAutoNext = 5000;
+let timeAutoNext = 6000;
 
 nextDom.onclick = function () {
   showSlider("next");
@@ -57,3 +57,4 @@ function showSlider(type) {
     next.click();
   }, timeAutoNext);
 }
+/*** Slider Animaux | Fin ***/

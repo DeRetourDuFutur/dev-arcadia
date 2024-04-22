@@ -1,3 +1,4 @@
+/*** Jeu De Mémoire | Début ***/
 const cards = [
   "assets/img/memory-game/arc-an-memory1.jpg",
   "assets/img/memory-game/arc-an-memory2.jpg",
@@ -78,3 +79,4 @@ allCards.forEach((card) => {
   const cardHtml = createCard(card);
   gameBoard.appendChild(cardHtml);
 });
+/*** Jeu De Mémoire | Fin ***/

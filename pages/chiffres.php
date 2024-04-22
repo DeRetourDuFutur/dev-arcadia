@@ -12,12 +12,12 @@
         <h1 class="text-white mb-2" data-toggle="counter-up">2742</h1>
         <p class="text-white mb-0">Animaux</p>
       </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
         <i class="fa-solid fa-train fa-3x text-primary mb-3"></i>
         <h1 class="text-white mb-2" data-toggle="counter-up">3</h1>
         <p class="text-white mb-0">Petits Trains</p>
       </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
         <i class="fa fa-users fa-3x text-primary mb-3"></i>
         <h1 class="text-white mb-2" data-toggle="counter-up">8600</h1>
         <p class="text-white mb-0">Visiteurs /jour</p>

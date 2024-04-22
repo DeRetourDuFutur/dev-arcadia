@@ -1,7 +1,7 @@
 (function ($) {
   ("use strict");
 
-  // Spinner
+  /*** Spinner | Début ***/
   var spinner = function () {
     setTimeout(function () {
       if ($("#spinner").length > 0) {
@@ -10,20 +10,23 @@
     }, 1);
   };
   spinner();
+  /*** Spinner | Fin ***/
 
-  // Initiate the wowjs
+  /*** Wow | Début ***/
   new WOW().init();
+  /*** Wow | Fin ***/
 
-  // Sticky Navbar
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $(".sticky-top").addClass("shadow-sm").css("top", "0px");
-    } else {
-      $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
-    }
-  });
+  /*** Navbar | Début ***/
+  // $(window).scroll(function () {
+  //   if ($(this).scrollTop() > 300) {
+  //     $(".sticky-top").addClass("shadow-sm").css("top", "0px");
+  //   } else {
+  //     $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
+  //   }
+  // });
+  /*** Navbar | Fin ***/
 
-  // Back to top button
+  /*** Back To Top | Début ***/
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
       $(".back-to-top").fadeIn("slow");
@@ -35,14 +38,16 @@
     $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     return false;
   });
+  /*** Back To Top | Fin ***/
 
-  // Facts counter
+  /*** Chiffres | Début ***/
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 2000,
   });
+  /*** Chiffres | Fin ***/
 
-  // Header carousel
+  /*** Header Carousel | Début ***/
   $(".header-carousel").owlCarousel({
     autoplay: true,
     smartSpeed: 1000,
@@ -55,8 +60,9 @@
       '<i class="bi bi-chevron-right"></i>',
     ],
   });
+  /*** Header Carousel | Fin ***/
 
-  // Testimonials carousel
+  /*** Testimonials Carousel | Début ***/
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
     smartSpeed: 1000,
@@ -77,8 +83,9 @@
       },
     },
   });
+  /*** Testimonials Carousel | Fin ***/
 
-  // Modal Video
+  /*** Modal Video | Début ***/
   var $videoSrc;
   $(".btn-play").click(function () {
     $videoSrc = $(this).data("src");
@@ -94,3 +101,4 @@
     $("#video").attr("src", $videoSrc);
   });
 })(jQuery);
+/*** Modal Video | Fin ***/
