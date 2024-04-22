@@ -32,4 +32,46 @@
   box-sizing: border-box;
   cursor: default;
 }
+
+.jeux-title p {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 5px 10px 5px 10px;
+}
+
+.jeux-subtitle p {
+  font-size: 20px;
+  margin: 5px 10px 5px 10px;
+}
+
+.jeux-text p {
+  font-size: 18px;
+  margin: 5px 10px 5px 10px;
+}
+
+@media (max-width: 767.98px) {
+  #game-board {
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
+    grid-gap: 10px;
+    padding: 0 50px 0 50px;
+  }
+
+  .jeux-title p {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 5px 10px 5px 10px;
+  }
+
+  .jeux-subtitle p {
+    font-size: 14px;
+    margin: 5px 10px 5px 10px;
+  }
+
+  .jeux-text p {
+    font-size: 12px;
+    font-style: italic;
+    margin: 5px 10px 5px 10px;
+  }
+}
 /* Jeu de Mémoire | Fin */

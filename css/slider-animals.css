@@ -74,7 +74,7 @@
   background-color: #eee;
   letter-spacing: 3px;
   font-family: Poppins;
-  font-weight: 500;
+  font-weight: 200;
 }
 .slider-animals
   .list-slider-animals
@@ -84,12 +84,6 @@
   background-color: transparent;
   border: 1px solid #fff;
   color: #eee;
-}
-
-@media (max-width: 767.98px) {
-  .thumbnail-slider-animals .item-slider-animals {
-    display: none;
-  }
 }
 
 .thumbnail-slider-animals {
@@ -135,13 +129,14 @@
 .arrows-slider-animals {
   position: absolute;
   top: 80%;
-  right: 52%;
+  right: 70%;
   z-index: 100;
-  width: 300px;
-  max-width: 30%;
+  width: 100px;
+  max-width: 40%;
   display: flex;
   gap: 10px;
   align-items: center;
+  text-align: center;
 }
 .arrows-slider-animals button {
   width: 70px;
@@ -160,22 +155,27 @@
   display: none;
 }
 
-@media (max-width: 767.98px) {
-  .arrows-slider-animals {
-    width: 500px;
-  }
+.arrows-slider-animals .btn-prev {
+  margin-left: -70px;
+}
 
-  .arrows-slider-animals button {
-    width: 60px;
-    height: 60px;
+@media (max-width: 767.98px) {
+  .thumbnail-slider-animals .item-slider-animals {
+    display: none;
   }
   .arrows-slider-animals .btn-next {
     display: none;
   }
+  .arrows-slider-animals .btn-prev {
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+  }
 }
 
 .arrows-slider-animals button:hover {
-  background-color: #fff;
+  background-color: var(--secondary);
   color: #000;
 }
 

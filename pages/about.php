@@ -30,20 +30,22 @@
           <img class="img-fluid" src="assets/img/home/about.jpg" alt="Zoo Arcadia" />
         </div>
       </div>
-      <br> <br>
-      <h5 class="mb-3">
+      <br>
+      <div class="atouts mt-2">
+      <h6 class="mb-3">
         <i class="far fa-check-circle text-primary me-3"></i>Un univers sauvage préservé et des animaux extraordinaires.
-      </h5>
-      <h5 class="mb-3">
+      </h6>
+      <h6 class="mb-3">
         <i class="far fa-check-circle text-primary me-3"></i>Des animaux attachants venus des quatre coins du globe, à observer dans leur habitat reconstitué.
-      </h5>
-      <h5 class="mb-3">
+      </h6>
+      <h6 class="mb-3">
         <i class="far fa-check-circle text-primary me-3"></i>Un engagement fort pour la conservation de la biodiversité et le bien-être animal.
-      </h5>
-      <h5 class="mb-3">
+      </h6>
+      <h6 class="mb-3">
         <i class="far fa-check-circle text-primary me-3"></i>Accès facile et parking gratuit pour tous nos visiteurs.
-      </h5>
+      </h6>
       <a class="btn btn-primary py-3 px-5 mt-3" href="#services">Voir tous nos services</a>
+      </div>
     </div>
   </div>
 </div>

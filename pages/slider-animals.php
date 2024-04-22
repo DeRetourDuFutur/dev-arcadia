@@ -89,7 +89,7 @@
       </div>
       <!-- next prev -->
       <div class="arrows-slider-animals">
-        <button id="prev" class="btn-prev">+</button>
+        <button id="prev" class="btn-prev"><i class="fas fa-paw text-white"></i></button>
         <button id="next" class="btn-next">></button>
       </div>
       <!-- time running -->
