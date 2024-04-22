@@ -1,5 +1,5 @@
 <!-- sectionInformations.début -->
-<div class="container-xxl py-5" id="informations">
+<div class="container-xxl pt-5" id="informations">
   <div class="container">
     <div class="row g-4 mb-5">
       <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">

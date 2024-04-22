@@ -41,7 +41,7 @@
     <link href="assets/fonts/fa/css/all.min.css" rel="stylesheet" />
     <!-- Librairie JS FontAwesome -->
     <script defer src="assets/fonts/fa/js/all.js"></script>
-    <script defer src="js/menu.js"></script>
+    <!-- <script defer src="js/menu.js"></script> -->
     <!-- <script defer src="js/slider-animals.js"></script>    
     <script defer src="js/animaux.js"></script> -->
     <title>Bienvenue dans l'univers d'Arcadia</title>

@@ -350,7 +350,7 @@
 
 /*** Services | Début ***/
 .img-services {
-  height: 150px;
+  height: 300px;
   border-top-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
@@ -384,6 +384,38 @@
 }
 
 /*** Chiffres | Fin ***/
+
+/*** Portfolio | Début ***/
+.portfolio-item .portfolio-btn {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  font-size: 90px;
+  background: rgba(44, 62, 80, 0.9);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.portfolio-item:hover .portfolio-btn {
+  opacity: 1;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  top: 30px;
+  left: 30px;
+}
+
+.portfolio-item i {
+  opacity: 0;
+  transition: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.portfolio-item:hover i {
+  opacity: 1;
+}
+/*** Portfolio | Fin ***/
 
 /*** Visites | Début ***/
 .visiting-hours {
