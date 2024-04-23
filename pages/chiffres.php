@@ -1,4 +1,4 @@
-<!-- sectionChiffres.début -->
+<!-- Chiffres | Début -->
 <div class="container-xxl bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s" id="chiffres">
   <div class="container py-5">
     <div class="row g-4">
@@ -21,8 +21,8 @@
         <i class="fa fa-users fa-3x text-primary mb-3"></i>
         <h1 class="text-white mb-2" data-toggle="counter-up">8600</h1>
         <p class="text-white mb-0">Visiteurs /jour</p>
-      </div>      
+      </div>
     </div>
   </div>
 </div>
-<!-- sectionChiffres.fin -->
+<!-- Chiffres | Fin -->

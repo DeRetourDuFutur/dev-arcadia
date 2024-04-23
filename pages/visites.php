@@ -1,5 +1,5 @@
-<!-- sectionVisite.début -->
-<div class="container-xxl bg-primary visiting-hours my-5 wow fadeInUp" data-wow-delay="0.1s" id="visite">
+<!-- Visites | Début -->
+<div class="container-xxl bg-primary visiting-hours my-5 wow fadeInUp" data-wow-delay="0.1s" id="visites">
   <div class="container py-5">
     <div class="row g-5">
       <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
@@ -67,4 +67,4 @@
     </div>
   </div>
 </div>
-<!-- sectionVisite.fin -->
+<!-- Visites | Fin -->

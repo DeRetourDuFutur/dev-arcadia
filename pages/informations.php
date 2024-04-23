@@ -1,4 +1,4 @@
-<!-- sectionInformations.début -->
+<!-- Informations | Début -->
 <div class="container-xxl pt-5" id="informations">
   <div class="container">
     <div class="row g-4 mb-5">
@@ -43,4 +43,4 @@
     </div>
   </div>
 </div>
-<!-- sectionInformations.fin -->
+<!-- Informations | Fin -->

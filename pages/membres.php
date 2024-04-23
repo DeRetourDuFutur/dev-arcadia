@@ -1,14 +1,12 @@
-<!-- sectionMembres.début -->
-<div class="container-xxl py-5" id="compte">
+<!-- Membres | Début -->
+<div class="container-xxl py-5" id="membres">
   <div class="container">
-    <div
-      class="row g-5 mb-5 align-items-end wow fadeInUp"
-      data-wow-delay="0.1s"
-    >
+    <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
       <div class="col-lg-6">
         <p><span class="text-primary me-2">#</span>Membership</p>
         <h1 class="display-5 mb-0">
-          You Can Be A Proud Member Of <span class="text-primary">Zoofari</span>
+          You Can Be A Proud Member Of
+          <span class="text-primary">Zoofari</span>
         </h1>
       </div>
       <div class="col-lg-6 text-lg-end">
@@ -27,7 +25,8 @@
             <i class="fa fa-check text-primary me-3"></i>2 adult and 2 child
           </p>
           <p>
-            <i class="fa fa-check text-primary me-3"></i>Free animal exhibition
+            <i class="fa fa-check text-primary me-3"></i>Free animal
+            exhibition
           </p>
           <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
         </div>
@@ -43,7 +42,8 @@
             <i class="fa fa-check text-primary me-3"></i>4 adult and 4 child
           </p>
           <p>
-            <i class="fa fa-check text-primary me-3"></i>Free animal exhibition
+            <i class="fa fa-check text-primary me-3"></i>Free animal
+            exhibition
           </p>
           <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
         </div>
@@ -59,7 +59,8 @@
             <i class="fa fa-check text-primary me-3"></i>6 adult and 6 child
           </p>
           <p>
-            <i class="fa fa-check text-primary me-3"></i>Free animal exhibition
+            <i class="fa fa-check text-primary me-3"></i>Free animal
+            exhibition
           </p>
           <a class="btn btn-outline-light px-4 mt-3" href="">Get Started</a>
         </div>
@@ -67,4 +68,4 @@
     </div>
   </div>
 </div>
-<!-- sectionMembres.fin -->
+<!-- Membres | Fin -->

@@ -52,7 +52,7 @@
   .list-slider-animals
   .item-slider-animals
   .topic-slider-animals {
-  color: var(--secondary);
+  color: var(--secondary-color);
   margin-left: -5px;
 }
 .slider-animals
@@ -142,7 +142,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   border: none;
   color: #fff;
   font-family: monospace;
@@ -175,7 +175,7 @@
 }
 
 .arrows-slider-animals button:hover {
-  background-color: var(--secondary);
+  background-color: var(--secondary-color);
   color: #000;
 }
 
@@ -303,7 +303,7 @@
   z-index: 1000;
   width: 0%;
   height: 5px;
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   left: 0;
   top: 0;
 }

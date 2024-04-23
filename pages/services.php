@@ -1,17 +1,17 @@
-<!-- sectionServices.début -->
+<!-- Services | Début -->
 <div class="container-xxl py-5" id="services">
   <div class="container">
     <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="col">
         <p><span class="text-primary me-2">#</span>Nos services</p>
-        <h1 class="display-5 mb-0">Services proposés aux <span class="text-primary">Arcadien(ne)s</span></h1>       
+        <h1 class="display-5 mb-0">Services proposés aux <span class="text-primary">Arcadien(ne)s</span></h1>
       </div>
     </div>
-    <div class="row gy-5 gx-4 portfolio-container"> 
+    <div class="row gy-5 gx-4 portfolio-container">
       <div class="col wow fadeInUp portfolio-btn portfolio-item first" data-wow-delay="0.1s">
         <a class="animal-item" href="assets/img/services/parking.jpg" data-lightbox="portfolio"><img class="img-fluid mb-3 img-services" src="assets/img/services/parking.jpg" alt="Parking Gratuit" /></a>
         <h6 class="mb-3">Parking gratuit</h6>
-        <span>Vous pourrez stationner votre véhicule dans notre parking privé, à l'abri des regards indiscrets et totalement sécurisé, 24h/24.</span> 
+        <span>Vous pourrez stationner votre véhicule dans notre parking privé, à l'abri des regards indiscrets et totalement sécurisé, 24h/24.</span>
         <!-- <br><img class="img-fluid mb-3 pic-services" src="assets/ico/parking.gif" alt="Parking Gratuit" />       -->
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -59,4 +59,4 @@
     </div>
   </div>
 </div>
-<!-- sectionServices.fin -->
+<!-- Services | Fin -->

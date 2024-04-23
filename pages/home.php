@@ -1,4 +1,4 @@
-<!-- sectionHome.début -->
+<!-- Home | Début -->
 <div class="container-fluid bg-dark p-0 mb-5" id="home">
   <div class="row g-0 flex-column-reverse flex-lg-row">
     <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
@@ -7,25 +7,20 @@
           Vivez une aventure <br> en famille à <span class="text-primary">Arcadia !</span>
         </h1>
         <div class="d-flex align-items-center pt-4 animated slideInDown">
-          <a href="#about" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">En savoir +</a>
-          <button
-          type="button"
-          class="btn-play"
-          data-bs-toggle="modal"
-          data-src="assets/vid/suricates.mp4"
-          data-bs-target="#videoModal">
-          <span></span>
+          <a href="#about" class="btn btn-primary-color py-sm-3 px-3 px-sm-5 me-5">En savoir +</a>
+          <button type="button" class="btn-play" data-bs-toggle="modal" data-src="assets/vid/suricates.mp4" data-bs-target="#videoModal">
+            <span></span>
           </button>
           <h6 class="text-white m-0 ms-4 d-none d-sm-block">Un petit aperçu ?</h6>
         </div>
       </div>
     </div>
-    <!-- sectionCarouselHome.début -->
+    <!-- Carousel Home | Début -->
     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
       <div class="owl-carousel header-carousel">
         <div class="owl-carousel-item">
           <img class="img-fluid" src="assets/img/home-slider/arcadia.jpg" alt="Zoo Arcadia" />
-        </div>        
+        </div>
         <div class="owl-carousel-item">
           <img class="img-fluid" src="assets/img/home-slider/jungle1.jpg" alt="La Jungle - Lémuriens" />
         </div>
@@ -52,27 +47,24 @@
         </div>
         <div class="owl-carousel-item">
           <img class="img-fluid" src="assets/img/home-slider/marais3.jpg" alt="Les Marais - Hippopotames" />
-        </div>       
+        </div>
       </div>
     </div>
-<!-- sectionCarouselHome.fin -->
+    <!-- Carousel Home | Fin -->
   </div>
 </div>
-<!-- sectionModaleVidéo.début -->
+<!-- Modales Vidéos Home | Début -->
 <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content rounded-0">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel">La vie est belle à Arcadia
-          <i class="fas fa-paw text-primary me-3"></i></h3>
-        <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close">
+          <i class="fas fa-paw text-primary me-3"></i>
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
-      <!-- sectionCarouselVideos.début -->
+      <!-- Carousel Vidéo | Début -->
       <div class="modal-body">
         <div class="owl-carousel-item">
           <div class="ratio ratio-16x9">
@@ -100,8 +92,9 @@
           </div>
         </div>
       </div>
-      <!-- sectionCarouselVideos.fin -->
+      <!-- Carousel Vidéo | Fin -->
     </div>
   </div>
 </div>
-<!-- sectionModaleVidéo.fin -->
+<!-- Modales Vidéos Home | Fin -->
+<!-- Home | Fin -->

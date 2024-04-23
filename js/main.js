@@ -1,7 +1,7 @@
 (function ($) {
-  ("use strict");
+  "use strict";
 
-  /*** Spinner | Début ***/
+  // Spinner
   var spinner = function () {
     setTimeout(function () {
       if ($("#spinner").length > 0) {
@@ -10,11 +10,9 @@
     }, 1);
   };
   spinner();
-  /*** Spinner | Fin ***/
 
-  /*** Wow | Début ***/
+  // Initiate the wowjs
   new WOW().init();
-  /*** Wow | Fin ***/
 
   // Sticky Navbar
   $(window).scroll(function () {
@@ -25,17 +23,7 @@
     }
   });
 
-  /*** Navbar | Début ***/
-  // $(window).scroll(function () {
-  //   if ($(this).scrollTop() > 300) {
-  //     $(".sticky-top").addClass("shadow-sm").css("top", "0px");
-  //   } else {
-  //     $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
-  //   }
-  // });
-  /*** Navbar | Fin ***/
-
-  /*** Back To Top | Début ***/
+  // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
       $(".back-to-top").fadeIn("slow");
@@ -47,16 +35,14 @@
     $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     return false;
   });
-  /*** Back To Top | Fin ***/
 
-  /*** Chiffres | Début ***/
+  // Facts counter
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 2000,
   });
-  /*** Chiffres | Fin ***/
 
-  /*** Header Carousel | Début ***/
+  // Header carousel
   $(".header-carousel").owlCarousel({
     autoplay: true,
     smartSpeed: 1000,
@@ -69,21 +55,8 @@
       '<i class="bi bi-chevron-right"></i>',
     ],
   });
-  /*** Header Carousel | Fin ***/
 
-  // Portfolio isotope and filter
-  var portfolioIsotope = $(".portfolio-container").isotope({
-    itemSelector: ".portfolio-item",
-    layoutMode: "fitRows",
-  });
-  $("#portfolio-flters li").on("click", function () {
-    $("#portfolio-flters li").removeClass("active");
-    $(this).addClass("active");
-
-    portfolioIsotope.isotope({ filter: $(this).data("filter") });
-  });
-
-  /*** Testimonials Carousel | Début ***/
+  // Testimonials carousel
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
     smartSpeed: 1000,
@@ -104,9 +77,8 @@
       },
     },
   });
-  /*** Testimonials Carousel | Fin ***/
 
-  /*** Modal Video | Début ***/
+  // Modal Video
   var $videoSrc;
   $(".btn-play").click(function () {
     $videoSrc = $(this).data("src");
@@ -122,4 +94,86 @@
     $("#video").attr("src", $videoSrc);
   });
 })(jQuery);
-/*** Modal Video | Fin ***/
+
+/*** Jeu De Mémoire | Début ***/
+const cards = [
+  "assets/img/memory-game/arc-an-memory1.jpg",
+  "assets/img/memory-game/arc-an-memory2.jpg",
+  "assets/img/memory-game/arc-an-memory3.jpg",
+  "assets/img/memory-game/arc-an-memory4.jpg",
+  "assets/img/memory-game/arc-an-memory5.jpg",
+  "assets/img/memory-game/arc-an-memory6.jpg",
+  "assets/img/memory-game/arc-an-memory7.jpg",
+  "assets/img/memory-game/arc-an-memory8.jpg",
+];
+const gameBoard = document.getElementById("game-board");
+let selectedCards = [];
+
+function createCard(cardUrl) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.dataset.value = cardUrl;
+
+  const cardContent = document.createElement("img");
+  cardContent.classList.add("card-content");
+  cardContent.src = cardUrl;
+
+  card.appendChild(cardContent);
+
+  card.addEventListener("click", onCardClick);
+  return card;
+}
+
+function duplicateArray(arraySimple) {
+  let arrayDouble = [];
+  arrayDouble.push(...arraySimple);
+  arrayDouble.push(...arraySimple);
+
+  return arrayDouble;
+}
+
+function shuffleArray(arrayToshuffle) {
+  const arrayShuffled = arrayToshuffle.sort(() => 0.5 - Math.random());
+  return arrayShuffled;
+}
+
+function onCardClick(e) {
+  const card = e.target.parentElement;
+  card.classList.add("flip");
+
+  selectedCards.push(card);
+  if (selectedCards.length == 2) {
+    setTimeout(() => {
+      if (selectedCards[0].dataset.value == selectedCards[1].dataset.value) {
+        //on a trouvé une paire
+        selectedCards[0].classList.add("matched");
+        selectedCards[1].classList.add("matched");
+        selectedCards[0].removeEventListener("click", onCardClick);
+        selectedCards[1].removeEventListener("click", onCardClick);
+
+        const allCardsNotMatched = document.querySelectorAll(
+          ".card:not(.matched)"
+        );
+        console.log(allCardsNotMatched.length);
+        if (allCardsNotMatched.length == 0) {
+          //Le joueur a gagné
+          alert("Bravo, vous avez gagné");
+        }
+      } else {
+        //on s'est trompé
+        selectedCards[0].classList.remove("flip");
+        selectedCards[1].classList.remove("flip");
+      }
+      selectedCards = [];
+    }, 1000);
+  }
+}
+
+let allCards = duplicateArray(cards);
+//Mélanger le tableau
+allCards = shuffleArray(allCards);
+allCards.forEach((card) => {
+  const cardHtml = createCard(card);
+  gameBoard.appendChild(cardHtml);
+});
+/*** Jeu De Mémoire | Fin ***/
