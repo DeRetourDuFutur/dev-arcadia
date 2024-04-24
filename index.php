@@ -11,7 +11,7 @@ include('inc/topbar.php');
 include('inc/navbar.php');
 ?>
 <?php
-include('pages/home.php');
+include('pages/hero.php');
 ?>
 <?php
 include('pages/about.php');
@@ -36,6 +36,12 @@ include('pages/testimonials.php');
 ?>
 <?php
 include('pages/jeux.php');
+?>
+<?php
+include('pages/win.php');
+?>
+<?php
+include('pages/bonus.php');
 ?>
 <?php
 include('inc/footer.php');

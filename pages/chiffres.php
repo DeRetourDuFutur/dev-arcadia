@@ -1,5 +1,5 @@
 <!-- Chiffres | Début -->
-<div class="container-xxl bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s" id="chiffres">
+<div class="container-fluid bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s" id="chiffres">
   <div class="container py-5">
     <div class="row g-4">
       <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">

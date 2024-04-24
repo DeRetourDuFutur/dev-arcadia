@@ -1,13 +1,13 @@
 <!-- Home | Début -->
 <div class="container-fluid bg-dark p-0 mb-5" id="home">
   <div class="row g-0 flex-column-reverse flex-lg-row">
-    <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="col-lg-6 p-0 wow fadeIn hero__wrapper" data-wow-delay="0.1s">
       <div class="header-bg h-100 d-flex flex-column justify-content-center p-5">
-        <h1 class="display-4 text-light mb-5">
+        <h1 class="display-4 text-light hero-title">
           Vivez une aventure <br> en famille à <span class="text-primary">Arcadia !</span>
         </h1>
         <div class="d-flex align-items-center pt-4 animated slideInDown">
-          <a href="#about" class="btn btn-primary-color py-sm-3 px-3 px-sm-5 me-5">En savoir +</a>
+          <a href="#about" class="btn btn-primary-color py-sm-3  px-sm-3 me-5">En savoir +</a>
           <button type="button" class="btn-play" data-bs-toggle="modal" data-src="assets/vid/suricates.mp4" data-bs-target="#videoModal">
             <span></span>
           </button>

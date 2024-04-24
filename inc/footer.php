@@ -29,7 +29,7 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Informations pratiques</h5>
-        <a class="btn btn-link" href="#visite">Préparez votre visite</a>
+        <a class="btn btn-link" href="#visites">Préparez votre visite</a>
         <a class="btn btn-link" href="#services">Nos Services</a>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -58,29 +58,31 @@
       </div>
     </div>
   </div>
-  <!-- Footer | Fin -->
+</div>
+<!-- Footer | Fin -->
 
-  <!-- Back To Top | Début -->
-  <a href="#" class="btn btn-lg btn-primary-color btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
-  <!-- Back To Top | Fin -->
+<!-- Back To Top | Début -->
+<a href="#" class="btn btn-lg btn-primary-color btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<!-- Back To Top | Fin -->
 
-  <!-- Pre Loader -->
-  <div id="loader" class="show">
-    <div class="loader"></div>
-  </div>
+<!-- Pre Loader -->
+<div id="loader" class="show">
+  <div class="loader"></div>
+</div>
 
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <!-- Template Javascript -->
-  <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/slider-animals.js"></script>
-  </body>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<!-- Template Javascript -->
+<script type="text/javascript" src="js/navbar.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/slider-animals.js"></script>
+</body>
 
-  </html>
+</html>

@@ -1,16 +1,10 @@
 /*** Template Arcadia by AM | TAD ***/
 
-/* Variables Globales CSS | Début */
-:root {
-  --primary-color: #1fad66;
-  --secondary-color: #f78f35;
-  --light-color: #f3f4f5;
-  --dark-color: #2c3134;
-  --main-font: "Poppins", sans-serif;
-  --secondary-font: "Roboto", sans-serif;
-  --font-size: 14px;
-}
-/* Variables Globales CSS | Fin */
+/* @media screen and (max-width: 750px) {
+  html {
+    font-size: 90%;
+  }
+} */
 
 /* Bouton Back To Top | Début */
 .back-to-top {
@@ -41,12 +35,17 @@
 .btn {
   font-weight: 500;
   transition: 0.5s;
+  border-radius: 0 10px 0 10px;
 }
 
 .btn.btn-primary-color,
 .btn.btn-secondary-color {
-  background-color: var(--primary-color);
+  background-color: var(--bs-primary);
   color: #ffffff;
+}
+
+.btn:hover {
+  background-color: var(--bs-secondary);
 }
 
 .btn-square {
@@ -91,6 +90,15 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 .navbar .navbar-brand {
   display: flex;
   align-items: center;
+  margin-left: 3rem;
+}
+
+.navbar .navbar-brand .text-logo {
+  background-color: var(--bs-primary);
+}
+
+.navbar .navbar-brand .text-logo:hover {
+  background-color: var(--bs-secondary);
 }
 
 /* La classe .navbar .navbar-brand img cible les images à l'intérieur de la marque de la barre de navigation. Elle définit une hauteur maximale de 50px pour ces images. */
@@ -108,9 +116,13 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
   margin-left: 8px;
 }
 
+.navbar .navbar-nav {
+  column-gap: 1rem;
+}
+
 /* La classe .navbar .navbar-nav .nav-link cible les liens de navigation dans la barre de navigation. Elle définit plusieurs styles pour ces liens, comme la marge, le padding, la couleur, la taille de la police, le poids de la police, la transformation du texte et la suppression du contour. */
 .navbar .navbar-nav .nav-link {
-  margin-right: 30px;
+  /* margin-right: 30px; */
   padding: 25px 0;
   color: #ffffff;
   font-size: 15px;
@@ -119,10 +131,10 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
   outline: none;
 }
 
-/* La classe .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active cible les liens de navigation lorsqu'ils sont survolés ou actifs. Elle change leur couleur en var(--primary-color), qui est définie dans le Root */
+/* La classe .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active cible les liens de navigation lorsqu'ils sont survolés ou actifs. Elle change leur couleur en var(--bs-primary), qui est définie dans le Root */
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-  color: var(--primary-color);
+  color: var(--bs-primary);
 }
 
 /* MediaQueries Barre De Navigation | Début 
@@ -149,7 +161,7 @@ Cible les écrans dont la largeur maximale est 991.98px * et ajuste les styles d
 */
 @media (max-width: 991.98px) {
   .navbar .navbar-nav .nav-link {
-    margin-right: 0;
+    /* margin-right: 0; */
     padding: 10px 0;
   }
 
@@ -159,7 +171,7 @@ Cible les écrans dont la largeur maximale est 991.98px * et ajuste les styles d
 }
 
 .navbar .navbar-nav .nav-link {
-  color: var(--dark-color);
+  color: var(--bs-dark);
   font-weight: 500;
 }
 
@@ -207,11 +219,20 @@ Cible les écrans dont la largeur est inférieure ou égale à 767.98px. Cela in
 /* MediaQueries Barre De Navigation | Fin 
 Barre Navigation | Fin */
 
-/* Header | Début */
-.header-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(../assets/img/home/bg-zoo.jpg) center center no-repeat;
-  background-size: cover;
+/* Hero | Début */
+.hero__wrapper 
+ /* img width: 800 height 530 */ {
+  aspect-ratio: 1.51;
+  white-space: nowrap;
+}
+
+.hero-title {
+  /* 
+  La fonction clamp() est une fonction mathématique CSS qui permet de définir une valeur flexible qui est ajustée entre une limite inférieure et une limite supérieure. */
+
+  /* Clamp : fonction intégrée CSS qui définit valeur minimale, valeur préfére valeur maximale */
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin-bottom: clamp(1rem, 2vw, 3rem);
 }
 
 .btn-play {
@@ -227,6 +248,9 @@ Barre Navigation | Fin */
   background: #ffffff;
 }
 
+.btn-play span:hover {
+  border-left-color: var(--bs-secondary);
+}
 .btn-play:before {
   content: "";
   position: absolute;
@@ -264,7 +288,7 @@ Barre Navigation | Fin */
   width: 0;
   height: 0;
   left: -1px;
-  border-left: 16px solid var(--primary-color);
+  border-left: 16px solid var(--bs-primary);
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
 }
@@ -305,10 +329,18 @@ Barre Navigation | Fin */
   background: #000000;
   opacity: 1;
 }
+/* Hero | Fin */
+
+/* Header | Début */
+.header-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../assets/img/home/bg-zoo.jpg) center center no-repeat;
+  background-size: cover;
+}
 
 .header-carousel .owl-nav {
   position: absolute;
-  width: 200px;
+  width: 350px;
   height: 40px;
   bottom: 30px;
   left: 50%;
@@ -325,7 +357,7 @@ Barre Navigation | Fin */
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  background: transparent;
+  background: var(--bs-primary);
   border: 1px solid #ffffff;
   font-size: 22px;
   transition: 0.5s;
@@ -333,8 +365,8 @@ Barre Navigation | Fin */
 
 .header-carousel .owl-nav .owl-prev:hover,
 .header-carousel .owl-nav .owl-next:hover {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
+  background: var(--bs-secondary);
+  border-color: var(--bs-primary);
 }
 
 .header-carousel .owl-dots {
@@ -348,13 +380,17 @@ Barre Navigation | Fin */
   justify-content: center;
 }
 
+.header-carousel .owl-dot:hover {
+  background: var(--bs-secondary);
+}
+
 .header-carousel .owl-dot {
   position: relative;
   display: inline-block;
   margin: 0 5px;
   width: 15px;
   height: 15px;
-  background: transparent;
+  background: var(--bs-primary);
   border: 1px solid #ffffff;
   transition: 0.5s;
 }
@@ -364,19 +400,20 @@ Barre Navigation | Fin */
   content: "";
   width: 5px;
   height: 5px;
-  top: 4px;
-  left: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #ffffff;
   border-radius: 5px;
 }
 
 .header-carousel .owl-dot.active {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
+  background: var(--bs-secondary);
+  /* border-color: var(--bs-primary); */
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  color: var(--light-color);
+  color: var(--bs-light);
 }
 /* Header | Fin */
 
@@ -413,7 +450,7 @@ Barre Navigation | Fin */
   left: 0;
   right: 3rem;
   bottom: 3rem;
-  border: 5px solid var(--primary-color);
+  border: 5px solid var(--bs-primary);
 }
 
 .img-border img {
@@ -510,13 +547,13 @@ Barre Navigation | Fin */
 .visiting-hours .list-group-item {
   display: flex;
   justify-content: space-between;
-  color: var(--light-color);
+  color: var(--bs-light);
   background: rgba(0, 0, 0, 0.15);
   border-color: rgba(255, 255, 255, 0.15);
 }
 
 .visiting-hours .table {
-  color: var(--light-color);
+  color: var(--bs-light);
   background: rgba(0, 0, 0, 0.15);
 }
 
@@ -576,13 +613,13 @@ Barre Navigation | Fin */
 }
 
 .testimonial-carousel .owl-item .testimonial-text {
-  background: var(--light-color);
+  background: var(--bs-light);
   transform: scale(0.8);
   transition: 0.5s;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text {
-  background: var(--primary-color);
+  background: var(--bs-primary);
   transform: scale(1);
 }
 
@@ -592,11 +629,11 @@ Barre Navigation | Fin */
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text * {
-  color: var(--light-color) !important;
+  color: var(--bs-light) !important;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item img {
-  border-color: var(--primary-color) !important;
+  border-color: var(--bs-primary) !important;
 }
 
 .testimonial-carousel .owl-nav {
@@ -620,14 +657,14 @@ Barre Navigation | Fin */
 .testimonial-carousel .owl-nav .owl-prev,
 .testimonial-carousel .owl-nav .owl-next {
   position: relative;
-  color: var(--primary-color);
+  color: var(--bs-primary);
   font-size: 45px;
   transition: 0.5s;
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
-  color: var(--dark-color);
+  color: var(--bs-dark);
 }
 /* Témoignages | Fin */
 
@@ -650,7 +687,7 @@ Barre Navigation | Fin */
 
 .membership-item .display-1 {
   color: transparent;
-  -webkit-text-stroke: 2px var(--primary-color);
+  -webkit-text-stroke: 2px var(--bs-primary);
 }
 /*** Membres | Fin ***/
 
@@ -664,7 +701,7 @@ Barre Navigation | Fin */
   justify-content: center;
 }
 .card {
-  background-color: var(--primary-color);
+  background-color: var(--bs-primary);
   border-radius: 5px;
   cursor: pointer;
   /* Animation */
@@ -684,7 +721,7 @@ Barre Navigation | Fin */
   transform: rotateY(180deg);
 }
 .card.matched {
-  border: solid 4px var(--secondary-color);
+  border: solid 4px var(--bs-secondary);
   box-sizing: border-box;
   cursor: default;
 }
@@ -746,13 +783,13 @@ Barre Navigation | Fin */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--light-color);
+  color: var(--bs-light);
   border: 1px solid #ffffff;
   transition: 0.3s;
 }
 
 .footer .btn.btn-social:hover {
-  color: var(--primary-color);
+  color: var(--bs-primary);
 }
 
 .footer .btn.btn-link {
@@ -776,7 +813,7 @@ Barre Navigation | Fin */
 }
 
 .footer .btn.btn-link:hover {
-  color: var(--primary-color);
+  color: var(--bs-primary);
   letter-spacing: 1px;
   box-shadow: none;
 }
@@ -788,10 +825,10 @@ Barre Navigation | Fin */
 }
 
 .footer .copyright a {
-  color: var(--light-color);
+  color: var(--bs-light);
 }
 
 .footer .copyright a:hover {
-  color: var(--primary-color);
+  color: var(--bs-primary);
 }
 /* Footer | Fin */

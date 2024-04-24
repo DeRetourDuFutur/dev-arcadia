@@ -1,5 +1,5 @@
 <!-- Animaux | Début -->
-<div class="container-xxl" id="animaux">
+<div class="container-fluid px-0" id="animaux">
   <div class="slider-animals">
     <!-- list item -->
     <div class="list-slider-animals">

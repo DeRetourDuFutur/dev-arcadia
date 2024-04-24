@@ -83,7 +83,6 @@
   $(".btn-play").click(function () {
     $videoSrc = $(this).data("src");
   });
-  console.log($videoSrc);
   $("#videoModal").on("shown.bs.modal", function (e) {
     $("#video").attr(
       "src",
@@ -96,7 +95,7 @@
 })(jQuery);
 
 /*** Jeu De Mémoire | Début ***/
-const cards = [
+const cardsPathName = [
   "assets/img/memory-game/arc-an-memory1.jpg",
   "assets/img/memory-game/arc-an-memory2.jpg",
   "assets/img/memory-game/arc-an-memory3.jpg",
@@ -142,7 +141,10 @@ function onCardClick(e) {
   card.classList.add("flip");
 
   selectedCards.push(card);
-  if (selectedCards.length == 2) {
+  if (selectedCards.length === 2) {
+    cards.forEach((card) => {
+      card.removeEventListener("click", onCardClick);
+    });
     setTimeout(() => {
       if (selectedCards[0].dataset.value == selectedCards[1].dataset.value) {
         //on a trouvé une paire
@@ -151,13 +153,39 @@ function onCardClick(e) {
         selectedCards[0].removeEventListener("click", onCardClick);
         selectedCards[1].removeEventListener("click", onCardClick);
 
-        const allCardsNotMatched = document.querySelectorAll(
+        const cardsNotMatched = document.querySelectorAll(
           ".card:not(.matched)"
         );
-        console.log(allCardsNotMatched.length);
-        if (allCardsNotMatched.length == 0) {
+        if (cardsNotMatched.length === 14) {
           //Le joueur a gagné
-          alert("Bravo, vous avez gagné");
+          // alert("Bravo, vous avez gagné");
+          const winDialog = document.getElementById("win-dialog");
+          const bonusDialog = document.getElementById("bonus-dialog");
+
+          const closeDialogBtn = winDialog.querySelector("#close-win-dialog");
+          const restartGameBtn = winDialog.querySelector("#restart-game");
+          const secretPageBtn = winDialog.querySelector("#open-secret-page");
+
+          winDialog.showModal();
+
+          // Events de la modale WinDialog
+          closeDialogBtn.addEventListener("click", () => {
+            winDialog.close();
+          });
+          restartGameBtn.addEventListener("click", () => {
+            restartGame();
+          });
+          secretPageBtn.addEventListener("click", () => {
+            winDialog.close();
+            bonusDialog.showModal();
+          });
+
+          // Events de la modale bonusDialog
+          bonusDialog
+            .querySelector("#close-bonus-dialog")
+            .addEventListener("click", () => {
+              bonusDialog.close();
+            });
         }
       } else {
         //on s'est trompé
@@ -165,15 +193,26 @@ function onCardClick(e) {
         selectedCards[1].classList.remove("flip");
       }
       selectedCards = [];
+
+      const unmatchedCards = document.querySelectorAll(".card:not(.matched)");
+      unmatchedCards.forEach((card) => {
+        card.addEventListener("click", onCardClick);
+      });
     }, 1000);
   }
 }
 
-let allCards = duplicateArray(cards);
+function restartGame() {
+  window.location.reload();
+}
+
+let duplicatedCardsPathName = duplicateArray(cardsPathName);
 //Mélanger le tableau
-allCards = shuffleArray(allCards);
-allCards.forEach((card) => {
+duplicatedCardsPathName = shuffleArray(duplicatedCardsPathName);
+duplicatedCardsPathName.forEach((card) => {
   const cardHtml = createCard(card);
   gameBoard.appendChild(cardHtml);
 });
+
+const cards = document.querySelectorAll(".card");
 /*** Jeu De Mémoire | Fin ***/
