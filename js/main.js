@@ -156,7 +156,7 @@ function onCardClick(e) {
         const cardsNotMatched = document.querySelectorAll(
           ".card:not(.matched)"
         );
-        if (cardsNotMatched.length === 14) {
+        if (cardsNotMatched.length === 0) {
           //Le joueur a gagné
           // alert("Bravo, vous avez gagné");
           const winDialog = document.getElementById("win-dialog");
