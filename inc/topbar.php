@@ -7,7 +7,7 @@
         <small>Forêt de Brocéliande</small>
       </div>
       <div class="h-100 d-inline-flex align-items-center py-3">
-        <a href="#informations"><small class="far fa-clock text-primary me-2"></small></a>
+        <a href="../template-parts/informations.php"><small class="far fa-clock text-primary me-2"></small></a>
         <small>Votre Zoo Arcadia est ouvert toute la semaine</small>
       </div>
     </div>

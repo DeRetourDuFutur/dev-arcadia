@@ -21,22 +21,22 @@
           <a href=""><i class="fa fa-envelope me-3"></a></i>contact@arcadia.com
         </p>
         <div class="d-flex pt-2">
-          <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-          <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-          <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-          <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+          <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-twitter"></i></a>
+          <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-facebook-f"></i></a>
+          <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-youtube"></i></a>
+          <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Informations pratiques</h5>
-        <a class="btn btn-link" href="#visites">Préparez votre visite</a>
-        <a class="btn btn-link" href="#services">Nos Services</a>
+        <a class="btn-footer btn-footer-link" href="../template-parts/informations.php">Préparez votre visite</a>
+        <a class="btn-footer btn-footer-link" href="../template-parts/services.php">Nos Services</a>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Liens rapides</h5>
-        <a class="btn btn-link" href="#home">Accueil</a>
-        <a class="btn btn-link" href="#animaux">Nos Animaux</a>
-        <a class="btn btn-link" href="#jeux">Amusez-vous avec Arcadia !</a>
+        <a class="btn-footer btn-footer-link" href="../">Accueil</a>
+        <a class="btn-footer btn-footer-link" href="../template-parts/animaux.php">Nos Animaux</a>
+        <a class="btn-footer btn-footer-link" href="../template-parts/jeux.php">Espace Jeux</a>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Newsletter</h5>
@@ -73,16 +73,16 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="../lib/wow/wow.min.js"></script>
+<script src="../lib/easing/easing.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../lib/lightbox/js/lightbox.min.js"></script>
 <!-- Template Javascript -->
-<script type="text/javascript" src="js/navbar.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/slider-animals.js"></script>
+<script type="text/javascript" src="../js/navbar.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/slider-animals.js"></script>
 </body>
 
 </html>

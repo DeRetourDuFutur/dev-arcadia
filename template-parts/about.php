@@ -1,4 +1,7 @@
-<!-- About | Début -->
+<?php
+require('../inc/header.php');
+?>
+<!-- Section ABOUT | Début -->
 <div class="container-xxl py-5" id="about">
   <div class="container">
     <div class="row g-5">
@@ -27,7 +30,7 @@
         <br>
         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
           <div class="img-border">
-            <img class="img-fluid" src="assets/img/home/about.jpg" alt="Zoo Arcadia" />
+            <img class="img-fluid" src="../assets/img/home/about.jpg" alt="Zoo Arcadia" />
           </div>
         </div>
         <br>
@@ -44,10 +47,13 @@
           <h6 class="mb-3">
             <i class="far fa-check-circle text-primary me-3"></i>Accès facile et parking gratuit pour tous nos visiteurs.
           </h6>
-          <a class="btn btn-primary-color py-3 px-5 mt-3" href="#services">Voir tous nos services</a>
+          <a class="btn btn-primary-color py-3 px-5 mt-3" href="template-parts/services.php">Voir tous nos services</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- About | Fin -->
+<!-- Section ABOUT | Fin -->
+<?php
+require('../inc/footer.php');
+?>
