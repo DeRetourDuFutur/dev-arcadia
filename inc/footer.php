@@ -29,14 +29,14 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Informations pratiques</h5>
-        <a class="btn-footer btn-footer-link" href="/informations">Préparez votre visite</a>
-        <a class="btn-footer btn-footer-link" href="/services">Nos Services</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/informations' ?>">Préparez votre visite</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/services' ?>">Nos Services</a>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Liens rapides</h5>
-        <a class="btn-footer btn-footer-link" href="/">Accueil</a>
-        <a class="btn-footer btn-footer-link" href="/animaup">Nos Animaux</a>
-        <a class="btn-footer btn-footer-link" href="/jeux">Espace Jeux</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/' ?>">Accueil</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/animaux' ?>">Nos Animaux</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/jeux' ?>">Espace Jeux</a>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Newsletter</h5>
