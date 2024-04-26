@@ -29,14 +29,14 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Informations pratiques</h5>
-        <a class="btn-footer btn-footer-link" href="../template-parts/informations.php">Préparez votre visite</a>
-        <a class="btn-footer btn-footer-link" href="../template-parts/services.php">Nos Services</a>
+        <a class="btn-footer btn-footer-link" href="/informations">Préparez votre visite</a>
+        <a class="btn-footer btn-footer-link" href="/services">Nos Services</a>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Liens rapides</h5>
-        <a class="btn-footer btn-footer-link" href="../">Accueil</a>
-        <a class="btn-footer btn-footer-link" href="../template-parts/animaux.php">Nos Animaux</a>
-        <a class="btn-footer btn-footer-link" href="../template-parts/jeux.php">Espace Jeux</a>
+        <a class="btn-footer btn-footer-link" href="/">Accueil</a>
+        <a class="btn-footer btn-footer-link" href="/animaup">Nos Animaux</a>
+        <a class="btn-footer btn-footer-link" href="/jeux">Espace Jeux</a>
       </div>
       <div class="col-lg-3 col-md-6">
         <h5 class="text-light mb-4">Newsletter</h5>
@@ -73,16 +73,16 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../lib/wow/wow.min.js"></script>
-<script src="../lib/easing/easing.min.js"></script>
-<script src="../lib/waypoints/waypoints.min.js"></script>
-<script src="../lib/counterup/counterup.min.js"></script>
-<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="../lib/lightbox/js/lightbox.min.js"></script>
+<script src="assets/lib/wow/wow.min.js"></script>
+<script src="assets/lib/easing/easing.min.js"></script>
+<script src="assets/lib/waypoints/waypoints.min.js"></script>
+<script src="assets/lib/counterup/counterup.min.js"></script>
+<script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="assets/lib/lightbox/js/lightbox.min.js"></script>
 <!-- Template Javascript -->
-<script type="text/javascript" src="../js/navbar.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/slider-animals.js"></script>
+<script type="text/javascript" src="assets/js/navbar.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/slider-animals.js"></script>
 </body>
 
 </html>
