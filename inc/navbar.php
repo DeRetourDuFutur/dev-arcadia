@@ -2,7 +2,9 @@
 <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand text-uppercase fw-bold" href="<?= BASE_URL . '/' ?>">
-      <img class="img-fluid me-3" src="assets/ico/animals.png" alt="Arcadia" /><span class="p-1 rounded-3 text-light text-logo">Zoo</span><span> ARCADIA</span>
+       <!-- <div>ZOO</div> -->
+    <!-- <img class="img-fluid me-3" src="assets/ico/animals.png" alt="Arcadia" /> -->
+    <span class="p-2 rounded-3 text-light text-logo"><i class="fa-solid fa-paw flip-horizontal text-dark"></i>  ARCADIA</span><span class="p-2 rounded-3"> PARK <i class="fa-solid fa-paw flip-horizontal text-primary"></i></span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

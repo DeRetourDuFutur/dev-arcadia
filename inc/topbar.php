@@ -17,10 +17,10 @@
         <small>+33 2 88 88 88 88</small>
       </div>
       <div class="h-100 d-inline-flex align-items-center">
-        <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-        <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-        <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-        <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fa-solid fa-hippo"></i></a>
+        <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fa-solid fa-crow"></i></a>
+        <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fa-solid fa-cat"></i></a>
+        <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fa-solid fa-otter"></i></a>
       </div>
     </div>
   </div>
