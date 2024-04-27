@@ -1,6 +1,6 @@
 <!-- Animaux | Début -->
-<div class="container-fluid px-0" id="animaux">
-  <div class="container">
+<div class="container-fluid" id="animaux">
+  <div class="container-fluid">
     <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="col">
         <p><span class="text-primary me-2">#</span>Nos animaux</p>
@@ -79,8 +79,8 @@
       </div>
       <!-- next prev -->
       <div class="arrows-slider-animals">
-        <button id="prev" class="btn-prev"><i class="fas fa-paw text-white"></i></button>
-        <button id="next" class="btn-next">></button>
+        <button id="prev" class="btn-prev"><i class="fa-solid fa-hippo fa-flip-horizontal prev-hippo"></i></button>
+        <button id="next" class="btn-next"><i class="fa-solid fa-hippo next-hippo"></i></button>
       </div>
       <!-- time running -->
       <div class="time-slider-animals"></div>

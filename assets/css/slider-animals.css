@@ -160,23 +160,40 @@
 }
 
 @media (max-width: 767.98px) {
-  .thumbnail-slider-animals .item-slider-animals {
-    display: none;
-  }
-  /* .arrows-slider-animals .btn-next {
+  /* .thumbnail-slider-animals .item-slider-animals {
     display: none;
   } */
-  .arrows-slider-animals .btn-prev {
+  /* .arrows-slider-animals  {
+    display: none;
+  } */
+
+.prev-hippo {
+  font-size: 35px;
+}
+
+.next-hippo {
+  font-size: 35px;
+
+}
+
+.arrows-slider-animals .btn-prev {
     margin-left: 20px;
-    width: 60px;
-    height: 60px;
-    text-align: center;
+    width: 40px;
+    height: 40px;
+
+  }
+  
+.arrows-slider-animals .btn-next {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
+
   }
 }
 
 .arrows-slider-animals button:hover {
   background-color: var(--bs-secondary);
-  color: #000;
+  color: #ffffff;
 }
 
 .slider-animals .list-slider-animals .item-slider-animals:nth-child(1) {

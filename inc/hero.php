@@ -68,27 +68,27 @@
       <div class="modal-body">
         <div class="owl-carousel-item">
           <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="http://localhost/assets/vid/girafes.mp4" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="assets/vid/girafes.mp4" allowfullscreen></iframe>
           </div>
         </div>
         <div class="owl-carousel-item">
           <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="http://localhost/assets/vid/lions.mp4" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="assets/vid/lions.mp4" allowfullscreen></iframe>
           </div>
         </div>
         <div class="owl-carousel-item">
           <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="http://localhost/assets/vid/gorille.mp4" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="assets/vid/gorille.mp4" allowfullscreen></iframe>
           </div>
         </div>
         <div class="owl-carousel-item">
           <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="http://localhost/assets/vid/suricates.mp4" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="assets/vid/suricates.mp4" allowfullscreen></iframe>
           </div>
         </div>
         <div class="owl-carousel-item">
           <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="http://localhost/assets/vid/ours.mp4" allowfullscreen></iframe>
+            <iframe class="embed-responsive-item" src="assets/vid/ours.mp4" allowfullscreen></iframe>
           </div>
         </div>
       </div>
