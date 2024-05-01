@@ -198,7 +198,7 @@
 <!-- Section Témoignages | Début -->
 <div class="container-xxl py-5" id="testimonials">
   <div class="container">
-    <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+    <h1 class="display-4 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
       Vos avis sont précieux !
     </h1>
     <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -236,7 +236,7 @@
         <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-4.jpg" style="width: 100px; height: 100px" />
         <div class="testimonial-text rounded text-center p-4">
           <p>
-            Une journée très agréable placeé sous le signe de la découverte et du partage. Ma fille a adoré et moi aussi. Nous reviendrons, c'est sûr ! Mention spéciale à la mascotte du parc qui adore les câlins !
+            Une journée très agréable placée sous le signe de la découverte et du partage. Ma fille a adoré et moi aussi. Nous reviendrons, c'est sûr ! Mention spéciale à la mascotte du parc, qui adore les câlins !
           </p>
           <h5 class="mb-1">Tyson N.</h5>
           <span class="fst-italic">Papa Solo</span>

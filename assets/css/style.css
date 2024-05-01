@@ -132,7 +132,7 @@
 La classe .navbar.sticky-top est utilisée pour une barre de navigation qui reste en haut de la page lors du défilement. Elle est initialement placée à -100px du haut de la page, ce qui signifie qu'elle est hors de la vue. Elle a une transition de 0.5s, ce qui signifie que tout changement de style se fera progressivement sur une demi-seconde. */
 .navbar.sticky-top {
   top: -100px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 /* La classe .navbar .navbar-brand cible le logo ou le nom de la marque dans la barre de navigation. Elle utilise display: flex pour organiser son contenu et align-items: center pour centrer ce contenu verticalement. */
@@ -290,7 +290,7 @@ Barre Navigation | Fin */
   La fonction clamp() est une fonction mathématique CSS qui permet de définir une valeur flexible qui est ajustée entre une limite inférieure et une limite supérieure. */
 
   /* Clamp : fonction intégrée CSS qui définit valeur minimale, valeur préfére valeur maximale */
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
   margin-bottom: clamp(1rem, 2vw, 3rem);
 }
 
@@ -584,6 +584,29 @@ text-align: justify;}
   object-fit: cover;
 }
 /* Image Border | Fin */
+
+/* Animaux | Début  */
+.animals-banner {
+  background: url(../img/animals/bg-animals.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.animals-content {
+  margin: 4rem 14rem 4rem 14rem;
+}
+
+.animals-content {
+font-family: 'Roboto', sans-serif;
+text-align: justify;}
+
+@media (max-width: 767.98px) {
+  .animals-content {
+    margin: 2rem;
+  }
+  .animals-content p {
+    text-align: left;} 
+}
+/* Animaux | Fin  */
 
 /*** Services | Début ***/
 .img-services {

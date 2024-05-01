@@ -42,5 +42,6 @@
       <img class="img-fluid" src="assets/img/home/eu-ecolabel.png" alt="eu - Ecolabel" />
     </div>
   </div>
+  <a class="btn btn-primary-color py-3 px-5 mt-4" href="<?= BASE_URL . '/animaux' ?>">Nos animaux</a>
 </div>
 <!-- Section LABEL | Fin -->

@@ -3,7 +3,7 @@
   <div class="row g-0 flex-column-reverse flex-lg-row">
     <div class="col-lg-6 p-0 wow fadeIn hero__wrapper" data-wow-delay="0.1s">
       <div class="header-bg h-100 d-flex flex-column justify-content-center p-5">
-        <h1 class="display-4 text-light hero-title">
+        <h1 class="text-light hero-title">
           Vivez une aventure <br> en famille à <span class="text-primary">Arcadia !</span>
         </h1>
         <div class="d-flex align-items-center pt-4 animated slideInDown">
@@ -58,9 +58,9 @@
   <div class="modal-dialog">
     <div class="modal-content rounded-0">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Tranches de vie à Arcadia
+        <h4 class="modal-title" id="exampleModalLabel">Tranches de vie à Arcadia
           <i class="fas fa-paw text-primary me-3"></i>
-        </h3>
+        </h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
