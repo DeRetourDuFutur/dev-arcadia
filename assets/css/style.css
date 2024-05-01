@@ -1,11 +1,5 @@
 /*** Template Arcadia by AM | TAD ***/
 
-/* @media screen and (max-width: 750px) {
-  html {
-    font-size: 90%;
-  }
-} */
-
 /* Bouton Back To Top | Début */
 .back-to-top {
   position: fixed;
@@ -31,21 +25,76 @@
 }
 /* Spinner | Fin */
 
+/* Boutons Logo | Début */
+.btn-logo-arc.btn-logo-arc-primary-color {
+  border-left: 1px solid var(--bs-dark);
+  border-top: 1px solid var(--bs-dark);
+  border-bottom: 1px solid var(--bs-dark);
+  background-color: var(--bs-primary);
+  color: #ffffff;
+  width: 150px;
+  height: 48px;
+  border-radius: 15px 0 0 0;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.btn-logo-arc:hover {
+  border: 1px solid var(--bs-dark);
+  background-color: var(--bs-secondary);
+
+}
+
+.btn-logo-par.btn-logo-par-primary-color {
+  border-right: 1px solid var(--bs-dark);
+  border-top: 1px solid var(--bs-dark);
+  border-bottom: 1px solid var(--bs-dark);
+  width: 120px;
+  height: 48px;
+  border-radius: 0 0 15px 0;
+  align-items: center;
+  vertical-align: middle;
+}
+
+@media (max-width: 767.98px) {
+  .btn-logo-arc.btn-logo-arc-primary-color {
+    font-size: 16px;
+    width: 100px;
+    height: 38px;
+  }
+
+  .btn-logo-par.btn-logo-par-primary-color {
+    font-size: 16px;
+    width: 100px;
+    height: 38px;
+  }  
+}
+/* Boutons Logo | Fin */
+
 /* Boutons | Début */
 .btn {
-  font-weight: 500;
+  width: 250px;
+  font-weight: 300;
   transition: 0.5s;
   border-radius: 0 10px 0 10px;
 }
 
-.btn.btn-primary-color,
-.btn.btn-secondary-color {
+.btn.btn-primary-color {
   background-color: var(--bs-primary);
   color: #ffffff;
 }
 
-.btn:hover {
+.btn.btn-primary-color:hover {
   background-color: var(--bs-secondary);
+}
+
+.btn.btn-secondary-color {
+  background-color: var(--bs-secondary);
+  color: #ffffff;
+}
+
+.btn.btn-secondary-color:hover {
+  background-color: var(--bs-primary);
 }
 
 .btn-square {
@@ -95,15 +144,16 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 
 .navbar .navbar-brand .text-logo {
   background-color: var(--bs-primary);
+  border-top-left-radius: 15px;
 }
 
 .navbar .navbar-brand .text-logo:hover {
   background-color: var(--bs-secondary);
 }
 
-/* La classe .navbar .navbar-brand img cible les images à l'intérieur de la marque de la barre de navigation. Elle définit une hauteur maximale de 50px pour ces images. */
+/* La classe .navbar .navbar-brand img cible les images à l'intérieur de la marque de la barre de navigation. Elle définit une hauteur maximale de 80px pour ces images. */
 .navbar .navbar-brand img {
-  max-height: 50px;
+  max-height: 80px;
 }
 
 /* La classe .navbar .dropdown-toggle::after cible le pseudo-élément ::after du bouton qui déclenche un menu déroulant. Elle définit un contenu spécifique, qui est un caractère de la police d'icônes Font Awesome, et supprime la bordure. */
@@ -199,6 +249,15 @@ Cible les écrans dont la largeur minimale est 992px et définit les styles pour
 /* @media (max-width: 767.98px) :
 Cible les écrans dont la largeur est inférieure ou égale à 767.98px. Cela inclut généralement les petits appareils tels que les smartphones en mode paysage et les tablettes en mode portrait. */
 @media (max-width: 767.98px) {
+
+  .navbar .navbar-brand {
+    margin-left: 0.5rem;
+  }
+
+  .navbar .navbar-brand img {
+    max-height: 60px;
+  }
+
   .navbar .nav-item .dropdown-menu {
     display: block;
     border: none;
@@ -417,24 +476,87 @@ Barre Navigation | Fin */
 }
 /* Header | Fin */
 
-/*** About | Début  ***/
-.about-content-text {
-  text-align: justify;
-  font-size: 16px;
+/* Home | Début  */
+.home-content {
+  margin: 4rem 14rem 4rem 14rem;
 }
 
+.home-content {
+font-family: 'Roboto', sans-serif;
+text-align: justify;}
+
 @media (max-width: 767.98px) {
-  .about-content-text {
-    text-align: left;
-    font-size: 12px;
+  .home-content {
+    margin: 2rem;
   }
-  .atouts h6 {
-    margin-left: 12px;
-    text-align: left;
-    font-size: 12px;
-  }
+  .home-content p {
+    text-align: left;} 
 }
-/*** About | Fin  ***/
+/* Home | Fin  */
+
+/* About | Début  */
+.about-banner {
+  background: url(../img/about/bg-about.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.about-content {
+  margin: 4rem 14rem 4rem 14rem;
+}
+
+.about-content p {
+font-family: 'Roboto', sans-serif;
+text-align: justify;}
+
+@media (max-width: 767.98px) {
+  .about-content {
+    margin: 2rem;
+  }
+  .about-content p {
+    text-align: left;} 
+}
+/* About | Fin  */
+
+/* Label | Début  */
+.label-banner {
+  background: url(../img/label/bg-label.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.label-content {
+  margin: 4rem 14rem 4rem 14rem;
+}
+
+.label-content {
+font-family: 'Roboto', sans-serif;
+text-align: justify;}
+
+@media (max-width: 767.98px) {
+  .label-content {
+    margin: 2rem;
+  }
+  .label-content p {
+    text-align: left;} 
+}
+/* Label | Fin  */
+
+/* Informations | Début  */
+.informations-content {
+  margin: 4rem 14rem 4rem 14rem;
+}
+
+.informations-content {
+font-family: 'Roboto', sans-serif;
+text-align: justify;}
+
+@media (max-width: 767.98px) {
+  .informations-content {
+    margin: 2rem;
+  }
+  .informations-content p {
+    text-align: left;} 
+}
+/* Informations | Fin  */
 
 /* Image Border | Début */
 .img-border {

@@ -9,9 +9,11 @@ $requestUri = $_SERVER['REQUEST_URI'];
 
 $routes = [
     BASE_URL . '/' => 'templates/home.php',
+    BASE_URL . '/about' => 'templates/about.php',
     BASE_URL . '/animaux' => 'templates/animaux.php',
     BASE_URL . '/informations' => 'templates/informations.php',
     BASE_URL . '/services' => 'templates/services.php',
+    BASE_URL . '/label' => 'templates/label.php',
     BASE_URL . '/jeux' => 'templates/jeux.php',
 ];
 
