@@ -42,7 +42,6 @@
 .btn-logo-arc:hover {
   border: 1px solid var(--bs-dark);
   background-color: var(--bs-secondary);
-
 }
 
 .btn-logo-par.btn-logo-par-primary-color {
@@ -67,7 +66,7 @@
     font-size: 16px;
     width: 100px;
     height: 38px;
-  }  
+  }
 }
 /* Boutons Logo | Fin */
 
@@ -249,7 +248,6 @@ Cible les écrans dont la largeur minimale est 992px et définit les styles pour
 /* @media (max-width: 767.98px) :
 Cible les écrans dont la largeur est inférieure ou égale à 767.98px. Cela inclut généralement les petits appareils tels que les smartphones en mode paysage et les tablettes en mode portrait. */
 @media (max-width: 767.98px) {
-
   .navbar .navbar-brand {
     margin-left: 0.5rem;
   }
@@ -482,15 +480,17 @@ Barre Navigation | Fin */
 }
 
 .home-content {
-font-family: 'Roboto', sans-serif;
-text-align: justify;}
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
 
 @media (max-width: 767.98px) {
   .home-content {
     margin: 2rem;
   }
   .home-content p {
-    text-align: left;} 
+    text-align: left;
+  }
 }
 /* Home | Fin  */
 
@@ -505,15 +505,17 @@ text-align: justify;}
 }
 
 .about-content p {
-font-family: 'Roboto', sans-serif;
-text-align: justify;}
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
 
 @media (max-width: 767.98px) {
   .about-content {
     margin: 2rem;
   }
   .about-content p {
-    text-align: left;} 
+    text-align: left;
+  }
 }
 /* About | Fin  */
 
@@ -528,15 +530,17 @@ text-align: justify;}
 }
 
 .label-content {
-font-family: 'Roboto', sans-serif;
-text-align: justify;}
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
 
 @media (max-width: 767.98px) {
   .label-content {
     margin: 2rem;
   }
   .label-content p {
-    text-align: left;} 
+    text-align: left;
+  }
 }
 /* Label | Fin  */
 
@@ -546,15 +550,17 @@ text-align: justify;}
 }
 
 .informations-content {
-font-family: 'Roboto', sans-serif;
-text-align: justify;}
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
 
 @media (max-width: 767.98px) {
   .informations-content {
     margin: 2rem;
   }
   .informations-content p {
-    text-align: left;} 
+    text-align: left;
+  }
 }
 /* Informations | Fin  */
 
@@ -591,21 +597,23 @@ text-align: justify;}
   background-size: cover;
 }
 
-.animals-content {
+/* .animals-content {
   margin: 4rem 14rem 4rem 14rem;
-}
+} */
 
-.animals-content {
-font-family: 'Roboto', sans-serif;
-text-align: justify;}
-
+/* .animals-content {
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+} */
+/* 
 @media (max-width: 767.98px) {
   .animals-content {
     margin: 2rem;
   }
   .animals-content p {
-    text-align: left;} 
-}
+    text-align: left;
+  }
+} */
 /* Animaux | Fin  */
 
 /*** Services | Début ***/

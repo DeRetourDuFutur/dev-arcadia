@@ -44,7 +44,7 @@
   .list-slider-animals
   .item-slider-animals
   .topic-slider-animals {
-  font-size: 5em;
+  font-size: clamp(3rem, 5vw, 5rem);
   font-weight: bold;
   line-height: 1.3em;
 }
@@ -167,27 +167,24 @@
     display: none;
   } */
 
-.prev-hippo {
-  font-size: 35px;
-}
-
-.next-hippo {
-  font-size: 35px;
-
-}
-
-.arrows-slider-animals .btn-prev {
-    margin-left: 20px;
-    width: 40px;
-    height: 40px;
-
+  .prev-hippo {
+    font-size: 35px;
   }
-  
-.arrows-slider-animals .btn-next {
+
+  .next-hippo {
+    font-size: 35px;
+  }
+
+  .arrows-slider-animals .btn-prev {
     margin-left: 20px;
     width: 40px;
     height: 40px;
+  }
 
+  .arrows-slider-animals .btn-next {
+    margin-left: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
 
