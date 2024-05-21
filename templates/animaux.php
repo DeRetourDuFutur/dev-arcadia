@@ -1,17 +1,12 @@
 <!-- Section ANIMAUX | Début -->
 
-<div class="container-fluid animals-banner" id="animaux">
-  <!-- Bannière ANIMAUX | Début -->
-  <div class="py-5"></div>
-  <!-- Bannière ANIMAUX | Fin -->
-</div>
 <!-- Contenu ANIMAUX | Début -->
 <div class="mt-5">
   <div class="container-sm">
     <p>
       <span class="text-primary me-2">#</span>Nos animaux
     </p>
-    <h1>Rencontrez nos animaux <span class="text-primary">attachants</span></h1>
+    <h2>Découvrez nos <span class="text-primary">3 domaines</span></h2>
   </div>
   <div class="slider-animals">
     <!-- Liste Items | Début -->
@@ -26,7 +21,7 @@
             Décourvrez notre domaine entièrement dédié à la faune et la flore de la Savane
           </div>
           <div class="buttons-slider-animals">
-            <button>Explorer</button>
+            <a href="<?= BASE_URL . '/savane' ?>"><button>Explorer</button></a>
           </div>
         </div>
       </div>
@@ -41,7 +36,7 @@
             Décourvrez notre domaine entièrement dédié à la faune et la flore de la Jungle
           </div>
           <div class="buttons-slider-animals">
-            <button>Explorer</button>
+            <a href="<?= BASE_URL . '/jungle' ?>"><button>Explorer</button></a>
           </div>
         </div>
       </div>
@@ -55,7 +50,7 @@
           <div class="des-slider-animals">
             Décourvrez notre domaine entièrement dédié à la faune et la flore des Marais
             <div class="buttons-slider-animals">
-              <button>Explorer</button>
+              <a href="<?= BASE_URL . '/marais' ?>"><button>Explorer</button></a>
             </div>
           </div>
         </div>

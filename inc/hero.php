@@ -7,7 +7,7 @@
           Vivez une aventure <br> en famille à <span class="text-primary">Arcadia !</span>
         </h1>
         <div class="d-flex align-items-center pt-4 animated slideInDown">
-          <a href="<?= BASE_URL . '/about' ?>" class="btn btn-primary-color py-sm-3 px-sm-3 me-5">En savoir +</a>
+          <a href="<?= BASE_URL . '/animaux' ?>" class="btn btn-primary-color py-sm-3 px-sm-3 me-5">Nos animaux</a>
           <button type="button" class="btn-play" data-bs-toggle="modal" data-src="assets/vid/suricates.mp4" data-bs-target="#videoModal">
             <span></span>
           </button>

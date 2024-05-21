@@ -1,10 +1,10 @@
-<!-- Services | Début -->
-<div class="container-xxl py-5" id="services">
+<!-- Savane | Début -->
+<div class="container-xxl py-5" id="savane">
   <div class="container">
     <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="col">
-        <p><span class="text-primary me-2">#</span>Nos services</p>
-        <h3>Services proposés aux <span class="text-primary">Arcadien(ne)s</span></h3>
+        <p><span class="text-primary me-2">#</span>La Savane</p>
+        <h3>Retrouvez ici nos animaux de la <span class="text-primary">Savane</span></h3>
       </div>
     </div>
     <div class="row gy-5 gx-4 portfolio-container">
@@ -36,7 +36,7 @@
       <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
         <a class="animal-item" href="assets/img/services/boissons.webp" data-lightbox="animal"><img class="img-fluid mb-3 img-services" src="assets/img/services/boissons.webp" alt="Nourriture & Boissons" /></a>
         <h6 class="mb-3">Nouriture & Boissons</h6>
-        <span>Chez nous, il n'y a pas que les animaux qui ont besoin de se nourrir ! Profitez de nos nombreux spots pour vous rafraichir, grignoter un morceau ou même déjeuner en famille. Il y en a pour tous les goûts ! </span>
+        <span>Chez nous, il n'y a pas que les animaux qui ont besoin de se nourrir ! Profitez de nos nombreux spots pour vous rafraichir, grignoter un morceau ou même déjeuner en famille. Il y en a pour tous les gouts ! </span>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
         <a class="animal-item" href="assets/img/services/aires.webp" data-lightbox="animal"><img class="img-fluid mb-3 img-services" src="assets/img/services/aires.webp" alt="Aires de Jeux & Repos" /></a>
