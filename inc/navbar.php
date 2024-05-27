@@ -18,7 +18,7 @@
           <a href="<?= BASE_URL . '/about' ?>" class="nav-link">A propos</a>
         </li>
         <li class="nav-item">
-          <a href="<?= BASE_URL . '/savane' ?>" class="nav-link">Nos Animaux</a>
+          <a href="<?= BASE_URL . '/animaux' ?>" class="nav-link">Nos Animaux</a>
         </li>
         <li class="nav-item">
           <a href="<?= BASE_URL . '/services' ?>" class="nav-link">Nos services</a>

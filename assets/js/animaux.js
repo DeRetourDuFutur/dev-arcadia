@@ -19,7 +19,7 @@ function showAnimalDetails() {
   });
 
   btns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
+    btn.addEventListener("click", () => {
       hideModals();
     });
   });

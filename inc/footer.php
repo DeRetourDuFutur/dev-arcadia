@@ -92,6 +92,7 @@
 <script type="text/javascript" src="assets/js/main.js"></script>
 <script type="text/javascript" src="assets/js/slider-animals.js"></script>
 <script type="text/javascript" src="assets/js/animaux.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
 
 </body>
 

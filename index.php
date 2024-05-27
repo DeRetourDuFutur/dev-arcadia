@@ -15,9 +15,6 @@ $routes = [
     BASE_URL . '/services' => 'templates/services.php',
     BASE_URL . '/label' => 'templates/label.php',
     BASE_URL . '/jeux' => 'templates/jeux.php',
-    BASE_URL . '/savane' => 'templates/domaines/savane.php',
-    BASE_URL . '/jungle' => 'templates/domaines/jungle.php',
-    BASE_URL . '/marais' => 'templates/domaines/marais.php',
 ];
 
 if (array_key_exists($requestUri, $routes)) {
