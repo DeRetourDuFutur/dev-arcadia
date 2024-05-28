@@ -1,29 +1,78 @@
-/* Portfolio Animaux | Début */
-function showAnimalDetails() {
-  const links = document.querySelectorAll(".card-animals__link");
-  const modals = document.querySelectorAll(".modal");
-  const btns = document.querySelectorAll(".modal__close");
+/*** Slider Domaines Animaux | Début ***/
+let nextDom = document.getElementById("next");
+let prevDom = document.getElementById("prev");
 
-  const hideModals = () => {
-    modals.forEach((modal) => {
-      modal.classList.remove("show");
-    });
-  };
+let carouselDom = document.querySelector(".slider-animals");
+let SliderDom = carouselDom.querySelector(
+  ".slider-animals .list-slider-animals"
+);
+let thumbnailBorderDom = document.querySelector(
+  ".slider-animals .thumbnail-slider-animals"
+);
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(
+  ".item-slider-animals"
+);
+let timeDom = document.querySelector(".slider-animals .time-slider-animals");
 
-  links.forEach((elem) => {
-    elem.addEventListener("click", (event) => {
-      event.preventDefault();
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 6000;
 
-      document.querySelector(`[id=${elem.dataset.id}]`).classList.add("show");
-    });
-  });
+nextDom.onclick = function () {
+  showSlider("next");
+};
 
-  btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      hideModals();
-    });
-  });
+prevDom.onclick = function () {
+  showSlider("prev");
+};
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+  next.click();
+}, timeAutoNext);
+function showSlider(type) {
+  let SliderItemsDom = SliderDom.querySelectorAll(
+    ".slider-animals .list-slider-animals .item-slider-animals"
+  );
+  let thumbnailItemsDom = document.querySelectorAll(
+    ".slider-animals .thumbnail-slider-animals .item-slider-animals"
+  );
+
+  if (type === "next") {
+    SliderDom.appendChild(SliderItemsDom[0]);
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    carouselDom.classList.add("next");
+  } else {
+    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+    carouselDom.classList.add("prev");
+  }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    carouselDom.classList.remove("next");
+    carouselDom.classList.remove("prev");
+  }, timeRunning);
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+    next.click();
+  }, timeAutoNext);
 }
+// /*** Slider Domaines Animaux | Fin ***/
 
-showAnimalDetails();
-/* Portfolio Animaux | Fin */
+/*** Slider Fiche Animal | Début ***/
+
+// L'utilsateur clique sur un domaine de notre slider domaines :
+// Afficher la section du domaine sélectionné par l'utilisateur
+// Rendre cliquables les domaines de notre slider domaines
+// Selectionner les domaines
+document.querySelectorAll(".buttons-slider-animals a").forEach((item) => {
+  item.addEventListener("click", () => {
+    const domaine = item.getAttribute("data-domaine");
+    document.querySelector("#" + domaine).classList.remove("d-none");
+  });
+});
+// Les rendre cliquables
+// Quand une section est déjà affiché et que l'utilisateur séléctionne un autre domaine :
+// Ferme la section affichée et affiche la nouvelle section sélectionnée
+
+/*** Slider Fiche Animal | Fin ***/

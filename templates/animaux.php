@@ -1,5 +1,4 @@
 <!-- Section ANIMAUX | Début -->
-
 <!-- Contenu ANIMAUX | Début -->
 <div class="mt-5">
   <div class="container-sm">
@@ -21,7 +20,7 @@
             Décourvrez notre domaine entièrement dédié à la faune et la flore de la Savane
           </div>
           <div class="buttons-slider-animals">
-            <a href="#savane"><button>Explorer</button></a>
+            <a href="#savane" data-domaine="savane">Explorer</a>
           </div>
         </div>
       </div>
@@ -36,7 +35,7 @@
             Décourvrez notre domaine entièrement dédié à la faune et la flore de la Jungle
           </div>
           <div class="buttons-slider-animals">
-            <a href="#jungle"><button>Explorer</button></a>
+            <a href="#jungle" data-domaine="jungle">Explorer</a>
           </div>
         </div>
       </div>
@@ -50,7 +49,7 @@
           <div class="des-slider-animals">
             Décourvrez notre domaine entièrement dédié à la faune et la flore des Marais
             <div class="buttons-slider-animals">
-              <a href="#marais"><button>Explorer</button></a>
+              <a href="#marais" data-domaine="marais">Explorer</a>
             </div>
           </div>
         </div>
@@ -91,275 +90,108 @@
   </p>
 </div>
 <!-- Contenu ANIMAUX | Fin -->
-
 <!-- Section ANIMAUX | Fin -->
-<style>
-  #savane,
-  #jungle,
-  #marais {
-    display: none;
-  }
 
-  #savane:target,
-  #jungle:target,
-  #marais:target {
-    display: block;
-  }
-</style>
 
-<section id="savane">
-  <div class="container-fluid">
-    <!-- Slide Savane | Début -->
-    <div id="carouselExampleControls" class="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d1-an01-pc01.jpg" class="d-block w-100" alt="...">
+<!-- Variables PhP -->
+
+<?php
+
+$race = ['Eléphant', 'Girafe', 'Léopard', 'Lion', 'Rhinocéros', 'Zèbre'];
+$id = ['01', '02', '03', '04', '05', '06'];
+// $age = ['1 an', '2 ans', '3 ans', '4 ans', '5 ans', '6 ans'];
+// $poids = ['100 kg', '200 kg', '300 kg', '400 kg', '500 kg', '600 kg'];
+// $habitat = ['Savane', 'Jungle', 'Marais'];
+// $prenom = ['Dumbo', 'Girafon', 'Léopold', 'Lionel', 'Rhino', 'Zébulon'];
+?>
+
+<!-- Section Savane | Début -->
+<div class="container">
+  <section id="savane" class="d-none">
+    <div class="row">
+      <?php
+      for ($i = 0; $i < 6; $i++) { ?>
+        <div id="carouselAn<?php echo $id[$i] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc01.jpg" class="d-block w-100" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $race[$i] ?></h5>
+                <p class="card-text">
+                  Prénom de l'animal 1 <br>
+                  Âge de l'animal 1 <br>
+                  Poids de l'animal 1 <br>
+                  Habitat de l'animal 1
+                </p>
+              </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 1</h5>
-              <p class="card-text">Contenu des infos de l'animal 1</p>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc02.jpg" class="d-block w-100" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $race[$i] ?></h5>
+                <p class="card-text">
+                  Prénom de l'animal 2 <br>
+                  Âge de l'animal 2 <br>
+                  Poids de l'animal 2 <br>
+                  Habitat de l'animal 2
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc03.jpg" class="d-block w-100" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $race[$i] ?></h5>
+                <p class="card-text">
+                  Prénom de l'animal 3 <br>
+                  Âge de l'animal 3 <br>
+                  Poids de l'animal 3 <br>
+                  Habitat de l'animal 3
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc04.jpg" class="d-block w-100" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $race[$i] ?></h5>
+                <p class="card-text">
+                  Prénom de l'animal 4 <br>
+                  Âge de l'animal 4 <br>
+                  Poids de l'animal 4 <br>
+                  Habitat de l'animal 4
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc05.jpg" class="d-block w-100" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $race[$i] ?></h5>
+                <p class="card-text">
+                  Prénom de l'animal 5 <br>
+                  Âge de l'animal 5 <br>
+                  Poids de l'animal 5 <br>
+                  Habitat de l'animal 5
+                </p>
+              </div>
             </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselAn<?php echo $id[$i] ?>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselAn<?php echo $id[$i] ?>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+          </button>
         </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d1-an02-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 2</h5>
-              <p class="card-text">Contenu des infos de l'animal 2</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d1-an03-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 3</h5>
-              <p class="card-text">Contenu des infos de l'animal 3</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d1-an04-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 4</h5>
-              <p class="card-text">Contenu des infos de l'animal 4</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d1-an05-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 5</h5>
-              <p class="card-text">Contenu des infos de l'animal 5</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d1-an06-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 6</h5>
-              <p class="card-text">Contenu des infos de l'animal 6</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Précédent</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Suivant</span>
-      </button>
+      <?php }
+      ?>
     </div>
-    <!-- Slide Savane | Fin -->
-
-  </div>
+  </section>
+</div>
+<!-- Section Savane | Fin -->
+<section id="jungle" class="d-none">
+  <p>section JUNGLE ICI</p>
 </section>
-<section id="jungle">
-  <div class="container-fluid">
-    <!-- Slide Jungle | Début -->
-    <div id="carouselExampleControls" class="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d2-an01-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 1</h5>
-              <p class="card-text">Contenu des infos de l'animal 1</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d2-an02-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 2</h5>
-              <p class="card-text">Contenu des infos de l'animal 2</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d2-an03-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 3</h5>
-              <p class="card-text">Contenu des infos de l'animal 3</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d2-an04-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 4</h5>
-              <p class="card-text">Contenu des infos de l'animal 4</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d2-an05-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 5</h5>
-              <p class="card-text">Contenu des infos de l'animal 5</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d2-an06-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 6</h5>
-              <p class="card-text">Contenu des infos de l'animal 6</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Précédent</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Suivant</span>
-      </button>
-    </div>
-    <!-- Slide Jungle | Fin -->
-
-  </div>
-</section>
-</section>
-<section id="marais">
-  <div class="container-fluid">
-    <!-- Slide Marais | Début -->
-    <div id="carouselExampleControls" class="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d3-an01-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 1</h5>
-              <p class="card-text">Contenu des infos de l'animal 1</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d3-an02-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 2</h5>
-              <p class="card-text">Contenu des infos de l'animal 2</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d3-an03-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 3</h5>
-              <p class="card-text">Contenu des infos de l'animal 3</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d3-an04-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 4</h5>
-              <p class="card-text">Contenu des infos de l'animal 4</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d3-an05-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 5</h5>
-              <p class="card-text">Contenu des infos de l'animal 5</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card-domaines">
-            <div class="img-wrapper">
-              <img src="assets/img/domaines/savane/d3-an06-pc01.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Prénom Animal 6</h5>
-              <p class="card-text">Contenu des infos de l'animal 6</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Précédent</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Suivant</span>
-      </button>
-    </div>
-    <!-- Slide Marais | Fin -->
-  </div>
-</section>
+<section id="marais" class="d-none">
+  <p>C'est Marseille Bébé</p>
 </section>
