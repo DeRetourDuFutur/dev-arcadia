@@ -1,18 +1,17 @@
-<!-- Section ANIMAUX | Début -->
-<!-- Contenu ANIMAUX | Début -->
+<!-- Slider Domaines ANIMAUX | Début -->
 <div class="mt-5">
   <div class="container-sm">
     <p>
       <span class="text-primary me-2">#</span>Nos animaux
     </p>
-    <h2>Découvrez nos <span class="text-primary">3 domaines</span></h2>
+    <h2>Explorez nos <span class="text-primary">3 domaines</span></h2>
   </div>
   <div class="slider-animals">
     <!-- Liste Items | Début -->
     <div class="list-slider-animals">
       <!-- Slider Savane | Début -->
       <div class="item-slider-animals">
-        <img src="assets/img/animals/covers/arc-sav-cover-slider.webp" alt="La Savane" />
+        <img src="assets/img/domaines/d1-cover-slider.webp" alt="La Savane" />
         <div class="content-slider-animals">
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">SAVANE</div>
@@ -27,7 +26,7 @@
       <!-- Slider Savane | Fin -->
       <!-- Slider Jungle | Début -->
       <div class="item-slider-animals">
-        <img src="assets/img/animals/covers/arc-jun-cover-slider.webp" alt="La Jungle" />
+        <img src="assets/img/domaines/d2-cover-slider.webp" alt="La Jungle" />
         <div class="content-slider-animals">
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">JUNGLE</div>
@@ -42,7 +41,7 @@
       <!-- Slider Jungle | Fin -->
       <!-- Slider Marais | Début -->
       <div class="item-slider-animals">
-        <img src="assets/img/animals/covers/arc-swa-cover-slider.webp" alt="Les Marais" />
+        <img src="assets/img/domaines/d3-cover-slider.webp" alt="Les Marais" />
         <div class="content-slider-animals">
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">MARAIS</div>
@@ -60,19 +59,19 @@
     <!-- Liste Thumbnail | Début -->
     <div class="thumbnail-slider-animals">
       <div class="item-slider-animals">
-        <img src="assets/img/animals/covers/arc-sav-cover-card.jpg" alt="La Savane" />
+        <img src="assets/img/domaines/d1-cover-card.webp" alt="La Savane" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Savane</div>
         </div>
       </div>
       <div class="item-slider-animals">
-        <img src="assets/img/animals/covers/arc-jun-cover-card.jpg" alt="La Jungle" />
+        <img src="assets/img/domaines/d2-cover-card.webp" alt="La Jungle" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Jungle</div>
         </div>
       </div>
       <div class="item-slider-animals">
-        <img src="assets/img/animals/covers/arc-swa-cover-card.jpg" alt="Les Marais" />
+        <img src="assets/img/domaines/d3-cover-card.webp" alt="Les Marais" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Marais</div>
         </div>
@@ -89,14 +88,10 @@
   </div>
   </p>
 </div>
-<!-- Contenu ANIMAUX | Fin -->
-<!-- Section ANIMAUX | Fin -->
+<!-- Slider Domaines ANIMAUX | Début -->
 
-
-<!-- Variables PhP -->
-
+<!-- Variables PhP en attendant la BDD/SQL -->
 <?php
-
 $race = ['Eléphant', 'Girafe', 'Léopard', 'Lion', 'Rhinocéros', 'Zèbre'];
 $id = ['01', '02', '03', '04', '05', '06'];
 // $age = ['1 an', '2 ans', '3 ans', '4 ans', '5 ans', '6 ans'];
@@ -105,7 +100,7 @@ $id = ['01', '02', '03', '04', '05', '06'];
 // $prenom = ['Dumbo', 'Girafon', 'Léopold', 'Lionel', 'Rhino', 'Zébulon'];
 ?>
 
-<!-- Section Savane | Début -->
+<!-- Section SAVANE | Début -->
 <div class="container">
   <section id="savane" class="d-none">
     <div class="row">
@@ -113,8 +108,8 @@ $id = ['01', '02', '03', '04', '05', '06'];
       for ($i = 0; $i < 6; $i++) { ?>
         <div id="carouselAn<?php echo $id[$i] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
           <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc01.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item active" data-bs-interval="7000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc01.webp" class="d-block w-100 rounded-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $race[$i] ?></h5>
                 <p class="card-text">
@@ -125,8 +120,8 @@ $id = ['01', '02', '03', '04', '05', '06'];
                 </p>
               </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc02.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-bs-interval="7000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc02.webp" class="d-block w-100 rounded-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $race[$i] ?></h5>
                 <p class="card-text">
@@ -137,8 +132,8 @@ $id = ['01', '02', '03', '04', '05', '06'];
                 </p>
               </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc03.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-bs-interval="7000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc03.webp" class="d-block w-100 rounded-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $race[$i] ?></h5>
                 <p class="card-text">
@@ -149,8 +144,8 @@ $id = ['01', '02', '03', '04', '05', '06'];
                 </p>
               </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc04.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-bs-interval="7000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc04.webp" class="d-block w-100 rounded-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $race[$i] ?></h5>
                 <p class="card-text">
@@ -161,8 +156,8 @@ $id = ['01', '02', '03', '04', '05', '06'];
                 </p>
               </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc05.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-item" data-bs-interval="7000">
+              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc05.webp" class="d-block w-100 rounded-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $race[$i] ?></h5>
                 <p class="card-text">
@@ -188,7 +183,8 @@ $id = ['01', '02', '03', '04', '05', '06'];
     </div>
   </section>
 </div>
-<!-- Section Savane | Fin -->
+<!-- Section SAVANE | Fin -->
+
 <section id="jungle" class="d-none">
   <p>section JUNGLE ICI</p>
 </section>

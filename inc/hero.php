@@ -19,34 +19,34 @@
     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
       <div class="owl-carousel header-carousel">
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/arcadia.jpg" alt="Zoo Arcadia" />
+          <img class="img-fluid" src="assets/img/home-slider/arcadia.webp" alt="Zoo Arcadia" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/jungle1.jpg" alt="La Jungle - Lémuriens" />
+          <img class="img-fluid" src="assets/img/home-slider/jungle1.webp" alt="La Jungle - Lémuriens" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/jungle2.jpg" alt="La Jungle - Léopards" />
+          <img class="img-fluid" src="assets/img/home-slider/jungle2.webp" alt="La Jungle - Léopards" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/jungle3.jpg" alt="La Jungle - Serpents" />
+          <img class="img-fluid" src="assets/img/home-slider/jungle3.webp" alt="La Jungle - Serpents" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/savane1.jpg" alt="La Savane - Girafes" />
+          <img class="img-fluid" src="assets/img/home-slider/savane1.webp" alt="La Savane - Girafes" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/savane2.jpg" alt="La Savane - Lions" />
+          <img class="img-fluid" src="assets/img/home-slider/savane2.webp" alt="La Savane - Lions" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/savane3.jpg" alt="La Savane - Rhinocéros" />
+          <img class="img-fluid" src="assets/img/home-slider/savane3.webp" alt="La Savane - Rhinocéros" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/marais1.jpg" alt="Les Marais - Crocodiles" />
+          <img class="img-fluid" src="assets/img/home-slider/marais1.webp" alt="Les Marais - Crocodiles" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/marais2.jpg" alt="Les Marais - Tigres" />
+          <img class="img-fluid" src="assets/img/home-slider/marais2.webp" alt="Les Marais - Tigres" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="assets/img/home-slider/marais3.jpg" alt="Les Marais - Hippopotames" />
+          <img class="img-fluid" src="assets/img/home-slider/marais3.webp" alt="Les Marais - Hippopotames" />
         </div>
       </div>
     </div>
