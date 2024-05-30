@@ -65,14 +65,17 @@ function showSlider(type) {
 // Afficher la section du domaine sélectionné par l'utilisateur
 // Rendre cliquables les domaines de notre slider domaines
 // Selectionner les domaines
-document.querySelectorAll(".buttons-slider-animals a").forEach((item) => {
+console.log(document.querySelectorAll("a[data-domaine]"));
+document.querySelectorAll("a[data-domaine]").forEach((item) => {
   item.addEventListener("click", () => {
+    // Fermer toutes les sections
+    document.querySelectorAll(".section-domaines").forEach((item) => {
+      item.classList.add("d-none");
+    });
+
     const domaine = item.getAttribute("data-domaine");
     document.querySelector("#" + domaine).classList.remove("d-none");
   });
 });
 // Les rendre cliquables
-// Quand une section est déjà affiché et que l'utilisateur séléctionne un autre domaine :
-// Ferme la section affichée et affiche la nouvelle section sélectionnée
-
-/*** Slider Fiche Animal | Fin ***/
+// Quand une section est déjà affiché et que l'utilisateur séléctionne un autre domaine, on ferme la section affichée et affiche la nouvelle section sélectionnée

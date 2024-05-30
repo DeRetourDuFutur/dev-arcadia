@@ -58,24 +58,24 @@
     <!-- Liste Items | Fin -->
     <!-- Liste Thumbnail | Début -->
     <div class="thumbnail-slider-animals">
-      <div class="item-slider-animals">
+      <a href="#savane" data-domaine="savane" class="item-slider-animals">
         <img src="assets/img/domaines/d1-cover-card.webp" alt="La Savane" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Savane</div>
         </div>
-      </div>
-      <div class="item-slider-animals">
+      </a>
+      <a href="#jungle" data-domaine="jungle" class="item-slider-animals">
         <img src="assets/img/domaines/d2-cover-card.webp" alt="La Jungle" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Jungle</div>
         </div>
-      </div>
-      <div class="item-slider-animals">
+      </a>
+      <a href="#marais" data-domaine="marais" class="item-slider-animals">
         <img src="assets/img/domaines/d3-cover-card.webp" alt="Les Marais" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Marais</div>
         </div>
-      </div>
+      </a>
     </div>
     <!-- Liste Thumbnail | Fin -->
     <!-- Boutons NEXT / PREV -->
@@ -92,102 +92,148 @@
 
 <!-- Variables PhP en attendant la BDD/SQL -->
 <?php
-$race = ['Eléphant', 'Girafe', 'Léopard', 'Lion', 'Rhinocéros', 'Zèbre'];
-$id = ['01', '02', '03', '04', '05', '06'];
-// $age = ['1 an', '2 ans', '3 ans', '4 ans', '5 ans', '6 ans'];
-// $poids = ['100 kg', '200 kg', '300 kg', '400 kg', '500 kg', '600 kg'];
-// $habitat = ['Savane', 'Jungle', 'Marais'];
-// $prenom = ['Dumbo', 'Girafon', 'Léopold', 'Lionel', 'Rhino', 'Zébulon'];
+
+$domaines = [
+  'Savane' => [
+    'id' => '1',
+    'races' => [
+      'Eléphant' => [
+        'race-id' => '01'
+      ],
+      'Girafe' => [
+        'race-id' => '02'
+      ],
+      'Léopard' => [
+        'race-id' => '03'
+      ],
+      'Lion' => [
+        'race-id' => '04'
+      ],
+      'Rhinocéros' => [
+        'race-id' => '05'
+      ],
+      'Zèbre' => [
+        'race-id' => '06'
+      ]
+    ]
+  ],
+  'Jungle' => [
+    'id' => '2',
+    'races' => [
+      'Gorille' => [
+        'race-id' => '01'
+      ],
+      'Tigre' => [
+        'race-id' => '02'
+      ],
+      'Jaguard' => [
+        'race-id' => '03'
+      ],
+    ]
+  ],
+  'Marais' => [
+    'id' => '3',
+    'races' => [
+      'Serpent' => [
+        'race-id' => '01'
+      ],
+      'Crocodile' => [
+        'race-id' => '02'
+      ],
+    ]
+  ]
+
+];
 ?>
 
 <!-- Section SAVANE | Début -->
 <div class="container">
-  <section id="savane" class="d-none">
-    <div class="row">
-      <?php
-      for ($i = 0; $i < 6; $i++) { ?>
-        <div id="carouselAn<?php echo $id[$i] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="7000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc01.webp" class="d-block w-100 rounded-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $race[$i] ?></h5>
-                <p class="card-text">
-                  Prénom de l'animal 1 <br>
-                  Âge de l'animal 1 <br>
-                  Poids de l'animal 1 <br>
-                  Habitat de l'animal 1
-                </p>
+  <?php foreach ($domaines as $domaineName => $domaineContent) { ?>
+    <section id="<?= strtolower($domaineName) ?>" class="section-domaines <?php if ($domaines['Savane'] !== $domaineContent) { ?>d-none<?php } ?>">
+      <div class="container-sm">
+        <p>
+          <span class="text-primary me-2">#</span><?= $domaineName ?>
+        </p>
+      </div>
+      <div class="row mb-3">
+        <?php foreach ($domaineContent['races'] as $raceName => $raceContent) { ?>
+
+          <div id="carouselAn<?= $raceContent['race-id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
+            <div class="carousel-inner py-3">
+              <div class="carousel-item active border" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc01.webp" class="d-block w-100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <p class="card-text">
+                    Prénom de l'animal 1 <br>
+                    Âge de l'animal 1 <br>
+                    Poids de l'animal 1 <br>
+                    Habitat de l'animal 1
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item border" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc02.webp" class="d-block w-100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <p class="card-text">
+                    Prénom de l'animal 2 <br>
+                    Âge de l'animal 2 <br>
+                    Poids de l'animal 2 <br>
+                    Habitat de l'animal 2
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item border" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc03.webp" class="d-block w-100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <p class="card-text">
+                    Prénom de l'animal 3 <br>
+                    Âge de l'animal 3 <br>
+                    Poids de l'animal 3 <br>
+                    Habitat de l'animal 3
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item border" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>v-pc04.webp" class="d-block w-100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <p class="card-text">
+                    Prénom de l'animal 4 <br>
+                    Âge de l'animal 4 <br>
+                    Poids de l'animal 4 <br>
+                    Habitat de l'animal 4
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item border" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc05.webp" class="d-block w-100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <p class="card-text">
+                    Prénom de l'animal 5 <br>
+                    Âge de l'animal 5 <br>
+                    Poids de l'animal 5 <br>
+                    Habitat de l'animal 5
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="carousel-item" data-bs-interval="7000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc02.webp" class="d-block w-100 rounded-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $race[$i] ?></h5>
-                <p class="card-text">
-                  Prénom de l'animal 2 <br>
-                  Âge de l'animal 2 <br>
-                  Poids de l'animal 2 <br>
-                  Habitat de l'animal 2
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="7000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc03.webp" class="d-block w-100 rounded-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $race[$i] ?></h5>
-                <p class="card-text">
-                  Prénom de l'animal 3 <br>
-                  Âge de l'animal 3 <br>
-                  Poids de l'animal 3 <br>
-                  Habitat de l'animal 3
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="7000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc04.webp" class="d-block w-100 rounded-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $race[$i] ?></h5>
-                <p class="card-text">
-                  Prénom de l'animal 4 <br>
-                  Âge de l'animal 4 <br>
-                  Poids de l'animal 4 <br>
-                  Habitat de l'animal 4
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="7000">
-              <img src="assets/img/domaines/savane/d1-an<?php echo $id[$i] ?>-pc05.webp" class="d-block w-100 rounded-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $race[$i] ?></h5>
-                <p class="card-text">
-                  Prénom de l'animal 5 <br>
-                  Âge de l'animal 5 <br>
-                  Poids de l'animal 5 <br>
-                  Habitat de l'animal 5
-                </p>
-              </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAn<?= $raceContent['race-id'] ?>" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAn<?= $raceContent['race-id'] ?>" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Suivant</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselAn<?php echo $id[$i] ?>" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Précédent</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselAn<?php echo $id[$i] ?>" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Suivant</span>
-          </button>
-        </div>
-      <?php }
-      ?>
-    </div>
-  </section>
+        <?php }
+        ?>
+      </div>
+    </section>
+  <?php } ?>
 </div>
 <!-- Section SAVANE | Fin -->
-
-<section id="jungle" class="d-none">
-  <p>section JUNGLE ICI</p>
-</section>
-<section id="marais" class="d-none">
-  <p>C'est Marseille Bébé</p>
-</section>
