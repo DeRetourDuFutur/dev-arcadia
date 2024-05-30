@@ -422,9 +422,22 @@
 /*** Slider Animaux | Fin ***/
 
 /* Animaux | Début  */
-.animals-banner {
+/* .animals-banner {
   background: url(../img/animals/bg-animals.jpg) center center no-repeat;
   background-size: cover;
+} */
+/* Animaux | Fin  */
+
+.border-fiche-animal {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top: 1px solid #818181;
+  border-left: 1px solid #818181;
+  border-right: 1px solid #818181;
+  border-bottom: 1px solid #818181;
 }
 
-/* Animaux | Fin  */
+.img-fiche-animal {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}

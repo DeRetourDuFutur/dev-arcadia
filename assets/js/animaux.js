@@ -65,7 +65,6 @@ function showSlider(type) {
 // Afficher la section du domaine sélectionné par l'utilisateur
 // Rendre cliquables les domaines de notre slider domaines
 // Selectionner les domaines
-console.log(document.querySelectorAll("a[data-domaine]"));
 document.querySelectorAll("a[data-domaine]").forEach((item) => {
   item.addEventListener("click", () => {
     // Fermer toutes les sections

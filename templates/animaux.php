@@ -160,8 +160,8 @@ $domaines = [
 
           <div id="carouselAn<?= $raceContent['race-id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
             <div class="carousel-inner py-3">
-              <div class="carousel-item active border" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc01.webp" class="d-block w-100" alt="...">
+              <div class="carousel-item active border-fiche-animal" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc01.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?= $raceName ?></h5>
                   <p class="card-text">
@@ -172,8 +172,8 @@ $domaines = [
                   </p>
                 </div>
               </div>
-              <div class="carousel-item border" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc02.webp" class="d-block w-100" alt="...">
+              <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc02.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?= $raceName ?></h5>
                   <p class="card-text">
@@ -184,8 +184,8 @@ $domaines = [
                   </p>
                 </div>
               </div>
-              <div class="carousel-item border" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc03.webp" class="d-block w-100" alt="...">
+              <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc03.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?= $raceName ?></h5>
                   <p class="card-text">
@@ -196,8 +196,8 @@ $domaines = [
                   </p>
                 </div>
               </div>
-              <div class="carousel-item border" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>v-pc04.webp" class="d-block w-100" alt="...">
+              <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc04.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?= $raceName ?></h5>
                   <p class="card-text">
@@ -208,8 +208,8 @@ $domaines = [
                   </p>
                 </div>
               </div>
-              <div class="carousel-item border" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc05.webp" class="d-block w-100" alt="...">
+              <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
+                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc05.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?= $raceName ?></h5>
                   <p class="card-text">
