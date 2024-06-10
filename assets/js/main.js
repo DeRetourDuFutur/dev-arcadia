@@ -97,9 +97,9 @@
 
 /*** Jeu De Mémoire | Début ***/
 
-const gameBoard = document.getElementById("game-board");
+const gameMemory = document.getElementById("game-memory");
 
-if (gameBoard) {
+if (gameMemory) {
   const cardsPathName = [
     "assets/img/memory-game/arc-an-memory1.jpg",
     "assets/img/memory-game/arc-an-memory2.jpg",
@@ -215,7 +215,7 @@ if (gameBoard) {
   duplicatedCardsPathName = shuffleArray(duplicatedCardsPathName);
   duplicatedCardsPathName.forEach((card) => {
     const cardHtml = createCard(card);
-    gameBoard.appendChild(cardHtml);
+    gameMemory.appendChild(cardHtml);
   });
 
   const cards = document.querySelectorAll(".card");

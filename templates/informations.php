@@ -41,39 +41,39 @@
   </p>
   <p>
     <span class="text-primary">Accès :</span>
-    <ul>
-      <li>En voiture : [Pop-up accès voiture]</li>
-      <li>En transports en commun : [Pop-up accès transports]</li>
-      <li>Parking gratuit</li>
-    </ul>
-    <span class="text-primary">Tarifs :</span>
-    <ul>
-      <li>Adultes : [Prix du billet adulte]</li>
-      <li>Enfants (3-12 ans) : [Prix du billet enfant]</li>
-      <li>Moins de 3 ans : Gratuit</li>
-      <li>Tarifs groupes et familles : [Informations sur les tarifs spéciaux]</li>
-    </ul>
-    <span class="text-primary">Restauration & Boutiques :</span><br>
-    <ul>
-      <li>Le Zoo dispose de plusieurs restaurants et snacks où vous pourrez vous restaurer durant votre visite.</li>
-      <li>Vous trouverez dans nos 3 boutiques une large sélection de souvenirs, peluches, livres et autres articles liés au monde animal.</li>
-    </ul>
-    <span class="text-primary">Accessibilité :</span><br>
-    Le Zoo est accessible aux personnes à mobilité réduite. Des poussettes et des fauteuils roulants sont disponibles à la location.<br> Les animaux domestiques ne sont pas admis dans le Zoo.
-    <br><br>
-    <span class="text-primary">Conseils pour profiter pleinement de votre visite :</span><br>
-    <ul>
-      <li>Consultez notre site web pour découvrir les différentes zones du Zoo, les animations et les événements en cours.</li>
-      <li>Arrivez tôt : le Zoo ouvre ses portes à 09h00 (sauf le dimanche) et il est souvent moins fréquenté le matin.</li>
-      <li>Portez des chaussures confortables : vous allez marcher beaucoup durant votre visite !</li>
-      <li>Prévoyez de quoi vous protéger du soleil et de la pluie : le Zoo est un espace extérieur, pensez à prendre un chapeau, des lunettes de soleil et une crème solaire si le temps le nécessite.</li>
-      <li>N'oubliez pas votre appareil photo : vous allez immortaliser des moments inoubliables !</li>
-      <li>Respectez les animaux et leur environnement : ne nourrissez pas les animaux, ne touchez pas les enclos et jetez vos déchets dans les poubelles prévues à cet effet.</li>
-    </ul>
-    Profitez de votre visite ! Le Zoo Arcadia est un lieu unique où vous pourrez vous émerveiller devant la beauté du monde animal et apprendre à mieux connaître la faune et la flore de notre planète. <b>Nous vous attendons avec impatience !</b>
+  <ul>
+    <li>En voiture : [Pop-up accès voiture]</li>
+    <li>En transports en commun : [Pop-up accès transports]</li>
+    <li>Parking gratuit</li>
+  </ul>
+  <span class="text-primary">Tarifs :</span>
+  <ul>
+    <li>Adultes : [Prix du billet adulte]</li>
+    <li>Enfants (3-12 ans) : [Prix du billet enfant]</li>
+    <li>Moins de 3 ans : Gratuit</li>
+    <li>Tarifs groupes et familles : [Informations sur les tarifs spéciaux]</li>
+  </ul>
+  <span class="text-primary">Restauration & Boutiques :</span><br>
+  <ul>
+    <li>Le Zoo dispose de plusieurs restaurants et snacks où vous pourrez vous restaurer durant votre visite.</li>
+    <li>Vous trouverez dans nos 3 boutiques une large sélection de souvenirs, peluches, livres et autres articles liés au monde animal.</li>
+  </ul>
+  <span class="text-primary">Accessibilité :</span><br>
+  Le Zoo est accessible aux personnes à mobilité réduite. Des poussettes et des fauteuils roulants sont disponibles à la location.<br> Les animaux domestiques ne sont pas admis dans le Zoo.
+  <br><br>
+  <span class="text-primary">Conseils pour profiter pleinement de votre visite :</span><br>
+  <ul>
+    <li>Consultez notre site web pour découvrir les différentes zones du Zoo, les animations et les événements en cours.</li>
+    <li>Arrivez tôt : le Zoo ouvre ses portes à 09h00 (sauf le dimanche) et il est souvent moins fréquenté le matin.</li>
+    <li>Portez des chaussures confortables : vous allez marcher beaucoup durant votre visite !</li>
+    <li>Prévoyez de quoi vous protéger du soleil et de la pluie : le Zoo est un espace extérieur, pensez à prendre un chapeau, des lunettes de soleil et une crème solaire si le temps le nécessite.</li>
+    <li>N'oubliez pas votre appareil photo : vous allez immortaliser des moments inoubliables !</li>
+    <li>Respectez les animaux et leur environnement : ne nourrissez pas les animaux, ne touchez pas les enclos et jetez vos déchets dans les poubelles prévues à cet effet.</li>
+  </ul>
+  Profitez de votre visite ! Le Zoo Arcadia est un lieu unique où vous pourrez vous émerveiller devant la beauté du monde animal et apprendre à mieux connaître la faune et la flore de notre planète. <b>Nous vous attendons avec impatience !</b>
   </p>
 </div>
-<!-- Section Informations | Fin -->  
+<!-- Section Informations | Fin -->
 
 <!-- Section Horaires | Début -->
 <div class="bg-primary visiting-hours wow fadeInUp py-5 " data-wow-delay="0.1s" id="horaires">
@@ -144,7 +144,7 @@
   </div>
 </div>
 <!-- Section Horaires | Fin -->
-  </div>
+</div>
 </div>
 
 <!-- Section Coordonnées | Début -->
@@ -194,57 +194,5 @@
         </div>
 </div> -->
 <!-- Section Coordonnées | Fin -->
-
-<!-- Section Témoignages | Début -->
-<div class="container-xxl py-5" id="testimonials">
-  <div class="container">
-    <h1 class="display-4 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-      Vos avis sont précieux !
-    </h1>
-    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-      <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-1.jpg" style="width: 100px; height: 100px" />
-        <div class="testimonial-text rounded text-center p-4">
-          <p>
-            Une expérience inoubliable ! Arcadia nous offre une atmoshpère magique, situation géographique oblige, et le temps d'une journée, nous fait voyager dans un monde extraordinaire. A faire en famille, sans modération !
-          </p>
-          <h5 class="mb-1">Céline D.</h5>
-          <span class="fst-italic">Maman de 4 enfants</span>
-        </div>
-      </div>
-      <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-2.jpg" style="width: 100px; height: 100px" />
-        <div class="testimonial-text rounded text-center p-4">
-          <p>
-            J'y suis allé avec mes amis pour une journée de détente et de découverte. Nous avons été agréablement surpris par la qualité des installations et la diversité des animaux. Nous avons passé un excellent moment !
-          </p>
-          <h5 class="mb-1">Antony M.</h5>
-          <span class="fst-italic">STUDIeux</span>
-        </div>
-      </div>
-      <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-3.jpg" style="width: 100px; height: 100px" />
-        <div class="testimonial-text rounded text-center p-4">
-          <p>
-            Je connais cet endroit depuis des années et je n'ai jamais été déçu. Les animaux sont bien traités et les installations sont toujours propres. Je recommande la visite guidée pour une expérience encore plus immersive.
-          </p>
-          <h5 class="mb-1">José M.</h5>
-          <span class="fst-italic">Client fidèle</span>
-        </div>
-      </div>
-      <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-4.jpg" style="width: 100px; height: 100px" />
-        <div class="testimonial-text rounded text-center p-4">
-          <p>
-            Une journée très agréable placée sous le signe de la découverte et du partage. Ma fille a adoré et moi aussi. Nous reviendrons, c'est sûr ! Mention spéciale à la mascotte du parc, qui adore les câlins !
-          </p>
-          <h5 class="mb-1">Tyson N.</h5>
-          <span class="fst-italic">Papa Solo</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Section Témoignages | Fin -->
-
+<?php include('avis.php'); ?>
 <!-- Page Informations | Fin -->

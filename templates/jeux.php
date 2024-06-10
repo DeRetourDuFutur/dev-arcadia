@@ -8,9 +8,12 @@
       </div>
     </div>
     <div class="jeux">
-      <p class="jeux-title">Le Jeu de Mémoire</p>
-      <p class="jeux-subtitle">Cliquez sur les cartes pour les retourner et retrouver les paires !</p>
-      <div id="game-board"></div>
+      <section class="memory">
+        <div class="jeux-title">Arcadia Memory</div>
+        <div class="jeux-subtitle">Cliquez sur les cartes pour les retourner et retrouver les paires !</div>
+        <div></div>
+        <div id="game-memory"></div>
+      </section>
     </div>
   </div>
 </div>

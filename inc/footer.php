@@ -92,7 +92,8 @@
 <!-- Template Javascript -->
 <script type="text/javascript" src="assets/js/main.js"></script>
 
-<?php if ($_SERVER['REQUEST_URI'] == '/animaux') { ?>
+<!-- Charger le JS animaux.js seulement si la page animaux.php est affichée -->
+<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/animaux') { ?>
   <script type="text/javascript" src="assets/js/animaux.js"></script>
 <?php } ?>
 </body>

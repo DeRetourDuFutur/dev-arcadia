@@ -51,4 +51,6 @@ require_once('inc/hero.php');
 </div>
 <!-- Contenu HOME | Fin -->
 
+<?php include('avis.php'); ?>
+
 <!-- Section HOME | Fin -->

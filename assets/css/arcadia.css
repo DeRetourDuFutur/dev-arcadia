@@ -6,7 +6,7 @@
   display: none;
   right: 45px;
   bottom: 45px;
-  z-index: 99;
+  z-index: 1000;
 }
 /* Bouton Back To Top | Fin */
 
@@ -94,6 +94,16 @@
 
 .btn.btn-secondary-color:hover {
   background-color: var(--bs-primary);
+}
+
+.btn.btn-jeux {
+  background-color: var(--bs-primary);
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.btn.btn-jeux:hover {
+  background-color: var(--bs-secondary);
 }
 
 .btn-square {
@@ -617,7 +627,7 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 /* Témoignages | Fin */
 
 /* Jeu de Mémoire | Début */
-#game-board {
+#game-memory {
   display: grid;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: repeat(4, 100px);
@@ -651,24 +661,24 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
   cursor: default;
 }
 
-.jeux-title p {
-  font-size: 26px;
-  font-weight: bold;
+.jeux-title {
+  font-size: 18px;
+  font-weight: 800;
   margin: 5px 10px 5px 10px;
 }
 
-.jeux-subtitle p {
-  font-size: 20px;
-  margin: 5px 10px 5px 10px;
+.jeux-subtitle {
+  font-size: 16px;
+  margin: 5px 10px 20px 10px;
 }
 
-.jeux-text p {
+.jeux-text {
   font-size: 18px;
   margin: 5px 10px 5px 10px;
 }
 
 @media (max-width: 767.98px) {
-  #game-board {
+  #game-memory {
     grid-template-columns: repeat(4, 80px);
     grid-template-rows: repeat(4, 80px);
     grid-gap: 10px;

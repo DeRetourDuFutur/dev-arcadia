@@ -16,7 +16,7 @@
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">SAVANE</div>
           <div class="des-slider-animals">
-            Décourvrez notre domaine entièrement dédié à la faune et la flore de la Savane
+            Découvrez notre domaine entièrement dédié à la faune et la flore de la Savane
           </div>
           <div class="buttons-slider-animals">
             <a href="#savane" data-domaine="savane">Explorer</a>
@@ -31,7 +31,7 @@
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">JUNGLE</div>
           <div class="des-slider-animals">
-            Décourvrez notre domaine entièrement dédié à la faune et la flore de la Jungle
+            Découvrez notre domaine entièrement dédié à la faune et la flore de la Jungle
           </div>
           <div class="buttons-slider-animals">
             <a href="#jungle" data-domaine="jungle">Explorer</a>
@@ -46,7 +46,7 @@
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">MARAIS</div>
           <div class="des-slider-animals">
-            Décourvrez notre domaine entièrement dédié à la faune et la flore des Marais
+            Découvrez notre domaine entièrement dédié à la faune et la flore des Marais
             <div class="buttons-slider-animals">
               <a href="#marais" data-domaine="marais">Explorer</a>
             </div>
@@ -91,141 +91,289 @@
 <!-- Slider Domaines ANIMAUX | Début -->
 
 <!-- Variables PhP en attendant la BDD/SQL -->
+
 <?php
 
 $domaines = [
-  'Savane' => [
-    'id' => '1',
-    'races' => [
-      'Eléphant' => [
+  [
+    'domaine-name' => 'Savane',
+    'domaine-id' => '1',
+    'domaine-races' => [
+      [
+        'race-name' => 'Elephant',
         'race-id' => '01'
       ],
-      'Girafe' => [
+      [
+        'race-name' => 'Girafe',
         'race-id' => '02'
       ],
-      'Léopard' => [
+      [
+        'race-name' => 'Léopard',
         'race-id' => '03'
       ],
-      'Lion' => [
+      [
+        'race-name' => 'Lion',
         'race-id' => '04'
       ],
-      'Rhinocéros' => [
+      [
+        'race-name' => 'Rhinocéros',
         'race-id' => '05'
       ],
-      'Zèbre' => [
+      [
+        'race-name' => 'Zèbre',
         'race-id' => '06'
       ]
     ]
   ],
-  'Jungle' => [
-    'id' => '2',
-    'races' => [
-      'Gorille' => [
+  [
+    'domaine-name' =>  'Jungle',
+    'domaine-id' => '2',
+    'domaine-races' => [
+      [
+        'race-name' => 'Gorille',
         'race-id' => '01'
       ],
-      'Tigre' => [
+      [
+        'race-name' => 'Tigre',
         'race-id' => '02'
       ],
-      'Jaguard' => [
+      [
+        'race-name' => 'Jaguar',
         'race-id' => '03'
       ],
     ]
   ],
-  'Marais' => [
-    'id' => '3',
-    'races' => [
-      'Serpent' => [
+  [
+    'domaine-name' => 'Marais',
+    'domaine-id' => '3',
+    'domaine-races' => [
+      [
+        'race-name' => 'Serpent',
         'race-id' => '01'
       ],
-      'Crocodile' => [
+      [
+        'race-name' => 'Crocodile',
         'race-id' => '02'
       ],
     ]
   ]
-
 ];
 ?>
 
 <!-- Section SAVANE | Début -->
 <div class="container">
-  <?php foreach ($domaines as $domaineName => $domaineContent) { ?>
-    <section id="<?= strtolower($domaineName) ?>" class="section-domaines <?php if ($domaines['Savane'] !== $domaineContent) { ?>d-none<?php } ?>">
+  <?php foreach ($domaines as $domaineIndex => $domaine) { ?>
+    <section id="<?= strtolower($domaine['domaine-name']) ?>" class="section-domaines <?php if ($domaines[0] !== $domaine) { ?>d-none<?php } ?>">
       <div class="container-sm">
         <p>
-          <span class="text-primary me-2">#</span><?= $domaineName ?>
+          <span class="text-primary me-2">#</span><?= $domaine['domaine-name'] ?>
         </p>
       </div>
       <div class="row mb-3">
-        <?php foreach ($domaineContent['races'] as $raceName => $raceContent) { ?>
-
-          <div id="carouselAn<?= $raceContent['race-id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
+        <?php foreach ($domaine['domaine-races'] as $raceIndex => $race) { ?>
+          <div id="carouselAn<?= $race['race-id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
             <div class="carousel-inner py-3">
               <div class="carousel-item active border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc01.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc01.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <h5 class="card-title">Prénom de l'animal 1</h5>
                   <p class="card-text">
-                    Prénom de l'animal 1 <br>
-                    Âge de l'animal 1 <br>
-                    Poids de l'animal 1 <br>
-                    Habitat de l'animal 1
+                    <?= $race['race-name'] ?> [<?= $domaine['domaine-name'] ?>]
                   </p>
+                  <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#<?= $race['race-name'] ?>-1">
+                    Détails
+                  </button>
+                  <!-- Modale Fiche Animal 1 | Début -->
+                  <div class="modal fade" id="<?= $race['race-name'] ?>-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 1</h5>
+                        </div>
+                        <div class="modal-body">
+                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc01.webp" class="d-block w-100" alt="...">
+                          <p class="card-text mt-2">
+                            <br>
+                            Âge de l'animal 1 <br>
+                            Poids de l'animal 1 <br>
+                            Etat de l'animal 1 <br>
+                            Nourriture proposée 1 <br>
+                            Grammage de la nourriture 1 <br>
+                            Dernière visite du vétérinaire 1 <br>
+                            Race animal 1, Habitat de l'animal 1
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary-color" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modale Fiche Animal 1 | Fin -->
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc02.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc02.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <h5 class="card-title">Prénom de l'animal 2</h5>
                   <p class="card-text">
-                    Prénom de l'animal 2 <br>
-                    Âge de l'animal 2 <br>
-                    Poids de l'animal 2 <br>
-                    Habitat de l'animal 2
+                    <?= $race['race-name'] ?> [<?= $domaine['domaine-name'] ?>]
                   </p>
+                  <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#<?= $race['race-name'] ?>-2">
+                    Détails
+                  </button>
+                  <!-- Modale Fiche Animal 2 | Début -->
+                  <div class="modal fade" id="<?= $race['race-name'] ?>-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 2</h5>
+                        </div>
+                        <div class="modal-body">
+                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc02.webp" class="d-block w-100" alt="...">
+                          <p class="card-text mt-2">
+                            <br>
+                            Âge de l'animal 2 <br>
+                            Poids de l'animal 2 <br>
+                            Etat de l'animal 2 <br>
+                            Nourriture proposée 2 <br>
+                            Grammage de la nourriture 2 <br>
+                            Dernière visite du vétérinaire 2 <br>
+                            Race animal 2, Habitat de l'animal 2
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary-color" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modale Fiche Animal 2 | Fin -->
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc03.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc03.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <h5 class="card-title">Prénom de l'animal 3</h5>
                   <p class="card-text">
-                    Prénom de l'animal 3 <br>
-                    Âge de l'animal 3 <br>
-                    Poids de l'animal 3 <br>
-                    Habitat de l'animal 3
+                    <?= $race['race-name'] ?> [<?= $domaine['domaine-name'] ?>]
                   </p>
+                  <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#<?= $race['race-name'] ?>-3">
+                    Détails
+                  </button>
+                  <!-- Modale Fiche Animal 3 | Début -->
+                  <div class="modal fade" id="<?= $race['race-name'] ?>-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 3</h5>
+                        </div>
+                        <div class="modal-body">
+                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc03.webp" class="d-block w-100" alt="...">
+                          <p class="card-text mt-2">
+                            <br>
+                            Âge de l'animal 3 <br>
+                            Poids de l'animal 3 <br>
+                            Etat de l'animal 3 <br>
+                            Nourriture proposée 3 <br>
+                            Grammage de la nourriture 3 <br>
+                            Dernière visite du vétérinaire 3 <br>
+                            Race animal 3, Habitat de l'animal 3
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary-color" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modale Fiche Animal 3 | Fin -->
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc04.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc04.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <h5 class="card-title">Prénom de l'animal 4</h5>
                   <p class="card-text">
-                    Prénom de l'animal 4 <br>
-                    Âge de l'animal 4 <br>
-                    Poids de l'animal 4 <br>
-                    Habitat de l'animal 4
+                    <?= $race['race-name'] ?> [<?= $domaine['domaine-name'] ?>]
                   </p>
+                  <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#<?= $race['race-name'] ?>-4">
+                    Détails
+                  </button>
+                  <!-- Modale Fiche Animal 4 | Début -->
+                  <div class="modal fade" id="<?= $race['race-name'] ?>-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 4</h5>
+                        </div>
+                        <div class="modal-body">
+                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc04.webp" class="d-block w-100" alt="...">
+                          <p class="card-text mt-2">
+                            <br>
+                            Âge de l'animal 4 <br>
+                            Poids de l'animal 4 <br>
+                            Etat de l'animal 4 <br>
+                            Nourriture proposée 4 <br>
+                            Grammage de la nourriture 4 <br>
+                            Dernière visite du vétérinaire 4 <br>
+                            Race animal 4, Habitat de l'animal 4
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary-color" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modale Fiche Animal 4 | Fin -->
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaineName) ?>/d<?= $domaineContent['id'] ?>-an<?= $raceContent['race-id'] ?>-pc05.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc05.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $raceName ?></h5>
+                  <h5 class="card-title">Prénom de l'animal 5</h5>
                   <p class="card-text">
-                    Prénom de l'animal 5 <br>
-                    Âge de l'animal 5 <br>
-                    Poids de l'animal 5 <br>
-                    Habitat de l'animal 5
+                    <?= $race['race-name'] ?> [<?= $domaine['domaine-name'] ?>]
                   </p>
+                  <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#<?= $race['race-name'] ?>-5">
+                    Détails
+                  </button>
+                  <!-- Modale Fiche Animal 5 | Début -->
+                  <div class="modal fade" id="<?= $race['race-name'] ?>-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 5</h5>
+                        </div>
+                        <div class="modal-body">
+                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc05.webp" class="d-block w-100" alt="...">
+                          <p class="card-text mt-2">
+                            <br>
+                            Âge de l'animal 5 <br>
+                            Poids de l'animal 5 <br>
+                            Etat de l'animal 5 <br>
+                            Nourriture proposée 5 <br>
+                            Grammage de la nourriture 5 <br>
+                            Dernière visite du vétérinaire 5 <br>
+                            Race animal 5, Habitat de l'animal 5
+                          </p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary-color" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modale Fiche Animal 5 | Fin -->
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAn<?= $raceContent['race-id'] ?>" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAn<?= $race['race-id'] ?>" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Précédent</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselAn<?= $raceContent['race-id'] ?>" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAn<?= $race['race-id'] ?>" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Suivant</span>
             </button>
@@ -236,4 +384,5 @@ $domaines = [
     </section>
   <?php } ?>
 </div>
+
 <!-- Section SAVANE | Fin -->
