@@ -24,6 +24,7 @@
   <!-- Template Stylesheet -->
   <link href="assets/css/arcadia.css" rel="stylesheet" />
   <link href="assets/css/animaux.css" rel="stylesheet" />
+  <link href="assets/css/memory-game.css" rel="stylesheet" />
   <title>Bienvenue dans l'univers d'Arcadia</title>
 </head>
 

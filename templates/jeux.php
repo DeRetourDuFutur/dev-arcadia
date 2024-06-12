@@ -11,8 +11,10 @@
       <section class="memory">
         <div class="jeux-title">Arcadia Memory</div>
         <div class="jeux-subtitle">Cliquez sur les cartes pour les retourner et retrouver les paires !</div>
-        <div></div>
-        <div id="game-memory"></div>
+        <div id="gameMemory"></div>
+        <div id="win-game" class="d-none text-center">Bravo, vous avez gagné.<br>
+          <button id="btn-restart" class="btn btn-primary-color">Rejouer</button>
+        </div>
       </section>
     </div>
   </div>

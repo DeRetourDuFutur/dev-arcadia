@@ -48,10 +48,10 @@
       <div class="col-lg-3 col-md-6 order-sm-4" id="newsletter">
         <h5 class="text-light mb-4">Newsletter</h5>
         <p>Inscrivez-vous pour recevoir les actualités de votre parc Arcadia !</p>
-        <div class="position-relative mx-auto" style="max-width: 400px">
-          <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email" />
+        <form>
+          <input type="text" placeholder="Votre email" id="email" autocomplete="off" />
           <button type="button" class="btn btn-primary-color">Inscription</button>
-        </div>
+        </form>
         <!-- Newsletter | Fin -->
         <!-- Copyright | Début -->
         <div class="copyright">
@@ -84,17 +84,22 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/lib/wow/wow.min.js"></script>
-<script src="assets/lib/easing/easing.min.js"></script>
-<script src="assets/lib/waypoints/waypoints.min.js"></script>
 <script src="assets/lib/counterup/counterup.min.js"></script>
 <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+<!--
+<script src="assets/lib/easing/easing.min.js"></script>
+<script src="assets/lib/waypoints/waypoints.min.js"></script>
 <script src="assets/lib/lightbox/js/lightbox.min.js"></script>
+-->
 <!-- Template Javascript -->
 <script type="text/javascript" src="assets/js/main.js"></script>
 
-<!-- Charger le JS animaux.js seulement si la page animaux.php est affichée -->
+<!-- Charger le JS concerné seulement si la page php relative est affichée -->
 <?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/animaux') { ?>
   <script type="text/javascript" src="assets/js/animaux.js"></script>
+<?php } ?>
+<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/jeux') { ?>
+  <script type="text/javascript" src="assets/js/memory-game.js"></script>
 <?php } ?>
 </body>
 
