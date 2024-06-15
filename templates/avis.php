@@ -16,16 +16,16 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="" method="POST">
               <div class="mb-3">
                 <label for="votrePseudo" class="form-label">Votre pseudo</label>
-                <input type="text" class="form-control" id="votrePseudo">
+                <input type="text" class="form-control" id="votrePseudo" placeholder="Votre pseudo/nom ici">
               </div>
-              <div class="form-floating">
-                <textarea class="form-control" placeholder="Laissez votre avis" id="floatingTextarea"></textarea>
-                <label for="floatingTextarea">Votre avis</label>
+              <div class="mb-3">
+                <label for="votreAvis" class="form-label">Votre avis</label>
+                <textarea name="textarea" rows="8" cols="56" id="votreAvis" placeholder="Votre avis ici"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary-color mt-3">Envoyer</button>
+              <button type="submit" name="post" value="post" class="btn btn-primary-color mt-3">Envoyer</button>
             </form>
           </div>
         </div>

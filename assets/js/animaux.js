@@ -15,8 +15,8 @@ let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(
 let timeDom = document.querySelector(".slider-animals .time-slider-animals");
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 3000;
-let timeAutoNext = 6000;
+let timeRunning = 2500;
+let timeAutoNext = 5000;
 
 nextDom.onclick = function () {
   showSlider("next");

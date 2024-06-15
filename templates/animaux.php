@@ -18,8 +18,8 @@
           <div class="des-slider-animals">
             Découvrez notre domaine entièrement dédié à la faune et la flore de la Savane
           </div>
-          <div class="buttons-slider-animals">
-            <a href="#savane" data-domaine="savane">Explorer</a>
+          <div class="btn btn-primary-color mt-3">
+            <a href="#savane" data-domaine="savane" class="text-white">EXPLORER</a>
           </div>
         </div>
       </div>
@@ -33,8 +33,8 @@
           <div class="des-slider-animals">
             Découvrez notre domaine entièrement dédié à la faune et la flore de la Jungle
           </div>
-          <div class="buttons-slider-animals">
-            <a href="#jungle" data-domaine="jungle">Explorer</a>
+          <div class="btn btn-primary-color mt-3">
+            <a href="#jungle" data-domaine="jungle" class="text-white">EXPLORER</a>
           </div>
         </div>
       </div>
@@ -47,8 +47,8 @@
           <div class="topic-slider-animals">MARAIS</div>
           <div class="des-slider-animals">
             Découvrez notre domaine entièrement dédié à la faune et la flore des Marais
-            <div class="buttons-slider-animals">
-              <a href="#marais" data-domaine="marais">Explorer</a>
+            <div class="btn btn-primary-color mt-3">
+              <a href="#marais" data-domaine="marais" class="text-white">EXPLORER</a>
             </div>
           </div>
         </div>

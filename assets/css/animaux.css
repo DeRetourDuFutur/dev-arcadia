@@ -1,7 +1,9 @@
 /*** Slider Animaux | Début ***/
+
+/* Largeur et hauteur du slider */
 .slider-animals {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   overflow: hidden;
   position: relative;
 }
@@ -15,7 +17,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(50%);
+  filter: brightness(60%);
 }
 .slider-animals
   .list-slider-animals
@@ -65,7 +67,7 @@
   gap: 5px;
   margin-top: 20px;
 }
-.slider-animals
+/* .slider-animals
   .list-slider-animals
   .item-slider-animals
   .buttons-slider-animals
@@ -84,7 +86,7 @@
   background-color: transparent;
   border: 1px solid #fff;
   color: #eee;
-}
+} */
 
 .thumbnail-slider-animals {
   position: absolute;
@@ -106,9 +108,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 20px 0 20px 0;
 }
 .thumbnail-slider-animals .item-slider-animals .content-slider-animals {
+  font-size: 20px;
   color: #fff;
   position: absolute;
   bottom: 10px;
@@ -128,20 +131,20 @@
 
 .arrows-slider-animals {
   position: absolute;
-  top: 80%;
+  top: 70%;
   right: 70%;
   z-index: 100;
   width: 100px;
   max-width: 40%;
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   text-align: center;
 }
 .arrows-slider-animals button {
   width: 70px;
   height: 70px;
-  border-radius: 50%;
+  border-radius: 20%;
   background-color: var(--bs-primary);
   border: none;
   color: #fff;
@@ -151,22 +154,11 @@
   transition: 0.3s;
 }
 
-/* .arrows-slider-animals .btn-next {
-  display: none;
-} */
-
 .arrows-slider-animals .btn-prev {
   margin-left: -70px;
 }
 
 @media (max-width: 767.98px) {
-  /* .thumbnail-slider-animals .item-slider-animals {
-    display: none;
-  } */
-  /* .arrows-slider-animals  {
-    display: none;
-  } */
-
   .prev-hippo {
     font-size: 35px;
   }
@@ -229,6 +221,7 @@
   opacity: 0;
   animation: showContent 0.5s 1s linear 1 forwards;
 }
+
 @keyframes showContent {
   to {
     transform: translateY(0px);
@@ -365,10 +358,7 @@
   opacity: 0;
   animation: showThumbnail 0.5s linear 1 forwards;
 }
-/* .slider-animals.next .arrows-slider-animals button,
-.slider-animals.prev .arrows-slider-animals button {
-  pointer-events: none;
-} */
+
 .slider-animals.prev
   .list-slider-animals
   .item-slider-animals:nth-child(2)
@@ -420,13 +410,6 @@
   }
 }
 /*** Slider Animaux | Fin ***/
-
-/* Animaux | Début  */
-/* .animals-banner {
-  background: url(../img/animals/bg-animals.jpg) center center no-repeat;
-  background-size: cover;
-} */
-/* Animaux | Fin  */
 
 .border-fiche-animal {
   border-top-left-radius: 25px;
