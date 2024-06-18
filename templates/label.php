@@ -39,7 +39,7 @@
   </p>
   <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
     <div class="img-border">
-      <img class="img-fluid" src="assets/img/label/eco-label.jpg" alt="eu - Ecolabel" />
+      <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/label/eco-label.jpg" alt="eu - Ecolabel" />
     </div>
   </div>
   <a class="btn btn-primary-color mt-5" href="<?= BASE_URL . '/animaux' ?>">Nos animaux</a>

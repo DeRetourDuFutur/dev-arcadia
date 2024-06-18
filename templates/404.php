@@ -8,7 +8,7 @@
         <span class="mb-4">Ce code signifie que la page n'existe pas.</span>
         <br>
         Vous vous êtes donc égaré(e) ? <br>
-        <img src="assets/img/home/404.jpg" style="width:170px" alt="Mauvaise direction">
+        <img src="<?= BASE_URL ?>/public/assets/img/home/404.jpg" style="width:170px" alt="Mauvaise direction">
         <p class="mb-4">
           <br>
 

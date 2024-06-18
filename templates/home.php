@@ -32,7 +32,7 @@ require_once('inc/hero.php');
   <br>
   <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
     <div class="img-border">
-      <img class="img-fluid" src="assets/img/home/zoo-sky.jpg" alt="Zoo Arcadia" />
+      <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home/zoo-sky.jpg" alt="Zoo Arcadia" />
     </div>
   </div>
   <br>

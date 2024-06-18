@@ -11,12 +11,12 @@
     <div class="list-slider-animals">
       <!-- Slider Savane | Début -->
       <div class="item-slider-animals">
-        <img src="assets/img/domaines/d1-cover-slider.webp" alt="La Savane" />
+        <img src="<?= BASE_URL ?>/public/assets/img/domaines/d1-cover-slider.webp" alt="La Savane" />
         <div class="content-slider-animals">
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">SAVANE</div>
           <div class="des-slider-animals">
-            Découvrez notre domaine entièrement dédié à la faune et la flore de la Savane
+            Découvrez les animaux de la Savane
           </div>
           <div class="btn btn-primary-color mt-3">
             <a href="#savane" data-domaine="savane" class="text-white">EXPLORER</a>
@@ -26,52 +26,54 @@
       <!-- Slider Savane | Fin -->
       <!-- Slider Jungle | Début -->
       <div class="item-slider-animals">
-        <img src="assets/img/domaines/d2-cover-slider.webp" alt="La Jungle" />
+        <img src="<?= BASE_URL ?>/public/assets/img/domaines/d2-cover-slider.webp" alt="La Jungle" />
         <div class="content-slider-animals">
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">JUNGLE</div>
           <div class="des-slider-animals">
-            Découvrez notre domaine entièrement dédié à la faune et la flore de la Jungle
+            Découvrez les animaux de la Jungle
           </div>
           <div class="btn btn-primary-color mt-3">
             <a href="#jungle" data-domaine="jungle" class="text-white">EXPLORER</a>
           </div>
         </div>
       </div>
+
       <!-- Slider Jungle | Fin -->
       <!-- Slider Marais | Début -->
       <div class="item-slider-animals">
-        <img src="assets/img/domaines/d3-cover-slider.webp" alt="Les Marais" />
+        <img src="<?= BASE_URL ?>/public/assets/img/domaines/d3-cover-slider.webp" alt="Les Marais" />
         <div class="content-slider-animals">
           <div class="author-slider-animals">ARCADIA</div>
           <div class="topic-slider-animals">MARAIS</div>
           <div class="des-slider-animals">
-            Découvrez notre domaine entièrement dédié à la faune et la flore des Marais
-            <div class="btn btn-primary-color mt-3">
-              <a href="#marais" data-domaine="marais" class="text-white">EXPLORER</a>
-            </div>
+            Découvrez les animaux des Marais
+          </div>
+          <div class="btn btn-primary-color mt-3">
+            <a href="#marais" data-domaine="marais" class="text-white">EXPLORER</a>
           </div>
         </div>
       </div>
+
       <!-- Slider Marais | Fin -->
     </div>
     <!-- Liste Items | Fin -->
     <!-- Liste Thumbnail | Début -->
     <div class="thumbnail-slider-animals">
       <a href="#savane" data-domaine="savane" class="item-slider-animals">
-        <img src="assets/img/domaines/d1-cover-card.webp" alt="La Savane" />
+        <img src="<?= BASE_URL ?>/public/assets/img/domaines/d1-cover-card.webp" alt="La Savane" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Savane</div>
         </div>
       </a>
       <a href="#jungle" data-domaine="jungle" class="item-slider-animals">
-        <img src="assets/img/domaines/d2-cover-card.webp" alt="La Jungle" />
+        <img src="<?= BASE_URL ?>/public/assets/img/domaines/d2-cover-card.webp" alt="La Jungle" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Jungle</div>
         </div>
       </a>
       <a href="#marais" data-domaine="marais" class="item-slider-animals">
-        <img src="assets/img/domaines/d3-cover-card.webp" alt="Les Marais" />
+        <img src="<?= BASE_URL ?>/public/assets/img/domaines/d3-cover-card.webp" alt="Les Marais" />
         <div class="content-slider-animals">
           <div class="title-slider-animals">Marais</div>
         </div>
@@ -174,7 +176,7 @@ $domaines = [
           <div id="carouselAn<?= $race['race-id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
             <div class="carousel-inner py-3">
               <div class="carousel-item active border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc01.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc01.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Prénom de l'animal 1</h5>
                   <p class="card-text">
@@ -191,7 +193,7 @@ $domaines = [
                           <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 1</h5>
                         </div>
                         <div class="modal-body">
-                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc01.webp" class="d-block w-100" alt="...">
+                          <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc01.webp" class="d-block w-100" alt="...">
                           <p class="card-text mt-2">
                             <br>
                             Âge de l'animal 1 <br>
@@ -213,7 +215,7 @@ $domaines = [
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc02.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc02.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Prénom de l'animal 2</h5>
                   <p class="card-text">
@@ -230,7 +232,7 @@ $domaines = [
                           <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 2</h5>
                         </div>
                         <div class="modal-body">
-                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc02.webp" class="d-block w-100" alt="...">
+                          <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc02.webp" class="d-block w-100" alt="...">
                           <p class="card-text mt-2">
                             <br>
                             Âge de l'animal 2 <br>
@@ -252,7 +254,7 @@ $domaines = [
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc03.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc03.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Prénom de l'animal 3</h5>
                   <p class="card-text">
@@ -269,7 +271,7 @@ $domaines = [
                           <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 3</h5>
                         </div>
                         <div class="modal-body">
-                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc03.webp" class="d-block w-100" alt="...">
+                          <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc03.webp" class="d-block w-100" alt="...">
                           <p class="card-text mt-2">
                             <br>
                             Âge de l'animal 3 <br>
@@ -291,7 +293,7 @@ $domaines = [
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc04.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc04.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Prénom de l'animal 4</h5>
                   <p class="card-text">
@@ -308,7 +310,7 @@ $domaines = [
                           <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 4</h5>
                         </div>
                         <div class="modal-body">
-                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc04.webp" class="d-block w-100" alt="...">
+                          <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc04.webp" class="d-block w-100" alt="...">
                           <p class="card-text mt-2">
                             <br>
                             Âge de l'animal 4 <br>
@@ -330,7 +332,7 @@ $domaines = [
                 </div>
               </div>
               <div class="carousel-item border-fiche-animal" data-bs-interval="10000">
-                <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc05.webp" class="d-block w-100 img-fiche-animal" alt="...">
+                <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc05.webp" class="d-block w-100 img-fiche-animal" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Prénom de l'animal 5</h5>
                   <p class="card-text">
@@ -347,7 +349,7 @@ $domaines = [
                           <h5 class="modal-title fs-5" id="exampleModalLabel">Prénom de l'animal 5</h5>
                         </div>
                         <div class="modal-body">
-                          <img src="assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc05.webp" class="d-block w-100" alt="...">
+                          <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc05.webp" class="d-block w-100" alt="...">
                           <p class="card-text mt-2">
                             <br>
                             Âge de l'animal 5 <br>

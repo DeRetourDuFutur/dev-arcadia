@@ -23,7 +23,7 @@
               </div>
               <div class="mb-3">
                 <label for="votreAvis" class="form-label">Votre avis</label>
-                <textarea name="textarea" rows="8" cols="56" id="votreAvis" placeholder="Votre avis ici"></textarea>
+                <textarea name="textarea" rows="8" cols="55" id="votreAvis" placeholder="Votre avis ici"></textarea>
               </div>
               <button type="submit" name="post" value="post" class="btn btn-primary-color mt-3">Envoyer</button>
             </form>
@@ -33,7 +33,7 @@
     </div>
     <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
       <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-1.jpg" style="width: 100px; height: 100px" />
+        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="<?= BASE_URL ?>/public/assets/img/livre/testimonial-1.jpg" style="width: 100px; height: 100px" />
         <div class="testimonial-text rounded text-center p-4">
           <p>
             Une expérience inoubliable ! Arcadia nous offre une atmoshpère magique, situation géographique oblige, et le temps d'une journée, nous fait voyager dans un monde extraordinaire. A faire en famille, sans modération !
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-2.jpg" style="width: 100px; height: 100px" />
+        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="<?= BASE_URL ?>/public/assets/img/livre/testimonial-2.jpg" style="width: 100px; height: 100px" />
         <div class="testimonial-text rounded text-center p-4">
           <p>
             J'y suis allé avec mes amis pour une journée de détente et de découverte. Nous avons été agréablement surpris par la qualité des installations et la diversité des animaux. Nous avons passé un excellent moment !
@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-3.jpg" style="width: 100px; height: 100px" />
+        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="<?= BASE_URL ?>/public/assets/img/livre/testimonial-3.jpg" style="width: 100px; height: 100px" />
         <div class="testimonial-text rounded text-center p-4">
           <p>
             Je connais cet endroit depuis des années et je n'ai jamais été déçu. Les animaux sont bien traités et les installations sont toujours propres. Je recommande la visite guidée pour une expérience encore plus immersive.
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="testimonial-item text-center">
-        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/livre/testimonial-4.jpg" style="width: 100px; height: 100px" />
+        <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="<?= BASE_URL ?>/public/assets/img/livre/testimonial-4.jpg" style="width: 100px; height: 100px" />
         <div class="testimonial-text rounded text-center p-4">
           <p>
             Une journée très agréable placée sous le signe de la découverte et du partage. Ma fille a adoré et moi aussi. Nous reviendrons, c'est sûr ! Mention spéciale à la mascotte du parc, qui adore les câlins !

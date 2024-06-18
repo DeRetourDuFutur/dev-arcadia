@@ -1,6 +1,5 @@
 /.htaccess-racine-techno2main
 /.todo
 /todos.md
-/assets/img/domaines/nomenclature_images_domaines.txt
-/assets/img/domaines/Sources Originales
-/assets/scss
+/app
+/public/assets/img/domaines/Sources Originales
