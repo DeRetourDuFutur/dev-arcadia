@@ -7,6 +7,11 @@
         <h5 class="text-light mb-4">Informations pratiques</h5>
         <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/informations' ?>">Préparez votre visite</a>
         <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/services' ?>">Nos Services</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/avis' ?>">Vos Avis</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/contact' ?>">Contactez-nous</a>
+        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/label' ?>">Eco Label 2024</a>
+
+
       </div>
       <!-- Informations | Fin -->
       <!-- Liens | Début -->

@@ -30,6 +30,9 @@
         <li class="nav-item">
           <a href="<?= BASE_URL . '/informations' ?>" class="nav-link">Informations</a>
         </li>
+        <li class="nav-item">
+          <a href="<?= BASE_URL . '/contact' ?>" class="nav-link">Contactez-nous</a>
+        </li>
       </ul>
     </div>
   </div>

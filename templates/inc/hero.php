@@ -65,34 +65,31 @@
         </button>
       </div>
       <!-- Carousel Vidéo | Début -->
-      <div class="modal-body">
-        <div class="owl-carousel-item">
-          <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/girafes.mp4" allowfullscreen></iframe>
-          </div>
+      <div class="carousel video" id="carouselExample">
+        <div class="carousel-item active ratio ratio-16x9">
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/girafes.mp4" autoplay allowfullscreen></iframe>
         </div>
-        <div class="owl-carousel-item">
-          <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/lions.mp4" allowfullscreen></iframe>
-          </div>
+        <div class="carousel-item ratio ratio-16x9">
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/suricates.mp4" autoplay allowfullscreen></iframe>
         </div>
-        <div class="owl-carousel-item">
-          <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/gorille.mp4" allowfullscreen></iframe>
-          </div>
+        <div class="carousel-item ratio ratio-16x9">
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/lions.mp4" autoplay allowfullscreen></iframe>
         </div>
-        <div class="owl-carousel-item">
-          <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/suricates.mp4" allowfullscreen></iframe>
-          </div>
+        <div class="carousel-item ratio ratio-16x9">
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/gorille.mp4" autoplay allowfullscreen></iframe>
         </div>
-        <div class="owl-carousel-item">
-          <div class="ratio ratio-16x9">
-            <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/ours.mp4" allowfullscreen></iframe>
-          </div>
+        <div class="carousel-item ratio ratio-16x9">
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/ours.mp4" autoplay allowfullscreen></iframe>
         </div>
-      </div>
-      <!-- Carousel Vidéo | Fin -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Suivant</span>
+        </button>
+      </div><!-- Carousel Vidéo | Fin -->
     </div>
   </div>
 </div>
