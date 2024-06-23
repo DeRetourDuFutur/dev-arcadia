@@ -4,6 +4,16 @@
 <?php $db = db_connect(); ?>
 
 <?php
+require_once '../vendor/autoload.php';
+
+// Config pour BDD non relationnelle (SleekDB)
+use SleekDB\Store;
+
+$statsAnimauxDb = new Store("statsAnimaux", '../databases', ["timeout" => false]);
+$statsAnimauxDb->insert(['animaux' => 'chien']);
+?>
+
+<?php
 require '../templates/inc/header.php';
 ?>
 
