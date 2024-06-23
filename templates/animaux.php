@@ -202,7 +202,7 @@ $domaines = [
       </div>
       <div class="row mb-3">
         <?php foreach ($domaine['domaine-races'] as $raceIndex => $race) { ?>
-          <div id="carouselAn<?= $race['race-id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
+          <div id="carousel<?= $domaine['domaine-name'] ?>An<?= $race['race-id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
             <div class="carousel-inner py-3">
               <div class="carousel-item active border-fiche-animal" data-bs-interval="10000">
                 <img src="<?= BASE_URL ?>/public/assets/img/domaines/<?= strtolower($domaine['domaine-name']) ?>/d<?= $domaine['domaine-id'] ?>-an<?= $race['race-id'] ?>-pc01.webp" class="d-block w-100 img-fiche-animal" alt="...">
@@ -400,11 +400,11 @@ $domaines = [
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAn<?= $race['race-id'] ?>" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?= $domaine['domaine-name'] ?>An<?= $race['race-id'] ?>" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Précédent</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselAn<?= $race['race-id'] ?>" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel<?= $domaine['domaine-name'] ?>An<?= $race['race-id'] ?>" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Suivant</span>
             </button>

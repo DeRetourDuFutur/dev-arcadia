@@ -1,5 +1,5 @@
 <?php
-require_once('process_avis.php');
+require_once('../app/process_avis.php');
 ?>
 
 <!-- Section Témoignages | Début -->

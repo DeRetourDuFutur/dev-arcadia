@@ -67,19 +67,19 @@
       <!-- Carousel Vidéo | Début -->
       <div class="carousel video" id="carouselExample">
         <div class="carousel-item active ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/girafes.mp4" autoplay allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/girafes.mp4" autoplay loop allowfullscreen></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/suricates.mp4" autoplay allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/suricates.mp4" autoplay loop allowfullscreen></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/lions.mp4" autoplay allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/lions.mp4" autoplay loop allowfullscreen></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/gorille.mp4" autoplay allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/gorille.mp4" autoplay loop allowfullscreen></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/ours.mp4" autoplay allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/ours.mp4" autoplay loop allowfullscreen></iframe>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

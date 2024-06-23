@@ -20,16 +20,20 @@ if (isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) &&
   $form_submited = true;
 }
 
+$db = null;
+$stmt = null;
+
 // Envoyer l'email
 if ($form_submited) {
   $to = 'avis-arcadia@techno2main.fr';
+  // $to = 'antonymasson.dev@gmail.com';
   $subject = 'Nouveau mail via le formulaire de contact Arcadia';
   $message = "Prénom: $prenom\n";
   $message .= "NOM: $nom\n";
   $message .= "Email: $email\n";
   $message .= "Message: $texte\n";
 
-  $headers = "From: contact@techno2main.fr\r\n";
+  $headers = "From: Arcadia <contact@techno2main.fr>\r\n";
   $headers .= "Reply-To: $email\r\n";
 
   if (mail($to, $subject, $message, $headers)) {
@@ -38,6 +42,3 @@ if ($form_submited) {
     echo "Le message n'a pas pu être envoyé, désolé !";
   }
 }
-
-$db = null;
-$stmt = null;

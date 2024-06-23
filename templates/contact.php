@@ -1,5 +1,5 @@
 <?php
-require_once('process_contact.php');
+require_once('../app/process_contact.php');
 ?>
 
 <!-- Section CONTACT | Début -->
