@@ -7,7 +7,7 @@ if (isset($_POST['pseudo']) && isset($_POST['note']) && isset($_POST['commentair
   $note = $_POST['note'];
   $commentaire = $_POST['commentaire'];
 
-  $sql = "INSERT INTO commentaires (pseudo, note, commentaire, statut) VALUES (:pseudo, :note, :commentaire, 0)";
+  $sql = "INSERT INTO commentaires (pseudo, note, commentaire, statut) VALUES (:pseudo, :note, :commentaire, 1)";
   $stmt = $db->prepare($sql);
   $stmt->bindParam(':pseudo', $pseudo);
   $stmt->bindParam(':note', $note);

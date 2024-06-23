@@ -14,8 +14,8 @@ require_once('inc/hero.php');
     <br /><br />
     Depuis 1960, notre parc animalier s'engage à offrir un refuge à une multitude d'espèces animales, réparties aujourd'hui sur trois vastes domaines : <br>
   <ul>
-    <li><span class="text-primary"><b>La Savane,</b></span> où lions, girafes, zèbres et éléphants évoluent en liberté, vous transportant au cœur de l'Afrique sauvage dans toute sa splendeur.</li>
-    <li><span class="text-primary"><b>La Jungle,</b></span> où singes espiègles, jaguars puissants et serpents fascinants se cachent parmi la végétation dense.</li>
+    <li><span class="text-primary"><b>La Savane,</b></span> où Eléphants, Girafes, Léopards, Lions, Rhinocéros et Zèbres évoluent en liberté, vous transportant au cœur de l'Afrique sauvage dans toute sa splendeur.</li>
+    <li><span class="text-primary"><b>La Jungle,</b></span> où Gorilles, Tigres, Jaguars, Serpents et , se cachent parmi la végétation dense.</li>
     <li><span class="text-primary"><b>Les Marais,</b></span> où oiseaux aquatiques, aligators majestueux et grenouilles agiles rythment la vie paisible de ce sanctuaire humide.</li>
   </ul>
   <span class="text-primary"><b>Une invitation à un voyage extraordinaire</b></span>

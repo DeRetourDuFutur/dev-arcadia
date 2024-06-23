@@ -1,6 +1,3 @@
-<?php
-require_once('../config/db_config.php');
-?>
 <!-- Services | Début -->
 <div class="container-xxl py-5" id="services">
   <div class="container">

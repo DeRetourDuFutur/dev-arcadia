@@ -136,13 +136,26 @@ $domaines = [
         'race-id' => '01'
       ],
       [
-        'race-name' => 'Tigre',
+        'race-name' => 'Jaguar',
         'race-id' => '02'
       ],
       [
-        'race-name' => 'Jaguar',
+        'race-name' => 'Paresseux',
         'race-id' => '03'
       ],
+      [
+        'race-name' => 'Panthère',
+        'race-id' => '04'
+      ],
+      [
+        'race-name' => 'Perroquet',
+        'race-id' => '05'
+      ],
+      [
+        'race-name' => 'Singe',
+        'race-id' => '06'
+      ],
+
     ]
   ],
   [
@@ -150,12 +163,28 @@ $domaines = [
     'domaine-id' => '3',
     'domaine-races' => [
       [
-        'race-name' => 'Serpent',
+        'race-name' => 'Crocodile',
         'race-id' => '01'
       ],
       [
-        'race-name' => 'Crocodile',
+        'race-name' => 'Hippopotame',
         'race-id' => '02'
+      ],
+      [
+        'race-name' => 'Grenouille',
+        'race-id' => '03'
+      ],
+      [
+        'race-name' => 'Raton Laveur',
+        'race-id' => '04'
+      ],
+      [
+        'race-name' => 'Salamandre',
+        'race-id' => '05'
+      ],
+      [
+        'race-name' => 'Serpent',
+        'race-id' => '06'
       ],
     ]
   ]
