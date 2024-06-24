@@ -10,7 +10,7 @@ require_once '../vendor/autoload.php';
 use SleekDB\Store;
 
 $statsAnimauxDb = new Store("statsAnimaux", '../databases', ["timeout" => false]);
-$statsAnimauxDb->insert(['animaux' => 'chien']);
+// $statsAnimauxDb->insert(['animaux' => 'chien']);
 ?>
 
 <?php
