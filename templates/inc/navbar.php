@@ -5,7 +5,7 @@
       <span class="logo-arc">ARCADIA</span>
       <!-- <span class="logo-img"><img src="../../public/assets/img/home/logo-arcadia.webp" alt="Logo Arcadia" /></span> -->
       <span class="logo-img"><img src="<?= BASE_URL ?>/public/assets/img/home/logo-arcadia.webp" alt="Logo Arcadia" /></span>
-      <span class="logo-zoo"> ZOO<i class="fa-solid fa-paw fa-flip-horizontal text-primary pe-2"></i></span>
+      <span class="logo-zoo"> ZOO<i class="fa-solid fa-paw fa-flip-horizontal text-danger pe-2"></i></span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

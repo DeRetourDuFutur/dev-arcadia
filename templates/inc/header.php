@@ -25,12 +25,15 @@
   <link href="<?= BASE_URL ?>/public/assets/css/arcadia.css" rel="stylesheet" />
   <link href="<?= BASE_URL ?>/public/assets/css/animaux.css" rel="stylesheet" />
   <link href="<?= BASE_URL ?>/public/assets/css/memory-game.css" rel="stylesheet" />
+  <link href="<?= BASE_URL ?>/public/assets/css/rating.css" rel="stylesheet" />
+
   <title>Bienvenue dans l'univers d'Arcadia</title>
+
 </head>
 
 <body>
   <?php
   require_once('../templates/inc/topbar.php');
   require_once('../templates/inc/navbar.php');
-  require_once('../templates/inc/spinner.php');
+  // require_once('../templates/inc/spinner.php');
   ?>

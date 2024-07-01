@@ -190,7 +190,6 @@ $domaines = [
   ]
 ];
 ?>
-
 <!-- Section SAVANE | Début -->
 <div class="container">
   <?php foreach ($domaines as $domaineIndex => $domaine) { ?>

@@ -36,16 +36,14 @@
           (3ème arbre sur la droite et tout droit jusqu'au matin)
         </p>
         <p class="mb-2">
-          <i class="fa fa-phone-alt me-3"></i>+33 2 88 88 88 88
+          <a href="<?= BASE_URL . '/gestion-avis' ?>"><i class="fa fa-phone-alt me-3"></i></a>+33 2 88 88 88 88
         </p>
         <p class="mb-2">
-          <a href=""><i class="fa fa-envelope me-3"></a></i>contact@arcadia.com
+          <a href="<?= BASE_URL . '/gestion-services' ?>"><i class="fa fa-envelope me-3"></i></a>contact@arcadia.com
         </p>
         <div class="d-flex pt-2">
-          <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-twitter"></i></a>
           <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-facebook-f"></i></a>
           <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-youtube"></i></a>
-          <a class="btn-footer btn-footer-outline-light btn-footer-social" href=""><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
       <!-- Adresse | Fin -->

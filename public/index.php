@@ -32,6 +32,9 @@ $routes = [
   BASE_URL . '/process-avis' => '../templates/process_avis.php',
   BASE_URL . '/contact' => '../templates/contact.php',
   BASE_URL . '/process-contact' => '../templates/process_contact.php',
+  BASE_URL . '/gestion-services' => '../templates/admin/gestion_services.php',
+  BASE_URL . '/gestion-avis' => '../templates/admin/gestion_avis.php',
+
 
 ];
 
