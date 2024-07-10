@@ -3,7 +3,7 @@
 /* Largeur et hauteur du slider */
 .slider-animals {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   overflow: hidden;
   position: relative;
 }
@@ -31,7 +31,7 @@
   top: 10%;
   width: 1140px;
   max-width: 80%;
-  left: 50%;
+  left: 46%;
   transform: translateX(-50%);
   padding-right: 30%;
   color: #fff;
@@ -90,52 +90,53 @@
 .arrows-slider-animals {
   position: absolute;
   top: 70%;
-  right: 70%;
+  right: 73%;
   z-index: 100;
-  width: 100px;
-  max-width: 40%;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
   text-align: center;
 }
 .arrows-slider-animals button {
-  width: 70px;
-  height: 70px;
-  border-radius: 20%;
+  width: 90px;
+  height: 50px;
+  max-width: 40%;
   background-color: var(--bs-primary);
   border: none;
   color: #fff;
-  font-family: monospace;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
+  font-size: 35px;
 }
 
-/* Position des flêches (alignement avec les titres) */
 .arrows-slider-animals .btn-prev {
-  margin-left: -70px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  position: relative;
+}
+.arrows-slider-animals .btn-next {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: relative;
 }
 
 @media (max-width: 767.98px) {
-  .prev-hippo {
-    font-size: 35px;
-  }
-
-  .next-hippo {
-    font-size: 35px;
+  .arrows-slider-animals {
+    position: absolute;
+    top: 75%;
+    right: 65%;
   }
 
   .arrows-slider-animals .btn-prev {
-    margin-left: 20px;
+    font-size: 35px;
     width: 40px;
     height: 40px;
+    position: relative;
   }
 
   .arrows-slider-animals .btn-next {
-    margin-left: 20px;
+    font-size: 35px;
     width: 40px;
     height: 40px;
+    position: relative;
   }
 }
 

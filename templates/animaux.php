@@ -7,6 +7,11 @@
     <h2>Explorez nos <span class="text-primary">3 domaines</span></h2>
   </div>
   <div class="slider-animals">
+    <!-- Boutons NEXT / PREV -->
+    <div class="arrows-slider-animals">
+      <button id="prev" class="btn-prev"><i class="fa-solid fa-hippo fa-flip-horizontal prev-hippo"></i></button>
+      <button id="next" class="btn-next"><i class="fa-solid fa-hippo next-hippo"></i></button>
+    </div>
     <!-- Liste Items | Début -->
     <div class="list-slider-animals">
       <!-- Slider Savane | Début -->
@@ -80,11 +85,7 @@
       </a>
     </div>
     <!-- Liste Thumbnail | Fin -->
-    <!-- Boutons NEXT / PREV -->
-    <div class="arrows-slider-animals">
-      <button id="prev" class="btn-prev"><i class="fa-solid fa-hippo fa-flip-horizontal prev-hippo"></i></button>
-      <button id="next" class="btn-next"><i class="fa-solid fa-hippo next-hippo"></i></button>
-    </div>
+
     <!-- Time Running -->
     <div class="time-slider-animals"></div>
   </div>

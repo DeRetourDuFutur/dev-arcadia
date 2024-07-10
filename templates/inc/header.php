@@ -17,23 +17,23 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
   <!-- Libraries Stylesheet -->
   <link href="<?= BASE_URL ?>/lib/animate/animate.min.css" rel="stylesheet" />
-  <link href="<?= BASE_URL ?>/lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
   <link href="<?= BASE_URL ?>/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
   <!-- Customized Bootstrap Stylesheet -->
   <link href="<?= BASE_URL ?>/public/assets/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Template Stylesheet -->
   <link href="<?= BASE_URL ?>/public/assets/css/arcadia.css" rel="stylesheet" />
+  <link href="<?= BASE_URL ?>/public/assets/css/nav_admin.css" rel="stylesheet" />
   <link href="<?= BASE_URL ?>/public/assets/css/animaux.css" rel="stylesheet" />
   <link href="<?= BASE_URL ?>/public/assets/css/memory-game.css" rel="stylesheet" />
   <link href="<?= BASE_URL ?>/public/assets/css/rating.css" rel="stylesheet" />
-
   <title>Bienvenue dans l'univers d'Arcadia</title>
-
 </head>
 
 <body>
   <?php
-  require_once('../templates/inc/topbar.php');
-  require_once('../templates/inc/navbar.php');
-  // require_once('../templates/inc/spinner.php');
+  require_once('spinner.php');
+  if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false) {
+    require_once('topbar.php');
+  }
+  require_once('navbar.php');
   ?>

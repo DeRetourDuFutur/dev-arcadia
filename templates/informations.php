@@ -59,8 +59,11 @@
     <li>Vous trouverez dans nos 3 boutiques une large sélection de souvenirs, peluches, livres et autres articles liés au monde animal.</li>
   </ul>
   <span class="text-primary">Accessibilité :</span><br>
-  Le Zoo est accessible aux personnes à mobilité réduite. Des poussettes et des fauteuils roulants sont disponibles à la location.<br> Les animaux domestiques ne sont pas admis dans le Zoo.
-  <br><br>
+  <ul>
+    <li>Le Zoo est accessible aux personnes à mobilité réduite.</li>
+    <li>Des poussettes et des fauteuils roulants sont disponibles à la location.</li>
+    <li>Les animaux domestiques ne sont pas admis dans le Zoo.</li>
+  </ul>
   <span class="text-primary">Conseils pour profiter pleinement de votre visite :</span><br>
   <ul>
     <li>Consultez notre site web pour découvrir les différentes zones du Zoo, les animations et les événements en cours.</li>
@@ -76,75 +79,12 @@
 <!-- Section Informations | Fin -->
 
 <!-- Section Horaires | Début -->
-<div class="bg-primary visiting-hours wow fadeInUp py-5 " data-wow-delay="0.1s" id="horaires">
-  <div class="container pb-5">
-    <div class="row g-5">
-      <div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-        <h1 class="display-6 text-white mb-5">Horaires du Parc</h1>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <span>Lundi</span>
-            <span>09:00 - 19:30</span>
-          </li>
-          <li class="list-group-item">
-            <span>Mardi</span>
-            <span>09:00 - 20:30</span>
-          </li>
-          <li class="list-group-item">
-            <span>Mercredi</span>
-            <span>09:00 - 19:30</span>
-          </li>
-          <li class="list-group-item">
-            <span>Jeudi</span>
-            <span>09:00 - 19:30</span>
-          </li>
-          <li class="list-group-item">
-            <span>Vendredi</span>
-            <span>09:00 - 20:30</span>
-          </li>
-          <li class="list-group-item">
-            <span>Samedi</span>
-            <span>09:00 - 20:30</span>
-          </li>
-          <li class="list-group-item">
-            <span>Dimanche</span>
-            <span>10:00 - 19:00</span>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6 text-light wow fadeIn" data-wow-delay="0.5s">
-        <h1 class="display-6 text-white mb-5">Coordonnées</h1>
-        <table class="table">
-          <tbody>
-            <tr>
-              <td>Adresse</td>
-              <td>Val-sans-retour de Brocéliande</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>56430 Tréhorenteuc</td>
-            </tr>
-            <tr>
-              <td>Tickets</td>
-              <td>
-                <p class="mb-2">+33 2 88 88 88 88</p>
-                <p class="mb-0">tickets@arcadia.com</p>
-              </td>
-            </tr>
-            <tr>
-              <td>Assistance</td>
-              <td>
-                <p class="mb-0">support@arcadia.com</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+<?php include('horaires.php'); ?>
 <!-- Section Horaires | Fin -->
 </div>
 </div>
+<!-- Section Avis | Début -->
 <?php include('avis.php'); ?>
+<!-- Section Avis | Fin -->
+
 <!-- Page Informations | Fin -->

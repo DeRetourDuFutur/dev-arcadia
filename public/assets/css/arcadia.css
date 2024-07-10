@@ -56,8 +56,8 @@
 
 @media (max-width: 767.98px) {
   .logo-arc {
-    font-size: 12px;
-    margin-left: 0;
+    font-size: 14px;
+    margin-left: -35px;
   }
 
   .logo-zoo {
@@ -133,10 +133,6 @@
 /* Boutons | Fin */
 
 /* Barre De Navigation | Début */
-.navbar {
-  background-color: white;
-}
-
 /*
 La classe .navbar.sticky-top est utilisée pour une barre de navigation qui reste en haut de la page lors du défilement. Elle est initialement placée à -100px du haut de la page, ce qui signifie qu'elle est hors de la vue. Elle a une transition de 0.5s, ce qui signifie que tout changement de style se fera progressivement sur une demi-seconde. */
 .navbar.sticky-top {
@@ -157,6 +153,18 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
   color: var(--bs-primary);
+}
+
+.nav-item-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .nav-item-vertical {
+    display: none;
+  }
 }
 /* Barre Navigation | Fin */
 
@@ -452,7 +460,7 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 .img-border {
   position: relative;
   /* height: 100%; */
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .img-border::before {
@@ -460,17 +468,17 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
   content: "";
   top: 0;
   left: 0;
-  right: 3rem;
-  bottom: 3rem;
-  border: 5px solid var(--bs-primary);
+  right: 1rem;
+  bottom: 1rem;
+  background-color: var(--bs-secondary);
 }
 
 .img-border img {
   position: absolute;
-  top: 3rem;
-  left: 3rem;
-  width: calc(100% - 3rem);
-  height: calc(100% - 3rem);
+  top: 1rem;
+  left: 1rem;
+  width: calc(105% - 1rem);
+  height: calc(105% - 1rem);
   object-fit: cover;
 }
 /* Image Border | Fin */
@@ -676,7 +684,6 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 }
 
 .footer .copyright {
-  padding: 25px 0;
   font-size: 15px;
   border-top: 1px solid rgba(256, 256, 256, 0.1);
 }

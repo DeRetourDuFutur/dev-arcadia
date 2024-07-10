@@ -21,16 +21,22 @@
     <span class="text-primary"><b>Un engagement pour la conservation</b></span> <br>
     Au-delà de sa vocation première d'accueil et de protection de la faune sauvage, le <span class="text-primary"><b>Zoo Arcadia</b></span> s'impose comme un véritable centre d'éducation et de sensibilisation à la conservation de la biodiversité. Nous proposons des animations et ateliers ludiques pour tous les âges, permettant de mieux comprendre l'équilibre fragile de l'environnement et adopter des comportements éco-responsables.
   </p>
-  <p>
-  <h6 class="mb-2">
-    <i class="far fa-check-circle text-primary me-3"></i>Un univers sauvage préservé, des habitats reconstitués.
-  </h6>
-  <h6 class="mb-2">
-    <i class="far fa-check-circle text-primary me-3"></i>Des animaux attachants venus des quatre coins du globe.
-  </h6>
-  <h6 class="mb-2">
-    <i class="far fa-check-circle text-primary me-3"></i>Un engagement fort pour la conservation de la biodiversité et le bien-être animal.
-  </h6>
+  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+    <div class="img-border">
+      <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/arcadia.webp" alt="Zoo Arcadia" />
+    </div>
+  </div>
+  <div class="mt-5">
+    <h6 class="mb-2">
+      <i class="far fa-check-circle text-primary me-3"></i>Un univers sauvage préservé, des habitats reconstitués.
+    </h6>
+    <h6 class="mb-2">
+      <i class="far fa-check-circle text-primary me-3"></i>Des animaux attachants venus des quatre coins du globe.
+    </h6>
+    <h6 class="mb-2">
+      <i class="far fa-check-circle text-primary me-3"></i>Un engagement fort pour la conservation de la biodiversité et le bien-être animal.
+    </h6>
+  </div>
   <a href="<?= BASE_URL . '/label' ?>" class="btn btn-primary-color">Eco Label</a>
   </p>
 </div>

@@ -20,28 +20,57 @@
     Depuis sa création, le Zoo Arcadia a placé l'écologie au cœur de ses priorités. Nous avons mis en œuvre des actions concrètes pour réduire notre empreinte carbone et préserver la biodiversité locale.
     <br /><br />
     <span class="text-primary"><b>Parmi nos initiatives écologiques, on peut citer :</b></span> <br>
-  <ul>
-    <i><span class="text-primary">L'utilisation d'énergies renouvelables : </span><br>
-      Nous avons installé des panneaux solaires pour alimenter une partie de nos besoins en électricité.</i> <br>
-    <i><span class="text-primary">La préservation des espèces menacées :</span> <br>
-      Nous participons à des programmes de reproduction et de réintroduction d'espèces en voie de disparition.</i> <br>
-    <i><span class="text-primary">La protection de l'environnement :</span> <br>
-      Nous entretenons des espaces naturels pour favoriser la biodiversité et sensibiliser nos visiteurs à la richesse de notre patrimoine.</i> <br>
-    <i><span class="text-primary">La gestion responsable des déchets : </span><br>
-      Nous trions et valorisons nos déchets afin de réduire notre impact sur l'environnement.</i> <br>
-    <i><span class="text-primary">La sensibilisation du public aux enjeux environnementaux :</span> <br>
-      Nous proposons des ateliers pédagogiques et des animations pour sensibiliser les visiteurs à l'importance de protéger la planète.</i>
+  <ul class="list-group" style="font-size: smaller;">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">L'utilisation d'énergies renouvelables</div>
+        Nous avons installé des panneaux solaires pour alimenter une partie de nos besoins en électricité.
+      </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">La préservation des espèces menacées</div>
+        Nous participons à des programmes de reproduction et de réintroduction d'espèces en voie de disparition.
+      </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">La protection de l'environnement</div>
+        Nous entretenons des espaces naturels pour favoriser la biodiversité et sensibiliser nos visiteurs à la richesse de notre patrimoine.
+      </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">La préservation des espèces menacées</div>
+        Nous participons à des programmes de reproduction et de réintroduction d'espèces en voie de disparition.
+      </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">La gestion responsable des déchets</div>
+        Nous trions et valorisons nos déchets afin de réduire notre impact sur l'environnement.
+      </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Le label EcoZoo : une reconnaissance de notre engagement</div>
+        L'obtention du label EcoZoo est une étape importante pour le Zoo Arcadia. Cette distinction nous encourage à poursuivre nos efforts et à aller encore plus loin dans notre engagement pour l'environnement. Le label EcoZoo est également un gage de qualité pour nos visiteurs. Il leur permet de choisir un zoo responsable qui s'engage à préserver la planète.
+      </div>
+    </li>
   </ul>
-  <span class="text-primary"><b>Le label EcoZoo : une reconnaissance de notre engagement</b></span> <br>
-  L'obtention du label EcoZoo est une étape importante pour le Zoo Arcadia. Cette distinction nous encourage à poursuivre nos efforts et à aller encore plus loin dans notre engagement pour l'environnement. Le label EcoZoo est également un gage de qualité pour nos visiteurs. Il leur permet de choisir un zoo responsable qui s'engage à préserver la planète. <br>
-  Rejoignez-nous dans cette aventure extraordinaire et découvrez un zoo qui allie conservation, éducation et respect de l'environnement !
+  <br />
+  <span class="text-primary"><b>Rejoignez-nous dans cette aventure extraordinaire et découvrez un zoo qui allie conservation, éducation et respect de l'environnement !</b></span> <br>
   <br /> <br />
   </p>
   <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
     <div class="img-border">
       <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/label/eco-label.jpg" alt="eu - Ecolabel" />
     </div>
+    <div class="row g-3 mb-5 pt-5" data-wow-delay="0.5s">
+      <div><i class="fa-solid fa-circle-right fa-xl" style="color: var(--bs-secondary);"></i> <a href="<?= BASE_URL . '/animaux' ?>" class="btn btn-primary-color">Voir nos Animaux</a></div>
+      <siv><i class="fa-solid fa-circle-right fa-xl" style="color: var(--bs-secondary);"></i> <a href="<?= BASE_URL . '/services' ?>" class="btn btn-primary-color">Voir nos Services</a></siv>
+    </div>
   </div>
-  <a class="btn btn-primary-color mt-5" href="<?= BASE_URL . '/animaux' ?>">Nos animaux</a>
+
 </div>
 <!-- Section LABEL | Fin -->

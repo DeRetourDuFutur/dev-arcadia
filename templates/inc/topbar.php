@@ -1,8 +1,8 @@
 <!-- Topbar Start -->
-<div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s" id="topbar">
+<div class="container-fluid bg-red p-0 wow fadeIn" data-wow-delay="0.1s" id="topbar">
   <div class="row gx-0 d-none d-lg-flex">
     <div class="col-lg-7 ps-5 text-start d-flex">
-      <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+      <div class="h-100 d-inline-flex align-items-center py-4 me-4">
         <a href="https://www.google.com/maps/place/For%C3%AAt+de+Broceliande,+Val+sans+Retour/@48.004798,-2.288173,16z/data=!4m6!3m5!1s0x480fb38fd5df5933:0x23f241c31b5da661!8m2!3d48.0047975!4d-2.2881727!16s%2Fg%2F11b7hk4_j7?hl=fr&entry=ttu" target="_blank"><small class="fa fa-map-marker-alt text-primary me-2"></small></a>
         <small>Forêt de Brocéliande</small>
       </div>
@@ -16,12 +16,12 @@
         <small class="fa fa-phone-alt text-primary me-2"></small>
         <small>+33 2 88 88 88 88</small>
       </div>
-      <div class="h-100 d-inline-flex align-items-center">
-        <a class="btn btn-sm-square bg-white text-primary me-1" href="<?= BASE_URL . '/gestion-services' ?>"><i class="fa-solid fa-hippo"></i></a>
+      <!-- <div class="h-100 d-inline-flex align-items-center">
+        <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fa-solid fa-hippo"></i></a>
         <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fa-solid fa-crow"></i></a>
         <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fa-solid fa-cat"></i></a>
         <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fa-solid fa-otter"></i></a>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

@@ -19,7 +19,52 @@ require_once('../app/process_services.php');
           <span><?= ($service['contenu']); ?></span>
         </div>
       <?php endforeach; ?>
-
+      <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+        <aside class="ms-lg-5 ">
+          <div class="text-center mb-3">
+            <img src="public/assets/img/services/pic-arcadia.png" class="w-25" alt="Tous les autres services d'Arcadia" title="Tous les autres services d'Arcadia">
+          </div>
+          <div class="text-center mt-4">
+            <i class="fa-solid fa-paw fa-xl text-secondary mb-4"></i>
+          </div>
+          <h6 class="text-center wow fadeInUp fw-light" data-wow-delay="0.1s">Les autres services d'Arcadia</h6>
+          <div id="slider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="public/assets/img/services/aires.webp" class="w-100 img-services" alt="Aires de Jeux & de Repos">
+                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
+                  <p>Aires Jeux & Repos</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="public/assets/img/services/boutiques.webp" class="d-block w-100 img-services" alt="">
+                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
+                  <p>Cadeaux & Souvenirs</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="public/assets/img/services/parking.webp" class="d-block w-100 img-services" alt="">
+                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
+                  <p>Parking gratuit</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="public/assets/img/services/wifi.webp" class="d-block w-100 img-services" alt="">
+                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
+                  <p>Wifi gratuit</p>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </aside>
+      </div>
     </div>
   </div>
 </div>

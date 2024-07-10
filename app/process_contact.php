@@ -25,9 +25,8 @@ $stmt = null;
 
 // Envoyer l'email
 if ($form_submited) {
-  $to = 'avis-arcadia@techno2main.fr';
-  // $to = 'antonymasson.dev@gmail.com';
-  $subject = 'Nouveau mail via le formulaire de contact Arcadia';
+  $to = 'antonymasson.dev@gmail.com';
+  $subject = 'Nouveau mail de contact via Arcadia';
   $message = "Prénom: $prenom\n";
   $message .= "NOM: $nom\n";
   $message .= "Email: $email\n";
