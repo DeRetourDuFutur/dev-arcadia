@@ -36,7 +36,8 @@ if ($form_submited) {
   $message .= "Note donnée : $note\n";
   $message .= "Posté le : $date_com\n";
 
-  $headers = "From: Arcadia | Avis <contact@techno2main.fr>\r\n";
+  $headers = "Content-Type: text/plain; charset=utf-8\r\n";
+  $headers .= "From: Arcadia | Avis <contact@techno2main.fr>\r\n";
 
   if (mail($to, $subject, $message, $headers)) {
     echo "Votre message a bien été envoyé, merci !";

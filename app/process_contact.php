@@ -32,7 +32,8 @@ if ($form_submited) {
   $message .= "Email: $email\n";
   $message .= "Message: $texte\n";
 
-  $headers = "From: Arcadia <contact@techno2main.fr>\r\n";
+  $headers = "Content-Type: text/plain; charset=utf-8\r\n";
+  $headers .= "From: Arcadia <contact@techno2main.fr>\r\n";
   $headers .= "Reply-To: $email\r\n";
 
   if (mail($to, $subject, $message, $headers)) {
