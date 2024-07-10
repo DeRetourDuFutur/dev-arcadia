@@ -23,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindValue(':date_inscrit', $date_inscrit);
   $stmt->bindValue(':statut', $statut);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 
   // Vérifier si la session est valide
   if (isset($_SESSION['access'])) {

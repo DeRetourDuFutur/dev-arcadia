@@ -26,6 +26,12 @@ require_once '../app/admin/gestion_services.php';
                 <input id="statut1" type="radio" name="statut" value="1" <?= $service['statut'] === 1 ? 'checked' : ''; ?>>
                 <label for="statut2">Masquer</label>
                 <input id="statut2" type="radio" name="statut" value="0" <?= $service['statut'] === 0 ? 'checked' : ''; ?>>
+                <label for="aside" class="mt-4 mb-2 fw-bold">ASIDE : <?= $service['aside'] === 'no' ? '<span class="text-secondary">NON</span>' : '<span class="text-primary">OUI</span>'; ?></label><br>
+                <label for="aside1">Oui</label>
+                <input id="aside1" type="radio" name="aside" value="yes" <?= $service['aside'] === 'yes' ? 'checked' : ''; ?>>
+                <label for="aside2">Non</label>
+                <input id="aside2" type="radio" name="aside" value="no" <?= $service['aside'] === 'no' ? 'checked' : ''; ?>>
+
               </div>
               <div class="d-flex justify-content-evenly pt-3">
                 <button type="submit" class="btn btn-primary-color my-4" name="action" value="update">Mettre à jour</button>

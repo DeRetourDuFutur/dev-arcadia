@@ -13,11 +13,14 @@ require_once('../app/process_services.php');
     </div>
     <div class="row gy-5 gx-4 portfolio-container">
       <?php foreach ($services as $service) : ?>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-          <a class="animal-item" href="<?= BASE_URL ?><?= ($service['visuel']); ?>" data-lightbox="animal"><img class="img-fluid mb-3 img-services" src="<?= BASE_URL ?><?= ($service['visuel']); ?>" alt="<?= ($service['nom']); ?>" /></a>
-          <h6 class="mb-3"><?= ($service['nom']); ?></h6>
-          <span><?= ($service['contenu']); ?></span>
-        </div>
+        <!-- Si aside est NO et statut est !== 0, alors afficher les services -->
+        <?php if ($service['aside'] === 'no' && $service['statut'] === 1) : ?>
+          <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+            <a class="animal-item" href="<?= BASE_URL ?><?= ($service['visuel']); ?>" data-lightbox="animal"><img class="img-fluid mb-3 img-services" src="<?= BASE_URL ?><?= ($service['visuel']); ?>" alt="<?= ($service['nom']); ?>" /></a>
+            <h6 class="mb-3"><?= ($service['nom']); ?></h6>
+            <span><?= ($service['contenu']); ?></span>
+          </div>
+        <?php endif; ?>
       <?php endforeach; ?>
       <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
         <aside class="ms-lg-5 ">
@@ -30,30 +33,17 @@ require_once('../app/process_services.php');
           <h6 class="text-center wow fadeInUp fw-light" data-wow-delay="0.1s">Les autres services d'Arcadia</h6>
           <div id="slider" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="public/assets/img/services/aires.webp" class="w-100 img-services" alt="Aires de Jeux & de Repos">
-                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <p>Aires Jeux & Repos</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="public/assets/img/services/boutiques.webp" class="d-block w-100 img-services" alt="">
-                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <p>Cadeaux & Souvenirs</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="public/assets/img/services/parking.webp" class="d-block w-100 img-services" alt="">
-                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <p>Parking gratuit</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="public/assets/img/services/wifi.webp" class="d-block w-100 img-services" alt="">
-                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
-                  <p>Wifi gratuit</p>
-                </div>
-              </div>
+              <?php foreach ($services as $key => $service) : ?>
+                <!-- Si est YES et statut est !== 0, alors afficher les autres services -->
+                <?php if ($service['aside'] === 'yes' && $service['statut'] === 1) : ?>
+                  <div class="carousel-item <?= ($key == 0) ? "active" : ""; ?>">
+                    <img src="<?= BASE_URL ?><?= ($service['visuel']); ?>" class="w-100 img-services" alt="<?= ($service['nom']); ?>">
+                    <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
+                      <p><?= ($service['nom']); ?></p>
+                    </div>
+                  </div>
+                <?php endif; ?>
+              <?php endforeach; ?>
               <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -63,6 +53,7 @@ require_once('../app/process_services.php');
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
+          </div>
         </aside>
       </div>
     </div>

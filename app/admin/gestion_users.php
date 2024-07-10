@@ -30,6 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindValue(':statut', $statut);
   $stmt->bindValue(':id', $id);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 }
 
 // Traitement de la suppression d'un user

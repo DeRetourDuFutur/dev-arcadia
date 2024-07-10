@@ -3,7 +3,7 @@ require_once '../app/admin/gestion_logos.php';
 ?>
 
 <!-- Logos | Début -->
-<div class="ms-5">
+<div class="ps-5">
   <a href="<?= BASE_URL . $logos['lien'] ?>" title="<?= BASE_URL . $logos['title'] ?>">
     <?php if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
       <span class="logo-arc mt-3"> <?= strtoupper($logos['txtgback']) ?></span>

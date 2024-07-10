@@ -25,6 +25,8 @@ if (isset($_POST['action-nb-admin'])) {
   $stmt->bindParam(':ico', $ico);
   $stmt->bindParam(':id', $id);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 }
 
 

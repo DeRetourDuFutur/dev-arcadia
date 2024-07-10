@@ -4,7 +4,7 @@
 $db = db_connect();
 
 // Requête pour récupérer les commentaires
-$sql = "SELECT * FROM commentaires";
+$sql = "SELECT * FROM commentaires ORDER BY date_com DESC";
 $stmt = $db->query($sql);
 $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindValue(':id', $id);
   $stmt->bindValue(':statut', $statut);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 }
 
 $db = null;

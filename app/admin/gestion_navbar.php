@@ -25,6 +25,8 @@ if (isset($_POST['action-navbar'])) {
   $stmt->bindParam(':ico', $ico);
   $stmt->bindParam(':id', $id);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 }
 
 

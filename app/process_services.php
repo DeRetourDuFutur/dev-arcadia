@@ -1,7 +1,7 @@
 <?php
 
 // Requête pour récupérer tous les services
-$sql = "SELECT * FROM services WHERE statut=1 ORDER BY id ASC";
+$sql = "SELECT * FROM services";
 $stmt = $db->query($sql);
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

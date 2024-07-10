@@ -29,6 +29,8 @@ if (isset($_POST['action-horaires'])) {
   $stmt->bindValue(':fermeture', $fermeture);
   $stmt->bindValue(':id', $id);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 }
 
 $db = null;

@@ -23,7 +23,7 @@ if (isset($_POST['pseudo']) && isset($_POST['note']) && isset($_POST['commentair
 }
 
 // Requête pour récupérer tous les commentaires
-$sql = "SELECT * FROM commentaires WHERE statut=1 ORDER BY date_com DESC LIMIT 30";
+$sql = "SELECT * FROM commentaires ORDER BY date_com DESC";
 $stmt = $db->query($sql);
 $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

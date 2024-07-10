@@ -38,6 +38,8 @@ if (isset($_POST['action-logos'])) {
   $stmt->bindParam(':title', $title);
   $stmt->bindParam(':id', $id);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 }
 
 

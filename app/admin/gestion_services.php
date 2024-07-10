@@ -3,7 +3,7 @@
 $db = db_connect();
 
 // Requête pour récupérer tous les liens de la navbar
-$sql = "SELECT * FROM services";
+$sql = "SELECT * FROM services ORDER BY aside ASC, statut DESC, nom ASC";
 $stmt = $db->query($sql);
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $statut = $_POST['statut'];
   $contenu = $_POST['contenu'];
   $nom = $_POST['nom'];
+  $aside = $_POST['aside'];
+
   // $visuel = $_POST['visuel'];
 
 
@@ -64,14 +66,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   // Requête pour mettre à jour le contenu du service
-  $sql = "UPDATE services SET statut = :statut, contenu = :contenu, nom = :nom WHERE id = :id";
+  $sql = "UPDATE services SET statut = :statut, contenu = :contenu, nom = :nom, aside = :aside WHERE id = :id";
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':statut', $statut);
   $stmt->bindValue(':contenu', $contenu);
   $stmt->bindValue(':id', $id);
   $stmt->bindValue(':nom', $nom);
+  $stmt->bindValue(':aside', $aside);
   // $stmt->bindValue(':visuel', $visuel);
   $stmt->execute();
+  // Rafraichir la page automatiquement
+  header("Refresh:0");
 }
 
 $db = null;
