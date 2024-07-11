@@ -9,7 +9,7 @@ require_once('../app/process_avis.php');
       Vos avis sont <span class="fw-bold">précieux pour nous,</span> <br>partagez vos expériences
     </h5>
     <div class="text-center mb-5">
-      <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#commentaires" title="N'hésitez pas à nous laisser un commentaire pour partager votre expérience à Arcadia.">Laissez un avis</button>
+      <button type="button" class="btn btn-secondary-color" data-bs-toggle="modal" data-bs-target="#commentaires" title="N'hésitez pas à nous laisser un commentaire pour partager votre expérience à Arcadia.">Laissez un avis</button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="commentaires" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -28,17 +28,33 @@ require_once('../app/process_avis.php');
               <div class="rating">
                 <label for="note" id="note" class="form-label">Votre note</label>
                 <div class="stars">
-                  <input type="radio" id="star1" name="note" value="1">
+                  <input type="radio" id="star1" name="note" value="1" hidden>
                   <label for="star1"><i class="fa fa-star green"></i></label>
-                  <input type="radio" id="star2" name="note" value="2">
+                  <input type="radio" id="star2" name="note" value="2" hidden>
                   <label for="star2"><i class="fa fa-star"></i></label>
-                  <input type="radio" id="star3" name="note" value="3">
+                  <input type="radio" id="star3" name="note" value="3" hidden>
                   <label for="star3"><i class="fa fa-star"></i></label>
-                  <input type="radio" id="star4" name="note" value="4">
+                  <input type="radio" id="star4" name="note" value="4" hidden>
                   <label for="star4"><i class="fa fa-star"></i></label>
-                  <input type="radio" id="star5" name="note" value="5">
+                  <input type="radio" id="star5" name="note" value="5" hidden>
                   <label for="star5"><i class="fa fa-star"></i></label>
                 </div>
+                <!-- Javascript pour animer les étoiles dans le notes de 1 à 5 -->
+                <script>
+                  const stars = document.querySelectorAll('.stars input[type="radio"]');
+                  const starLabels = document.querySelectorAll('.stars label');
+                  stars.forEach((star, index) => {
+                    star.addEventListener('change', () => {
+                      starLabels.forEach((label, labelIndex) => {
+                        if (labelIndex <= index) {
+                          label.querySelector('i').classList.add('green');
+                        } else {
+                          label.querySelector('i').classList.remove('green');
+                        }
+                      });
+                    });
+                  });
+                </script>
               </div>
               <div class="mb-3">
                 <label for="commentaire" class="form-label">Votre avis</label>
@@ -59,7 +75,7 @@ require_once('../app/process_avis.php');
             <p><?= htmlspecialchars(date_format(date_create($commentaire['date_com']), 'd/m/Y')); ?></p>
             <p><?= htmlspecialchars($commentaire['commentaire']); ?></p>
             <h5 class="mb-1"><?= htmlspecialchars($commentaire['pseudo']); ?></h5>
-            <h6 class="fw-bold"><?= htmlspecialchars($commentaire['note']); ?>/5</h6>
+            <p class="mt-2"><i class="fa-solid fa-star text-secondary"></i> <?= htmlspecialchars($commentaire['note']); ?>/5</p>
           </div>
         </div>
       <?php endforeach; ?>

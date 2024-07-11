@@ -19,6 +19,10 @@ require_once '../app/admin/gestion_navbar.php';
               <input type="text" class="form-control" id="lien" name="lien" value="<?= $navlink['lien']; ?>">
             </div>
             <div class="alert alert-secondary my-0">
+              <label for="class" class="ms-1">CLASSE</label>
+              <input type="text" class="form-control" id="class" name="class" value="<?= $navlink['class']; ?>">
+            </div>
+            <div class="alert alert-secondary my-0">
               <label for="title" class="ms-1">TITLE</label>
               <input type="text" class="form-control" id="title" name="title" value="<?= $navlink['title']; ?>">
             </div>

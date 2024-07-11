@@ -156,9 +156,9 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 }
 
 .nav-item-vertical {
-  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 9px 0 0 6px;
 }
 
 @media (max-width: 767px) {
@@ -582,6 +582,13 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
   background: var(--bs-light);
   transform: scale(0.8);
   transition: 0.5s;
+  border-radius: 0 25px 0 25px !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+  background: var(--bs-primary);
+  transform: scale(1);
+  border-radius: 10px; /* Add this line to round the corners */
 }
 
 .testimonial-carousel .owl-item.center .testimonial-text {

@@ -14,18 +14,18 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAdmin" aria-controls="navbarNavAdmin" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div id="navbarNavAdmin" class="collapse navbar-collapse flex-grow-0">
+    <div id="navbarNavAdmin" class="ms-4 collapse navbar-collapse flex-grow-0">
       <?php if ($_SESSION['access'] == 'admin') : ?>
         <!-- Récupérer les liens de navigation admin depuis la base -->
         <?php foreach ($dalinks as $link) : ?>
           <!-- Si le statut est ADMIN, afficher les liens de navigation admin -->
           <?php if ($link['admin'] === 1) : ?>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>" style="--fa-rotate-angle: 45deg;"></i></a>
-              </li>
               <li class="nav-item-vertical">
-                <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>
+                <i class="fa-solid fa-stop fa-sm ps-2 mb-1 text-secondary"></i>
+              </li>
+              <li class="nav-item">
+                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>"></i></a>
               </li>
             </ul>
           <?php endif; ?>
@@ -38,7 +38,7 @@
           <?php if ($link['employee'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>" style="--fa-rotate-angle: 45deg;"></i></a>
+                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>"></i></a>
               </li>
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>
@@ -54,7 +54,7 @@
           <?php if ($link['veto'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>" style="--fa-rotate-angle: 45deg;"></i></a>
+                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>"></i></a>
               </li>
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>

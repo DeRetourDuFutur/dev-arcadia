@@ -1,14 +1,14 @@
 <!-- Section HERO | Début -->
-<div class="container-fluid bg-dark p-0 mb-5" id="hero">
+<div class="container-fluid bg-dark  mb-5" id="hero">
   <div class="row g-0 flex-column-reverse flex-lg-row">
     <div class="col-lg-6 p-0 wow fadeIn hero__wrapper" data-wow-delay="0.1s">
-      <div class="header-bg h-100 d-flex flex-column justify-content-center p-5">
-        <h1 class="text-light hero-title">
+      <div class="header-bg h-100 d-flex flex-column justify-content-center ps-5">
+        <h1 class="text-light hero-title ps-lg-5">
           Vivez une aventure <br> en famille à <span class="text-primary">Arcadia !</span>
         </h1>
-        <div class="d-flex align-items-center pt-4 animated slideInDown">
+        <div class="d-flex align-items-center pt-4 ps-lg-5 animated slideInDown">
           <a href="<?= BASE_URL . '/animaux' ?>" class="btn btn-primary-color py-sm-3 px-sm-3 me-5">Nos animaux</a>
-          <button type="button" class="btn-play" data-bs-toggle="modal" data-src="<?= BASE_URL ?>/public/assets/vid/suricates.mp4" data-bs-target="#videoModal">
+          <button type="button" class="btn-play" data-bs-toggle="modal" data-src="" data-bs-target="#videoModal" data-bs-interval="true">
             <span></span>
           </button>
           <h6 class="text-white m-0 ms-4 d-none d-sm-block">Un petit aperçu ?</h6>
@@ -67,19 +67,19 @@
       <!-- Carousel Vidéo | Début -->
       <div class="carousel video" id="carouselExample">
         <div class="carousel-item active ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/girafes.mp4" autoplay loop allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?php echo BASE_URL ?>/public/assets/vid/girafes.mp4" autoplay="autoplay" loop="loop" allowfullscreen="allowfullscreen"></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/suricates.mp4" autoplay loop allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?php echo BASE_URL ?>/public/assets/vid/suricates.mp4" autoplay="autoplay" loop="loop" allowfullscreen="allowfullscreen"></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/lions.mp4" autoplay loop allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?php echo BASE_URL ?>/public/assets/vid/lions.mp4" autoplay="autoplay" loop="loop" allowfullscreen="allowfullscreen"></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/gorille.mp4" autoplay loop allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?php echo BASE_URL ?>/public/assets/vid/gorille.mp4" autoplay="autoplay" loop="loop" allowfullscreen="allowfullscreen"></iframe>
         </div>
         <div class="carousel-item ratio ratio-16x9">
-          <iframe class="embed-responsive-item" src="<?= BASE_URL ?>/public/assets/vid/ours.mp4" autoplay loop allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<?php echo BASE_URL ?>/public/assets/vid/ours.mp4" autoplay="autoplay" loop="loop" allowfullscreen="allowfullscreen"></iframe>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -89,9 +89,11 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Suivant</span>
         </button>
-      </div><!-- Carousel Vidéo | Fin -->
+      </div>
     </div>
+    <!-- Carousel Vidéo | Fin -->
   </div>
+</div>
 </div>
 <!-- Modales Vidéos Home | Fin -->
 <!-- Section HERO | Fin -->

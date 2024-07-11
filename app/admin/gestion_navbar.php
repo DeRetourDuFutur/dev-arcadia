@@ -13,15 +13,17 @@ if (isset($_POST['action-navbar'])) {
   $id = $_POST['id'];
   $nom = $_POST['nom'];
   $lien = $_POST['lien'];
+  $class = $_POST['class'];
   $title = $_POST['title'];
   $ico = $_POST['ico'];
 
   // Requête pour mettre à jour les liens de la navbar
-  $sql = "UPDATE navlinks SET nom = :nom, lien = :lien, title = :title, ico = :ico WHERE id = :id";
+  $sql = "UPDATE navlinks SET nom = :nom, lien = :lien, class = :class, title = :title, ico = :ico WHERE id = :id";
   $stmt = $db->prepare($sql);
   $stmt->bindParam(':nom', $nom);
   $stmt->bindParam(':lien', $lien);
   $stmt->bindParam(':title', $title);
+  $stmt->bindParam(':class', $class);
   $stmt->bindParam(':ico', $ico);
   $stmt->bindParam(':id', $id);
   $stmt->execute();
