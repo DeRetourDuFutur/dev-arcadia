@@ -9,6 +9,7 @@ $db = db_connect();
 if (!isset($_SESSION)) {
   session_start();
 }
+
 // Récupérer l'URI de la requête
 $requestUri = $_SERVER['REQUEST_URI'];
 
