@@ -493,6 +493,16 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 .pic-services {
   height: 50px;
 }
+
+.other-services {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100% !important;
+  position: absolute !important;
+  bottom: 1.25rem !important;
+  color: #fff;
+  text-align: center !important;
+  padding-top: 0.6rem !important;
+}
 /*** Services | Fin ***/
 
 /* Chiffres | Début */

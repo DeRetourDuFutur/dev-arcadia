@@ -20,7 +20,7 @@ require_once '../app/admin/gestion_avis.php';
               <form action="" method="POST">
                 <input type="hidden" name="id" value="<?= $commentaire['id'] ?>">
                 <button type="submit" class="btn btn-primary-color align-bottom mb-2" name="statut" value="1">Valider</button>
-                <button type="submit" class="btn btn-secondary-color align-bottom" name="statut" value="0">Masquer</button>
+                <button type="submit" class="btn btn-secondary-color align-bottom mb-2" name="statut" value="0">Masquer</button>
               </form>
             </div>
           </div>

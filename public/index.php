@@ -2,6 +2,11 @@
 require_once '../config/config.php';
 require_once '../config/db_config.php';
 
+function isUserLoggedIn()
+{
+  return (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true);
+}
+
 // Initialiser la variable $db (provenant de db_config.php)
 $db = db_connect();
 
@@ -50,16 +55,17 @@ $routes = [
 
 ];
 
-// Supprimer le dernier élément de la chaîne de caractères
-if (strrpos($requestUri, '/')) {
-  $requestUri = substr($requestUri, 0, strrpos($requestUri, '/'));
-}
+// // Supprimer le dernier élément de la chaîne de caractères
+// if (strrpos($requestUri, '/')) {
+//   $requestUri = substr($requestUri, 0, strrpos($requestUri, '/'));
+// }
 
-// Supprimer le premier élément de la chaîne de caractères
+//  Démarrer la temporisation de sortie
 ob_start();
 if (array_key_exists($requestUri, $routes)) {
-  if (str_contains($routes[$requestUri], 'admin') && $requestUri !== BASE_URL . '/login') {
-    require_once '../app/admin/check_conn.php';
+  if (str_contains($routes[$requestUri], 'admin') && $requestUri !== BASE_URL . '/login' && !isUserLoggedIn()) {
+    header('Location: ' . BASE_URL . '/login');
+    exit;
   }
   require_once $routes[$requestUri];
 } else {
@@ -73,6 +79,7 @@ require_once '../templates/inc/header.php';
 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
   require_once '../templates/admin/navbar_admin.php';
   require_once '../templates/admin/dashboard_welcome.php';
+  require_once '../app/admin/check_conn.php';
 }
 echo $body;
 require_once '../templates/inc/footer.php';

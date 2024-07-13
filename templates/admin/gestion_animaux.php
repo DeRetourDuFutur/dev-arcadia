@@ -1,8 +1,8 @@
 <?php
-// require_once '../app/admin/gestion_animaux.php';
+require_once '../app/admin/gestion_animaux.php';
 ?>
 <!-- Gestion des Animaux | Début -->
-<section id="veto">
+<section id="animaux">
   <div class="container">
     <div class="fadeInUp row col-lg-12 pt-5" data-wow-delay="0.1s">
       <h6 class="text-left mb-3"><i class="fa-solid fa-square-caret-down fa-xl text-secondary me-3"></i><span>DASHBOARD</span> | <span class="text-primary">GESTION ANIMAUX</span></h6>

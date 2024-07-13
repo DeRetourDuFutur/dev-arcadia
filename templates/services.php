@@ -38,7 +38,7 @@ require_once('../app/process_services.php');
                 <?php if ($service['aside'] === 'yes' && $service['statut'] === 1) : ?>
                   <div class="carousel-item <?= ($key == 0) ? "active" : ""; ?>">
                     <img src="<?= BASE_URL ?><?= ($service['visuel']); ?>" class="w-100 img-services" alt="<?= ($service['nom']); ?>">
-                    <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.7);">
+                    <div class="other-services">
                       <p><?= ($service['nom']); ?></p>
                     </div>
                   </div>
@@ -46,11 +46,11 @@ require_once('../app/process_services.php');
               <?php endforeach; ?>
               <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Précédent</span>
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">Suivant</span>
               </button>
             </div>
           </div>

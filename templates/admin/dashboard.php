@@ -1,5 +1,5 @@
 <?php
-require_once '../app/admin/check_session.php';
+// require_once '../app/admin/check_session.php';
 
 match ($_SESSION['access']) {
   'admin' => $fileName = 'gestion_users.php',

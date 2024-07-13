@@ -24,7 +24,7 @@ require_once '../app/admin/gestion_users.php';
             </div>
             <div class="alert alert-secondary my-0">
               <label for="pwd" class="ms-1">MOT DE PASSE</label>
-              <input type="text" class="form-control" id="pwd" name="pwd" value="<?php echo $user['pwd']; ?>">
+              <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo $user['pwd']; ?>">
             </div>
             <div class="alert alert-secondary my-0">
               <label for="prenom" class="ms-1">PR&Eacute;NOM</label>

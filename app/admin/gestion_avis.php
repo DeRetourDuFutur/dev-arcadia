@@ -1,10 +1,10 @@
 <?php
 
-// Initialize the $db variable
+// Initialiser la variable $db
 $db = db_connect();
 
-// Requête pour récupérer les commentaires
-$sql = "SELECT * FROM commentaires ORDER BY date_com DESC";
+// Requête pour récupérer les avis
+$sql = "SELECT * FROM commentaires WHERE statut= 1 ORDER BY date_com DESC";
 $stmt = $db->query($sql);
 $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $date_com = $_POST['date_com'];
   $statut = $_POST['statut'];
 
-  // Requête pour mettre à jour le statut du commentaire
+  // Requête pour mettre à jour le statut du avis
   $sql = "UPDATE commentaires SET statut = :statut WHERE id = :id";
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':id', $id);

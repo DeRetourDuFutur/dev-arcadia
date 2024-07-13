@@ -69,15 +69,17 @@ require_once('../app/process_avis.php');
     </div>
     <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
       <?php foreach ($commentaires as $commentaire) : ?>
-        <div class="testimonial-item text-center">
-          <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="<?= BASE_URL ?>/public/assets/img/avis/ok.jpg" style="width: 100px; height: 100px" />
-          <div class="testimonial-text rounded text-center p-4">
-            <p><?= htmlspecialchars(date_format(date_create($commentaire['date_com']), 'd/m/Y')); ?></p>
-            <p><?= htmlspecialchars($commentaire['commentaire']); ?></p>
-            <h5 class="mb-1"><?= htmlspecialchars($commentaire['pseudo']); ?></h5>
-            <p class="mt-2"><i class="fa-solid fa-star text-secondary"></i> <?= htmlspecialchars($commentaire['note']); ?>/5</p>
+        <?php if ($commentaire['statut'] == 1) : ?>
+          <div class="testimonial-item text-center">
+            <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="<?= BASE_URL ?>/public/assets/img/avis/ok.jpg" style="width: 100px; height: 100px" />
+            <div class="testimonial-text rounded text-center p-4">
+              <p><?= htmlspecialchars(date_format(date_create($commentaire['date_com']), 'd/m/Y')); ?></p>
+              <p><?= htmlspecialchars($commentaire['commentaire']); ?></p>
+              <h5 class="mb-1"><?= htmlspecialchars($commentaire['pseudo']); ?></h5>
+              <p class="mt-2"><i class="fa-solid fa-star text-secondary"></i> <?= htmlspecialchars($commentaire['note']); ?>/5</p>
+            </div>
           </div>
-        </div>
+        <?php endif; ?>
       <?php endforeach; ?>
     </div>
   </div>
