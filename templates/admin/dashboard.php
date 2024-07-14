@@ -1,10 +1,9 @@
 <?php
-// require_once '../app/admin/check_session.php';
 
-match ($_SESSION['access']) {
+match ($_SESSION['user_role']) {
   'admin' => $fileName = 'gestion_users.php',
-  'veto' => $fileName = 'gestion_animaux.php',
   'employee' => $fileName = 'gestion_avis.php',
+  'veto' => $fileName = 'gestion_animaux.php',
 };
 ?>
 

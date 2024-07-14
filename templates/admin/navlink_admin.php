@@ -7,7 +7,7 @@ require_once '../app/admin/gestion_navlink_admin.php';
   <div class="container-fluid justify-content-center">
     <div class="navbar-item text-light">
       <span>
-        <?php echo $_SESSION['prenom'] . ' ' .  $_SESSION['nom'] ?> <i class="fa-solid fa-user-gear fa-lg ms-3 me-3 text-secondary" title="Vous êtes connecté(e) en tant que : <?php echo strtoupper($_SESSION['access']); ?>"></i> <?php echo strtoupper($_SESSION['access']); ?>
+        <?php echo $_SESSION['user_prenom'] . ' ' .  $_SESSION['user_nom'] ?> <i class="fa-solid fa-user-gear fa-lg ms-3 me-3 text-secondary" title="Vous êtes connecté(e) en tant que : <?php echo strtoupper($_SESSION['user_role']); ?>>"></i> <?php echo strtoupper($_SESSION['user_role']); ?>
       </span>
       <span>
         <a href="<?php echo BASE_URL . '/dashboard' ?>"><i class="fa-solid fa-sliders fa-lg ms-1 me-3 text-secondary" title="Retourner à l'accueil du Dashboard"></i></a>
@@ -17,7 +17,7 @@ require_once '../app/admin/gestion_navlink_admin.php';
       <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navlink_admin" class="ms-4 collapse navbar-collapse flex-grow-0">
-      <?php if ($_SESSION['access'] == 'admin') : ?>
+      <?php if ($_SESSION['user_role'] == 'admin') : ?>
         <!-- Récupérer les liens de navigation admin depuis la base -->
         <?php foreach ($navlinks_admin as $navlink_admin) : ?>
           <!-- Si le statut est ADMIN, afficher les liens de navigation admin -->
@@ -33,7 +33,7 @@ require_once '../app/admin/gestion_navlink_admin.php';
           <?php endif; ?>
         <?php endforeach; ?>
       <?php endif; ?>
-      <?php if ($_SESSION['access'] == 'employee') : ?>
+      <?php if ($_SESSION['user_role'] == 'employee') : ?>
         <!-- Récupérer les liens de navigation admin depuis la base -->
         <?php foreach ($navlinks_admin as $navlink_admin) : ?>
           <!-- Si le statut est EMPLOYEE, afficher les liens de navigation employee -->
@@ -49,14 +49,14 @@ require_once '../app/admin/gestion_navlink_admin.php';
           <?php endif; ?>
         <?php endforeach; ?>
       <?php endif; ?>
-      <?php if ($_SESSION['access'] == 'veto') : ?>
+      <?php if ($_SESSION['user_role'] == 'veto') : ?>
         <!-- Récupérer les liens de navigation admin depuis la base -->
         <?php foreach ($navlinks_admin as $navlink_admin) : ?>
           <!-- Si le statut est VETO, afficher les liens de navigation customer -->
           <?php if ($navlink_admin['navlink_admin_v'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
+                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>

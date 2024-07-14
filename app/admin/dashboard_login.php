@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
   if (!$result) {
     $user_errorMessage = "Identifiants incorrects";
   } else {
-    $user_accessLevel = $result['user_access'];
+    $user_roleLevel = $result['user_role'];
     $user_statut = $result['user_statut'];
 
     if ($user_statut != 1) {
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
       $_SESSION['loggedIn'] = true;
       $_SESSION['user_prenom'] = $result['user_prenom'];
       $_SESSION['user_nom'] = $result['user_nom'];
-      $_SESSION['user_access'] = $accessLevel;
+      $_SESSION['user_role'] = $user_roleLevel;
 
       if (empty($user_errorMessage)) {
         header('Location: ' . BASE_URL . '/dashboard');

@@ -11,7 +11,7 @@ try {
 }
 
 // Requête pour récupérer tous les domaines avec la jointure des tables animaux et domaines
-$sql = "SELECT domaines.* FROM domaines JOIN animaux ON animaux.domaines_id = domaines.id";
+$sql = "SELECT domaines.* FROM domaines JOIN animaux ON animaux.animal_domaine_id = domaines.domaine_id";
 $stmt = $pdo->query($sql);
 // Récupération des résultats
 $domaines = $stmt->fetchAll(PDO::FETCH_ASSOC);

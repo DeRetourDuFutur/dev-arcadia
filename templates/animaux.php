@@ -10,11 +10,13 @@ require_once '../app/admin/gestion_animaux.php';
     <h2>Explorez nos <span class="text-primary">3 domaines</span></h2>
   </div>
   <div class="slider-animals">
-    <!-- Boutons NEXT / PREV -->
+    <!-- Boutons NEXT / PREV  | Début-->
     <div class="arrows-slider-animals">
       <button id="prev" class="btn-prev"><i class="fa-solid fa-hippo fa-flip-horizontal prev-hippo"></i></button>
       <button id="next" class="btn-next"><i class="fa-solid fa-hippo next-hippo"></i></button>
     </div>
+    <!-- Boutons NEXT / PREV  | Fin-->
+
     <!-- Liste Items | Début -->
     <div class="list-slider-animals">
       <!-- Slider Savane | Début -->
@@ -32,6 +34,7 @@ require_once '../app/admin/gestion_animaux.php';
         </div>
       </div>
       <!-- Slider Savane | Fin -->
+
       <!-- Slider Jungle | Début -->
       <div class="item-slider-animals">
         <img src="<?= BASE_URL ?>/public/assets/img/domaines/d2-cover-slider.webp" alt="La Jungle" />
@@ -46,8 +49,8 @@ require_once '../app/admin/gestion_animaux.php';
           </div>
         </div>
       </div>
-
       <!-- Slider Jungle | Fin -->
+
       <!-- Slider Marais | Début -->
       <div class="item-slider-animals">
         <img src="<?= BASE_URL ?>/public/assets/img/domaines/d3-cover-slider.webp" alt="Les Marais" />
@@ -62,10 +65,11 @@ require_once '../app/admin/gestion_animaux.php';
           </div>
         </div>
       </div>
-
       <!-- Slider Marais | Fin -->
+
     </div>
     <!-- Liste Items | Fin -->
+
     <!-- Liste Thumbnail | Début -->
     <div class="thumbnail-slider-animals">
       <a href="#savane" data-domaine="savane" class="item-slider-animals">
@@ -89,57 +93,64 @@ require_once '../app/admin/gestion_animaux.php';
     </div>
     <!-- Liste Thumbnail | Fin -->
 
-    <!-- Time Running -->
-    <div class="time-slider-animals"></div>
   </div>
-  </p>
 </div>
+<!-- Slider Domaines ANIMAUX | Fin -->
+
+<!-- Time Running -->
+<div class="time-slider-animals"></div>
 
 <!-- Section ANIMAUX | Début -->
 <div class="container">
   <!-- Section DOMAINE | Début -->
+  <?php
+  // echo '<pre>';
+  // print_r($habitats);
+  // echo '</pre>';
+
+  ?>
+
   <?php foreach ($habitats as $habitatName => $habitatContent) : ?>
     <?php $races = $habitatContent['races'] ?>
     <section id="<?= strtolower($habitatName) ?>" class="section-domaines">
       <div class="container-sm">
-        <p>
-          <span class="text-primary me-2">#</span><?= $habitatName ?>
+        <p class="pt-4">
+          <span class="text-primary me-2"># <?= htmlspecialchars($habitatName) ?></span>
         </p>
       </div>
-      <!-- <div class="carousel-inner py-3"> -->
       <div class="row mb-3">
         <?php foreach ($races as $raceId => $race) : ?>
           <?php $animaux = $race['animaux']; ?>
-          <div id="carousel<?= $race['id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
+          <div id="carousel<?= $race['race_id'] ?>" class="carousel slide col-lg-4 col-sm-6 column col-12">
             <div class="carousel-inner py-3">
               <!-- <div class="row mb-3"> -->
               <?php foreach ($animaux as $animal) : ?>
                 <?php $firstKey = array_key_first($animaux); ?>
                 <div class="carousel-item border-fiche-animal <?php if ($animaux[$firstKey] === $animal) : ?> active <?php endif ?>" data-bs-interval="10000">
-                  <img src="<?= BASE_URL ?><?= $animal['dossier'] ?><?= strtolower($animal['photo']) ?>" class="d-block w-100 img-fiche-animal" alt="<?= $animal['prenom'] ?>">
+                  <img src="<?= BASE_URL ?><?= $animal['animal_dossier'] ?><?= strtolower($animal['animal_photo']) ?>" class="d-block w-100 img-fiche-animal" alt="<?= $animal['animal_prenom'] ?>">
                   <div class="card-body">
-                    <h5 class="card-title"><?= $animal['prenom'] ?></h5>
+                    <h5 class="card-title"><?= $animal['animal_prenom'] ?></h5>
                     <p class="card-text">
-                      <?= ucfirst($animal['race_name']) ?> [<?= htmlspecialchars($habitatName) ?>]
+                      <?= ucfirst($animal['race_nom']) ?> [<?= htmlspecialchars($habitatName) ?>]
                     </p>
-                    <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#modale<?= $animal['id'] ?>">
+                    <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#modale<?= $animal['animal_id'] ?>">
                       Détails
                     </button>
                     <!-- Modale Fiche Animal  | Début -->
-                    <div class="modal fade" id="modale<?= $animal['id'] ?>" tabindex="-1" aria-labelledby="<?= $animal['id'] ?>" aria-hidden="true">
+                    <div class="modal fade" id="modale<?= $animal['animal_id'] ?>" tabindex="-1" aria-labelledby="<?= $animal['animal_id'] ?>" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title fs-5" id="<?= $animal['race_name'] ?>"><?= $animal['prenom'] ?></h5>
+                            <h5 class="modal-title fs-5" id="<?= $animal['race_nom'] ?>"><?= $animal['animal_prenom'] ?></h5>
                           </div>
                           <div class="modal-body">
-                            <img src="<?= BASE_URL ?><?= $animal['dossier'] ?><?= $animal['photo'] ?>" class="d-block w-100 " alt="<?= $animal['prenom'] ?>">
+                            <img src="<?= BASE_URL ?><?= $animal['animal_dossier'] ?><?= $animal['animal_photo'] ?>" class="d-block w-100 " alt="<?= $animal['animal_prenom'] ?>">
                             <p class="card-text mt-2">
                               <br>
-                              Âge : <?= $animal['age'] ?> <br>
-                              Poids : <?= $animal['poids'] ?> <br>
-                              Santé : <?= $animal['sante'] ?> <br>
-                              Race : <?= $animal['race_name'] ?>
+                              Âge : <?= $animal['animal_age'] ?> <br>
+                              Poids : <?= $animal['animal_poids'] ?> <br>
+                              Santé : <?= $animal['animal_sante'] ?> <br>
+                              Race : <?= $animal['race_nom'] ?>
                             </p>
                           </div>
                           <div class="modal-footer">
@@ -152,20 +163,18 @@ require_once '../app/admin/gestion_animaux.php';
                   </div>
                 </div>
               <?php endforeach; ?>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?= $race['id'] ?>" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel<?= $race['race_id'] ?>" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Précédent</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel<?= $race['id'] ?>" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel<?= $race['race_id'] ?>" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Suivant</span>
               </button>
-              <!-- </div> -->
             </div>
           </div>
         <?php endforeach; ?>
       </div>
-      <!-- </div> -->
     </section>
   <?php endforeach; ?>
 </div>

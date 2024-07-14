@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const addUserForm = (event) => {
     event.preventDefault();
-    let access = document.getElementById("user_access").value;
+    let user_role = document.getElementById("user_role").value;
     let email = document.getElementById("user_email").value;
     let prenom = document.getElementById("user_prenom").value;
     let nom = document.getElementById("user_nom").value;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       - Idem pour le nom
       - (facultatif) Vérifier que le mot de passe soit suffisament long (sécurité)
       - Vérifier que la correspondance des mots de passe
-      - Vérifier que l'access renseigné correspond bien à un des access présent dans le <select>
+      - Vérifier que l'user_role renseigné correspond bien à un des user_role présent dans le <select>
     */
 
     // Vérifier que les champs ne sont pas vides
@@ -85,12 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
       formHasErrors = true;
     }
 
-    if (access === "") {
+    if (user_role === "") {
       p = document.createElement("p");
       p.textContent = "Le role renseigné est vide";
       p.style.color = "red";
       document
-        .getElementById("user_access")
+        .getElementById("user_role")
         .insertAdjacentElement("beforebegin", p);
       formHasErrors = true;
     }

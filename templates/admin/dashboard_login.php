@@ -2,7 +2,7 @@
 require_once('../app/admin/dashboard_login.php');
 ?>
 
-<div class="container lg-w-50 mt-5 " id="login">
+<div class="container lg-w-50 mt-5" id="login">
   <p>
     <span class="text-primary me-2">#</span>Accès Dashboard
   </p>

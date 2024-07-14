@@ -58,9 +58,9 @@
     <li>Le Zoo dispose de plusieurs restaurants et snacks où vous pourrez vous restaurer durant votre visite.</li>
     <li>Vous trouverez dans nos 3 boutiques une large sélection de souvenirs, peluches, livres et autres articles liés au monde animal.</li>
   </ul>
-  <span class="text-primary">Accessibilité :</span><br>
+  <span class="text-primary">user_roleibilité :</span><br>
   <ul>
-    <li>Le Zoo est accessible aux personnes à mobilité réduite.</li>
+    <li>Le Zoo est user_roleible aux personnes à mobilité réduite.</li>
     <li>Des poussettes et des fauteuils roulants sont disponibles à la location.</li>
     <li>Les animaux domestiques ne sont pas admis dans le Zoo.</li>
   </ul>

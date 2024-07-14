@@ -12,11 +12,11 @@ require_once '../app/admin/gestion_users.php';
             <input type="hidden" id="user_id" name="user_id" value="<?= $user['user_id'] ?>">
             <div class="alert alert-secondary my-0">
               <div class="input-group mb-3">
-                <label class="input-group-text <?php if ($user['user_access'] == 'admin') echo 'text-primary'; ?>" for="user_access">RÔLE</label>
-                <select class="form-select" id="user_access" name="user_access">
-                  <option value="admin" <?php if ($user['user_access'] == 'admin') echo 'selected'; ?> class="text-primary fw-bold">ADMINISTRATEUR</option>
-                  <option value="employee" <?php if ($user['user_access'] == 'employee') echo 'selected'; ?>>EMPLOY&Eacute;</option>
-                  <option value="veto" <?php if ($user['user_access'] == 'veto') echo 'selected'; ?>>V&Eacute;T&Eacute;RINAIRE</option>
+                <label class="input-group-text <?php if ($user['user_role'] == 'admin') echo 'text-primary'; ?>" for="user_role">RÔLE</label>
+                <select class="form-select" id="user_role" name="user_role">
+                  <option value="admin" <?php if ($user['user_role'] == 'admin') echo 'selected'; ?> class="text-primary fw-bold">ADMINISTRATEUR</option>
+                  <option value="employee" <?php if ($user['user_role'] == 'employee') echo 'selected'; ?>>EMPLOY&Eacute;</option>
+                  <option value="veto" <?php if ($user['user_role'] == 'veto') echo 'selected'; ?>>V&Eacute;T&Eacute;RINAIRE</option>
                 </select>
               </div>
             </div>
@@ -37,8 +37,8 @@ require_once '../app/admin/gestion_users.php';
               <input type="text" class="form-control" id="user_nom" name="user_nom" value="<?php echo $user['user_nom']; ?>">
             </div>
             <div class="alert alert-secondary my-0">
-              <label for="user_date_inscrit" class="ms-1">DATE DE CR&Eacute;ATION</label>
-              <input type="text" class="form-control" id="user_date_inscrit" name="user_date_inscrit" value="<?php echo $user['user_date_inscrit']; ?>" readonly>
+              <label for="user_date" class="ms-1">DATE DE CR&Eacute;ATION</label>
+              <input type="text" class="form-control" id="user_date" name="user_date" value="<?php echo $user['user_date']; ?>" readonly>
             </div>
             <div class="input-group mb-3">
               <label for="user_statut" class="input-group-text" style="<?php if ($user['user_statut'] == 0) echo 'color: red'; ?>"><?php echo ($user['user_statut'] == 0) ? 'STATUT INACTIF' : 'STATUT ACTIF'; ?></label>
@@ -60,7 +60,7 @@ require_once '../app/admin/gestion_users.php';
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      Êtes-vous sûr de vouloir supprimer l'utilisateur <br><?= $user['user_prenom'] ?> <?= $user['user_nom'] ?> - Statut : <?= $user['user_access'] ?>
+                      Êtes-vous sûr de vouloir supprimer l'utilisateur <br><?= $user['user_prenom'] ?> <?= $user['user_nom'] ?> - Statut : <?= $user['user_role'] ?>
                       <input type="hidden" id="user_d" name="user_id" value="<?= $user['user_id'] ?>">
                     </div>
                     <div class="modal-footer">
