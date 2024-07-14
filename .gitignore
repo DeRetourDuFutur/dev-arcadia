@@ -6,3 +6,4 @@
 /.gitignore
 /app/scss
 /templates/animaux_ok.php
+/vendor/rakibtg/sleekdb
