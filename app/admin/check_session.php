@@ -1,7 +1,7 @@
 <?php
 
 // Durée de vie de la session en secondes
-$dureeVieSession = 30; // 5 minutes   
+$dureeVieSession = 300; // 5 minutes   
 
 // Vérifie si la clé 'derniereActivite' est présente dans $_SESSION
 if (isset($_SESSION['derniereActivite']) && (time() - $_SESSION['derniereActivite'] > $dureeVieSession)) {

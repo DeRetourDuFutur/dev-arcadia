@@ -10,8 +10,8 @@ require_once '../app/admin/gestion_horaires.php';
         <?php foreach ($horaires as $horaire) : ?>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <span><?= strtoupper(htmlspecialchars($horaire['jour'])); ?></span>
-              <span><?= htmlspecialchars($horaire['ouverture']); ?> - <?= htmlspecialchars($horaire['fermeture']); ?></span>
+              <span><?= strtoupper(htmlspecialchars($horaire['horaire_jour'])); ?></span>
+              <span><?= htmlspecialchars($horaire['horaire_ouverture']); ?> - <?= htmlspecialchars($horaire['horaire_fermeture']); ?></span>
             </li>
           </ul>
         <?php endforeach; ?>

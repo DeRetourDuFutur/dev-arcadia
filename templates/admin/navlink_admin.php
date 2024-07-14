@@ -1,4 +1,6 @@
-<?php require_once '../app/admin/gestion_navbar_admin.php'; ?>
+<?php
+require_once '../app/admin/gestion_navlink_admin.php';
+?>
 
 <!-- Navbar Admin | Début -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
@@ -11,21 +13,21 @@
         <a href="<?php echo BASE_URL . '/dashboard' ?>"><i class="fa-solid fa-sliders fa-lg ms-1 me-3 text-secondary" title="Retourner à l'accueil du Dashboard"></i></a>
       </span>
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAdmin" aria-controls="navbarNavAdmin" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navlink_admin" aria-controls="navlink_admin" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div id="navbarNavAdmin" class="ms-4 collapse navbar-collapse flex-grow-0">
+    <div id="navlink_admin" class="ms-4 collapse navbar-collapse flex-grow-0">
       <?php if ($_SESSION['access'] == 'admin') : ?>
         <!-- Récupérer les liens de navigation admin depuis la base -->
-        <?php foreach ($dalinks as $link) : ?>
+        <?php foreach ($navlinks_admin as $navlink_admin) : ?>
           <!-- Si le statut est ADMIN, afficher les liens de navigation admin -->
-          <?php if ($link['admin'] === 1) : ?>
+          <?php if ($navlink_admin['navlink_admin_a'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm ps-2 mb-1 text-secondary"></i>
               </li>
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>"></i></a>
+                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
             </ul>
           <?php endif; ?>
@@ -33,12 +35,12 @@
       <?php endif; ?>
       <?php if ($_SESSION['access'] == 'employee') : ?>
         <!-- Récupérer les liens de navigation admin depuis la base -->
-        <?php foreach ($dalinks as $link) : ?>
+        <?php foreach ($navlinks_admin as $navlink_admin) : ?>
           <!-- Si le statut est EMPLOYEE, afficher les liens de navigation employee -->
-          <?php if ($link['employee'] === 1) : ?>
+          <?php if ($navlink_admin['navlink_admin_e'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>"></i></a>
+                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>
@@ -49,12 +51,12 @@
       <?php endif; ?>
       <?php if ($_SESSION['access'] == 'veto') : ?>
         <!-- Récupérer les liens de navigation admin depuis la base -->
-        <?php foreach ($dalinks as $link) : ?>
+        <?php foreach ($navlinks_admin as $navlink_admin) : ?>
           <!-- Si le statut est VETO, afficher les liens de navigation customer -->
-          <?php if ($link['veto'] === 1) : ?>
+          <?php if ($navlink_admin['navlink_admin_v'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $link['lien'] ?>" class="<?= htmlspecialchars($link['class']); ?>" title="<?= htmlspecialchars($link['title']); ?>"><?= htmlspecialchars($link['nom']); ?> <i class="<?= htmlspecialchars($link['ico']); ?>"></i></a>
+                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>

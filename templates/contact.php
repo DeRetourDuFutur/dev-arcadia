@@ -18,14 +18,15 @@ require_once('../app/process_contact.php');
   <p>
   <div class="mb-3" style="width: 40%;">
     <form method="POST" action="#contacts" class="form-label">
-      <label for="prenom">Votre Prénom :</label>
-      <input type="text" class="form-control" name="prenom" id="prenom" required><br>
-      <label for="nom">Votre NOM :</label>
-      <input type="text" class="form-control" name="nom" id="nom" required><br>
-      <label for="email">Votre Email :</label>
-      <input type="email" class="form-control" name="email" id="email" required><br>
-      <label for="texte">Votre Message :</label>
-      <textarea name="texte" class="form-control" id="texte" required></textarea><br>
+      <label for="contact_prenom">Votre Prénom :</label>
+      <input type="text" class="form-control" name="contact_prenom" id="contact_prenom" required><br>
+      <label for="contact_nom">Votre NOM :</label>
+      <input type="text" class="form-control" name="contact_nom" id="contact_nom" required><br>
+      <label for="contact_emailInput">Votre Email :</label>
+      <input type="contact_email" class="form-control" name="contact_email" id="contact_emailInput" required><br>
+      <label for="contact_message">Votre Message :</label>
+      <textarea name="contact_message" class="form-control" id="contact_message" required></textarea><br>
+      <input type="hidden" name="contact_date" value="<?= date('Y-m-d H:i:s') ?>">
       <button type="submit" class="btn btn-primary-color mt-3">Envoyer</button>
     </form>
   </div>

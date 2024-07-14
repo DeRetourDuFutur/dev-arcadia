@@ -9,18 +9,18 @@ require_once '../app/admin/gestion_avis.php';
       <?php foreach ($commentaires as $commentaire) : ?>
         <div class="text-center col-sm-3 mb-4 px-2">
           <div class="p-4 border border-primary h-100">
-            <p class="mt-3"><?= htmlspecialchars(date_format(date_create($commentaire['date_com']), 'd/m/Y')); ?></p>
+            <p class="mt-3"><?= htmlspecialchars(date_format(date_create($commentaire['commentaire_date']), 'd/m/Y')); ?></p>
             <i class="fa-solid fa-comment-dots fa-2xl" style="color: #019367;"></i>
-            <p class="py-3"><?= htmlspecialchars($commentaire['commentaire']); ?></p>
+            <p class="py-3"><?= htmlspecialchars($commentaire['commentaire_avis']); ?></p>
             <i class="fa-solid fa-user-pen fa-xl" style="color: #316f16;"></i>
-            <h6 class="mt-2"><?= htmlspecialchars($commentaire['pseudo']); ?></h6>
-            <h6 class="fw-bold">Note : <span class="text-primary"><?= htmlspecialchars($commentaire['note']); ?>/5</span></h6>
-            <p class="mt-4"><?= $commentaire['statut'] === 1 ? '<span class="text-primary">Statut actuel : validé</span>' : '<span class="text-danger">Statut en attente de validation</span>'; ?></p>
+            <h6 class="mt-2"><?= htmlspecialchars($commentaire['commentaire_pseudo']); ?></h6>
+            <h6 class="fw-bold">Note : <span class="text-primary"><?= htmlspecialchars($commentaire['commentaire_note']); ?>/5</span></h6>
+            <p class="mt-4"><?= $commentaire['commentaire_statut'] === 1 ? '<span class="text-primary">Statut actuel : validé</span>' : '<span class="text-danger">Statut en attente de validation</span>'; ?></p>
             <div class="align-text-bottom mt-2">
               <form action="" method="POST">
-                <input type="hidden" name="id" value="<?= $commentaire['id'] ?>">
-                <button type="submit" class="btn btn-primary-color align-bottom mb-2" name="statut" value="1">Valider</button>
-                <button type="submit" class="btn btn-secondary-color align-bottom mb-2" name="statut" value="0">Masquer</button>
+                <input type="hidden" name="commentaire_id" value="<?= $commentaire['commentaire_id'] ?>">
+                <button type="submit" class="btn btn-primary-color align-bottom mb-2" name="commentaire_statut" value="1">Valider</button>
+                <button type="submit" class="btn btn-secondary-color align-bottom mb-2" name="commentaire_statut" value="0">Masquer</button>
               </form>
             </div>
           </div>

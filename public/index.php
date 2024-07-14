@@ -36,7 +36,7 @@ $routes = [
   BASE_URL . '/process-contact' => '../app/process_contact.php',
   BASE_URL . '/logout' => '../app/admin/dashboard_logout.php',
   BASE_URL . '/del-user' => '../app/admin/delete_user.php',
-  BASE_URL . '/navbar' => '../app/admin/gestion_navbar.php',
+  BASE_URL . '/navlink' => '../app/admin/gestion_navlink.php',
   BASE_URL . '/logos' => '../app/admin/gestion_logos.php',
   BASE_URL . '/horaires' => '../app/admin/gestion_horaires.php',
 
@@ -47,8 +47,8 @@ $routes = [
   BASE_URL . '/gestion-avis' => '../templates/admin/gestion_avis.php',
   BASE_URL . '/gestion-services' => '../templates/admin/gestion_services.php',
   BASE_URL . '/gestion-animaux' => '../templates/admin/gestion_animaux.php',
-  BASE_URL . '/gestion-navbar' => '../templates/admin/gestion_navbar.php',
-  BASE_URL . '/gestion-navbar-admin' => '../templates/admin/gestion_navbar_admin.php',
+  BASE_URL . '/gestion-navlink' => '../templates/admin/gestion_navlink.php',
+  BASE_URL . '/gestion-navlink-admin' => '../templates/admin/gestion_navlink_admin.php',
   BASE_URL . '/gestion-logos' => '../templates/admin/gestion_logos.php',
   BASE_URL . '/login' => '../templates/admin/dashboard_login.php',
   BASE_URL . '/new-user' => '../templates/admin/new_user.php',
@@ -77,7 +77,7 @@ $body = ob_get_clean();
 // Afficher le contenu du tampon de sortie
 require_once '../templates/inc/header.php';
 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
-  require_once '../templates/admin/navbar_admin.php';
+  require_once '../templates/admin/navlink_admin.php';
   require_once '../templates/admin/dashboard_welcome.php';
   require_once '../app/admin/check_conn.php';
 }

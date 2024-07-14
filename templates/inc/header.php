@@ -31,9 +31,9 @@
 
 <body>
   <?php
-  require_once('spinner.php');
+  // require_once('spinner.php');
   if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] === false) {
     require_once('topbar.php');
   }
-  require_once('navbar.php');
+  require_once('navlink.php');
   ?>

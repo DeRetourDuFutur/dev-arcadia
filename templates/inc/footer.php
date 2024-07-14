@@ -50,7 +50,8 @@
         <h5 class="text-light mb-4">Newsletter</h5>
         <p>Inscrivez-vous pour recevoir les actualités de votre parc Arcadia !</p>
         <form>
-          <input type="text" placeholder="Votre email" id="email" autocomplete="off" />
+          <input type="email" name="email" id="emailInput" class="form-control">
+          <input type="text" placeholder="Votre email" id="emailPlaceholder" autocomplete="off">
           <button type="button" class="btn btn-primary-color">Inscription</button>
         </form>
         <!-- Copyright | Début -->
@@ -94,7 +95,10 @@
   <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/animaux.js"></script>
 <?php } ?>
 <?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/jeux') { ?>
-  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/memory-game.js"></script>
+  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/memoryGame.js"></script>
+<?php } ?>
+<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/new-user') { ?>
+  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/checkFormNewUser.js"></script>
 <?php } ?>
 </body>
 
