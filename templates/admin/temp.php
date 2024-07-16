@@ -19,11 +19,21 @@ require_once '../app/admin/gestion_animaux.php';
         <?php endforeach; ?>
       </h6>
       <h6>
-        <select name="animal_race_id" id="animal_race_id">
+        <!-- <select name="animal_race_id" id="animal_race_id">
           <?php foreach ($races as $race) : ?>
             <option value="<?= $race['race_id'] ?>" <?php if ($animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= $race['race_nom'] ?></option>
           <?php endforeach ?>
-        </select>
+        </select> -->
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="animal_race_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Race
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="animal_race_dropdown">
+            <?php foreach ($races as $race) : ?>
+              <li><a class="dropdown-item" href="#" value="<?= $race['race_id'] ?>" <?php if ($animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= $race['race_nom'] ?></a></li>
+            <?php endforeach ?>
+          </ul>
+        </div>
       </h6>
       <?php if (isset($selected_domaine_id)) : ?>
         <?php foreach ($animaux as $animal) : ?>

@@ -69,7 +69,8 @@ $selected_domaine_id = intval($_GET['domaine_id'] ?? $domaines[0]['domaine_id'])
 $sql = 'SELECT races.*
   FROM animaux
   JOIN races ON animaux.animal_race_id = races.race_id
-  WHERE animaux.animal_domaine_id = :domaine_id';
+  WHERE animaux.animal_domaine_id = :domaine_id
+  GROUP BY races.race_nom';
 
 $stmt = $db->prepare($sql);
 
@@ -78,9 +79,6 @@ $stmt->execute();
 $races = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $selected_race_id = intval($_GET['race_id'] ?? $races[0]['race_id']);
-
-// dump('domaine_name : ' . $domaines[0]['domaine_name']);
-// dump('race_nom : ' . $races[0]['race_nom']);
 
 $sql = "SELECT animaux.*, races.*, domaines.*
         FROM animaux 
@@ -120,6 +118,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
   $animaux[] = $animal;
 }
+
+// $races = array_unique($races, SORT_REGULAR);
 
 
 // Requête SQL avec double jointure pour inclure les races et les domaines
