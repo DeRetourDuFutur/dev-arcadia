@@ -4,20 +4,26 @@ require_once '../app/admin/gestion_logos.php';
 
 <!-- Logos | Début -->
 <div class="ps-5">
-  <a href="<?php echo BASE_URL . $logos['logo_lien'] ?>" title="<?php echo BASE_URL . $logos['logo_title'] ?>">
-    <?php if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
-      <span class="logo-arc mt-3"> <?= strtoupper($logos['logo_txtgback']) ?></span>
-      <?php if (isset($logos['logo_imgback'])) : ?>
-        <span class="logo-img pt-3"><img src="<?php echo BASE_URL . ($logos['logo_imgback']) ?>" alt="Logo Admin Arcadia" /></span>
+  <?php
+
+  if (isUserLoggedIn()) {
+    $logos = array_filter($logos, function ($logo) {
+      return $logo['logo_attribut'] === 'BACK';
+    });
+  } else {
+    $logos = array_filter($logos, function ($logo) {
+      return $logo['logo_attribut'] === 'FRONT';
+    });
+  }
+  ?>
+  <?php foreach ($logos as $logo) : ?>
+    <a href="<?= BASE_URL . $logo['logo_lien'] ?>" title="<?= BASE_URL . $logo['logo_title'] ?>">
+      <span class="logo-arc mt-3"> <?= strtoupper($logo['logo_txtg']) ?></span>
+      <?php if (isset($logo['logo_img'])) : ?>
+        <span class="logo-img pt-3"><img src="<?php echo BASE_URL . ($logo['logo_img']) ?>" alt="Logo Arcadia" /></span>
       <?php endif; ?>
-      <span class="logo-zoo mt-2"> <?= strtoupper($logos['logo_txtdback']) ?><i class="<?= htmlspecialchars($logos['logo_icob']); ?>"></i></span>
-    <?php else : ?>
-      <span class="logo-arc mt-3"> <?= strtoupper($logos['logo_txtgfront']) ?></span>
-      <?php if (isset($logos['logo_imgfront'])) : ?>
-        <span class="logo-img pt-3"><img src="<?php echo BASE_URL . ($logos['logo_imgfront']) ?>" alt="Logo Arcadia" /></span>
-      <?php endif; ?>
-      <span class="logo-zoo mt-2"> <?= strtoupper($logos['logo_txtdfront']) ?><i class="<?= htmlspecialchars($logos['logo_icof']); ?>"></i></span>
-    <?php endif; ?>
-  </a>
+      <span class="logo-zoo mt-2"> <?= strtoupper($logo['logo_txtd']) ?><i class="<?= htmlspecialchars($logo['logo_ico']); ?>"></i></span>
+    </a>
+  <?php endforeach; ?>
 </div>
 <!-- Logos | Fin -->

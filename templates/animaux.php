@@ -1,5 +1,5 @@
 <?php
-require_once '../app/admin/gestion_animaux.php';
+require_once '../app/read_animaux.php';
 ?>
 <!-- Slider Domaines ANIMAUX | Début -->
 <div class="mt-5">
@@ -102,20 +102,14 @@ require_once '../app/admin/gestion_animaux.php';
 
 <!-- Section ANIMAUX | Début -->
 <div class="container">
+  <?php $firstHabitat = $habitats[array_key_first($habitats)]; ?>
   <!-- Section DOMAINE | Début -->
-  <?php
-  // echo '<pre>';
-  // print_r($habitats);
-  // echo '</pre>';
-
-  ?>
-
-  <?php foreach ($habitats as $habitatName => $habitatContent) : ?>
-    <?php $races = $habitatContent['races'] ?>
-    <section id="<?= strtolower($habitatName) ?>" class="section-domaines">
+  <?php foreach ($habitats as $habitat) : ?>
+    <?php $races = $habitat['races'] ?>
+    <section id="<?= strtolower($habitat['domaine']) ?>" class="section-domaines <?php if ($firstHabitat !== $habitat) : ?> d-none <?php endif; ?>">
       <div class="container-sm">
         <p class="pt-4">
-          <span class="text-primary me-2"># <?= htmlspecialchars($habitatName) ?></span>
+          <span class="text-primary me-2"># <?= htmlspecialchars($habitat['domaine']) ?></span>
         </p>
       </div>
       <div class="row mb-3">
@@ -127,11 +121,11 @@ require_once '../app/admin/gestion_animaux.php';
               <?php foreach ($animaux as $animal) : ?>
                 <?php $firstKey = array_key_first($animaux); ?>
                 <div class="carousel-item border-fiche-animal <?php if ($animaux[$firstKey] === $animal) : ?> active <?php endif ?>" data-bs-interval="10000">
-                  <img src="<?= BASE_URL ?><?= $animal['animal_dossier'] ?><?= strtolower($animal['animal_photo']) ?>" class="d-block w-100 img-fiche-animal" alt="<?= $animal['animal_prenom'] ?>">
+                  <img src="<?= BASE_URL . $animal['animal_visuel'] ?>" class="d-block w-100 img-fiche-animal" alt="<?= $animal['animal_prenom'] ?>">
                   <div class="card-body">
                     <h5 class="card-title"><?= $animal['animal_prenom'] ?></h5>
                     <p class="card-text">
-                      <?= ucfirst($animal['race_nom']) ?> [<?= htmlspecialchars($habitatName) ?>]
+                      <?= ucfirst($animal['race_nom']) ?> [<?= htmlspecialchars($habitat['domaine']) ?>]
                     </p>
                     <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#modale<?= $animal['animal_id'] ?>">
                       Détails
@@ -144,7 +138,7 @@ require_once '../app/admin/gestion_animaux.php';
                             <h5 class="modal-title fs-5" id="<?= $animal['race_nom'] ?>"><?= $animal['animal_prenom'] ?></h5>
                           </div>
                           <div class="modal-body">
-                            <img src="<?= BASE_URL ?><?= $animal['animal_dossier'] ?><?= $animal['animal_photo'] ?>" class="d-block w-100 " alt="<?= $animal['animal_prenom'] ?>">
+                            <img src="<?= BASE_URL . $animal['animal_visuel'] ?>" class="d-block w-100 " alt="<?= $animal['animal_prenom'] ?>">
                             <p class="card-text mt-2">
                               <br>
                               Âge : <?= $animal['animal_age'] ?> <br>
@@ -178,3 +172,4 @@ require_once '../app/admin/gestion_animaux.php';
     </section>
   <?php endforeach; ?>
 </div>
+<!-- Section ANIMAUX | Fin -->

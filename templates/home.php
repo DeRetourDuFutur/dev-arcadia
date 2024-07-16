@@ -15,15 +15,15 @@ require_once('inc/hero.php');
     Depuis 1960, notre parc animalier s'engage à offrir un refuge à une multitude d'espèces animales, réparties aujourd'hui sur trois vastes domaines : <br>
   <ul>
     <li><span class="text-primary"><b>La Savane,</b></span> où Eléphants, Girafes, Léopards, Lions, Rhinocéros et Zèbres évoluent en liberté, vous transportant au cœur de l'Afrique sauvage dans toute sa splendeur.</li>
-    <li><span class="text-primary"><b>La Jungle,</b></span> où Gorilles, Tigres, Jaguars, Serpents et , se cachent parmi la végétation dense.</li>
-    <li><span class="text-primary"><b>Les Marais,</b></span> où oiseaux aquatiques, aligators majestueux et grenouilles agiles rythment la vie paisible de ce sanctuaire humide.</li>
+    <li><span class="text-primary"><b>La Jungle,</b></span> où Gorilles, Jaguars, Panthères, Paresseux, Tigres et Singes se fondent dans un écrin de verdure préservé.</li>
+    <li><span class="text-primary"><b>Les Marais,</b></span> où Crocodiles, Hippopotames, Grenouilles, Râton Laveurs, Salamandres et Serpents rythment la vie paisible de ce sanctuaire humide.</li>
   </ul>
   <span class="text-primary"><b>Une invitation à un voyage extraordinaire</b></span>
   <br>
   Au-delà d'une simple visite, Arcadia vous propose une véritable immersion au cœur du monde animal :
   <ul>
     <li>Partez à la rencontre des animaux, observez leurs comportements fascinants et laissez-vous transporter par la beauté fragile de leurs environnements naturels.</li>
-    <li>Participez aux visites pédagogiques, animées par des guides passionnés qui vous dévoileront les secrets de la faune et de la flore ett la richesse de la biodiversité.</li>
+    <li>Participez aux visites pédagogiques, animées par des guides passionnés qui vous dévoileront les secrets de la faune et de la flore et la richesse de la biodiversité.</li>
     <li>Savourez un moment de détente dans nos restaurants et boutiques, où vous pourrez déguster des produits locaux et trouver des souvenirs uniques de votre visite. </li>
   </ul>
   <span class="text-primary">Arcadia,</span> c'est bien plus qu'un simple Zoo, c'est une expérience inoubliable à partager en famille ou entre amis. <br><br>

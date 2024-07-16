@@ -1,37 +1,74 @@
 <?php
-require_once '../app/admin/gestion_navlink_admin.php';
-session_start(); // Assurez-vous que session_start() est appelé au début si ce n'est pas déjà fait ailleurs.
+require_once '../app/admin/gestion_animaux.php';
 ?>
 
-<!-- Navbar Admin | Début -->
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-  <div class="container-fluid justify-content-center">
-    <div class="navbar-item text-light">
-      <span>
-        <?php echo $_SESSION['user_prenom'] . ' ' .  $_SESSION['user_nom']; ?> <i class="fa-solid fa-user-gear fa-lg ms-3 me-3 text-secondary" title="Vous êtes connecté(e) en tant que : <?php echo strtoupper($_SESSION['user_role']); ?>"></i> <?php echo strtoupper($_SESSION['user_role']); ?>
-      </span>
-      <span>
-        <a href="<?php echo BASE_URL . '/dashboard'; ?>"><i class="fa-solid fa-sliders fa-lg ms-1 me-3 text-secondary" title="Retourner à l'accueil du Dashboard"></i></a>
-      </span>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navlink_admin" aria-controls="navlink_admin" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="navlink_admin" class="ms-4 collapse navbar-collapse flex-grow-0">
-      <?php if ($_SESSION['user_role'] == 'admin') : ?>
-        <ul class="navbar-nav">
-          <!-- Récupérer les liens de navigation admin depuis la base -->
-          <?php foreach ($navlinks_admin as $navlink_admin) : ?>
-            <!-- Si le statut est ADMIN, afficher les liens de navigation admin -->
-            <?php if ($navlink_admin['navlink_admin_a'] === 1) : ?>
-              <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . htmlspecialchars($navlink_admin['navlink_admin_lien']); ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?></a>
-              </li>
-            <?php endif; ?>
-          <?php endforeach; ?>
-        </ul>
+<!-- Gestion des Animaux | Début -->
+<section id="gestion_animaux">
+  <div class="container">
+    <div class="fadeInUp row col-lg-12 pt-5" data-wow-delay="0.1s">
+      <h6 class="text-left mb-3">
+        <i class="fa-solid fa-square-caret-down fa-xl text-primary me-3"></i>
+        <span>DASHBOARD</span> | <span class="text-primary">ANIMAUX</span>
+        <?php foreach ($domaines as $domaine) : ?>
+          <?php if ($selected_domaine_id === $domaine['domaine_id']) : ?>
+            <i class="fa-solid fa-square-caret-down fa-xl text-primary ms-4 me-2"></i>
+          <?php else : ?>
+            <i class="fa-solid fa-square-caret-right fa-xl text-secondary ms-4 me-2"></i>
+          <?php endif; ?>
+          <a href="<?= BASE_URL . '/gestion-animaux?domaine_id=' . $domaine['domaine_id'] ?>"><?= $domaine['domaine_name']; ?></a>
+        <?php endforeach; ?>
+      </h6>
+      <h6>
+        <select name="animal_race_id" id="animal_race_id">
+          <?php foreach ($races as $race) : ?>
+            <option value="<?= $race['race_id'] ?>" <?php if ($animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= $race['race_nom'] ?></option>
+          <?php endforeach ?>
+        </select>
+      </h6>
+      <?php if (isset($selected_domaine_id)) : ?>
+        <?php foreach ($animaux as $animal) : ?>
+          <?php if ($animal['animal_domaine_id'] === $selected_domaine_id) : ?>
+            <div class="col-lg-3 mb-4" id="filtered_animal">
+              <div class="border border-primary ">
+                <form action="" method="POST" class="container" enctype="multipart/form-data">
+                  <input type="hidden" name="animal_id" value="<?= $animal['animal_id'] ?>">
+                  <label for="animal_prenom" class="mt-4 mb-2 fw-bold">PRENOM</label> <br>
+                  <input type="text" name="animal_prenom" value="<?= htmlspecialchars($animal['animal_prenom']); ?>"> <br>
+                  <img src="<?= BASE_URL . $animal['animal_visuel'] ?>" class="img-fluid mt-4"><br />
+                  <label for="animal_visuel" class="mt-4 mb-2 fw-bold">Modifier l'image</label> <br>
+                  <input id="animal_visuel" type="file" name="animal_visuel" accept="image/*">
+                  <label for="animal_age" class="mt-4 mb-2 fw-bold">AGE</label> <br>
+                  <input type="text" name="animal_age" value="<?= htmlspecialchars($animal['animal_age']); ?>"> <br>
+                  <label for="animal_poids" class="mt-4 mb-2 fw-bold">POIDS</label> <br>
+                  <input type="text" name="animal_poids" value="<?= htmlspecialchars($animal['animal_poids']); ?>"> <br>
+                  <label for="animal_sante" class="mt-4 mb-2 fw-bold">SANTE</label> <br>
+                  <input type="text" name="animal_sante" value="<?= htmlspecialchars($animal['animal_sante']); ?>"> <br>
+                  <label for="animal_statut" class="mt-4 mb-2 fw-bold">STATUT</label> <br>
+                  <input type="text" name="animal_statut" value="<?= htmlspecialchars($animal['animal_statut']); ?>"> <br>
+                  <label for="animal_domaine_id" class="mt-4 mb-2 fw-bold">DOMAINE</label> <br>
+                  <select name="animal_domaine_id" id="animal_domaine_id">
+                    <?php foreach ($domaines as $domaine) : ?>
+                      <option value="<?= $domaine['domaine_id'] ?>" <?php if ($animal['animal_domaine_id'] === $domaine['domaine_id']) : ?> selected <?php endif; ?>> <?= $domaine['domaine_name'] ?> </option>
+                    <?php endforeach ?>
+                  </select>
+                  <br>
+                  <label for="animal_race_id" class="mt-4 mb-2 fw-bold">RACE</label> <br>
+                  <select name="animal_race_id" id="animal_race_id">
+                    <?php foreach ($races as $race) : ?>
+                      <option value="<?= $race['race_id'] ?>" <?php if ($animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= $race['race_nom'] ?></option>
+                    <?php endforeach ?>
+                  </select>
+                  <br>
+                  <div class="d-flex justify-content-evenly pt-3">
+                    <button type="submit" class="btn btn-primary-color my-4" name="animal_action" value="update">Mettre à jour</button>
+                  </div>
+                </form>
+              </div>
+              <br>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
       <?php endif; ?>
     </div>
-  </div>
-</nav>
-<!-- Navbar Admin | Fin -->
+</section>
+<!-- Gestion des Animaux | Fin -->

@@ -15,17 +15,40 @@ require_once '../app/admin/gestion_horaires.php';
             <div class="align-text-bottom mt-2">
               <form action="" method="POST">
                 <input type="hidden" name="horaire_id" value="<?= $horaire['horaire_id'] ?>">
+                <input type="hidden" name="horaire_jour" value="<?= $horaire['horaire_jour'] ?>">
                 <div class="alert alert-secondary my-0">
-                  <label for="horaire_jour" class="ms-1">JOUR</label>
-                  <input type="text" class="form-control" id="horaire_jour" name="horaire_jour" readonly value="<?= $horaire['horaire_jour']; ?>">
-                </div>
-                <div class="alert alert-secondary my-0">
-                  <label for="horaire_ouverture" class="ms-1">OUVERTURE</label>
-                  <input type="text" class="form-control" id="horaire_ouverture" name="horaire_ouverture" value="<?= $horaire['horaire_ouverture']; ?>">
-                </div>
-                <div class="alert alert-secondary my-0">
-                  <label for="horaire_fermeture" class="ms-1">FERMETURE</label>
-                  <input type="text" class="form-control" id="horaire_fermeture" name="horaire_fermeture" value="<?= $horaire['horaire_fermeture']; ?>">
+                  <div class="input-group mb-3">
+                    <label for="horaire_ouverture" class="input-group-text">OUVERTURE</label>
+                    <select class="form-select" id="horaire_ouverture" name="horaire_ouverture">
+                      <?php
+                      $start_time = strtotime('00:00');
+                      $end_time = strtotime('23:00');
+                      $current_time = $start_time;
+                      while ($current_time <= $end_time) {
+                        $time = date('H:i', $current_time);
+                        $selected = ($time == $horaire['horaire_ouverture']) ? 'selected' : '';
+                        echo "<option value=\"$time\" $selected>$time</option>";
+                        $current_time += 60 * 30; // increment by 30 minutes
+                      }
+                      ?>
+                    </select>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label for="horaire_fermeture" class="input-group-text">FERMETURE</label>
+                    <select class="form-select" id="horaire_fermeture" name="horaire_fermeture">
+                      <?php
+                      $start_time = strtotime('00:00');
+                      $end_time = strtotime('23:00');
+                      $current_time = $start_time;
+                      while ($current_time <= $end_time) {
+                        $time = date('H:i', $current_time);
+                        $selected = ($time == $horaire['horaire_fermeture']) ? 'selected' : '';
+                        echo "<option value=\"$time\" $selected>$time</option>";
+                        $current_time += 60 * 30; // increment by 30 minutes
+                      }
+                      ?>
+                    </select>
+                  </div>
                 </div>
                 <button type="submit" class="btn btn-primary-color align-bottom mt-4" name="horaire_action" value="update">MAJ</button>
               </form>

@@ -31,7 +31,5 @@ if (isset($_POST['navlink_action'])) {
   header("Refresh:0");
 }
 
-
-
 $db = null;
 $stmt = null;

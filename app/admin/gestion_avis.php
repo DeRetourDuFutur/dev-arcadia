@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindValue(':commentaire_statut', $commentaire_statut);
   $stmt->execute();
   // Rafraichir la page automatiquement
-  // header("Refresh:0");
+  header("Refresh:0");
 }
 
 $db = null;

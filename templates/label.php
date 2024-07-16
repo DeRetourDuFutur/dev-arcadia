@@ -41,12 +41,6 @@
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
-        <div class="fw-bold">La préservation des espèces menacées</div>
-        Nous participons à des programmes de reproduction et de réintroduction d'espèces en voie de disparition.
-      </div>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-start">
-      <div class="ms-2 me-auto">
         <div class="fw-bold">La gestion responsable des déchets</div>
         Nous trions et valorisons nos déchets afin de réduire notre impact sur l'environnement.
       </div>

@@ -1,6 +1,7 @@
 <?php
 require_once '../config/config.php';
 require_once '../config/db_config.php';
+require_once '../app/functions.php';
 
 function isUserLoggedIn()
 {
@@ -16,7 +17,7 @@ if (!isset($_SESSION)) {
 }
 
 // Récupérer l'URI de la requête
-$requestUri = $_SERVER['REQUEST_URI'];
+$requestUri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 // Système de routage php pour les pages du site
 $routes = [
@@ -34,10 +35,11 @@ $routes = [
   // Routes Process du site
   BASE_URL . '/process-avis' => '../app/process_avis.php',
   BASE_URL . '/process-contact' => '../app/process_contact.php',
+  BASE_URL . '/edit-animal' => '../app/edit_animal.php',
   BASE_URL . '/logout' => '../app/admin/dashboard_logout.php',
   BASE_URL . '/del-user' => '../app/admin/delete_user.php',
   BASE_URL . '/navlink' => '../app/admin/gestion_navlink.php',
-  BASE_URL . '/logos' => '../app/admin/gestion_logos.php',
+  // BASE_URL . '/logos' => '../app/admin/gestion_logos.php',
   BASE_URL . '/horaires' => '../app/admin/gestion_horaires.php',
 
   // Routes Admin du site
@@ -52,13 +54,7 @@ $routes = [
   BASE_URL . '/gestion-logos' => '../templates/admin/gestion_logos.php',
   BASE_URL . '/login' => '../templates/admin/dashboard_login.php',
   BASE_URL . '/new-user' => '../templates/admin/new_user.php',
-
 ];
-
-// // Supprimer le dernier élément de la chaîne de caractères
-// if (strrpos($requestUri, '/')) {
-//   $requestUri = substr($requestUri, 0, strrpos($requestUri, '/'));
-// }
 
 //  Démarrer la temporisation de sortie
 ob_start();
@@ -67,6 +63,7 @@ if (array_key_exists($requestUri, $routes)) {
     header('Location: ' . BASE_URL . '/login');
     exit;
   }
+  if (isUserLoggedIn()) require_once '../app/admin/check_session.php';
   require_once $routes[$requestUri];
 } else {
   require_once '../templates/404.php';
@@ -76,10 +73,9 @@ $body = ob_get_clean();
 
 // Afficher le contenu du tampon de sortie
 require_once '../templates/inc/header.php';
-if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+if (isUserLoggedIn()) {
   require_once '../templates/admin/navlink_admin.php';
   require_once '../templates/admin/dashboard_welcome.php';
-  require_once '../app/admin/check_conn.php';
 }
 echo $body;
 require_once '../templates/inc/footer.php';
