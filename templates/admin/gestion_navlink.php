@@ -18,14 +18,22 @@ require_once '../app/admin/gestion_navlink.php';
               <label for="navlink_lien" class="ms-1">LIEN</label>
               <input type="text" class="form-control" id="navlink_lien" name="navlink_lien" value="<?= $navlink['navlink_lien']; ?>">
             </div>
+            <!-- CLASS CSS -->
             <div class="alert alert-secondary my-0">
-              <label for="navlink_class" class="ms-1">CLASSE</label>
-              <input type="text" class="form-control" id="navlink_class" name="navlink_class" value="<?= $navlink['navlink_class']; ?>">
+              <div class="input-group mb-3">
+                <label for="navlink_class" class="input-group-text input-group-text-sm">CSS</label>
+                <select class="form-select form-select-sm" id="navlink_class" name="navlink_class">
+                  <option value="nav-link" <?php if ($navlink['navlink_class'] === 'nav-link') : ?> selected <?php endif; ?>>nav-link</option>
+                  <option value="btn btn-outline-success" <?php if ($navlink['navlink_class'] === 'btn btn-outline-success') : ?> selected <?php endif; ?>>btn btn-outline-success</option>
+                </select>
+              </div>
             </div>
+            <!-- TITLE -->
             <div class="alert alert-secondary my-0">
               <label for="navlink_title" class="ms-1">TITLE</label>
               <input type="text" class="form-control" id="navlink_title" name="navlink_title" value="<?= $navlink['navlink_title']; ?>">
             </div>
+            <!-- ICO -->
             <div class="alert alert-secondary my-0">
               <label for="navlink_ico" class="ms-1">ICO</label>
               <input type="text" class="form-control" id="navlink_ico" name="navlink_ico" value="<?= $navlink['navlink_ico']; ?>">

@@ -119,56 +119,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $animaux[] = $animal;
 }
 
-// $races = array_unique($races, SORT_REGULAR);
-
-
-// Requête SQL avec double jointure pour inclure les races et les domaines
-// $sql = "SELECT animaux.*, races.race_nom, races.race_id, domaines.domaine_name, domaines.domaine_id
-//         FROM animaux 
-//         JOIN races ON animaux.animal_race_id = races.race_id 
-//         JOIN domaines ON animaux.animal_domaine_id = domaines.domaine_id";
-// Exécution de la requête
-// $stmt = $db->query($sql);
-// Récupération des résultats
-// $habitats = $animaux = $races = $domaines = [];
-// while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//   $animal = [
-//     'animal_id' => $row['animal_id'],
-//     'animal_prenom' => $row['animal_prenom'],
-//     'animal_age' => $row['animal_age'],
-//     'animal_poids' => $row['animal_poids'],
-//     'animal_sante' => $row['animal_sante'],
-//     'animal_statut' => $row['animal_statut'],
-//     'animal_domaine_id' => $row['animal_domaine_id'],
-//     'animal_visuel' => $row['animal_visuel'],
-//     'animal_race_id' => $row['animal_race_id'],
-//     'race_nom' => $row['race_nom'],
-//     'domaine_name' => $row['domaine_name'],
-//     'race_id' => $row['race_id'],
-//     'domaine_id' => $row['domaine_id'],
-//   ];
-
-//   $race = [
-//     'race_id' => $row['race_id'],
-//     'race_nom' => $row['race_nom'],
-//   ];
-
-//   $domaine = [
-//     'domaine_id' => $row['domaine_id'],
-//     'domaine_name' => $row['domaine_name'],
-//   ];
-
-//   // Créer un tableau associatif pour chaque habitat, incluant le nom du domaine
-//   $habitats[$row['animal_domaine_id']]['domaine'] = $row['domaine_name'];
-//   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race_id'] = $row['animal_race_id'];
-//   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race'] = $row['race_nom'];
-//   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['animaux'][$row['animal_id']] = $animal;
-
-//   $animaux[] = $animal;
-//   $races[] = $race;
-//   $domaines[] = $domaine;
-// }
-
 // $domaines = array_unique($domaines, SORT_REGULAR);
 // $races = array_unique($races, SORT_REGULAR);
 

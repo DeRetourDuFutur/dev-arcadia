@@ -13,23 +13,30 @@ require_once '../app/admin/gestion_services.php';
               <input type="hidden" name="service_id" value="<?= $service['service_id'] ?>">
               <label for="service_nom" class="mt-4 mb-2 fw-bold">TITRE DU SERVICE</label> <br>
               <input type="text" name="service_nom" value="<?= htmlspecialchars($service['service_nom']); ?>"> <br>
-              <img src="<?= $service['service_visuel']; ?>" alt="<?= $service['service_nom']; ?>" class="img-fluid mt-4 img-services" style="max-height: 120px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='120px';"> <br /> <label for="service_visuel" class="mt-4 mb-2 fw-bold">Modifier l'image</label> <br>
-              <input id="service_visuel" type="file" name="service_visuel" accept="image/*">
+              <!-- IMAGE -->
+              <img src="<?= $service['service_visuel']; ?>" alt="<?= $service['service_nom']; ?>" class="img-fluid mt-4 img-services" style="max-height: 120px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='120px';"><br />
+              <div class="input-group">
+                <input id="service_visuel" type="file" name="service_visuel" accept="image/*" class="form-control form-control-sm">
+              </div>
               <div class="justify-content-center">
                 <label for="service_contenu" class="mt-4 mb-2 fw-bold">DESCRIPTION DU SERVICE</label>
                 <textarea name="service_contenu" class="form-control" cols="70" rows="4" wrap="hard"><?= htmlspecialchars($service['service_contenu']); ?></textarea>
               </div>
-              <div class="text-center">
-                <label for="service_statut" class="mt-4 mb-2 fw-bold">STATUT ACTUEL : <?= $service['service_statut'] === 1 ? '<span class="text-primary">AFFICH&Eacute;</span>' : '<span class="text-secondary">MASQU&Eacute;</span>'; ?></label><br>
-                <label for="service_statut1">Afficher</label>
-                <input id="service_statut1" type="radio" name="service_statut" value="1" <?= $service['service_statut'] === 1 ? 'checked' : ''; ?>>
-                <label for="service_statut2">Masquer</label>
-                <input id="service_statut2" type="radio" name="service_statut" value="0" <?= $service['service_statut'] === 0 ? 'checked' : ''; ?>>
-                <label for="service_aside" class="mt-4 mb-2 fw-bold">ASIDE : <?= $service['service_aside'] === 'no' ? '<span class="text-secondary">NON</span>' : '<span class="text-primary">OUI</span>'; ?></label><br>
-                <label for="service_aside1">Oui</label>
-                <input id="service_aside1" type="radio" name="service_aside" value="yes" <?= $service['service_aside'] === 'yes' ? 'checked' : ''; ?>>
-                <label for="service_aside2">Non</label>
-                <input id="service_aside2" type="radio" name="service_aside" value="no" <?= $service['service_aside'] === 'no' ? 'checked' : ''; ?>>
+              <!-- STATUT (Affiché ou Masqué) -->
+              <div class="input-group mt-3">
+                <label for="service_statut" class="input-group-text input-group-text-sm"><?= $service['service_statut'] === 1 ? '<span class="text-primary">AFFICH&Eacute;</span>' : '<span class="text-secondary">MASQU&Eacute;</span>'; ?></label>
+                <select class="form-select form-select-sm" id="service_statut" name="service_statut">
+                  <option value="<?= $service['service_statut'] ?>" <?= $service['service_statut'] === 1 ? 'checked' : ''; ?>>Actif</option>
+                  <option value="<?= $service['service_statut'] ?>" <?= $service['service_statut'] === 0 ? 'checked' : ''; ?>>Inactif</option>
+                </select>
+              </div>
+              <!-- ASIDE (Sur le côté ou non) -->
+              <div class="input-group mt-3">
+                <label for="service_aside" class="input-group-text input-group-text-sm"><?= $service['service_aside'] === 'yes' ? '<span class="text-secondary">ASIDE</span>' : '<span class="text-primary">MAIN</span>'; ?></label>
+                <select class="form-select form-select-sm" id="service_aside" name="service_aside">
+                  <option value="<?= $service['service_aside'] ?>" <?= $service['service_aside'] === 'yes' ? 'checked' : ''; ?>>ASIDE</option>
+                  <option value="<?= $service['service_aside'] ?>" <?= $service['service_aside'] === 'no' ? 'checked' : ''; ?>>MAIN</option>
+                </select>
               </div>
               <div class="d-flex justify-content-evenly pt-3">
                 <button type="submit" class="btn btn-primary-color my-4" name="service_action" value="update">Mettre à jour</button>

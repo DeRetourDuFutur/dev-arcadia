@@ -26,9 +26,15 @@ require_once '../app/admin/gestion_navlink_admin.php';
               <label for="navlink_admin_ico" class="ms-1">ICO</label>
               <input type="text" class="form-control" id="navlink_admin_ico" name="navlink_admin_ico" value="<?= $navlink_admin['navlink_admin_ico']; ?>">
             </div>
+            <!-- CLASS CSS -->
             <div class="alert alert-secondary my-0">
-              <label for="navlink_admin_class" class="ms-1">CLASSE LIENS</label>
-              <input type="text" class="form-control" id="navlink_admin_class" name="navlink_admin_class" value="<?= $navlink_admin['navlink_admin_class']; ?>">
+              <div class="input-group mb-3">
+                <label for="navlink_admin_class" class="input-group-text input-group-text-sm">CSS</label>
+                <select class="form-select form-select-sm" id="navlink_admin_class" name="navlink_admin_class">
+                  <option value="nav-link" <?php if ($navlink_admin['navlink_admin_class'] === 'nav-link') : ?> selected <?php endif; ?>>nav-link</option>
+                  <option value="btn btn-outline-success" <?php if ($navlink_admin['navlink_admin_class'] === 'btn btn-outline-success') : ?> selected <?php endif; ?>>btn btn-outline-success</option>
+                </select>
+              </div>
             </div>
             <div class="alert alert-secondary my-0">
               ACC&Egrave;S AUX MENUS

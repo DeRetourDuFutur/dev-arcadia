@@ -11,23 +11,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $service_contenu = $_POST['service_contenu'];
   $service_nom = $_POST['service_nom'];
   $service_aside = $_POST['service_aside'];
+  $service_visuel = $_FILES['service_visuel'];
 
-  $service_newFilepath = uploadFile($FILES['service_visuel'], 'services');
+  // Si le fichier a été uploadé ... 
+  $isFileSubmitted = $service_visuel['error'] !== 4;
 
-  $db->query('UPDATE services SET service_visuel = ' . $service_newFilepath . ' WHERE service_id = ' . $service_id);
+  if ($isFileSubmitted) {
+    try {
+      $newFilepath = uploadFile($_FILES['service_visuel'], 'services');
+      $alertMessages[] = 'Les fichiers ont bien été uploadés.';
+    } catch (Exception $e) {
+      $alertMessages[] = 'L\'upload des fichiers à échoué';
+    }
+  }
 
-  // Requête pour mettre à jour le contenu du service
-  $sql = "UPDATE services SET service_statut = :service_statut, service_contenu = :service_contenu, service_nom = :service_nom, service_aside = :service_aside WHERE service_id = :service_id";
+  $sqlFields = [
+    'service_id = :service_id',
+    'service_statut = :service_statut',
+    'service_contenu = :service_contenu',
+    'service_nom = :service_nom',
+    'service_aside = :service_aside',
+  ];
+
+  if ($isFileSubmitted) {
+    $sqlFields[] = 'service_visuel = :service_visuel';
+  }
+
+  $sql = 'UPDATE services SET ' . implode(', ', $sqlFields) . ' WHERE service_id = :service_id';
+
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(':service_statut', $service_statut);
-  $stmt->bindValue(':service_contenu', $service_contenu);
-  $stmt->bindValue(':service_id', $service_id);
-  $stmt->bindValue(':service_nom', $service_nom);
-  $stmt->bindValue(':service_aside', $service_aside);
+  $stmt->bindParam(':service_id', $service_id);
+  $stmt->bindParam(':service_statut', $service_statut);
+  $stmt->bindParam(':service_contenu', $service_contenu);
+  $stmt->bindParam(':service_nom', $service_nom);
+  $stmt->bindParam(':service_aside', $service_aside);
+
+
+  if ($isFileSubmitted) {
+    $stmt->bindParam(':sservice_visuel', $newFilepath);
+  }
+
   $stmt->execute();
 }
 
-// Requête pour récupérer tous les liens de la navbar
+
+// Requête pour récupérer tous les services
 $sql = "SELECT * FROM services ORDER BY service_aside ASC, service_statut DESC, service_nom ASC";
 $stmt = $db->query($sql);
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
