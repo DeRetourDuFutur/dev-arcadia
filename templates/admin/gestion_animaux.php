@@ -36,7 +36,7 @@ require_once '../app/admin/gestion_animaux.php';
           </button>
           <ul class="dropdown-menu" aria-labelledby="animal_race_dropdown">
             <?php foreach ($races as $race) : ?>
-              <li><a class="dropdown-item" href="?domaine_id=<?= $selected_domaine_id ?>&race_id=<?= $race['race_id'] ?>" value="<?= $race['race_id'] ?>" <?php if (isset($animal) && $animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= ucwords($race['race_nom']) ?></a></li>
+              <li><a class="dropdown-item" href="?domaine_id=<?= $selected_domaine_id ?>&race_id=<?= $race['race_id'] ?>" value="<?= $race['race_id'] ?>" <?php if (isset($animal) && $animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= ucfirst($race['race_nom']) ?></a></li>
             <?php endforeach ?>
           </ul>
         </div>
@@ -45,24 +45,24 @@ require_once '../app/admin/gestion_animaux.php';
       <?php if (isset($selected_domaine_id)) : ?>
         <?php foreach ($animaux as $animal) : ?>
           <?php if ($animal['animal_domaine_id'] === $selected_domaine_id) : ?>
-            <div class="col-lg-3 mb-4" id="filtered_animal">
+            <div class="col-lg-3 mb-2" id="filtered_animal">
               <div class="border border-primary ">
                 <form action="" method="POST" class="container" enctype="multipart/form-data">
                   <!-- ID (hidden) -->
                   <input type="hidden" name="animal_id" value="<?= $animal['animal_id'] ?>">
                   <!-- PRENOM -->
-                  <div class="input-group">
+                  <div class="input-group mb-2">
                     <input type="text" name="animal_prenom" class="form-control form-control-lg mt-2" value="<?= htmlspecialchars($animal['animal_prenom']); ?>"> <br>
                   </div>
-                  <div class="input-group mb-3">
+                  <div class="input-group mb-2">
                     <!-- IMAGE -->
-                    <img src="<?= BASE_URL . $animal['animal_visuel'] ?>" class="img-fluid mt-4 img-fiche-animal" style="max-height: 88px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='88px';"><br />
+                    <img src="<?= BASE_URL . $animal['animal_visuel'] ?>" class="img-fluid img-fiche-animal" style="max-height: 88px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='88px';"><br />
                     <div class="input-group">
                       <input id="animal_visuel" type="file" name="animal_visuel" accept="image/*" class="form-control form-control-sm">
                     </div>
                   </div>
                   <!-- ÂGE -->
-                  <div class="input-group mb-3">
+                  <div class="input-group mb-2">
                     <label for="animal_age" class="input-group-text input-group-text-sm">ÂGE</label>
                     <select class="form-select form-select-sm" id="animal_age" name="animal_age">
                       <?php
@@ -74,7 +74,7 @@ require_once '../app/admin/gestion_animaux.php';
                     </select>
                   </div>
                   <!-- POIDS -->
-                  <div class="input-group mb-3">
+                  <div class="input-group mb-2">
                     <label for="animal_poids" class="input-group-text input-group-text-sm">POIDS</label>
                     <select class="form-select form-select-sm" id="animal_poids" name="animal_poids">
                       <?php
@@ -85,18 +85,47 @@ require_once '../app/admin/gestion_animaux.php';
                       ?>
                     </select>
                   </div>
+                  <!-- TYPE NOURRITURE -->
+                  <div class="input-group mb-2">
+                    <label for="animal_food_id" class="input-group-text input-group-text-sm">NOURRITURE</label>
+                    <select class="form-select form-select-sm" id="animal_food_id" name="animal_food_id">
+                      <?php foreach ($foods as $food) : ?>
+                        <option value="<?= $food['food_id'] ?>" <?php if ($animal['animal_food_id'] === $food['food_id']) : ?> selected <?php endif; ?>> <?= $food['food_type'] ?> </option>
+                      <?php endforeach ?>
+                    </select>
+                  </div>
+                  <!-- UNITE NOURRITURE -->
+                  <div class="input-group mb-2">
+                    <label for="animal_unite_id" class="input-group-text input-group-text-sm">UNITE</label>
+                    <select class="form-select form-select-sm" id="animal_unite_id" name="animal_unite_id">
+                      <?php foreach ($unites as $unite) : ?>
+                        <option value="<?= $unite['unite_id'] ?>" <?php if ($animal['animal_unite_id'] === $unite['unite_id']) : ?> selected <?php endif; ?>> <?= $unite['unite_type'] ?> </option>
+                      <?php endforeach ?>
+                    </select>
+                  </div>
+                  <!-- QUANTITE NOURRITURE -->
+                  <div class="input-group mb-2">
+                    <label for="animal_quantite_id" class="input-group-text input-group-text-sm">QUANTITE</label>
+                    <select class="form-select form-select-sm" id="animal_quantite_id" name="animal_quantite_id">
+                      <?php
+                      for ($i = 1; $i <= 100; $i++) {
+                        $selected = ($i == $animal['animal_quantite_id']) ? 'selected' : '';
+                        echo "<option value=\"$i\" $selected>$i</option>";
+                      }
+                      ?>
+                    </select>
+                  </div>
                   <!-- SANTE -->
-                  <div class="input-group mb-3">
-                    <label for="animal_sante" class="input-group-text input-group-text-sm">SANTE</label>
-                    <select class="form-select form-select-sm" id="animal_sante" name="animal_sante">
-                      <option value="bonne" <?= $animal['animal_sante'] === 1 ? 'checked' : ''; ?>>Bonne</option>
-                      <option value="fatigue" <?= $animal['animal_sante'] === 2 ? 'checked' : ''; ?>>Fatigué</option>
-                      <option value="malade" <?= $animal['animal_sante'] === 3 ? 'checked' : ''; ?>>Malade</option>
-                      <option value="isolement" <?= $animal['animal_sante'] === 4 ? 'checked' : ''; ?>>Isolement</option>
+                  <div class="input-group mb-2">
+                    <label for="animal_etat_id" class="input-group-text input-group-text-sm">SANTE</label>
+                    <select class="form-select form-select-sm" id="animal_etat_id" name="animal_etat_id">
+                      <?php foreach ($etats as $etat) : ?>
+                        <option value="<?= $etat['etat_id'] ?>" <?php if ($animal['animal_etat_id'] === $etat['etat_id']) : ?> selected <?php endif; ?>> <?= $etat['etat_type'] ?> </option>
+                      <?php endforeach ?>
                     </select>
                   </div>
                   <!-- DOMAINE -->
-                  <div class="input-group mb-3">
+                  <div class="input-group mb-2">
                     <label for="animal_domaine_id" class="input-group-text input-group-text-sm">DOMAINE</label>
                     <select class="form-select form-select-sm" id="animal_domaine_id" name="animal_domaine_id">
                       <?php foreach ($domaines as $domaine) : ?>
@@ -105,10 +134,11 @@ require_once '../app/admin/gestion_animaux.php';
                     </select>
                   </div>
                   <!-- RACE -->
-                  <div class="input-group">
+                  <div class="input-group mb-2">
                     <label for="animal_race_id" class="input-group-text input-group-text-sm">RACE</label>
                     <select class="form-select form-select-sm" id="animal_race_id" name="animal_race_id">
-                      <?php foreach ($races as $race) : ?> <option value="<?= $race['race_id'] ?>" <?php if ($animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= $race['race_nom'] ?></option>
+                      <?php foreach ($races as $race) : ?>
+                        <option value="<?= $race['race_id'] ?>" <?php if ($animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= ucfirst($race['race_nom']) ?></option>
                       <?php endforeach ?>
                     </select>
                   </div>
@@ -116,8 +146,8 @@ require_once '../app/admin/gestion_animaux.php';
                   <div class="input-group">
                     <label for="animal_statut" class="input-group-text input-group-text-sm"><?= $animal['animal_statut'] === 1 ? '<span class="text-primary">AFFICH&Eacute;</span>' : '<span class="text-secondary">MASQU&Eacute;</span>'; ?></label>
                     <select class="form-select form-select-sm" id="animal_statut" name="animal_statut">
-                      <option value="<?= $animal['animal_statut'] ?>" <?= $animal['animal_statut'] === 1 ? 'checked' : ''; ?>>Actif</option>
-                      <option value="<?= $animal['animal_statut'] ?>" <?= $animal['animal_statut'] === 0 ? 'checked' : ''; ?>>Inactif</option>
+                      <option value="1" <?= $animal['animal_statut'] === 1 ? 'selected' : ''; ?>>Actif</option>
+                      <option value="0" <?= $animal['animal_statut'] === 0 ? 'selected' : ''; ?>>Inactif</option>
                     </select>
                   </div>
                   <div class="d-flex justify-content-evenly pt-3">

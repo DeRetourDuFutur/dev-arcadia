@@ -5,7 +5,7 @@ require_once '../app/admin/gestion_navlink.php';
 <section id="navlink">
   <div class="container">
     <div class="fadeInUp row col-lg-12 pt-5" data-wow-delay="0.1s">
-      <h6 class="text-left mb-3"><i class="fa-solid fa-square-caret-down fa-xl text-secondary me-3"></i><span>DASHBOARD</span> | <span class="text-primary">GESTION NAVBAR </span></h6>
+      <h6 class="text-left mb-3"><i class="fa-solid fa-square-caret-down fa-xl text-secondary me-3"></i><span>DASHBOARD</span> | <span class="text-primary">GESTION NAVBAR</span></h6>
       <?php foreach ($navlinks as $navlink) : ?>
         <div class="col-lg-3 mb-4">
           <form action="" method="POST">

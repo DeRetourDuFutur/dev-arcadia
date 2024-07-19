@@ -42,8 +42,8 @@
   <p>
     <span class="text-primary">Accès :</span>
   <ul>
-    <li>En voiture : [Pop-up accès voiture]</li>
-    <li>En transports en commun : [Pop-up accès transports]</li>
+    <li>En <a href="https://maps.app.goo.gl/ojcTEEnM7J2CCJ1f8" target="_blank">voiture</a></li>
+    <li>En <a href="https://maps.app.goo.gl/ojcTEEnM7J2CCJ1f8" target="_blank">transports</a></li>
     <li>Parking gratuit</li>
   </ul>
   <span class="text-primary">Tarifs :</span>

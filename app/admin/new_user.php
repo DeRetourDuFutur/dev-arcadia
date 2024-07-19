@@ -3,7 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Récupérer les données du formulaire
-  $user_id = $_POST['user_id'];
+  // $user_id = $_POST['user_id'];
   $user_role = $_POST['user_role'];
   $user_prenom = $_POST['user_prenom'];
   $user_nom = $_POST['user_nom'];

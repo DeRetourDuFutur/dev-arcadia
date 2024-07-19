@@ -49,12 +49,15 @@ $routes = [
   BASE_URL . '/gestion-avis' => '../templates/admin/gestion_avis.php',
   BASE_URL . '/gestion-services' => '../templates/admin/gestion_services.php',
   BASE_URL . '/gestion-animaux' => '../templates/admin/gestion_animaux.php',
+  BASE_URL . '/gestion-rapports' => '../templates/admin/gestion_rapports.php',
   BASE_URL . '/gestion-navlink' => '../templates/admin/gestion_navlink.php',
   BASE_URL . '/gestion-navlink-admin' => '../templates/admin/gestion_navlink_admin.php',
   BASE_URL . '/gestion-logos' => '../templates/admin/gestion_logos.php',
   BASE_URL . '/login' => '../templates/admin/dashboard_login.php',
   BASE_URL . '/new-user' => '../templates/admin/new_user.php',
+  BASE_URL . '/new-rapport' => '../templates/admin/new_rapport.php',
 ];
+
 
 //  Démarrer la temporisation de sortie
 ob_start();

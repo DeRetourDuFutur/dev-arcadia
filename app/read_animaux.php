@@ -7,13 +7,17 @@ try {
 } catch (PDOException $e) {
   die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
-// Requête SQL avec double jointure pour inclure les races et les domaines
-$sql = "SELECT animaux.*, races.race_nom, domaines.domaine_name 
+// Requête SQL pour récupérer les animaux (avec les jointures entre animaux/races/domaines)
+$sql = "SELECT animaux.*, races.race_nom, domaines.domaine_name, etats.etat_type, foods.food_type, unites.unite_type  
         FROM animaux 
-        JOIN races ON animaux.animal_race_id = races.race_id 
-        JOIN domaines ON animaux.animal_domaine_id = domaines.domaine_id";
+        LEFT JOIN races ON animaux.animal_race_id = races.race_id
+        LEFT JOIN domaines ON animaux.animal_domaine_id = domaines.domaine_id
+        LEFT JOIN etats ON animaux.animal_etat_id = etats.etat_id
+        LEFT JOIN foods ON animaux.animal_food_id = foods.food_id
+        LEFT JOIN unites ON animaux.animal_unite_id = unites.unite_id";
+
 // Exécution de la requête
-$stmt = $pdo->query($sql);
+$stmt = $pdo->prepare($sql);
 // Récupération des résultats
 $habitats = [];
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -22,13 +26,16 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     'animal_prenom' => $row['animal_prenom'],
     'animal_age' => $row['animal_age'],
     'animal_poids' => $row['animal_poids'],
-    'animal_sante' => $row['animal_sante'],
     'animal_statut' => $row['animal_statut'],
     'animal_domaine_id' => $row['animal_domaine_id'],
     'animal_visuel' => $row['animal_visuel'],
     'animal_race_id' => $row['animal_race_id'],
     'race_nom' => $row['race_nom'],
-    'domaine_name' => $row['domaine_name']
+    'etat_type' => $row['etat_type'],
+    'food_type' => $row['food_type'],
+    'unite_type' => $row['unite_type'],
+    'domaine_name' => $row['domaine_name'],
+
   ];
 
   // Stocker le nom du domaine dans une variable
@@ -41,7 +48,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['animaux'][$row['animal_id']] = $animal;
 }
 
-// Fermer la connexion à la base de données
-$db = null;
 // Fermer la requête préparée
 $stmt = null;
+// Fermer la connexion à la base de données
+$db = null;

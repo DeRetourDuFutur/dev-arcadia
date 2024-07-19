@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $service_statut = $_POST['service_statut'];
   $service_contenu = $_POST['service_contenu'];
   $service_nom = $_POST['service_nom'];
-  $service_aside = $_POST['service_aside'];
+  $service_main = $_POST['service_main'];
   $service_visuel = $_FILES['service_visuel'];
 
   // Si le fichier a été uploadé ... 
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     'service_statut = :service_statut',
     'service_contenu = :service_contenu',
     'service_nom = :service_nom',
-    'service_aside = :service_aside',
+    'service_main = :service_main',
   ];
 
   if ($isFileSubmitted) {
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindParam(':service_statut', $service_statut);
   $stmt->bindParam(':service_contenu', $service_contenu);
   $stmt->bindParam(':service_nom', $service_nom);
-  $stmt->bindParam(':service_aside', $service_aside);
+  $stmt->bindParam(':service_main', $service_main);
 
 
   if ($isFileSubmitted) {
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 // Requête pour récupérer tous les services
-$sql = "SELECT * FROM services ORDER BY service_aside ASC, service_statut DESC, service_nom ASC";
+$sql = "SELECT * FROM services ORDER BY service_main DESC";
 $stmt = $db->query($sql);
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

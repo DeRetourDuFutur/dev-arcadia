@@ -13,8 +13,8 @@ require_once('../app/process_services.php');
     </div>
     <div class="row gy-5 gx-4 portfolio-container">
       <?php foreach ($services as $service) : ?>
-        <!-- Si aside est NO et statut est !== 0, alors afficher les services -->
-        <?php if ($service['service_aside'] === 'no' && $service['service_statut'] === 1) : ?>
+        <!-- Si aside est !== 0 et statut est !== 0, alors afficher les services -->
+        <?php if ($service['service_main'] === 1 && $service['service_statut'] === 1) : ?>
           <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
             <a class="animal-item" href="<?= BASE_URL ?><?= ($service['service_visuel']); ?>" data-lightbox="animal"><img class="img-fluid mb-3 img-services" src="<?= BASE_URL ?><?= ($service['service_visuel']); ?>" alt="<?= ($service['service_nom']); ?>" /></a>
             <h6 class="mb-3"><?= ($service['service_nom']); ?></h6>
@@ -34,8 +34,8 @@ require_once('../app/process_services.php');
           <div id="other_services_slider" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <?php foreach ($services as $key => $service) : ?>
-                <!-- Si est YES et statut est !== 0, alors afficher les autres services -->
-                <?php if ($service['service_aside'] === 'yes' && $service['service_statut'] === 1) : ?>
+                <!-- Si aside est === 0 et statut est !== 0, alors afficher les services en "ASIDE" -->
+                <?php if ($service['service_main'] !== 1 && $service['service_statut'] === 1) : ?>
                   <div class="carousel-item <?= ($key == 0) ? "active" : ""; ?>">
                     <img src="<?= BASE_URL ?><?= ($service['service_visuel']); ?>" class="w-100 img-services" alt="<?= ($service['service_nom']); ?>">
                     <div class="other-services">

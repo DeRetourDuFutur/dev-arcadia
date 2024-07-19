@@ -102,7 +102,7 @@ require_once '../app/read_animaux.php';
 
 <!-- Section ANIMAUX | Début -->
 <div class="container">
-  <?php $firstHabitat = $habitats[array_key_first($habitats)]; ?>
+  <?php $firstHabitat = !empty($habitats) ? $habitats[array_key_first($habitats)] : null; ?>
   <!-- Section DOMAINE | Début -->
   <?php foreach ($habitats as $habitat) : ?>
     <?php $races = $habitat['races'] ?>
@@ -128,26 +128,40 @@ require_once '../app/read_animaux.php';
                       <?= ucfirst($animal['race_nom']) ?> [<?= htmlspecialchars($habitat['domaine']) ?>]
                     </p>
                     <button type="button" class="btn btn-primary-color" data-bs-toggle="modal" data-bs-target="#modale<?= $animal['animal_id'] ?>">
-                      Détails
+                      Voir la fiche
                     </button>
                     <!-- Modale Fiche Animal  | Début -->
                     <div class="modal fade" id="modale<?= $animal['animal_id'] ?>" tabindex="-1" aria-labelledby="<?= $animal['animal_id'] ?>" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
+                          <!-- En-Tête Fiche Animal | Début -->
                           <div class="modal-header">
-                            <h5 class="modal-title fs-5" id="<?= $animal['race_nom'] ?>"><?= $animal['animal_prenom'] ?></h5>
+                            <span id="<?= $animal['race_nom'] ?>">
+                              <i class="fa-solid fa-paw fa-rotate-270 fa-lg text-primary me-2"></i>
+                              <?= ucwords($animal['race_nom']) ?>
+                            </span>
+                            <span class="fw-bold">
+                              <i class="fa-regular fa-comments fa-lg me-2 text-primary"></i>
+                              <?= strtoupper($animal['animal_prenom']) ?>
+                            </span>
+                            <span>
+                              <i class="fa-solid fa-notes-medical fa-lg <?= ($animal['etat_type'] === 'Maladie' || $animal['etat_type'] === 'Isolement') ? 'text-secondary' : 'text-primary' ?> me-2"></i>
+                              <?= ucwords($animal['etat_type']) ?>
+                            </span>
                           </div>
-                          <div class="modal-body">
-                            <img src="<?= BASE_URL . $animal['animal_visuel'] ?>" class="d-block w-100 " alt="<?= $animal['animal_prenom'] ?>">
-                            <p class="card-text mt-2">
-                              <br>
-                              Âge : <?= $animal['animal_age'] ?> <br>
-                              Poids : <?= $animal['animal_poids'] ?> <br>
-                              Santé : <?= $animal['animal_sante'] ?> <br>
-                              Race : <?= $animal['race_nom'] ?>
-                            </p>
+                          <!-- En-Tête Fiche Animal | Fin -->
+                          <!-- Contenu Fiche Animal | Début -->
+                          <div class=" modal-body">
+                            <img src=" <?= BASE_URL . $animal['animal_visuel'] ?>" class="d-block w-100 " alt="<?= $animal['animal_prenom'] ?>">
+                            <div class="card-text mt-2">
+                              <p>
+                                <i class="fa-solid fa-circle-info fa-lg text-primary me-2"></i><strong>Âge : </strong><?= $animal['animal_age'] ?> <i class="fa-solid fa-circle fa-2xs text-secondary mx-2 pt-4"></i> <strong>Poids :</strong> <?= $animal['animal_poids'] ?> <br>
+                                <i class="fa-solid fa-bowl-food fa-lg text-primary me-2"></i><strong>Nourriture : </strong><?= $animal['food_type'] ?> <i class="fa-solid fa-circle fa-2xs text-secondary mx-2 pt-4"></i> <strong>Quantité :</strong> <?= $animal['animal_food_quantite'] ?> kg
+                              </p>
+                            </div>
                           </div>
-                          <div class="modal-footer">
+                          <!-- Contenu Fiche Animal | Fin -->
+                          <div class=" modal-footer">
                             <button type="button" class="btn btn-primary-color" data-bs-dismiss="modal">Fermer</button>
                           </div>
                         </div>

@@ -1,61 +1,38 @@
 <?php
-// Initialiser la variable $db
-$db = db_connect();
-
-// Un formulaire a été envoyé
+// Si le formulaire est soumis      
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $animal_id = $_POST['animal_id'];
-  $animal_prenom = $_POST['animal_prenom'];
-  $animal_race_id = $_POST['animal_race_id'];
-  $animal_age = $_POST['animal_age'];
-  $animal_poids = $_POST['animal_poids'];
-  $animal_domaine_id = $_POST['animal_domaine_id'];
-  $animal_visuel = $_FILES['animal_visuel'];
-  $animal_statut = $_POST['animal_statut'];
 
-  // Si le fichier a été uploadé ... 
-  $isFileSubmitted = $animal_visuel['error'] !== 4;
+  // Récupérer les données du formulaire
+  $rapport_animal_id = $_POST['rapport_animal_id'];
+  $rapport_date = $_POST['rapport_date'];
+  $rapport_etat_animal = $_POST['rapport_etat_animal'];
+  $rapport_food_type_id = $_POST['rapport_food_type_id'];
+  $rapport_food_unite_type_id = $_POST['rapport_food_unite_type_id'];
+  $rapport_food_quantite = $_POST['rapport_food_quantite'];
 
-  if ($isFileSubmitted) {
-    try {
-      $newFilepath = uploadFile($_FILES['animal_visuel'], 'animaux');
-      $alertMessages[] = 'Les fichiers ont bien été uploadés.';
-    } catch (Exception $e) {
-      $alertMessages[] = 'L\'upload des fichiers à échoué';
-    }
-  }
-
-  $sqlFields = [
-    'animal_id = :animal_id',
-    'animal_prenom = :animal_prenom',
-    'animal_race_id = :animal_race_id',
-    'animal_age = :animal_age',
-    'animal_poids = :animal_poids',
-    'animal_domaine_id = :animal_domaine_id',
-    'animal_statut = :animal_statut',
-  ];
-
-  if ($isFileSubmitted) {
-    $sqlFields[] = 'animal_visuel = :animal_visuel';
-  }
-
-  $sql = 'UPDATE animaux SET ' . implode(', ', $sqlFields) . ' WHERE animal_id = :animal_id';
-
+  // Requête pour ajouter un nouvel rapport
+  $sql = "INSERT INTO rapports (rapport_animal_id, rapport_date, rapport_etat_animal, rapport_food_type_id, rapport_food_unite_type_id, rapport_food_quantite) VALUES (:rapport_animal_id, :rapport_date, :rapport_etat_animal, :rapport_food_type_id, :rapport_food_unite_type_id, :rapport_food_quantite)";
   $stmt = $db->prepare($sql);
-  $stmt->bindParam(':animal_id', $animal_id);
-  $stmt->bindParam(':animal_prenom', $animal_prenom);
-  $stmt->bindParam(':animal_race_id', $animal_race_id);
-  $stmt->bindParam(':animal_age', $animal_age);
-  $stmt->bindParam(':animal_poids', $animal_poids);
-  $stmt->bindParam(':animal_domaine_id', $animal_domaine_id);
-  $stmt->bindParam(':animal_statut', $animal_statut);
-
-  if ($isFileSubmitted) {
-    $stmt->bindParam(':animal_visuel', $newFilepath);
-  }
-
+  $stmt->bindValue(':rapport_animal_id', $rapport_animal_id);
+  $stmt->bindValue(':rapport_date', $rapport_date);
+  $stmt->bindValue(':rapport_etat_animal', $rapport_etat_animal);
+  $stmt->bindValue(':rapport_food_type_id', $rapport_food_type_id);
+  $stmt->bindValue(':rapport_food_unite_type_id', $rapport_food_unite_type_id);
+  $stmt->bindValue(':rapport_food_quantite', $rapport_food_quantite);
   $stmt->execute();
 }
+
+$sql = 'SELECT * FROM foods';
+$stmt = $db->query($sql);
+$foods = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = 'SELECT * FROM etats';
+$stmt = $db->query($sql);
+$etats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = 'SELECT * FROM unites';
+$stmt = $db->query($sql);
+$unites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $sql = 'SELECT * FROM domaines';
 $stmt = $db->query($sql);
@@ -98,10 +75,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     'animal_race_id' => $row['animal_race_id'],
     'animal_age' => $row['animal_age'],
     'animal_poids' => $row['animal_poids'],
-    // 'animal_food_id' => $row['animal_food_id'],
-    // 'animal_unite_id' => $row['animal_unite_id'],
-    // 'animal_food_quantite' => $row['animal_food_quantite'],
-    // 'animal_etat_id' => $row['animal_etat_id'],
     'animal_domaine_id' => $row['animal_domaine_id'],
     'animal_visuel' => $row['animal_visuel'],
     'animal_statut' => $row['animal_statut'],
@@ -109,13 +82,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     'domaine_name' => $row['domaine_name'],
     'race_id' => $row['race_id'],
     'race_nom' => $row['race_nom'],
-    // 'etat_id' => $row['etat_id'],
-    // 'etat_type' => $row['etat_type'],
-    // 'food_id' => $row['food_id'],
-    // 'food_type' => $row['food_type'],
-    // 'unite_id' => $row['unite_id'],
-    // 'unite_type' => $row['unite_type'],
-
   ];
 
   // Créer un tableau associatif pour chaque habitat, incluant le nom du domaine
@@ -124,8 +90,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race'] = $row['race_nom'];
   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['animaux'][$row['animal_id']] = $animal;
 
+
   $animaux[] = $animal;
-  $habitats[] = $habitat;
 }
 
 // Fermer la connexion à la base de données

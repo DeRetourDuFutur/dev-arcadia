@@ -26,16 +26,16 @@ require_once '../app/admin/gestion_services.php';
               <div class="input-group mt-3">
                 <label for="service_statut" class="input-group-text input-group-text-sm"><?= $service['service_statut'] === 1 ? '<span class="text-primary">AFFICH&Eacute;</span>' : '<span class="text-secondary">MASQU&Eacute;</span>'; ?></label>
                 <select class="form-select form-select-sm" id="service_statut" name="service_statut">
-                  <option value="<?= $service['service_statut'] ?>" <?= $service['service_statut'] === 1 ? 'checked' : ''; ?>>Actif</option>
-                  <option value="<?= $service['service_statut'] ?>" <?= $service['service_statut'] === 0 ? 'checked' : ''; ?>>Inactif</option>
+                  <option value="1" <?= $service['service_statut'] === 1 ? 'checked' : ''; ?>>OUI</option>
+                  <option value="0" <?= $service['service_statut'] === 0 ? 'checked' : ''; ?>>NON</option>
                 </select>
               </div>
               <!-- ASIDE (Sur le côté ou non) -->
               <div class="input-group mt-3">
-                <label for="service_aside" class="input-group-text input-group-text-sm"><?= $service['service_aside'] === 'yes' ? '<span class="text-secondary">ASIDE</span>' : '<span class="text-primary">MAIN</span>'; ?></label>
-                <select class="form-select form-select-sm" id="service_aside" name="service_aside">
-                  <option value="<?= $service['service_aside'] ?>" <?= $service['service_aside'] === 'yes' ? 'checked' : ''; ?>>ASIDE</option>
-                  <option value="<?= $service['service_aside'] ?>" <?= $service['service_aside'] === 'no' ? 'checked' : ''; ?>>MAIN</option>
+                <label for="service_main" class="input-group-text input-group-text-sm"><?= $service['service_main'] === 1 ? '<span class="text-primary">MAIN</span>' : '<span class="text-secondary">ASIDE</span>'; ?></label>
+                <select class="form-select form-select-sm" id="service_main" name="service_main">
+                  <option value="1" <?= $service['service_main'] === 1 ? 'selected' : ''; ?>>MAIN</option>
+                  <option value="0" <?= $service['service_main'] === 0 ? 'selected' : ''; ?>>ASIDE</option>
                 </select>
               </div>
               <div class="d-flex justify-content-evenly pt-3">
