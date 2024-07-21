@@ -5,8 +5,8 @@ require_once '../app/admin/gestion_animaux.php';
 <!-- GESTION DES ANIMAUX | DÉBUT -->
 <section id="gestion_animaux">
   <div class="container">
-    <div class="fadeInUp row col-lg-12" data-wow-delay="0.1s">
-      <div class="row col-lg-12 pt-3">
+    <div class="fadeInUp row col-lg-12 pt-5" data-wow-delay="0.1s">
+      <div class="row col-lg-12">
         <h6 class="text-left mb-3">
           <i class="fa-solid fa-square-caret-down fa-xl text-primary me-3"></i>
           <span>DASHBOARD</span> | <span class="text-primary">ANIMAUX</span>

@@ -2,7 +2,7 @@
 <?php
 require_once '../app/admin/gestion_users.php';
 ?>
-<!-- Gestion des Utilisateurs | Début -->
+<!-- GESTION DES UTILISATEURS | DÉBUT -->
 <section id="users">
   <div class="container">
     <div class="fadeInUp row col-lg-12 pt-5" data-wow-delay="0.1s">
@@ -10,9 +10,11 @@ require_once '../app/admin/gestion_users.php';
       <?php foreach ($users as $user) : ?>
         <div class="col-lg-3 mb-4">
           <form method="POST" class="<?php if ($user['user_statut'] == 0) echo 'text-decoration-line-through'; ?>">
+            <!-- ID (HIDDEN) -->
             <input type="hidden" id="user_id" name="user_id" value="<?= $user['user_id'] ?>">
             <div class="alert alert-secondary my-0">
               <div class="input-group mb-3">
+                <!-- RÔLE -->
                 <label class="input-group-text <?php if ($user['user_role'] == 'admin') echo 'text-primary'; ?>" for="user_role">RÔLE</label>
                 <select class="form-select" id="user_role" name="user_role">
                   <option value="admin" <?php if ($user['user_role'] == 'admin') echo 'selected'; ?> class="text-primary fw-bold">ADMINISTRATEUR</option>
@@ -22,25 +24,31 @@ require_once '../app/admin/gestion_users.php';
               </div>
             </div>
             <div class="alert alert-secondary my-0">
+              <!-- IDENTIFIANT -->
               <label for="user_email" class="ms-1">IDENTIFIANT</label>
               <input type="email" class="form-control" id="user_email" name="user_email" value="<?php echo $user['user_email']; ?>" readonly>
             </div>
+            <!-- MOT DE PASSE -->
             <div class="alert alert-secondary my-0">
               <label for="user_pwd" class="ms-1">MOT DE PASSE</label>
               <input type="password" class="form-control" id="user_pwd" name="user_pwd" value="<?php echo $user['user_pwd']; ?>">
             </div>
+            <!-- PRÉNOM -->
             <div class="alert alert-secondary my-0">
               <label for="user_prenom" class="ms-1">PR&Eacute;NOM</label>
               <input type="text" class="form-control" id="user_prenom" name="user_prenom" value="<?php echo $user['user_prenom']; ?>">
             </div>
+            <!-- NOM -->
             <div class="alert alert-secondary my-0">
               <label for="user_nom" class="ms-1">NOM</label>
               <input type="text" class="form-control" id="user_nom" name="user_nom" value="<?php echo $user['user_nom']; ?>">
             </div>
+            <!-- DATE DE CRÉATION -->
             <div class="alert alert-secondary my-0">
               <label for="user_date" class="ms-1">DATE DE CR&Eacute;ATION</label>
               <input type="text" class="form-control" id="user_date" name="user_date" value="<?php echo $user['user_date']; ?>" readonly>
             </div>
+            <!-- STATUT -->
             <div class="input-group mb-3">
               <label for="user_statut" class="input-group-text" style="<?php if ($user['user_statut'] == 0) echo 'color: red'; ?>"><?php echo ($user['user_statut'] == 0) ? 'STATUT INACTIF' : 'STATUT ACTIF'; ?></label>
               <select class="form-select" id="user_statut" name="user_statut">
@@ -48,11 +56,12 @@ require_once '../app/admin/gestion_users.php';
                 <option value="0" <?php if ($user['user_statut'] == 0) echo 'selected'; ?>>NON</option>
               </select>
             </div>
+            <!-- BOUTONS -->
             <div class="d-flex justify-content-evenly pt-3">
               <button type="submit" class="btn btn-primary-color" name="user_action" value="update" style="width: 30%;">MAJ</button>
               <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#<?= 'deleteModal' . $user['user_id'] ?>" style="width: 30%;" title="Supprimer l'utilisateur de la base de données"><i class="fa-solid fa-user-minus"></i></button>
 
-              <!-- Modal -->
+              <!-- MODAL POUR SUPPRIMER UN UTILISATEUR -->
               <div class="modal fade" id="<?= 'deleteModal' . $user['user_id'] ?>" tabindex="-1" aria-labelledby="<?= 'deleteModalLabel' . $user['user_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">

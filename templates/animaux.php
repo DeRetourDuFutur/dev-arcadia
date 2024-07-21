@@ -75,7 +75,7 @@ require_once '../app/read_animaux.php';
                     <div class="text-center">
                       <h5 class="card-title"><?= $animal['animal_prenom'] ?></h5>
                       <p class="card-text">
-                        <?= ucfirst($animal['race_nom']) ?><i class="fa-solid fa-location-crosshairs fa-lg text-secondary mx-2"></i><?= htmlspecialchars($habitat['domaine']) ?><br><br>
+                        <?= ucfirst($animal['race_nom']) ?><i class="fa-solid fa-location-crosshairs fa-lg text-secondary mx-2"></i><?= ucfirst(strtolower($habitat['domaine'])) ?><br><br>
                         <button type="button" class="btn btn-primary-color me-3" data-bs-toggle="modal" data-bs-target="#modale<?= $animal['animal_id'] ?>">
                           Sa fiche
                         </button>

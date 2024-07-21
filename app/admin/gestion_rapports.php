@@ -63,11 +63,12 @@ $unites = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // REQUÊTE SQL POUR RÉCUPÉRER TOUS LES RAPPORTS AVEC LES ANIMAUX, LES NOURRITURES, LES UNITÉS ET LES ÉTATS
 $sql = "SELECT rapports.*, animaux.animal_id, animaux.animal_prenom, animaux.animal_visuel, foods.food_id, foods.food_type, unites.unite_id, unites.unite_type, etats.etat_id, etats.etat_type
-        FROM rapports   
-        JOIN animaux ON rapports.rapport_animal_id = animaux.animal_id
-        JOIN foods ON rapport_food_type_id = foods.food_id
-        JOIN etats ON rapport_etat_animal = etats.etat_id 
-        JOIN unites ON rapport_food_unite_type_id = unites.unite_id";
+  FROM rapports   
+  JOIN animaux ON rapports.rapport_animal_id = animaux.animal_id
+  JOIN foods ON rapport_food_type_id = foods.food_id
+  JOIN etats ON rapport_etat_animal = etats.etat_id 
+  JOIN unites ON rapport_food_unite_type_id = unites.unite_id
+  ORDER BY rapport_date DESC";
 
 // EXÉCUTER LA REQUÊTE
 $stmt = $db->query($sql);
