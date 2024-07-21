@@ -1,5 +1,5 @@
 <?php
-// Initialiser la variable $db
+// INITIALISER LA VARIABLE $DB
 $db = db_connect();
 try {
   $pdo = $db;
@@ -7,19 +7,19 @@ try {
 } catch (PDOException $e) {
   die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
-// Requête SQL pour récupérer les animaux (avec les jointures entre animaux/races/domaines)
-$sql = "SELECT animaux.*, races.race_nom, domaines.domaine_name, etats.etat_type, foods.food_type, unites.unite_type  
+// REQÊTE SQL POUR RÉCUPÉRER TOUS LES ANIMAUX AVEC LEURS RAPPORTS ASSOCIÉS  
+$sql = "SELECT animaux.*, rapports.rapport_food_quantite, rapports.rapport_date, etats.etat_type, foods.food_type, races.race_nom, domaines.domaine_name, domaines.domaine_cover, domaines.domaine_thumbnail, etats.etat_type, foods.food_type, unites.unite_type  
         FROM animaux 
-        LEFT JOIN races ON animaux.animal_race_id = races.race_id
-        LEFT JOIN domaines ON animaux.animal_domaine_id = domaines.domaine_id
-        LEFT JOIN etats ON animaux.animal_etat_id = etats.etat_id
-        LEFT JOIN foods ON animaux.animal_food_id = foods.food_id
-        LEFT JOIN unites ON animaux.animal_unite_id = unites.unite_id";
+        JOIN races ON animaux.animal_race_id = races.race_id
+        JOIN domaines ON animaux.animal_domaine_id = domaines.domaine_id
+        LEFT JOIN rapports ON rapports.rapport_animal_id = animaux.animal_id
+        LEFT JOIN etats ON rapports.rapport_etat_animal = etats.etat_id
+        LEFT JOIN foods ON rapports.rapport_food_type_id = foods.food_id
+        LEFT JOIN unites ON rapports.rapport_food_unite_type_id  = unites.unite_id";
 
-// Exécution de la requête
-$stmt = $pdo->prepare($sql);
-// Récupération des résultats
-$habitats = [];
+// EXÉCUTER LA REQUÊTE
+$stmt = $pdo->query($sql);
+
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $animal = [
     'animal_id' => $row['animal_id'],
@@ -28,27 +28,34 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     'animal_poids' => $row['animal_poids'],
     'animal_statut' => $row['animal_statut'],
     'animal_domaine_id' => $row['animal_domaine_id'],
+    'animal_pays' => $row['animal_pays'],
+    'animal_histoire' => $row['animal_histoire'],
     'animal_visuel' => $row['animal_visuel'],
     'animal_race_id' => $row['animal_race_id'],
     'race_nom' => $row['race_nom'],
-    'etat_type' => $row['etat_type'],
-    'food_type' => $row['food_type'],
-    'unite_type' => $row['unite_type'],
     'domaine_name' => $row['domaine_name'],
-
+    'domaine_cover' => $row['domaine_cover'],
+    'domaine_thumbnail' => $row['domaine_thumbnail'],
+    'rapport_date' => $row['rapport_date'] ?? 'Aucun',
+    'etat_type' => $row['etat_type'] ?? 'Aucun',
+    'food_type' => $row['food_type'] ?? 'Aucun',
+    'unite_type' => $row['unite_type'] ?? 'Aucun',
+    'animal_food_quantite' => $row['rapport_food_quantite'] ?? 'Aucun',
   ];
 
-  // Stocker le nom du domaine dans une variable
+  // STOCKER LE NOM DU DOMAINE DANS UNE VARIABLE
   $habitatName = $row['domaine_name'];
 
-  // Créer un tableau associatif pour chaque habitat, incluant le nom du domaine
+  // CRÉER UN TABLEAU ASSOCIATIF POUR CHAQUE DOMAINE  
   $habitats[$row['animal_domaine_id']]['domaine'] = $row['domaine_name'];
+  $habitats[$row['animal_domaine_id']]['cover'] = $row['domaine_cover'];
+  $habitats[$row['animal_domaine_id']]['thumbnail'] = $row['domaine_thumbnail'];
   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race_id'] = $row['animal_race_id'];
   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race'] = $row['race_nom'];
   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['animaux'][$row['animal_id']] = $animal;
 }
 
-// Fermer la requête préparée
+// FERMER LA REQUÊTE  
 $stmt = null;
-// Fermer la connexion à la base de données
+// FERMER LA CONNEXION
 $db = null;

@@ -1,24 +1,76 @@
 <?php
-// Initialiser la variable $db
+// INITIALISER LA VARIABLE $DB
 $db = db_connect();
-// Création d'une instance PDO pour la connexion à la base de données
-try {
-  $pdo = $db;
-  // Configuration des attributs PDO pour gérer les erreurs
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  die("Erreur de connexion à la base de données : " . $e->getMessage());
+
+
+// SI UN FORMULAIRE A ÉTÉ ENVOYÉ, ON TRAITE LES DONNÉES
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $domaine_id = $_POST['domaine_id'];
+  $domaine_name = $_POST['domaine_name'];
+  // $domaine_cover = $_FILES['domaine_cover'];
+  // $domaine_thumbnail = $_FILES['domaine_thumbnail'];
+
+  // INITIALISER LA VARIABLE DOMAINES
+  $domaines = [
+    'domaine_id' => $domaine_id,
+    'domaine_name' => $domaine_name,
+    // 'domaine_cover' => $domaine_cover,
+    // 'domaine_thumbnail' => $domaine_thumbnail,
+  ];
+
+  // SI UN FICHIER A ÉTÉ SOUMIS (UPLOADÉ)
+  // $isFileSubmitted = $domaine_cover['error'] !== 4;
+  // $isFileSubmitted = $domaine_thumbnail['error'] !== 4;
+
+  // if ($isFileSubmitted) {
+  //   try {
+  //     $newFilepath = uploadFile($_FILES['domaine_cover'], 'domaines');
+  //     $newFilepath = uploadFile($_FILES['domaine_thumbnail'], 'domaines');
+  //     $alertMessages[] = 'Les fichiers ont bien été uploadés.';
+  //   } catch (Exception $e) {
+  //     $alertMessages[] = 'L\'upload des fichiers à échoué';
+  //   }
+  // }
+
+  // PRÉPARER LA REQUÊTE SQL
+  $sqlFields = [
+    'domaine_id = :domaine_id',
+    'domaine_name = :domaine_name',
+    // 'domaine_cover = :domaine_cover',
+    // 'domaine_thumbnail = :domaine_thumbnail',
+  ];
+
+  // if ($isFileSubmitted) {
+  //   $sqlFields[] = 'domaine_cover = :domaine_cover';
+  //   $sqlFields[] = 'domaine_thumbnail = :domaine_thumbnail';
+  // }
+
+  // MISE À JOUR DE LA TABLE DOMAINES
+  $sql = 'UPDATE domaines SET ' . implode(', ', $sqlFields) . ' WHERE domaine_id = :domaine_id';
+
+  $stmt = $db->prepare($sql);
+  $stmt->bindParam(':domaine_id', $domaine_id);
+  $stmt->bindParam(':domaine_name', $domaine_name);
+  $stmt->bindParam(':domaine_cover', $domaine_cover);
+  $stmt->bindParam(':domaine_thumbnail', $domaine_thumbnail);
+
+  // if ($isFileSubmitted) {
+  //   $stmt->bindParam(':domaine_cover', $newFilepath);
+  //   $stmt->bindParam(':domaine_thumbnail', $newFilepath);
+  // }
+
+  // EXÉCUTER LA REQUÊTE
+  $stmt->execute();
+
+  // REQUÊTE SQL POUR RÉCUPÉRER TOUS LES DOMAINES
+  $sql = 'SELECT * FROM domaines';
+
+  // EXÉCUTER LA REQUÊTE
+  $stmt = $db->query($sql);
+  $domaines = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Requête pour récupérer tous les domaines avec la jointure des tables animaux et domaines
-$sql = "SELECT domaines.* FROM domaines JOIN animaux ON animaux.animal_domaine_id = domaines.domaine_id";
-$stmt = $pdo->query($sql);
-// Récupération des résultats
-$domaines = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Fermer la connexion à la base de données
-$db = null;
-// Fermer la requête préparée
+// FERMER LA REQUÊTE  
 $stmt = null;
-// Fermer la connexion PDO
-$pdo = null;
+// FERMER LA CONNEXION
+$db = null;

@@ -1,58 +1,66 @@
+<!-- APPEL DES FONCTIONS PHP -->
 <?php
 require_once '../app/admin/gestion_logos.php';
 ?>
-<!-- Gestion des Logos | Début -->
+<!-- GESTION LOGOS | DÉBUT -->
 <section id="gestion_logos">
   <div class="container">
-    <div class="fadeInUp row col-lg-12 pt-5" data-wow-delay="0.1s">
+    <div class="fadeInUp row col-lg-12 pt-3" data-wow-delay="0.1s">
       <h6 class="text-left mb-3"><i class="fa-solid fa-square-caret-down fa-xl text-secondary me-3"></i>
         <span>DASHBOARD</span> | <span class="text-primary">GESTION LOGOS </span>
       </h6>
       <?php foreach ($logos as $logo) : ?>
         <div class="col-lg-3 mb-4">
-          <div class="border border-primary ">
-            <?php if (isset($alertMessages)) : ?>
-              <?php foreach ($alertMessages as $message) : ?>
-                <p><?= $message ?></p>
-              <?php endforeach ?>
-            <?php endif; ?>
-            <form action="" method="POST" class="container" enctype="multipart/form-data">
-              <input type="hidden" name="logo_id" value="<?= $logo['logo_id'] ?>">
-              <label for="logo_txtg" class="mt-4 mb-2 fw-bold">TEXTE GAUCHE <?php ?></label> <br>
-              <input type="text" name="logo_txtg" value="<?= htmlspecialchars($logo['logo_txtg']); ?>"> <br>
-              <label for="logo_txtd" class="mt-4 mb-2 fw-bold">TEXTE DROIT</label> <br>
-              <input type="text" name="logo_txtd" value="<?= htmlspecialchars($logo['logo_txtd']); ?>"> <br>
-              <label for="logo_img" class="mt-4 mb-2 fw-bold">IMAGE</label> <br>
-              <img src="<?= $logo['logo_img']; ?>" alt="<?= $logo['logo_title']; ?>" class="img-fluid mt-4 img-services" style="max-height: 120px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='120px';"> <br />
-              <label for="logo_img" class="mt-4 mb-2 fw-bold">Modifier Image Front</label> <br>
-              <input type="file" name="logo_img" id="logo_img">
-              <div class="justify-content-center">
-                <label for="logo_ico" class="mt-4 mb-2 fw-bold">ICÔNE</label>
-                <textarea name="logo_ico" class="form-control" cols="70" rows="4" wrap="hard"><?= htmlspecialchars($logo['logo_ico']); ?></textarea>
+          <?php if (isset($alertMessages)) : ?>
+            <?php foreach ($alertMessages as $message) : ?>
+              <p><?= $message ?></p>
+            <?php endforeach ?>
+          <?php endif; ?>
+          <!-- FORMULAIRE DE GESTION DES LOGOS | DÉBUT -->
+          <form method="POST" class="container" enctype="multipart/form-data">
+            <!-- ID (HIDDEN) -->
+            <input type="hidden" name="logo_id" value="<?= $logo['logo_id'] ?>">
+            <!-- ATTRIBUT -->
+            <div class="input-group">
+              <label for="logo_attribut" class="input-group-text input-group-text-sm"><?= $logo['logo_attribut'] === 'FRONT' ? '<span class="text-primary">FRONT</span>' : '<span class="text-secondary">BACK</span>'; ?></label>
+              <select class="form-select form-select-sm" id="logo_attribut" name="logo_attribut">
+                <option value="FRONT" <?= $logo['logo_attribut'] === 'FRONT' ? 'selected' : ''; ?>>FRONT</option>
+                <option value="BACK" <?= $logo['logo_attribut'] === 'BACK' ? 'selected' : ''; ?>>BACK</option>
+              </select>
+            </div>
+            <!-- TEXTE GAUCHE -->
+            <div class="alert alert-secondary my-0">
+              <label for="logo_txtg" class="fs-6">TEXTE GAUCHE</label>
+              <input type="text" class="form-control" name="logo_txtg" value="<?= htmlspecialchars($logo['logo_txtg']); ?>">
+              <!-- TEXTE DROIT -->
+              <label for="logo_txtd" class="fs-6 mt-2">TEXTE DROIT</label>
+              <input type="text" class="form-control" name="logo_txtd" value="<?= htmlspecialchars($logo['logo_txtd']); ?>">
+              <!-- ICÔNE -->
+              <label for="logo_ico" class="fs-6 mt-2">ICÔNE</label>
+              <input type="text" class="form-control" name="logo_ico" value="<?= htmlspecialchars($logo['logo_ico']); ?>">
+              <!-- LINK -->
+              <label for="logo_lien" class="fs-6 mt-2">LINK</label>
+              <input type="text" class="form-control" name="logo_lien" value="<?= htmlspecialchars($logo['logo_lien']); ?>">
+              <!-- TITLE -->
+              <label for="logo_title" class="fs-6 mt-2">TITLE</label>
+              <input type="text" class="form-control" name="logo_title" value="<?= htmlspecialchars($logo['logo_title']); ?>">
+            </div>
+            <!-- IMAGE -->
+            <div class="alert alert-secondary my-0 text-center">
+              <img src="<?= $logo['logo_img']; ?>" alt="<?= $logo['logo_title']; ?>" class="img-fluid" style="max-height: 80px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='80px';">
+              <div class="input-group">
+                <input type="file" name="logo_img" id="logo_img" accept="image/*" class="form-control form-control-sm">
               </div>
-              <div class="justify-content-center">
-                <label for="logo_lien" class="mt-4 mb-2 fw-bold">LINK</label>
-                <textarea name="logo_lien" class="form-control" cols="70" rows="4" wrap="hard"><?= htmlspecialchars($logo['logo_lien']); ?></textarea>
-              </div>
-              <div class="justify-content-center">
-                <label for="logo_title" class="mt-4 mb-2 fw-bold">TITLE</label>
-                <textarea name="logo_title" class="form-control" cols="70" rows="4" wrap="hard"><?= htmlspecialchars($logo['logo_title']); ?></textarea>
-              </div>
-              <div class="justify-content-center">
-                <label for="logo_attribut" class="mt-4 mb-2 fw-bold">ATTRIBUT</label>
-                <select name="logo_attribut" id="logo_attribut">
-                  <option value="FRONT" <?php if ($logo['logo_attribut'] === 'FRONT') : ?> selected <?php endif ?>>FRONT</option>
-                  <option value="BACK" <?php if ($logo['logo_attribut'] === 'BACK') : ?> selected <?php endif ?>>BACK</option>
-                </select>
-              </div>
+              <!-- BOUTON MAJ LOGO -->
               <div class="d-flex justify-content-evenly pt-3">
-                <button type="submit" class="btn btn-primary-color my-4" name="logo_action" value="update">Mettre à jour</button>
+                <button type="submit" class="btn btn-primary-color" name="logo_action" value="update">Mettre à jour</button>
               </div>
-            </form>
-          </div>
-          <br>
+            </div>
+          </form>
+          <!-- FORMULAIRE DE GESTION DES LOGOS | FIN -->
         </div>
       <?php endforeach; ?>
     </div>
   </div>
 </section>
+<!-- GESTION LOGOS | FIN -->

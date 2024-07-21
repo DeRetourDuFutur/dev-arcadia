@@ -1,8 +1,8 @@
+<!-- APPEL DES FONCTIONS PHP -->
 <?php
 require_once '../app/admin/gestion_animaux.php';
 ?>
-
-<!-- Gestion des Animaux | Début -->
+<!-- GESTION DES ANIMAUX | DÉBUT -->
 <section id="gestion_animaux">
   <div class="container">
     <div class="fadeInUp row col-lg-12" data-wow-delay="0.1s">
@@ -11,7 +11,7 @@ require_once '../app/admin/gestion_animaux.php';
           <i class="fa-solid fa-square-caret-down fa-xl text-primary me-3"></i>
           <span>DASHBOARD</span> | <span class="text-primary">ANIMAUX</span>
         </h6>
-        <!-- MENU DES DOMAINES | DEBUT -->
+        <!-- MENU DES DOMAINES | DÉBUT -->
         <div class="mb-3">
           <?php foreach ($domaines as $domaine) : ?>
             <?php if ($selected_domaine_id === $domaine['domaine_id']) : ?>
@@ -27,7 +27,7 @@ require_once '../app/admin/gestion_animaux.php';
           <?php endforeach; ?>
         </div>
         <!-- MENU DES DOMAINES | FIN -->
-        <!-- MENU DES RACES | DEBUT -->
+        <!-- MENU DES RACES | DÉBUT -->
         <div class="input-group mb-3 ms-5 dropdown">
           <button class="input-group-text input-group-text-sm dropdown-toggle" type="button" id="animal_race_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <?php foreach ($races as $race) : ?>
@@ -48,9 +48,9 @@ require_once '../app/admin/gestion_animaux.php';
             <div class="col-lg-3 mb-2" id="filtered_animal">
               <div class="border border-primary ">
                 <form action="" method="POST" class="container" enctype="multipart/form-data">
-                  <!-- ID (hidden) -->
+                  <!-- ID (HIDDEN) -->
                   <input type="hidden" name="animal_id" value="<?= $animal['animal_id'] ?>">
-                  <!-- PRENOM -->
+                  <!-- PRÉNOM -->
                   <div class="input-group mb-2">
                     <input type="text" name="animal_prenom" class="form-control form-control-lg mt-2" value="<?= htmlspecialchars($animal['animal_prenom']); ?>"> <br>
                   </div>
@@ -89,12 +89,12 @@ require_once '../app/admin/gestion_animaux.php';
                   <div class="input-group mb-2">
                     <label for="animal_food_id" class="input-group-text input-group-text-sm">NOURRITURE</label>
                     <select class="form-select form-select-sm" id="animal_food_id" name="animal_food_id">
-                      <?php foreach ($foods as $food) : ?>
-                        <option value="<?= $food['food_id'] ?>" <?php if ($animal['animal_food_id'] === $food['food_id']) : ?> selected <?php endif; ?>> <?= $food['food_type'] ?> </option>
+                      <?php foreach ($rapports as $rapport) : ?>
+                        <option value="<?= $rapport['rapport_food_type_id'] ?>" <?php if ($rapport['rapport_food_type_id'] === $rapport['rapport_food_type_id']) : ?> selected <?php endif; ?>> <?= $rapport['food_type'] ?> </option>
                       <?php endforeach ?>
                     </select>
                   </div>
-                  <!-- UNITE NOURRITURE -->
+                  <!-- UNITÉ NOURRITURE -->
                   <div class="input-group mb-2">
                     <label for="animal_unite_id" class="input-group-text input-group-text-sm">UNITE</label>
                     <select class="form-select form-select-sm" id="animal_unite_id" name="animal_unite_id">
@@ -103,7 +103,7 @@ require_once '../app/admin/gestion_animaux.php';
                       <?php endforeach ?>
                     </select>
                   </div>
-                  <!-- QUANTITE NOURRITURE -->
+                  <!-- QUANTITÉ NOURRITURE -->
                   <div class="input-group mb-2">
                     <label for="animal_quantite_id" class="input-group-text input-group-text-sm">QUANTITE</label>
                     <select class="form-select form-select-sm" id="animal_quantite_id" name="animal_quantite_id">
@@ -115,7 +115,7 @@ require_once '../app/admin/gestion_animaux.php';
                       ?>
                     </select>
                   </div>
-                  <!-- SANTE -->
+                  <!-- SANTÉ -->
                   <div class="input-group mb-2">
                     <label for="animal_etat_id" class="input-group-text input-group-text-sm">SANTE</label>
                     <select class="form-select form-select-sm" id="animal_etat_id" name="animal_etat_id">
@@ -142,7 +142,7 @@ require_once '../app/admin/gestion_animaux.php';
                       <?php endforeach ?>
                     </select>
                   </div>
-                  <!-- STATUT (Affiché ou Masqué) -->
+                  <!-- STATUT (AFFICHÉ/MASQUÉ) -->
                   <div class="input-group">
                     <label for="animal_statut" class="input-group-text input-group-text-sm"><?= $animal['animal_statut'] === 1 ? '<span class="text-primary">AFFICH&Eacute;</span>' : '<span class="text-secondary">MASQU&Eacute;</span>'; ?></label>
                     <select class="form-select form-select-sm" id="animal_statut" name="animal_statut">

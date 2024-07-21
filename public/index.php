@@ -48,6 +48,7 @@ $routes = [
   BASE_URL . '/gestion-horaires' => '../templates/admin/gestion_horaires.php',
   BASE_URL . '/gestion-avis' => '../templates/admin/gestion_avis.php',
   BASE_URL . '/gestion-services' => '../templates/admin/gestion_services.php',
+  BASE_URL . '/gestion-domaines' => '../templates/admin/gestion_domaines.php',
   BASE_URL . '/gestion-animaux' => '../templates/admin/gestion_animaux.php',
   BASE_URL . '/gestion-rapports' => '../templates/admin/gestion_rapports.php',
   BASE_URL . '/gestion-navlink' => '../templates/admin/gestion_navlink.php',

@@ -1,11 +1,11 @@
 <?php
-// Initialiser la variable $db
+// INITIALISER LA VARIABLE $DB
 $db = db_connect();
 
-// Si le formulaire est soumis      
+// SI UN FORMULAIRE A ÉTÉ ENVOYÉ, ON TRAITE LES DONNÉES
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  // Récupérer les données du formulaire
+  // RÉCUPÉRER LES DONNÉES DU FORMULAIRE
   $service_id = $_POST['service_id'];
   $service_statut = $_POST['service_statut'];
   $service_contenu = $_POST['service_contenu'];
@@ -13,9 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $service_main = $_POST['service_main'];
   $service_visuel = $_FILES['service_visuel'];
 
-  // Si le fichier a été uploadé ... 
+  //  VÉRIFIER SI UN FICHIER A ÉTÉ SOUMIS
   $isFileSubmitted = $service_visuel['error'] !== 4;
 
+  // SI UN FICHIER A ÉTÉ SOUMIS (UPLOADÉ)
   if ($isFileSubmitted) {
     try {
       $newFilepath = uploadFile($_FILES['service_visuel'], 'services');
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 
+  // PRÉPARER LA REQUÊTE SQL
   $sqlFields = [
     'service_id = :service_id',
     'service_statut = :service_statut',
@@ -37,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sqlFields[] = 'service_visuel = :service_visuel';
   }
 
+  // MISE À JOUR DE LA TABLE DOMAINES
   $sql = 'UPDATE services SET ' . implode(', ', $sqlFields) . ' WHERE service_id = :service_id';
 
   $stmt = $db->prepare($sql);
@@ -46,19 +49,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindParam(':service_nom', $service_nom);
   $stmt->bindParam(':service_main', $service_main);
 
-
   if ($isFileSubmitted) {
-    $stmt->bindParam(':sservice_visuel', $newFilepath);
+    $stmt->bindParam(':service_visuel', $newFilepath);
   }
 
-  $stmt->execute();
+  // EXÉCUTER LA REQUÊTE
+  try {
+    $stmt->execute();
+  } catch (PDOException $e) {
+    echo 'Error executing query: ' . $e->getMessage();
+    exit();
+  }
 }
 
-
-// Requête pour récupérer tous les services
+// REQUÊTE SQL POUR RÉCUPÉRER TOUS LES SERVICES
 $sql = "SELECT * FROM services ORDER BY service_main DESC";
-$stmt = $db->query($sql);
-$services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// EXÉCUTER LA REQUÊTE
+$stmt = $db->query($sql);
+
+// INITIALISER LA VARIABLE SERVICES
+$services = [];
+
+// STOCKER LES RÉSULTATS DANS LA VARIABLE $SERVICES
+if (isset($stmt)) {
+  $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// FERMER LA CONNEXION
 $db = null;
 $stmt = null;

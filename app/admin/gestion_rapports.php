@@ -1,10 +1,11 @@
 <?php
-// Initialiser la variable $db
+// INITIALISER LA VARIABLE $DB
 $db = db_connect();
 
-
-// Un formulaire a été envoyé
+// SI UN FORMULAIRE A ÉTÉ ENVOYÉ, ON TRAITE LES DONNÉES
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  // RÉCUPÉRER LES DONNÉES DU FORMULAIRE
   $rapport_id = $_POST['rapport_id'];
   $rapport_animal_id = $_POST['rapport_animal_id'];
   $rapport_date = $_POST['rapport_date'];
@@ -13,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $rapport_food_unite_type_id = $_POST['rapport_food_unite_type_id'];
   $rapport_food_quantite = $_POST['rapport_food_quantite'];
 
-
+  // PRÉPARER LA REQUÊTE SQL
   $sqlFields = [
     'rapport_id = :rapport_id',
     'rapport_animal_id = :rapport_animal_id',
@@ -23,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     'rapport_food_unite_type_id = :rapport_food_unite_type_id',
     'rapport_food_quantite = :rapport_food_quantite',
   ];
+
+  // MISE À JOUR DE LA TABLE RAPPORTS
   $sql = 'UPDATE rapports SET ' . implode(', ', $sqlFields) . ' WHERE rapport_id = :rapport_id';
 
   $stmt = $db->prepare($sql);
@@ -34,10 +37,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindParam(':rapport_food_unite_type_id', $rapport_food_unite_type_id);
   $stmt->bindParam(':rapport_food_quantite', $rapport_food_quantite);
 
+  // EXÉCUTER LA REQUÊTE
   $stmt->execute();
 }
 
-// Requête SQL avec double jointure pour inclure les rapports et les animaux
+// REQUÊTE SQL POUR RÉCUPÉRER TOUS LES ANIMAUX
+$sql = 'SELECT * FROM animaux';
+$stmt = $db->query($sql);
+$animaux = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// REQUÊTE SQL POUR RÉCUPÉRER TOUS LES ÉTATS
+$sql = 'SELECT * FROM etats';
+$stmt = $db->query($sql);
+$etats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// REQUÊTE SQL POUR RÉCUPÉRER TOUS LES NOURRITURES
+$sql = 'SELECT * FROM foods';
+$stmt = $db->query($sql);
+$foods = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// REQUÊTE SQL POUR RÉCUPÉRER TOUTES LES UNITÉS
+$sql = 'SELECT * FROM unites';
+$stmt = $db->query($sql);
+$unites = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// REQUÊTE SQL POUR RÉCUPÉRER TOUS LES RAPPORTS AVEC LES ANIMAUX, LES NOURRITURES, LES UNITÉS ET LES ÉTATS
 $sql = "SELECT rapports.*, animaux.animal_id, animaux.animal_prenom, animaux.animal_visuel, foods.food_id, foods.food_type, unites.unite_id, unites.unite_type, etats.etat_id, etats.etat_type
         FROM rapports   
         JOIN animaux ON rapports.rapport_animal_id = animaux.animal_id
@@ -45,11 +69,17 @@ $sql = "SELECT rapports.*, animaux.animal_id, animaux.animal_prenom, animaux.ani
         JOIN etats ON rapport_etat_animal = etats.etat_id 
         JOIN unites ON rapport_food_unite_type_id = unites.unite_id";
 
-// Exécution de la requête
+// EXÉCUTER LA REQUÊTE
 $stmt = $db->query($sql);
 
-// Récupération des résultats
+// INITIALISER LA VARIABLE RAPPORTS
 $rapports = [];
 
-// Stocker les rapports dans une variable
-$rapports = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// STOCKER LES RÉSULTATS DANS LA VARIABLE $RAPPORTS
+if (isset($stmt)) {
+  $rapports = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// FERMER LA CONNEXION
+$db = null;
+$stmt = null;

@@ -456,6 +456,26 @@ La classe .navbar.sticky-top est utilisée pour une barre de navigation qui rest
 }
 /* Informations | Fin  */
 
+/* Contact | Début  */
+.contact-content {
+  margin: 4rem 14rem 4rem 14rem;
+}
+
+.informations-content {
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+}
+
+@media (max-width: 767.98px) {
+  .informations-content {
+    margin: 2rem;
+  }
+  .informations-content p {
+    text-align: left;
+  }
+}
+/* Informations | Fin  */
+
 /* Image Border | Début */
 .img-border {
   position: relative;

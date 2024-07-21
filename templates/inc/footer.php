@@ -100,6 +100,9 @@
 <?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/new-user') { ?>
   <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/checkFormNewUser.js"></script>
 <?php } ?>
+<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/contact') { ?>
+  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/checkFormContact.js"></script>
+<?php } ?>
 </body>
 
 </html>

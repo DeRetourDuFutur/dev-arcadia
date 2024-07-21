@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const addUserForm = (event) => {
     event.preventDefault();
     let user_role = document.getElementById("user_role").value;
-    let email = document.getElementById("user_email").value;
-    let prenom = document.getElementById("user_prenom").value;
-    let nom = document.getElementById("user_nom").value;
-    let password = document.getElementById("user_pwd").value;
-    let passwordConfirm = document.getElementById("user_confirm_pwd").value;
+    let user_email = document.getElementById("user_email").value;
+    let user_prenom = document.getElementById("user_prenom").value;
+    let user_nom = document.getElementById("user_nom").value;
+    let user_pwd = document.getElementById("user_pwd").value;
+    let user_confirm_pwd = document.getElementById("user_confirm_pwd").value;
 
     let formHasErrors = false;
     let p;
@@ -25,9 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
     */
 
     // Vérifier que les champs ne sont pas vides
-    if (email === "") {
+    if (user_role === "") {
       p = document.createElement("p");
-      p.textContent = "L'email renseigné est vide";
+      p.textContent = "Le rôle n'a pas été sélectionné";
+      p.style.color = "red";
+      document
+        .getElementById("user_role")
+        .insertAdjacentElement("beforebegin", p);
+      formHasErrors = true;
+    }
+
+    if (user_email === "") {
+      p = document.createElement("p");
+      p.textContent = "L'email doit être renseigné";
       p.style.color = "red";
       document
         .getElementById("user_email")
@@ -35,9 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
       formHasErrors = true;
     }
 
-    if (prenom === "") {
+    if (user_prenom === "") {
       p = document.createElement("p");
-      p.textContent = "Le prenom renseigné est vide";
+      p.textContent = "Le prénom doit être renseigné";
       p.style.color = "red";
       document
         .getElementById("user_prenom")
@@ -45,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
       formHasErrors = true;
     }
 
-    if (nom === "") {
+    if (user_nom === "") {
       p = document.createElement("p");
-      p.textContent = "Le nom renseigné est vide";
+      p.textContent = "Le nom doit être renseigné";
       p.style.color = "red";
       document
         .getElementById("user_nom")
@@ -55,9 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
       formHasErrors = true;
     }
 
-    if (password === "") {
+    if (user_pwd === "") {
       p = document.createElement("p");
-      p.textContent = "Le mot de passe renseigné est vide";
+      p.textContent = "Le mot de passe  doit être renseigné";
       p.style.color = "red";
       document
         .getElementById("user_pwd")
@@ -65,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
       formHasErrors = true;
     }
 
-    if (passwordConfirm === "") {
+    if (user_confirm_pwd === "") {
       p = document.createElement("p");
-      p.textContent = "La confirmation de mot de passe renseigné est vide";
+      p.textContent = "Vous devez confirmer votre mot de passe";
       p.style.color = "red";
       document
         .getElementById("user_confirm_pwd")
@@ -75,22 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
       formHasErrors = true;
     }
 
-    if (passwordConfirm === password) {
+    if (user_confirm_pwd !== user_pwd) {
       p = document.createElement("p");
-      p.textContent = "La mot de passe a mal été confirmé";
+      p.textContent = "Les mots de passe ne correspondent pas";
       p.style.color = "red";
       document
         .getElementById("user_confirm_pwd")
-        .insertAdjacentElement("beforebegin", p);
-      formHasErrors = true;
-    }
-
-    if (user_role === "") {
-      p = document.createElement("p");
-      p.textContent = "Le role renseigné est vide";
-      p.style.color = "red";
-      document
-        .getElementById("user_role")
         .insertAdjacentElement("beforebegin", p);
       formHasErrors = true;
     }

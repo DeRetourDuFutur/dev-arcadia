@@ -61,20 +61,20 @@ function showSlider(type) {
 
 /*** Slider Fiche Animal | Début ***/
 
-// L'utilsateur clique sur un domaine de notre slider domaines :
-// Afficher la section du domaine sélectionné par l'utilisateur
+// L'utilisateur clique sur un domaine et on affiche la section correspondante:
 // Rendre cliquables les domaines de notre slider domaines
-// Selectionner les domaines
 document.querySelectorAll("a[data-domaine]").forEach((item) => {
   item.addEventListener("click", () => {
     // Fermer toutes les sections
-    document.querySelectorAll(".section-domaines").forEach((item) => {
-      item.classList.add("d-none");
+    document.querySelectorAll(".section-domaines").forEach((section) => {
+      section.classList.add("d-none");
     });
 
+    // Afficher la section correspondante
     const domaine = item.getAttribute("data-domaine");
-    document.querySelector("#" + domaine).classList.remove("d-none");
+    const section = document.querySelector("#" + domaine);
+    if (section) {
+      section.classList.remove("d-none");
+    }
   });
 });
-// Les rendre cliquables
-// Quand une section est déjà affiché et que l'utilisateur séléctionne un autre domaine, on ferme la section affichée et affiche la nouvelle section sélectionnée

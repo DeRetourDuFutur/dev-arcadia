@@ -1,31 +1,38 @@
 <?php
-
-// Initialiser la variable $db
+// INITIALISER LA VARIABLE $DB
 $db = db_connect();
 
-// Vérifier si le formulaire de MAJ du logo a été soumis
-if (isset($_POST['logo_action'])) {
-  $logo_id = $_POST['logo_id'];
-  $logo_txtg = $_POST['logo_txtg'];
-  $logo_txtd = $_POST['logo_txtd'];
-  $logo_ico = $_POST['logo_ico'];
-  $logo_lien = $_POST['logo_lien'];
-  $logo_title = $_POST['logo_title'];
-  $logo_attribut = $_POST['logo_attribut'];
-  $logo_img = $_FILES['logo_img'];
+// SI UN FORMULAIRE A ÉTÉ ENVOYÉ, ON TRAITE LES DONNÉES
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  // Si le fichier a été uploadé ... 
-  $isFileSubmitted = $logo_img['error'] !== 4;
+  // RÉCUPÉRER LES DONNÉES DU FORMULAIRE
+  $logo_id = isset($_POST['logo_id']) ? $_POST['logo_id'] : null;
+  $logo_txtg = isset($_POST['logo_txtg']) ? $_POST['logo_txtg'] : null;
+  $logo_txtd = isset($_POST['logo_txtd']) ? $_POST['logo_txtd'] : null;
+  $logo_ico = isset($_POST['logo_ico']) ? $_POST['logo_ico'] : null;
+  $logo_lien = isset($_POST['logo_lien']) ? $_POST['logo_lien'] : null;
+  $logo_title = isset($_POST['logo_title']) ? $_POST['logo_title'] : null;
+  $logo_attribut = isset($_POST['logo_attribut']) ? $_POST['logo_attribut'] : null;
+  $logo_img = isset($_FILES['logo_img']) ? $_FILES['logo_img'] : null;
 
+  //  VÉRIFIER SI UN FICHIER A ÉTÉ SOUMIS
+  $isFileSubmitted = isset($logo_img['error']) && $logo_img['error'] !== 4;
+
+  // SI UN FICHIER A ÉTÉ SOUMIS (UPLOADÉ)
   if ($isFileSubmitted) {
-    try {
-      $logo_imgPath = uploadFile($logo_img, 'logos');
-      $alertMessages[] = 'Les fichiers ont bien été uploadés.';
-    } catch (Exception $e) {
-      $alertMessages[] = 'L\'upload des fichiers à échoué';
+    if (isset($_FILES['logo_img'])) {
+      try {
+        $newFilepath = uploadFile($_FILES['logo_img'], 'logos');
+        $alertMessages[] = 'Les fichiers ont bien été uploadés.';
+      } catch (Exception $e) {
+        $alertMessages[] = 'L\'upload des fichiers a échoué.';
+      }
+    } else {
+      $alertMessages[] = 'Aucun fichier n\'a été soumis.';
     }
   }
 
+  // PRÉPARER LA REQUÊTE SQL
   $sqlFields = [
     'logo_txtg = :logo_txtg',
     'logo_txtd = :logo_txtd',
@@ -36,8 +43,10 @@ if (isset($_POST['logo_action'])) {
   ];
 
   if ($isFileSubmitted) {
-    $sqlFields['logo_img'] = ':logo_img';
+    $sqlFields[] = 'logo_img = :logo_img';
   }
+
+  // MISE À JOUR DE LA TABLE DOLOGOSMAINES
   $sql = 'UPDATE logos SET ' . implode(', ', $sqlFields) . ' WHERE logo_id = :logo_id';
 
   $stmt = $db->prepare($sql);
@@ -50,17 +59,32 @@ if (isset($_POST['logo_action'])) {
   $stmt->bindParam(':logo_attribut', $logo_attribut);
 
   if ($isFileSubmitted) {
-    $stmt->bindParam(':logo_img', $logo_img);
+    $stmt->bindParam(':logo_img', $newFilepath);
   }
 
-  $stmt->execute();
+  // EXÉCUTER LA REQUÊTE
+  try {
+    $stmt->execute();
+  } catch (PDOException $e) {
+    echo 'Error executing query: ' . $e->getMessage();
+    exit();
+  }
 }
 
-// Requête pour récupérer le logo du site
+// REQUÊTE SQL POUR RÉCUPÉRER TOUS LES LOGOS
 $sql = "SELECT * FROM logos";
-$stmt = $db->query($sql);
-$logos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Fermeture de la connexion
+// EXÉCUTER LA REQUÊTE
+$stmt = $db->query($sql);
+
+// INITIALISER LA VARIABLE LOGOS
+$logos = [];
+
+// STOCKER LES RÉSULTATS DANS LA VARIABLE $LOGOS
+if (isset($stmt)) {
+  $logos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// FERMER LA CONNEXION
 $db = null;
 $stmt = null;

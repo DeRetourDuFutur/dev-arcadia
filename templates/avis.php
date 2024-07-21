@@ -11,6 +11,7 @@ require_once('../app/process_avis.php');
     <div class="text-center mb-5">
       <button type="button" class="btn btn-secondary-color" data-bs-toggle="modal" data-bs-target="#commentaires" title="N'hésitez pas à nous laisser un commentaire pour partager votre expérience à Arcadia.">Laissez un avis</button>
     </div>
+    <div id="form_ok"></div>
     <!-- Modal -->
     <div class="modal fade" id="commentaires" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

@@ -65,6 +65,5 @@
       <siv><i class="fa-solid fa-circle-right fa-xl" style="color: var(--bs-secondary);"></i> <a href="<?= BASE_URL . '/services' ?>" class="btn btn-primary-color">Voir nos Services</a></siv>
     </div>
   </div>
-
 </div>
 <!-- Section LABEL | Fin -->

@@ -46,5 +46,6 @@ if ($form_submited) {
   }
 }
 
+
 $db = null;
 $stmt = null;

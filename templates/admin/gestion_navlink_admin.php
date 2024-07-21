@@ -1,3 +1,4 @@
+<!-- APPEL DES FONCTIONS PHP -->
 <?php
 require_once '../app/admin/gestion_navlink_admin.php';
 ?>
