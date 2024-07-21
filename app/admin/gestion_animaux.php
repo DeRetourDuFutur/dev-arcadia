@@ -6,11 +6,11 @@ $db = db_connect();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $animal_id = $_POST['animal_id'];
   $animal_prenom = $_POST['animal_prenom'];
-  $animal_race_id = $_POST['animal_race_id'];
+  $animal_visuel = $_FILES['animal_visuel'];
   $animal_age = $_POST['animal_age'];
   $animal_poids = $_POST['animal_poids'];
   $animal_domaine_id = $_POST['animal_domaine_id'];
-  $animal_visuel = $_FILES['animal_visuel'];
+  $animal_race_id = $_POST['animal_race_id'];
   $animal_statut = $_POST['animal_statut'];
 
   // SI UN FICHIER A ÉTÉ SOUMIS (UPLOADÉ)
@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $sqlFields = [
     'animal_id = :animal_id',
     'animal_prenom = :animal_prenom',
-    'animal_race_id = :animal_race_id',
     'animal_age = :animal_age',
     'animal_poids = :animal_poids',
     'animal_domaine_id = :animal_domaine_id',
+    'animal_race_id = :animal_race_id',
     'animal_statut = :animal_statut',
   ];
 
@@ -65,6 +65,26 @@ $sql = 'SELECT * FROM domaines';
 $stmt = $db->query($sql);
 $domaines = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// RÉCUPÉRER LES RAPPORTS VETERINAIRE
+$sql = 'SELECT * FROM rapports';
+$stmt = $db->query($sql);
+$rapports = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// RÉCUPÉRER LES UNITES DE MESURE DE LA NOURRITURE
+$sql = 'SELECT * FROM unites';
+$stmt = $db->query($sql);
+$unites = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// RÉCUPÉRER LES TYPES DE NOURRITURE
+$sql = 'SELECT * FROM foods';
+$stmt = $db->query($sql);
+$foods = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// RÉCUPÉRER LES ÉTATS DE SANTÉ DES ANIMAUX
+$sql = 'SELECT * FROM etats';
+$stmt = $db->query($sql);
+$etats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 $selected_domaine_id = intval($_GET['domaine_id'] ?? $domaines[0]['domaine_id']);
 
 // RÉCUPÉRER LES RACES
@@ -83,7 +103,7 @@ $races = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $selected_race_id = intval($_GET['race_id'] ?? $races[0]['race_id']);
 
 // RÉCUPÉRER LES ANIMAUX AVEC LEURS RAPPORTS (JOINTURES)
-$sql = "SELECT animaux.*, races.*, domaines.*, rapports.rapport_food_quantite, rapports.rapport_date, etats.etat_type, foods.food_type, races.race_nom, domaines.domaine_name, etats.etat_type, foods.food_type, unites.unite_type
+$sql = "SELECT animaux.*, races.*, domaines.*, rapports.*, etats.*, foods.*, races.*, unites.*
         FROM animaux 
         JOIN races ON animaux.animal_race_id = races.race_id
         JOIN domaines ON animaux.animal_domaine_id = domaines.domaine_id
@@ -104,26 +124,7 @@ $stmt->execute();
 
 // PRÉPARER LES ANIMAUX AVEC LEURS RAPPORTS (JOINTURES)
 $animaux = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$habitats = [];
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-  $animal = [
-    'animal_id' => $row['animal_id'],
-    'animal_prenom' => $row['animal_prenom'],
-    'animal_age' => $row['animal_age'],
-    'animal_poids' => $row['animal_poids'],
-    'animal_statut' => $row['animal_statut'],
-    'animal_domaine_id' => $row['animal_domaine_id'],
-    'animal_visuel' => $row['animal_visuel'],
-    'animal_race_id' => $row['animal_race_id'],
-    'race_nom' => $row['race_nom'],
-    'domaine_name' => $row['domaine_name'],
-    'rapport_date' => $row['rapport_date'] ?? 'Aucun',
-    'etat_type' => $row['etat_type'] ?? 'Aucun',
-    'food_type' => $row['food_type'] ?? 'Aucun',
-    'unite_type' => $row['unite_type'] ?? 'Aucun',
-    'animal_food_quantite' => $row['rapport_food_quantite'] ?? 'Aucun',
-  ];
-}
+
 
 // FERMER LA CONNEXION
 $db = null;

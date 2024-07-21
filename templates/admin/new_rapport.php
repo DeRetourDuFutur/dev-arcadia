@@ -56,7 +56,7 @@ require_once '../app/admin/new_rapport.php';
                 <!-- DATE DE PASSAGE -->
                 <div class="input-group mt-2">
                   <label for="rapport_date" class="input-group-text input-group-text-sm">DATE</label>
-                  <input type="date" name="rapport_date" id="rapport_date" class="form-control" value="<?= date('Y-m-d') ?>">
+                  <input type="datetime-local" name="rapport_date" id="rapport_date" class="form-control" value="<?= date('Y-m-d H:i:s') ?>">
                   <!-- ÉTAT DE L'ANIMAL -->
                   <div class="input-group mt-2">
                     <label for="rapport_etat_animal" class="input-group-text input-group-text-sm">SANTÉ</label>

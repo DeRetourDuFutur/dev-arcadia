@@ -64,65 +64,32 @@ require_once '../app/admin/gestion_animaux.php';
                   <!-- ÂGE -->
                   <div class="input-group mb-2">
                     <label for="animal_age" class="input-group-text input-group-text-sm">ÂGE</label>
-                    <select class="form-select form-select-sm" id="animal_age" name="animal_age">
-                      <?php
-                      for ($i = 1; $i <= 100; $i++) {
-                        $selected = ($i == $animal['animal_age']) ? 'selected' : '';
-                        echo "<option value=\"$i\" $selected>$i</option>";
-                      }
-                      ?>
-                    </select>
+                    <input class="form-control form-control-sm" type="number" name="animal_age" id="animal_age" min="0" value="<?= $animal['animal_age'] ?>">
                   </div>
                   <!-- POIDS -->
                   <div class="input-group mb-2">
                     <label for="animal_poids" class="input-group-text input-group-text-sm">POIDS</label>
-                    <select class="form-select form-select-sm" id="animal_poids" name="animal_poids">
-                      <?php
-                      for ($i = 1; $i <= 200; $i++) {
-                        $selected = ($i == $animal['animal_poids']) ? 'selected' : '';
-                        echo "<option value=\"$i\" $selected>$i</option>";
-                      }
-                      ?>
-                    </select>
+                    <input class="form-control form-control-sm" type="number" name="animal_poids" id="animal_poids" min="0" step="0.5" value="<?= $animal['animal_poids'] ?>">
                   </div>
                   <!-- TYPE NOURRITURE -->
                   <div class="input-group mb-2">
                     <label for="animal_food_id" class="input-group-text input-group-text-sm">NOURRITURE</label>
-                    <select class="form-select form-select-sm" id="animal_food_id" name="animal_food_id">
-                      <?php foreach ($rapports as $rapport) : ?>
-                        <option value="<?= $rapport['rapport_food_type_id'] ?>" <?php if ($rapport['rapport_food_type_id'] === $rapport['rapport_food_type_id']) : ?> selected <?php endif; ?>> <?= $rapport['food_type'] ?> </option>
-                      <?php endforeach ?>
-                    </select>
+                    <input class="form-control form-control-sm" type="text" name="animal_food_id" id="animal_food_id" value="<?= $animal['food_type'] ?>" readonly>
                   </div>
                   <!-- UNITÉ NOURRITURE -->
                   <div class="input-group mb-2">
                     <label for="animal_unite_id" class="input-group-text input-group-text-sm">UNITE</label>
-                    <select class="form-select form-select-sm" id="animal_unite_id" name="animal_unite_id">
-                      <?php foreach ($unites as $unite) : ?>
-                        <option value="<?= $unite['unite_id'] ?>" <?php if ($animal['animal_unite_id'] === $unite['unite_id']) : ?> selected <?php endif; ?>> <?= $unite['unite_type'] ?> </option>
-                      <?php endforeach ?>
-                    </select>
+                    <input class="form-control form-control-sm" type="text" name="animal_unite_id" id="animal_unite_id" value="<?= $animal['unite_type'] ?>" readonly>
                   </div>
                   <!-- QUANTITÉ NOURRITURE -->
                   <div class="input-group mb-2">
                     <label for="animal_quantite_id" class="input-group-text input-group-text-sm">QUANTITE</label>
-                    <select class="form-select form-select-sm" id="animal_quantite_id" name="animal_quantite_id">
-                      <?php
-                      for ($i = 1; $i <= 100; $i++) {
-                        $selected = ($i == $animal['animal_quantite_id']) ? 'selected' : '';
-                        echo "<option value=\"$i\" $selected>$i</option>";
-                      }
-                      ?>
-                    </select>
+                    <input class="form-control form-control-sm" type="number" name="animal_quantite_id" id="animal_quantite_id" min="0" max="1000" value="<?= $animal['rapport_food_quantite'] ?>" readonly>
                   </div>
                   <!-- SANTÉ -->
                   <div class="input-group mb-2">
                     <label for="animal_etat_id" class="input-group-text input-group-text-sm">SANTE</label>
-                    <select class="form-select form-select-sm" id="animal_etat_id" name="animal_etat_id">
-                      <?php foreach ($etats as $etat) : ?>
-                        <option value="<?= $etat['etat_id'] ?>" <?php if ($animal['animal_etat_id'] === $etat['etat_id']) : ?> selected <?php endif; ?>> <?= $etat['etat_type'] ?> </option>
-                      <?php endforeach ?>
-                    </select>
+                    <input class="form-control form-control-sm" type="text" name="animal_etat_id" id="animal_etat_id" value="<?= $animal['etat_type'] ?>" readonly>
                   </div>
                   <!-- DOMAINE -->
                   <div class="input-group mb-2">
