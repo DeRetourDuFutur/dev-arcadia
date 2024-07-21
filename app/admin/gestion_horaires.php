@@ -1,7 +1,7 @@
 <?php
 
 // Initialiser la variable $db
-$db = db_connect();
+$db = Database::$pdo;
 
 // Requête pour récupérer tous les horaires
 $sql = "SELECT * FROM horaires";

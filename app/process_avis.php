@@ -1,7 +1,7 @@
 <?php
 
 // Initialize the $db variable
-$db = db_connect();
+$db = Database::$pdo;
 
 $form_submited = false;
 

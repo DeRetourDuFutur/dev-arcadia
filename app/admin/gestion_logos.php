@@ -1,6 +1,6 @@
 <?php
 // INITIALISER LA VARIABLE $DB
-$db = db_connect();
+$db = Database::$pdo;
 
 // SI UN FORMULAIRE A ÉTÉ ENVOYÉ, ON TRAITE LES DONNÉES
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

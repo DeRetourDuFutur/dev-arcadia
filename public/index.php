@@ -2,6 +2,9 @@
 require_once '../config/config.php';
 require_once '../config/db_config.php';
 require_once '../app/functions.php';
+require_once '../app/Database.php';
+
+Database::connect();
 
 function isUserLoggedIn()
 {
@@ -9,7 +12,8 @@ function isUserLoggedIn()
 }
 
 // Initialiser la variable $db (provenant de db_config.php)
-$db = db_connect();
+$db = Database::$pdo;
+
 
 // Vérifier si une session est connectée
 if (!isset($_SESSION)) {

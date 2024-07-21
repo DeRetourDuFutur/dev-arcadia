@@ -1,7 +1,7 @@
 <?php
 
 // Initialiser la variable $db
-$db = db_connect();
+$db = Database::$pdo;
 
 // Requête pour récupérer les commentaires
 $sql = "SELECT * FROM users ORDER BY user_role ASC";

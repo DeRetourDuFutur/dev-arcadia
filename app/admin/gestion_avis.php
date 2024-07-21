@@ -1,7 +1,7 @@
 <?php
 
 // Initialiser la variable $db
-$db = db_connect();
+$db = Database::$pdo;
 
 // Requête pour récupérer les avis
 $sql = "SELECT * FROM commentaires ORDER BY commentaire_date DESC";

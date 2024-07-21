@@ -1,6 +1,6 @@
 <?php
 // INITIALISER LA VARIABLE $DB
-$db = db_connect();
+$db = Database::$pdo;
 try {
   $pdo = $db;
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

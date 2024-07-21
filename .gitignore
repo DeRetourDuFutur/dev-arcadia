@@ -3,3 +3,4 @@
 /vendor
 /config/db_config.php
 /public/assets/uploads
+/app/Models

@@ -1,11 +1,5 @@
 <?php
 
-namespace App\Models;
-
-use PDO;
-use PDOException;
-use PDOStatement;
-
 class Database
 {
   public static PDO|null $pdo;
@@ -14,8 +8,8 @@ class Database
   public static function connect()
   {
     try {
-      self::$pdo = new PDO(DB_DSN, DB_USER, DB_PWD);
-    } catch (PDOException $error) {
+      self::$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+    } catch (PDOException) {
       // logger l'erreur sur un fichier par exemple
     }
   }

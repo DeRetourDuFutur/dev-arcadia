@@ -1,6 +1,6 @@
 <?php
 // Initialiser la variable $db
-$db = db_connect();
+$db = Database::$pdo;
 
 // Requête pour récupérer toutes les races
 $sql = "SELECT * FROM races ORDER BY race_id ASC";

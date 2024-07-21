@@ -1,6 +1,6 @@
 <?php
 // INITIALISER LA VARIABLE $DB
-$db = db_connect();
+$db = Database::$pdo;
 
 // REQUÊTE POUR RÉCUPÉRER TOUS LES DOMAINES
 $sql = "SELECT * FROM domaines";
