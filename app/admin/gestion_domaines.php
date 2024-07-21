@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($isCoverSubmitted) {
     if (isset($_FILES['domaine_cover'])) {
       try {
-        $newFilepath = uploadFile($_FILES['domaine_cover'], 'domaines');
+        $coverFilepath = uploadFile($_FILES['domaine_cover'], 'domaines');
         $alertMessages[] = 'Les fichiers ont bien été uploadés.';
       } catch (Exception $e) {
         $alertMessages[] = 'L\'upload des fichiers a échoué.';
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($isThumbnailSubmitted) {
     if (isset($_FILES['domaine_thumbnail'])) {
       try {
-        $newFilepath = uploadFile($_FILES['domaine_thumbnail'], 'domaines');
+        $thumbnailFilepath = uploadFile($_FILES['domaine_thumbnail'], 'domaines');
         $alertMessages[] = 'Les fichiers ont bien été uploadés.';
       } catch (Exception $e) {
         $alertMessages[] = 'L\'upload des fichiers a échoué.';
@@ -75,11 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindParam(':domaine_slogan', $domaine_slogan);
 
   if ($isCoverSubmitted) {
-    $stmt->bindParam(':domaine_cover', $newFilepath);
+    $stmt->bindParam(':domaine_cover', $coverFilepath);
   }
 
   if ($isThumbnailSubmitted) {
-    $stmt->bindParam(':domaine_thumbnail', $newFilepath);
+    $stmt->bindParam(':domaine_thumbnail', $thumbnailFilepath);
   }
 
   // EXÉCUTER LA REQUÊTE
