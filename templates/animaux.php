@@ -9,28 +9,15 @@ require_once '../app/read_animaux.php';
     <h3>Explorez nos <span class="text-primary">3 domaines naturels</span></h3>
   </div>
   <!-- SLIDER DOMAINES | DÉBUT -->
-  <div class="slider-animals">
-    <!-- BOUTONS PREV/NEXT | DÉBUT -->
-    <div class="arrows-slider-animals">
-      <button id="prev" class="btn-prev">
-        <i class="fa-solid fa-hippo fa-flip-horizontal prev-hippo"></i>
-      </button>
-      <button id="next" class="btn-next">
-        <i class="fa-solid fa-hippo next-hippo"></i>
-      </button>
-    </div>
-    <!-- BOUTONS PREV/NEXT | FIN-->
-    <!-- LISTE SLIDER DOMAINES | DÉBUT -->
-    <div class="list-slider-animals">
+  <div id="carouselDomaines" class="carousel slide carouselDomaines" data-bs-ride="carousel">
+    <div class="carouselDomaines carousel-inner">
       <?php foreach ($habitats as $habitat) : ?>
-        <div class="item-slider-animals">
+        <?php $firstKey = array_key_first($habitats); ?>
+        <div class="carouselDomaines carousel-item <?php if ($habitats[$firstKey] === $habitat) : ?> active <?php endif ?>">
           <img src="<?= BASE_URL . $habitat['cover'] ?>" alt="<?= $habitat['domaine'] ?>" />
-          <div class="content-slider-animals">
-            <div class="author-slider-animals">ARCADIA</div>
-            <div class="topic-slider-animals"><?= strtoupper($habitat['domaine']) ?></div>
-            <div class="des-slider-animals">
-              Découvrez les animaux de ce domaine
-            </div>
+          <div class="carouselDomaines carousel-caption">
+            <h1 class="text-secondary">ARCADIA</h1>
+            <h2 class="text-primary"><?= strtoupper($habitat['domaine']) ?></h2>
             <div class="btn btn-primary-color mt-3">
               <a href="#<?= strtolower($habitat['domaine']) ?>" data-domaine="<?= strtolower($habitat['domaine']) ?>" class="text-white">EXPLORER</a>
             </div>
@@ -38,31 +25,36 @@ require_once '../app/read_animaux.php';
         </div>
       <?php endforeach ?>
     </div>
-    <!-- LISTE SLIDER DOMAINES | FIN -->
-    <!-- SLIDER DOMAINES | FIN -->
-    <!-- LISTE THUMBNAILS | DÉBUT -->
-    <div class="thumbnail-slider-animals">
-      <?php foreach ($habitats as $habitat) : ?>
-        <a href="#<?= strtolower($habitat['domaine']) ?>" data-domaine="<?= strtolower($habitat['domaine']) ?>" class="item-slider-animals">
-          <img src="<?= BASE_URL . $habitat['thumbnail'] ?>" alt="<?= $habitat['domaine'] ?>" />
-          <div class="content-slider-animals">
-            <div class="title-slider-animals"><?= strtoupper($habitat['domaine']) ?></div>
-          </div>
-        </a>
-      <?php endforeach ?>
-    </div>
-    <!-- LISTE THUMBNAILS | FIN -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDomaines" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselDomaines" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
-<!-- TIME RUNNING -->
-<div class="time-slider-animals"></div>
+<!-- SLIDER DOMAINES | FIN -->
+<!-- LISTE THUMBNAILS | DÉBUT -->
+<div class="thumbnails-carouselDomaines">
+  <?php foreach ($habitats as $habitat) : ?>
+    <a href="#<?= strtolower($habitat['domaine']) ?>" data-domaine="<?= strtolower($habitat['domaine']) ?>" class="item-carouselDomaines">
+      <img src="<?= BASE_URL . $habitat['thumbnail'] ?>" alt="<?= $habitat['domaine'] ?>" />
+      <div class="content-carouselDomaines">
+        <div class="title-carouselDomaines"><?= strtoupper($habitat['domaine']) ?></div>
+      </div>
+    </a>
+  <?php endforeach ?>
+</div>
+<!-- LISTE THUMBNAILS | FIN -->
 <!-- SECTION ANIMAUX | DÉBUT -->
 <div class="container">
   <?php $firstHabitat = !empty($habitats) ? $habitats[array_key_first($habitats)] : null ?>
   <!-- SECTION DOMAINE | DÉBUT -->
   <?php foreach ($habitats as $habitat) : ?>
     <?php $races = $habitat['races'] ?>
-    <section id="<?= strtolower($habitat['domaine']) ?>" class="section-domaines <?php if ($firstHabitat !== $habitat) : ?> d-none <?php endif ?>">
+    <section id="<?= strtolower($habitat['domaine']) ?>" class="section-domaines">
       <div class="container-sm pt-4">
         <span class="text-primary me-2"># <?= htmlspecialchars($habitat['domaine']) ?></span>
       </div>
@@ -129,7 +121,7 @@ require_once '../app/read_animaux.php';
                                 <!-- QUANTITÉ & UNITÉ NOURRITURE -->
                                 <i class="fa-solid fa-circle fa-2xs text-secondary mx-2"></i><span class="fw-bold">Quantité :</span> <?= $animal['animal_food_quantite'] ?> <?= $animal['unite_type'] ?> <br>
                                 <!-- DATE RAPPORT -->
-                                <i class="fa-solid fa-clipboard-check fa-lg text-primary me-4 ms-1 py-2"></i><span class="fw-bold">Dernier contrôle :</span> <?= date('d-m-Y', strtotime($animal['rapport_date'])) ?> <br>
+                                <i class="fa-solid fa-clipboard-check fa-lg text-primary me-4 ms-1 py-2"></i><span class="fw-bold">Contrôle du vétérinaire :</span> <?= date('d-m-Y', strtotime($animal['rapport_date'])) ?> <br>
                               </p>
                             </div>
                           </div>
@@ -206,3 +198,5 @@ require_once '../app/read_animaux.php';
     </section>
   <?php endforeach ?>
 </div>
+<!-- SECTION DOMAINE | FIN -->
+<!-- SECTION ANIMAUX | FIN -->

@@ -19,34 +19,52 @@
     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
       <div class="owl-carousel header-carousel">
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/arcadia.webp" alt="Zoo Arcadia" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/arcadia.webp" alt="Zoo Arcadia" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/jungle1.webp" alt="La Jungle - Lémuriens" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/jungle1.webp" alt="Lémuriens" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/jungle2.webp" alt="La Jungle - Léopards" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/jungle2.webp" alt="Léopards" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/jungle3.webp" alt="La Jungle - Serpents" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/jungle3.webp" alt="Serpents" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane1.webp" alt="La Savane - Girafes" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane1.webp" alt="Girafes" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane2.webp" alt="La Savane - Lions" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane2.webp" alt="Lions" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane3.webp" alt="La Savane - Rhinocéros" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane3.webp" alt="Rhinocéros" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/marais1.webp" alt="Les Marais - Crocodiles" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/marais1.webp" alt="Crocodiles" />
+          </a>
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/marais2.webp" alt="Les Marais - Tigres" />
+          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/marais2.webp" alt="Tigres" />
         </div>
         <div class="owl-carousel-item">
-          <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/marais3.webp" alt="Les Marais - Hippopotames" />
+          <a href="<?= BASE_URL . '/animaux' ?>">
+            <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/marais3.webp" alt="Hippopotames" />
+          </a>
         </div>
       </div>
     </div>

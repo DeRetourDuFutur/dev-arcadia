@@ -1,0 +1,363 @@
+/*** Slider Animaux | Début ***/
+
+/* Largeur et hauteur du slider */
+.slider-animals {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Position des titres */
+.list-slider-animals .item-slider-animals {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/* Taille des images de fond du slider */
+.slider-animals .list-slider-animals .item-slider-animals img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Redimensionne l'image pour qu'elle remplisse l'élément tout en conservant ses proportions */
+  filter: brightness(60%); /* Luminosité de l'image */
+}
+
+/* Affichage des noms de domaine sous Arcadia*/
+.slider-animals
+  .list-slider-animals
+  .item-slider-animals
+  .content-slider-animals {
+  position: absolute;
+  top: 10%;
+  width: 1140px;
+  max-width: 80%;
+  left: 46%;
+  transform: translateX(-50%);
+  padding-right: 30%;
+  color: #fff;
+  text-shadow: 0 5px 10px #0004;
+}
+/* Mise en forme des titres */
+.slider-animals .item-slider-animals .topic-slider-animals {
+  color: var(--bs-secondary);
+  font-size: clamp(3rem, 5vw, 5rem);
+  margin-left: -5px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 1.3em;
+}
+
+/* Mise en forme des vignettes */
+.thumbnail-slider-animals {
+  position: absolute;
+  bottom: 50px;
+  left: 55%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+}
+
+/* Taille des vignettes */
+.thumbnail-slider-animals .item-slider-animals {
+  width: 140px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Mise en forme des images des vignettes */
+.thumbnail-slider-animals .item-slider-animals img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 0 20px 0;
+  border: 2px solid var(--bs-secondary);
+  transition: 0.3s;
+}
+
+/* Mise en forme des textes des vignettes */
+.thumbnail-slider-animals .item-slider-animals .content-slider-animals {
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+/* Mise en forme des flêches (boutons next et prev) */
+.arrows-slider-animals {
+  position: absolute;
+  top: 70%;
+  right: 73%;
+  z-index: 100;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  text-align: center;
+}
+.arrows-slider-animals button {
+  width: 90px;
+  height: 50px;
+  max-width: 40%;
+  background-color: var(--bs-primary);
+  border: none;
+  color: #fff;
+  font-size: 35px;
+}
+
+.arrows-slider-animals .btn-prev {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  position: relative;
+}
+.arrows-slider-animals .btn-next {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: relative;
+}
+
+@media (max-width: 767.98px) {
+  .arrows-slider-animals {
+    position: absolute;
+    top: 75%;
+    right: 65%;
+  }
+
+  .arrows-slider-animals .btn-prev {
+    font-size: 35px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+
+  .arrows-slider-animals .btn-next {
+    font-size: 35px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+}
+
+.arrows-slider-animals button:hover {
+  background-color: var(--bs-secondary);
+  color: #ffffff;
+}
+
+/* animation text in first item */
+.slider-animals
+  .list-slider-animals
+  .content-slider-animals
+  .author-slider-animals
+  .title-slider-animals
+  .topic-slider-animals
+  .des-slider-animals
+  .buttons-slider-animals {
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+  to {
+    transform: translateY(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+.slider-animals
+  .list-slider-animals
+  .item-slider-animals:nth-child(1)
+  .content-slider-animals
+  .title-slider-animals {
+  animation-delay: 1.2s !important;
+}
+.slider-animals
+  .list-slider-animals
+  .item-slider-animals:nth-child(1)
+  .content-slider-animals
+  .topic-slider-animals {
+  animation-delay: 1.4s !important;
+}
+.slider-animals
+  .list-slider-animals
+  .item-slider-animals:nth-child(1)
+  .content-slider-animals
+  .des-slider-animals {
+  animation-delay: 1.6s !important;
+}
+.slider-animals
+  .list-slider-animals
+  .item-slider-animals:nth-child(1)
+  .content-slider-animals
+  .buttons-slider-animals {
+  animation-delay: 1.8s !important;
+}
+
+.slider-animals.next
+  .list-slider-animals
+  .item-slider-animals:nth-child(1)
+  img {
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  border-radius: 30px;
+  animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage {
+  to {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+.slider-animals.next
+  .thumbnail-slider-animals
+  .item-slider-animals:nth-last-child(1) {
+  overflow: hidden;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+.slider-animals.prev .list-slider-animals .item-slider-animals img {
+  z-index: 100;
+}
+@keyframes showThumbnail {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+}
+.slider-animals.next .thumbnail-slider-animals {
+  animation: effectNext 0.5s linear 1 forwards;
+}
+
+@keyframes effectNext {
+  from {
+    transform: translateX(150px);
+  }
+}
+
+.slider-animals .time-slider-animals {
+  position: absolute;
+  z-index: 1000;
+  width: 0%;
+  height: 5px;
+  background-color: var(--bs-primary);
+  left: 0;
+  top: 0;
+}
+
+.slider-animals.next .time-slider-animals,
+.slider-animals.prev .time-slider-animals {
+  animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.slider-animals.prev .list-slider-animals .item-slider-animals:nth-child(2) {
+  z-index: 2;
+}
+
+.slider-animals.prev
+  .list-slider-animals
+  .item-slider-animals:nth-child(2)
+  img {
+  animation: outFrame 0.5s linear 1 forwards;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@keyframes outFrame {
+  to {
+    width: 150px;
+    height: 220px;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 20px;
+  }
+}
+
+.slider-animals.prev
+  .thumbnail-slider-animals
+  .item-slider-animals:nth-child(1) {
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.slider-animals.prev
+  .list-slider-animals
+  .item-slider-animals:nth-child(2)
+  .content-slider-animals
+  .author-slider-animals,
+.slider-animals.prev
+  .list-slider-animals
+  .item-slider-animals:nth-child(2)
+  .content-slider-animals
+  .title-slider-animals,
+.slider-animals.prev
+  .list-slider-animals
+  .item-slider-animals:nth-child(2)
+  .content-slider-animals
+  .topic-slider-animals,
+.slider-animals.prev
+  .list-slider-animals
+  .item-slider-animals:nth-child(2)
+  .content-slider-animals
+  .des-slider-animals,
+.slider-animals.prev
+  .list-slider-animals
+  .item-slider-animals:nth-child(2)
+  .content-slider-animals
+  .buttons-slider-animals {
+  animation: contentOut 1.5s linear 1 forwards !important;
+}
+
+@keyframes contentOut {
+  to {
+    transform: translateY(-150px);
+    filter: blur(20px);
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 678px) {
+  .slider-animals
+    .list-slider-animals
+    .item-slider-animals
+    .content-slider-animals {
+    padding-right: 0;
+  }
+  .slider-animals
+    .list-slider-animals
+    .item-slider-animals
+    .content-slider-animals
+    .title-slider-animals {
+    font-size: 30px;
+  }
+}
+/*** Slider Animaux | Fin ***/
+
+.border-fiche-animal {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top: 1px solid #818181;
+  border-left: 1px solid #818181;
+  border-right: 1px solid #818181;
+  border-bottom: 1px solid #818181;
+}
+
+.img-fiche-animal {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
