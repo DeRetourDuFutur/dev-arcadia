@@ -1,10 +1,5 @@
-/.htaccess-racine-techno2main
-/.todo
-/todos.md
-/public/assets/img/domaines/Sources Originales
 /_sources
-/.gitignore
 /app/scss
-/templates/animaux_ok.php
 /vendor
 /config/db_config.php
+/public/assets/uploads
