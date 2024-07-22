@@ -7,6 +7,7 @@ require_once '../app/FileUploader.php';
 require_once '../app/Router.php';
 require_once '../app/CheckSession.php';
 require_once '../app/CheckConnection.php';
+require_once '../app/CsrfToken.php';
 
 $checkSession = new CheckSession();
 $checkSession->start();
@@ -18,6 +19,14 @@ Database::connect();
 // Initialiser la variable $db (provenant de db_config.php)
 $db = Database::$pdo;
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (!CsrfToken::isTokenValid()) {
+    header('Location: ' . BASE_URL . '/');
+    die();
+  }
+}
+
+CsrfToken::generateToken();
 
 // Vérifier si une session est connectée
 if (!isset($_SESSION)) {

@@ -21,6 +21,7 @@ require_once '../app/admin/gestion_avis.php';
                 <input type="hidden" name="commentaire_id" value="<?= htmlspecialchars($commentaire['commentaire_id']) ?>">
                 <button type="submit" class="btn btn-primary-color align-bottom mb-2" name="commentaire_statut" value="1">Valider</button>
                 <button type="submit" class="btn btn-secondary-color align-bottom mb-2" name="commentaire_statut" value="0">Masquer</button>
+                <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
               </form>
             </div>
           </div>

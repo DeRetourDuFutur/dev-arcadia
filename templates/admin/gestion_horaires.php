@@ -52,6 +52,7 @@ require_once '../app/admin/gestion_horaires.php';
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary-color align-bottom mt-4" name="horaire_action" value="update">MAJ</button>
+                <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
               </form>
             </div>
           </div>

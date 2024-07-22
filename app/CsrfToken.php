@@ -2,26 +2,20 @@
 
 class CsrfToken
 {
-  private $token;
+  private static string $token;
 
-  public function __construct()
+  public static function generateToken()
   {
-    $this->token = bin2hex(random_bytes(32));
-    $_SESSION['csrf_token'] = $this->token;
+    self::$token = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = self::$token;
   }
 
-  public function generateToken()
+  public static function getToken()
   {
-    $this->token = bin2hex(random_bytes(32));
-    $_SESSION['csrf_token'] = $this->token;
+    return self::$token;
   }
 
-  public function getToken()
-  {
-    return $this->token;
-  }
-
-  public function validateToken()
+  public static function isTokenValid(): bool
   {
     if ($_SESSION['csrf_token'] !== $_POST['csrf_token']) {
       return true;

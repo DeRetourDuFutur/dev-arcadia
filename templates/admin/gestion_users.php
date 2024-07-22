@@ -81,6 +81,7 @@ require_once '../app/admin/gestion_users.php';
                 </div>
               </div>
             </div>
+            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
           <div class="container text-center pt-3">
             <hr style="width: 100%;">

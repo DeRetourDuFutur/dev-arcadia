@@ -53,6 +53,7 @@
           <input type="email" name="email" id="emailInput" class="form-control">
           <input type="text" placeholder="Votre email" id="emailPlaceholder" autocomplete="off">
           <button type="button" class="btn btn-primary-color">Inscription</button>
+          <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
         </form>
         <!-- Copyright | Début -->
         <div class="copyright mt-5">

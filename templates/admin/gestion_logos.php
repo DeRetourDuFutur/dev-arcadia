@@ -56,6 +56,7 @@ require_once '../app/admin/gestion_logos.php';
                 <button type="submit" class="btn btn-primary-color" name="logo_action" value="update">Mettre à jour</button>
               </div>
             </div>
+            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
           <!-- FORMULAIRE DE GESTION DES LOGOS | FIN -->
         </div>

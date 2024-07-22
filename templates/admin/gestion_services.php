@@ -53,6 +53,7 @@ require_once '../app/admin/gestion_services.php';
                 <button type="submit" class="btn btn-primary" name="service_action" value="update">MAJ</button>
               </div>
             </div>
+            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
         </div>
       <?php endforeach; ?>

@@ -40,6 +40,7 @@ require_once '../app/admin/gestion_navlink.php';
               <input type="text" class="form-control" id="navlink_ico" name="navlink_ico" value="<?= htmlspecialchars($navlink['navlink_ico']); ?>">
             </div>
             <button type="submit" class="btn btn-primary-color align-bottom mt-4" name="navlink_action" value="update">MAJ</button>
+            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
         </div>
       <?php endforeach; ?>

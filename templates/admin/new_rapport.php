@@ -96,6 +96,7 @@ require_once '../app/admin/new_rapport.php';
                 </div>
               </div>
             </div>
+            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
           <!-- FORMULAIRE D'AJOUT D'UN RAPPORT | FIN -->
         </div>
