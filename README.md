@@ -4,29 +4,6 @@ Réaliser une appli web et web mobile pour le compte d'un client propriétaire d
 Arcadia est une application web et web mobile permettant de mettre en lumière le Zoo Arcadia avec une expérience utilisateur moderne et dynamique.
 L’app comprend également toute la partie administration pour permettre aux différents acteurs de gérer toutes les parties du site.
 
-## Structure du projet Arcadia :
-
-app
- ---- admin	
-config
-lib
----- animate
----- counterup
----- owlcarousel
----- waypoints
----- wow
-public
----- assets
----- css
----- ico
----- img
----- js
----- uploads
----- vid
-templates
----- admin
----- inc
-
 ## Structure du site Front-End
 HTML / CSS
 JavaScript pour dynamiser l’expérience UI
