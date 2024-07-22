@@ -3,19 +3,32 @@
 // Classe pour vérifier la session
 class CheckSession
 {
-  private $dureeVieSession;
+  private $dureeVieSession = 900;
 
-  // Constructeur de la classe avec une durée de vie de session par défaut de 900 secondes (15 minutes)
-  public function __construct($dureeVieSession = 900)
+  /**
+   * Configure les informations liées à la session
+   */
+  public function configureSession()
   {
-    $this->dureeVieSession = $dureeVieSession;
+    session_set_cookie_params([
+      'lifetime' => 0,
+      'secure' => true,
+      'httponly' => true,
+      'samesite' => 'Strict',
+    ]);
   }
 
-  // Méthode pour vérifier la session
+  public function start()
+  {
+    $this->configureSession();
+    session_start();
+  }
+
+  /** 
+   * Méthode pour vérifier la session
+   */
   public function check()
   {
-    session_start();
-
     // Vérifie si la clé 'derniereActivite' est présente dans $_SESSION
     if (isset($_SESSION['derniereActivite']) && (time() - $_SESSION['derniereActivite'] > $this->dureeVieSession)) {
       // Détruit la session et redirige vers la page de connexion
@@ -29,6 +42,3 @@ class CheckSession
     $_SESSION['derniereActivite'] = time();
   }
 }
-
-$checkSession = new CheckSession();
-$checkSession->check();

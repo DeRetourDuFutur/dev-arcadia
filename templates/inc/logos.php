@@ -6,7 +6,7 @@ require_once '../app/admin/gestion_logos.php';
 <div class="ps-5">
   <?php
 
-  if (isUserLoggedIn()) {
+  if ($checkConnection->isUserLoggedIn()) {
     $logos = array_filter($logos, function ($logo) {
       return $logo['logo_attribut'] === 'BACK';
     });

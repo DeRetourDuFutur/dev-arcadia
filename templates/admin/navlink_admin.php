@@ -24,9 +24,6 @@ require_once '../app/admin/gestion_navlink_admin.php';
           <!-- Si le statut est ADMIN, afficher les liens de navigation admin -->
           <?php if ($navlink_admin['navlink_admin_a'] === 1) : ?>
             <ul class="navbar-nav">
-              <li class="nav-item-vertical">
-                <i class="fa-solid fa-stop fa-sm ps-2 mb-1 text-secondary"></i>
-              </li>
               <li class="nav-item">
                 <a href="<?= htmlspecialchars(BASE_URL . '/' . $navlink_admin['navlink_admin_lien']) ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
