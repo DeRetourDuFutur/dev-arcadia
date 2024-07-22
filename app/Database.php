@@ -10,7 +10,9 @@ class Database
   // Méthode pour se connecter à la base de données
   public static function connect()
   {
+    // Connexion à la base de données
     try {
+      // Création d'une instance de PDO
       self::$pdo = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     } catch (PDOException) {
       die('Erreur de connexion à la base de données');
@@ -20,7 +22,9 @@ class Database
   //  Déconnexion de la base de données
   public static function disconnect()
   {
+    // Fermeture de la connexion à la base de données
     self::$pdo = null;
+    // Fermeture de la requête
     self::$statement = null;
   }
 }
