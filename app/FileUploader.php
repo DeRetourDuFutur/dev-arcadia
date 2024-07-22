@@ -1,8 +1,9 @@
 <?php
 
+// Classe pour uploader des fichiers
 class FileUploader
 {
-  // Propriété statique
+  // Propriété statique (accessible sans instancier la classe)
   private static array $allowedTypes = [
     'image/png' => 'png',
     'image/jpeg' => 'jpg',
@@ -19,30 +20,38 @@ class FileUploader
   // Méthode statique (pas besoin d'instancier la classe pour l'utiliser)
   public static function uploadFile(array $file, string $directory): string
   {
+    // Récupère le type MIME du fichier
     $filepath = $file['tmp_name'];
     $fileinfo = finfo_open(FILEINFO_MIME_TYPE);
     $filetype = finfo_file($fileinfo, $filepath);
 
+    // Vérifie la taille du fichier
     self::checkFileSize($filepath);
 
+    // Vérifie si le type MIME est autorisé
     self::checkAllowedTypes($filetype);
 
+    // Vérifie si le dossier existe, sinon le crée (avec les permissions 0777)
     $filename = pathinfo($file['name'], PATHINFO_FILENAME);
     $extension = self::$allowedTypes[$filetype];
     $targetDirectory = "assets/uploads/" . $directory;
 
+    // Crée le dossier s'il n'existe pas
     $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
 
-    if (!copy($filepath, $newFilepath)) { // Copy the file, returns false if failed
+    // Copier le fichier dans le dossier
+    if (!copy($filepath, $newFilepath)) { // Si le fichier n'a pas été copié
       die("Can't move file.");
     }
-    unlink($filepath); // Delete the temp file
+    // Supprime le fichier temporaire
+    unlink($filepath);
 
+    // Retourne le chemin du fichier sauvegardé
     $newFilepath = '/public/' . $newFilepath;
-
     return $newFilepath;
   }
 
+  // Méthode pour vérifier la taille du fichier
   private static function checkFileSize(string $filepath): void
   {
     $fileSize = filesize($filepath);
@@ -56,6 +65,7 @@ class FileUploader
     }
   }
 
+  // Méthode pour vérifier si le type MIME est autorisé
   private static function checkAllowedTypes(string $filetype): void
   {
     if (!in_array($filetype, array_keys(self::$allowedTypes))) {
