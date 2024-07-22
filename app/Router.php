@@ -1,6 +1,6 @@
 <?php
 
-// Classe pour la redirection des routes
+// Classe pour la redirection des routes avec le fichier JSON
 class Router
 {
   // Propriétés de la classe

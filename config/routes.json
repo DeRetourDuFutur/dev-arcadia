@@ -15,6 +15,7 @@
   "/logout": "../app/admin/dashboard_logout.php",
   "/del-user": "../app/admin/delete_user.php",
   "/navlink": "../app/admin/gestion_navlink.php",
+  "/navlink-admin": "../app/admin/gestion_navlink_admin.php",
   "/horaires": "../app/admin/gestion_horaires.php",
 
   "/dashboard": "../templates/admin/dashboard.php",
@@ -31,4 +32,5 @@
   "/login": "../templates/admin/dashboard_login.php",
   "/new-user": "../templates/admin/new_user.php",
   "/new-rapport": "../templates/admin/new_rapport.php"
+
 }
