@@ -1,6 +1,6 @@
 <?php
 
-class TokenCsrfLogin
+class CsrfToken
 {
   private $token;
 
