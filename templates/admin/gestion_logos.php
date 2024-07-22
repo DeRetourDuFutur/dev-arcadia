@@ -47,7 +47,7 @@ require_once '../app/admin/gestion_logos.php';
             </div>
             <!-- IMAGE -->
             <div class="alert alert-secondary my-0 text-center">
-              <img src="<?= htmlspecialchars($logo['logo_img']); ?>" alt="<?= htmlspecialchars($logo['logo_title']); ?>" class="img-fluid" style="max-height: 80px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='80px';">
+              <img src="<?= BASE_URL . htmlspecialchars($logo['logo_img']); ?>" alt="<?= htmlspecialchars($logo['logo_title']); ?>" class="img-fluid" style="max-height: 80px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='80px';">
               <div class="input-group">
                 <input type="file" name="logo_img" id="logo_img" accept="image/*" class="form-control form-control-sm">
               </div>
@@ -56,7 +56,7 @@ require_once '../app/admin/gestion_logos.php';
                 <button type="submit" class="btn btn-primary-color" name="logo_action" value="update">Mettre à jour</button>
               </div>
             </div>
-            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
           <!-- FORMULAIRE DE GESTION DES LOGOS | FIN -->
         </div>

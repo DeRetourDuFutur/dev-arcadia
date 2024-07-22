@@ -43,7 +43,7 @@ require_once '../app/admin/gestion_domaines.php';
               <button type="submit" class="btn btn-primary-color">Modifier</button>
             </div>
           </div>
-          <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
+          <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
         </form>
       </div>
     <?php endforeach; ?>

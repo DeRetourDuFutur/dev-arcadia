@@ -17,9 +17,8 @@ class CsrfToken
 
   public static function isTokenValid(): bool
   {
-    if ($_SESSION['csrf_token'] !== $_POST['csrf_token']) {
-      return true;
-    }
-    return false;
+    if (!isset($_POST['csrf_token'])) return false;
+    if ($_SESSION['csrf_token'] !== $_POST['csrf_token']) return false;
+    return true;
   }
 }

@@ -62,7 +62,7 @@ require_once '../app/admin/gestion_navlink_admin.php';
               </div>
             </div>
             <button type="submit" class="btn btn-primary-color align-bottom mt-4" name="navlink_admin_action" value="update">MAJ</button>
-            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
         </div>
       <?php endforeach; ?>

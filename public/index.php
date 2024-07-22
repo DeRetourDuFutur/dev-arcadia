@@ -12,6 +12,20 @@ require_once '../app/CsrfToken.php';
 $checkSession = new CheckSession();
 $checkSession->start();
 
+set_exception_handler('handleErrors');
+
+function handleErrors(Throwable $exception)
+{
+  $logMessage = date('Y-m-d H:s', strtotime('now')) . ' : ';
+  $logMessage .= 'Uncaught Exception in ' . $exception->getFile() . ', line ' . $exception->getLine() . ' : ' . $exception->getMessage();
+  $logMessage .= PHP_EOL;
+  $logMessage .= $exception->getTraceAsString();
+  $logMessage .= PHP_EOL;
+  $logMessage .= PHP_EOL;
+
+  error_log($logMessage, 3, '../logs.txt');
+}
+
 $checkConnection = new CheckConnection();
 
 Database::connect();
@@ -20,7 +34,7 @@ Database::connect();
 $db = Database::$pdo;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  if (!CsrfToken::isTokenValid()) {
+  if (!(CsrfToken::isTokenValid())) {
     header('Location: ' . BASE_URL . '/');
     die();
   }
@@ -42,7 +56,7 @@ $routes = Router::getRoutes();
 //  Démarrer la temporisation de sortie
 ob_start();
 if (array_key_exists($currentRoute['uri'], $routes)) {
-  if (str_contains($currentRoute['template'], 'admin') && $currentRoute['uri'] !== BASE_URL . '/login' && !$checkConnection->isUserLoggedIn()) {
+  if (str_contains($currentRoute['template'], 'admin') && $currentRoute['uri'] !== '/login' && !$checkConnection->isUserLoggedIn()) {
     header('Location: ' . BASE_URL . '/login');
     exit;
   }

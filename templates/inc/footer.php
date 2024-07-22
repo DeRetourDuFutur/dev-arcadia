@@ -47,14 +47,13 @@
       <!-- Adresse | Fin -->
       <!-- Newsletter | Début -->
       <div class="col-lg-3 col-md-6 order-sm-4" id="newsletter">
-        <h5 class="text-light mb-4">Newsletter</h5>
+        <!-- <h5 class="text-light mb-4">Newsletter</h5>
         <p>Inscrivez-vous pour recevoir les actualités de votre parc Arcadia !</p>
         <form>
           <input type="email" name="email" id="emailInput" class="form-control">
           <input type="text" placeholder="Votre email" id="emailPlaceholder" autocomplete="off">
           <button type="button" class="btn btn-primary-color">Inscription</button>
-          <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
-        </form>
+        </form> -->
         <!-- Copyright | Début -->
         <div class="copyright mt-5">
           <div class="col-12">

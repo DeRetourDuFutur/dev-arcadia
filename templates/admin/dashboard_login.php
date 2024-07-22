@@ -23,7 +23,7 @@ require_once('../app/admin/dashboard_login.php');
         <input type="password" class="form-control" id="user_pwd" name="user_pwd" required>
       </div>
       <button type="submit" class="btn btn-primary-color" name="submit">Se connecter</button>
-      <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
+      <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
     </form>
   </div>
 </div>

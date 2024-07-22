@@ -1,0 +1,6 @@
+2024-07-22 22:12 : Uncaught Exception in C:\xampp\htdocs\web-am\dev.studi\arcadia_dev\public\index.php, line 30 : Undefined constant "aaaaa"
+#0 {main}
+
+2024-07-22 22:12 : Uncaught Exception in C:\xampp\htdocs\web-am\dev.studi\arcadia_dev\public\index.php, line 30 : Undefined constant "aaaaa"
+#0 {main}
+

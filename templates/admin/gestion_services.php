@@ -19,7 +19,7 @@ require_once '../app/admin/gestion_services.php';
             </div>
             <!-- IMAGE -->
             <div class="alert alert-secondary my-0 text-center">
-              <img src="<?= htmlspecialchars($service['service_visuel']); ?>" alt="<?= htmlspecialchars($service['service_nom']); ?>" class="img-fluid" style="max-height: 90px;" onmouseover="this.style.maxHeight='70%';" onmouseout="this.style.maxHeight='90px';">
+              <img src="<?= BASE_URL . htmlspecialchars($service['service_visuel']); ?>" alt="<?= htmlspecialchars($service['service_nom']); ?>" class="img-fluid" style="max-height: 90px;" onmouseover="this.style.maxHeight='70%';" onmouseout="this.style.maxHeight='90px';">
               <div class="input-group">
                 <input id="service_visuel" type="file" name="service_visuel" accept="image/*" class="form-control form-control-sm">
               </div>
@@ -53,7 +53,7 @@ require_once '../app/admin/gestion_services.php';
                 <button type="submit" class="btn btn-primary" name="service_action" value="update">MAJ</button>
               </div>
             </div>
-            <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
           </form>
         </div>
       <?php endforeach; ?>

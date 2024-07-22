@@ -63,7 +63,7 @@ require_once('../app/process_avis.php');
               </div>
               <input type="hidden" name="commentaire_date" value="<?= htmlspecialchars(date('Y-m-d H:i:s')) ?>">
               <button type="submit" class="btn btn-primary-color mt-3">Envoyer</button>
-              <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
+              <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
             </form>
           </div>
         </div>

@@ -120,7 +120,7 @@ require_once '../app/admin/gestion_animaux.php';
                   <div class="d-flex justify-content-evenly pt-3">
                     <button type="submit" class="btn btn-primary-color my-4" name="animal_action" value="update">Mettre à jour</button>
                   </div>
-                  <input type="hidden" value="<?= $_SESSION['csrf_token'] ?>">
+                  <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                 </form>
               </div>
               <br>
