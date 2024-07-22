@@ -2,8 +2,6 @@
 // INITIALISER LA VARIABLE $DB
 $db = Database::$pdo;
 
-// Remplacer Database::$pdo par Database::$pdo pour se connecter à la base de données
-
 // SI UN FORMULAIRE A ÉTÉ ENVOYÉ, ON TRAITE LES DONNÉES
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $animal_id = $_POST['animal_id'];
@@ -20,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($isFileSubmitted) {
     try {
-      $newFilepath = uploadFile($_FILES['animal_visuel'], 'animaux');
+      // UPLOAD DU FICHIER
+      $newFilepath = FileUploader::uploadFile($_FILES['animal_visuel'], 'animaux');
       $alertMessages[] = 'Les fichiers ont bien été uploadés.';
     } catch (Exception $e) {
       $alertMessages[] = 'L\'upload des fichiers à échoué';

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // SI UN FICHIER A ÉTÉ SOUMIS (UPLOADÉ)
   if ($isFileSubmitted) {
     try {
-      $newFilepath = uploadFile($_FILES['service_visuel'], 'services');
+      $newFilepath = FileUploader::uploadFile($_FILES['service_visuel'], 'services');
       $alertMessages[] = 'Les fichiers ont bien été uploadés.';
     } catch (Exception $e) {
       $alertMessages[] = 'L\'upload des fichiers à échoué';

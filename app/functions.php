@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Upload un fichier
- * 
- * @param array $file Le fichier a upload (ex : $_FILES['mon_nom_de_fichier'])
- * @param string $directory Le nom du dossier dans le répertoire 'public/assets/uploads' où le fichier sera sauvegardé
- */
 function uploadFile(array $file, string $directory): string
 {
   $filepath = $file['tmp_name'];

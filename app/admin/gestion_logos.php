@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($isFileSubmitted) {
     if (isset($_FILES['logo_img'])) {
       try {
-        $newFilepath = uploadFile($_FILES['logo_img'], 'logos');
+        $newFilepath = FileUploader::uploadFile($_FILES['logo_img'], 'logos');
         $alertMessages[] = 'Les fichiers ont bien été uploadés.';
       } catch (Exception $e) {
         $alertMessages[] = 'L\'upload des fichiers a échoué.';

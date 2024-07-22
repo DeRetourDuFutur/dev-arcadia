@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($isCoverSubmitted) {
     if (isset($_FILES['domaine_cover'])) {
       try {
-        $coverFilepath = uploadFile($_FILES['domaine_cover'], 'domaines');
+        $coverFilepath = FileUploader::uploadFile($_FILES['domaine_cover'], 'domaines');
         $alertMessages[] = 'Les fichiers ont bien été uploadés.';
       } catch (Exception $e) {
         $alertMessages[] = 'L\'upload des fichiers a échoué.';
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($isThumbnailSubmitted) {
     if (isset($_FILES['domaine_thumbnail'])) {
       try {
-        $thumbnailFilepath = uploadFile($_FILES['domaine_thumbnail'], 'domaines');
+        $thumbnailFilepath = FileUploader::uploadFile($_FILES['domaine_thumbnail'], 'domaines');
         $alertMessages[] = 'Les fichiers ont bien été uploadés.';
       } catch (Exception $e) {
         $alertMessages[] = 'L\'upload des fichiers a échoué.';
