@@ -10,15 +10,15 @@ $navlinks_admin = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Vérifier si le formulaire a été soumis
 if (isset($_POST['navlink_admin_action'])) {
-  $navlink_admin_id = $_POST['navlink_admin_id'];
-  $navlink_admin_nom = $_POST['navlink_admin_nom'];
-  $navlink_admin_ico = $_POST['navlink_admin_ico'];
-  $navlink_admin_lien = $_POST['navlink_admin_lien'];
-  $navlink_admin_class = $_POST['navlink_admin_class'];
-  $navlink_admin_title = $_POST['navlink_admin_title'];
-  $navlink_admin_a = $_POST['navlink_admin_a'];
-  $navlink_admin_e = $_POST['navlink_admin_e'];
-  $navlink_admin_v = $_POST['navlink_admin_v'];
+  $navlink_admin_id = htmlspecialchars($_POST['navlink_admin_id']);
+  $navlink_admin_nom = htmlspecialchars($_POST['navlink_admin_nom']);
+  $navlink_admin_ico = htmlspecialchars($_POST['navlink_admin_ico']);
+  $navlink_admin_lien = htmlspecialchars($_POST['navlink_admin_lien']);
+  $navlink_admin_class = htmlspecialchars($_POST['navlink_admin_class']);
+  $navlink_admin_title = htmlspecialchars($_POST['navlink_admin_title']);
+  $navlink_admin_a = htmlspecialchars($_POST['navlink_admin_a']);
+  $navlink_admin_e = htmlspecialchars($_POST['navlink_admin_e']);
+  $navlink_admin_v = htmlspecialchars($_POST['navlink_admin_v']);
 
 
   // Requête pour mettre à jour les liens de la navbar Admin

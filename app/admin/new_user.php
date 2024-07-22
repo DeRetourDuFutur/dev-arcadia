@@ -4,14 +4,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Récupérer les données du formulaire
   // $user_id = $_POST['user_id'];
-  $user_role = $_POST['user_role'];
-  $user_prenom = $_POST['user_prenom'];
-  $user_nom = $_POST['user_nom'];
-  $user_email = $_POST['user_email'];
-  $user_pwd = $_POST['user_pwd'];
-  $user_confirm_pwd = $_POST['user_confirm_pwd'];
-  $user_date = $_POST['user_date'];
-  $user_statut = $_POST['user_statut'];
+  $user_role = htmlspecialchars($_POST['user_role']);
+  $user_prenom = htmlspecialchars($_POST['user_prenom']);
+  $user_nom = htmlspecialchars($_POST['user_nom']);
+  $user_email = htmlspecialchars($_POST['user_email']);
+  $user_pwd = htmlspecialchars($_POST['user_pwd']);
+  $user_confirm_pwd = htmlspecialchars($_POST['user_confirm_pwd']);
+  $user_date = htmlspecialchars($_POST['user_date']);
+  $user_statut = htmlspecialchars($_POST['user_statut']);
 
   // Requête pour ajouter un nouvel utilisateur
   $sql = "INSERT INTO users (user_prenom, user_nom, user_email, user_pwd, user_role, user_date, user_statut) VALUES (:user_prenom, :user_nom, :user_email, :user_pwd, :user_role, :user_date, :user_statut)";

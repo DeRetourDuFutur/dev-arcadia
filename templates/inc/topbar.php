@@ -3,11 +3,11 @@
   <div class="row gx-0 d-none d-lg-flex">
     <div class="col-lg-7 ps-5 text-start d-flex">
       <div class="h-100 d-inline-flex align-items-center py-4 me-4">
-        <a href="https://www.google.com/maps/place/For%C3%AAt+de+Broceliande,+Val+sans+Retour/@48.004798,-2.288173,16z/data=!4m6!3m5!1s0x480fb38fd5df5933:0x23f241c31b5da661!8m2!3d48.0047975!4d-2.2881727!16s%2Fg%2F11b7hk4_j7?hl=fr&entry=ttu" target="_blank"><small class="fa fa-map-marker-alt text-primary me-2"></small></a>
+        <a href="<?php echo htmlspecialchars('https://www.google.com/maps/place/For%C3%AAt+de+Broceliande,+Val+sans+Retour/@48.004798,-2.288173,16z/data=!4m6!3m5!1s0x480fb38fd5df5933:0x23f241c31b5da661!8m2!3d48.0047975!4d-2.2881727!16s%2Fg%2F11b7hk4_j7?hl=fr&entry=ttu', ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><small class="fa fa-map-marker-alt text-primary me-2"></small></a>
         <small>Forêt de Brocéliande</small>
       </div>
       <div class="h-100 d-inline-flex align-items-center py-3">
-        <a href="<?= BASE_URL . '/informations' ?>"><small class="far fa-clock text-primary me-2"></small></a>
+        <a href="<?= htmlspecialchars(BASE_URL . '/informations', ENT_QUOTES, 'UTF-8'); ?>"><small class="far fa-clock text-primary me-2"></small></a>
         <small>Votre Zoo Arcadia est ouvert toute la semaine</small>
       </div>
     </div>

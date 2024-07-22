@@ -3,12 +3,12 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Récupérer les données du formulaire
-  $rapport_animal_id = $_POST['rapport_animal_id'];
-  $rapport_date = $_POST['rapport_date'];
-  $rapport_etat_animal = $_POST['rapport_etat_animal'];
-  $rapport_food_type_id = $_POST['rapport_food_type_id'];
-  $rapport_food_unite_type_id = $_POST['rapport_food_unite_type_id'];
-  $rapport_food_quantite = $_POST['rapport_food_quantite'];
+  $rapport_animal_id = htmlspecialchars($_POST['rapport_animal_id']);
+  $rapport_date = htmlspecialchars($_POST['rapport_date']);
+  $rapport_etat_animal = htmlspecialchars($_POST['rapport_etat_animal']);
+  $rapport_food_type_id = htmlspecialchars($_POST['rapport_food_type_id']);
+  $rapport_food_unite_type_id = htmlspecialchars($_POST['rapport_food_unite_type_id']);
+  $rapport_food_quantite = htmlspecialchars($_POST['rapport_food_quantite']);
 
   // Requête pour ajouter un nouvel rapport
   $sql = "INSERT INTO rapports (rapport_animal_id, rapport_date, rapport_etat_animal, rapport_food_type_id, rapport_food_unite_type_id, rapport_food_quantite) VALUES (:rapport_animal_id, :rapport_date, :rapport_etat_animal, :rapport_food_type_id, :rapport_food_unite_type_id, :rapport_food_quantite)";
@@ -70,24 +70,24 @@ $stmt->execute();
 $animaux = [];
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $animal = [
-    'animal_id' => $row['animal_id'],
-    'animal_prenom' => $row['animal_prenom'],
-    'animal_race_id' => $row['animal_race_id'],
-    'animal_age' => $row['animal_age'],
-    'animal_poids' => $row['animal_poids'],
-    'animal_domaine_id' => $row['animal_domaine_id'],
-    'animal_visuel' => $row['animal_visuel'],
-    'animal_statut' => $row['animal_statut'],
-    'domaine_id' => $row['domaine_id'],
-    'domaine_name' => $row['domaine_name'],
-    'race_id' => $row['race_id'],
-    'race_nom' => $row['race_nom'],
+    'animal_id' => htmlspecialchars($row['animal_id']),
+    'animal_prenom' => htmlspecialchars($row['animal_prenom']),
+    'animal_race_id' => htmlspecialchars($row['animal_race_id']),
+    'animal_age' => htmlspecialchars($row['animal_age']),
+    'animal_poids' => htmlspecialchars($row['animal_poids']),
+    'animal_domaine_id' => htmlspecialchars($row['animal_domaine_id']),
+    'animal_visuel' => htmlspecialchars($row['animal_visuel']),
+    'animal_statut' => htmlspecialchars($row['animal_statut']),
+    'domaine_id' => htmlspecialchars($row['domaine_id']),
+    'domaine_name' => htmlspecialchars($row['domaine_name']),
+    'race_id' => htmlspecialchars($row['race_id']),
+    'race_nom' => htmlspecialchars($row['race_nom']),
   ];
 
   // Créer un tableau associatif pour chaque habitat, incluant le nom du domaine
-  $habitats[$row['animal_domaine_id']]['domaine'] = $row['domaine_name'];
-  $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race_id'] = $row['animal_race_id'];
-  $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race'] = $row['race_nom'];
+  $habitats[$row['animal_domaine_id']]['domaine'] = htmlspecialchars($row['domaine_name']);
+  $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race_id'] = htmlspecialchars($row['animal_race_id']);
+  $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['race'] = htmlspecialchars($row['race_nom']);
   $habitats[$row['animal_domaine_id']]['races'][$row['animal_race_id']]['animaux'][$row['animal_id']] = $animal;
 
 

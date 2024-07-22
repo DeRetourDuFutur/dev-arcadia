@@ -10,7 +10,7 @@ require_once('../app/admin/dashboard_login.php');
   <div class="mb-3">
     <?php if (!empty($user_errorMessage)) : ?>
       <div class="alert alert-danger" role="alert">
-        <?php echo $user_errorMessage; ?>
+        <?php echo htmlspecialchars($user_errorMessage); ?>
       </div>
     <?php endif; ?>
     <form method="post" action="">

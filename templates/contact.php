@@ -20,7 +20,7 @@ require_once('../app/process_contact.php');
           <input type="contact_email" class="form-control" name="contact_email" id="contact_emailInput" required><br>
           <label for="contact_message">Votre Message :</label>
           <textarea name="contact_message" class="form-control" id="contact_message" required></textarea><br>
-          <input type="hidden" name="contact_date" value="<?= date('Y-m-d H:i:s') ?>">
+          <input type="hidden" name="contact_date" value="<?= htmlspecialchars(date('Y-m-d H:i:s')) ?>">
           <button type="submit" class="btn btn-primary-color" name="contact_action">Envoyer</button>
         </form>
         <div id="responseContact"></div>

@@ -4,14 +4,14 @@ $db = Database::$pdo;
 
 // SI UN FORMULAIRE A ÉTÉ ENVOYÉ, ON TRAITE LES DONNÉES
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $animal_id = $_POST['animal_id'];
-  $animal_prenom = $_POST['animal_prenom'];
+  $animal_id = htmlspecialchars($_POST['animal_id']);
+  $animal_prenom = htmlspecialchars($_POST['animal_prenom']);
   $animal_visuel = $_FILES['animal_visuel'];
-  $animal_age = $_POST['animal_age'];
-  $animal_poids = $_POST['animal_poids'];
-  $animal_domaine_id = $_POST['animal_domaine_id'];
-  $animal_race_id = $_POST['animal_race_id'];
-  $animal_statut = $_POST['animal_statut'];
+  $animal_age = htmlspecialchars($_POST['animal_age']);
+  $animal_poids = htmlspecialchars($_POST['animal_poids']);
+  $animal_domaine_id = htmlspecialchars($_POST['animal_domaine_id']);
+  $animal_race_id = htmlspecialchars($_POST['animal_race_id']);
+  $animal_statut = htmlspecialchars($_POST['animal_statut']);
 
   // SI UN FICHIER A ÉTÉ SOUMIS (UPLOADÉ)
   $isFileSubmitted = $animal_visuel['error'] !== 4;

@@ -19,13 +19,13 @@ require_once '../app/admin/gestion_logos.php';
           <!-- FORMULAIRE DE GESTION DES LOGOS | DÉBUT -->
           <form method="POST" class="container" enctype="multipart/form-data">
             <!-- ID (HIDDEN) -->
-            <input type="hidden" name="logo_id" value="<?= $logo['logo_id'] ?>">
+            <input type="hidden" name="logo_id" value="<?= htmlspecialchars($logo['logo_id']); ?>">
             <!-- ATTRIBUT -->
             <div class="input-group">
-              <label for="logo_attribut" class="input-group-text input-group-text-sm"><?= $logo['logo_attribut'] === 'FRONT' ? '<span class="text-primary">FRONT</span>' : '<span class="text-secondary">BACK</span>'; ?></label>
+              <label for="logo_attribut" class="input-group-text input-group-text-sm"><?= htmlspecialchars($logo['logo_attribut']) === 'FRONT' ? '<span class="text-primary">FRONT</span>' : '<span class="text-secondary">BACK</span>'; ?></label>
               <select class="form-select form-select-sm" id="logo_attribut" name="logo_attribut">
-                <option value="FRONT" <?= $logo['logo_attribut'] === 'FRONT' ? 'selected' : ''; ?>>FRONT</option>
-                <option value="BACK" <?= $logo['logo_attribut'] === 'BACK' ? 'selected' : ''; ?>>BACK</option>
+                <option value="FRONT" <?= htmlspecialchars($logo['logo_attribut']) === 'FRONT' ? 'selected' : ''; ?>>FRONT</option>
+                <option value="BACK" <?= htmlspecialchars($logo['logo_attribut']) === 'BACK' ? 'selected' : ''; ?>>BACK</option>
               </select>
             </div>
             <!-- TEXTE GAUCHE -->
@@ -47,7 +47,7 @@ require_once '../app/admin/gestion_logos.php';
             </div>
             <!-- IMAGE -->
             <div class="alert alert-secondary my-0 text-center">
-              <img src="<?= $logo['logo_img']; ?>" alt="<?= $logo['logo_title']; ?>" class="img-fluid" style="max-height: 80px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='80px';">
+              <img src="<?= htmlspecialchars($logo['logo_img']); ?>" alt="<?= htmlspecialchars($logo['logo_title']); ?>" class="img-fluid" style="max-height: 80px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='80px';">
               <div class="input-group">
                 <input type="file" name="logo_img" id="logo_img" accept="image/*" class="form-control form-control-sm">
               </div>

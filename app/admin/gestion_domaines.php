@@ -11,11 +11,11 @@ $domaines = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // RÉCUPÉRER LES DONNÉES DU FORMULAIRE
-  $domaine_id = $_POST['domaine_id'];
-  $domaine_name = $_POST['domaine_name'];
-  $domaine_slogan = $_POST['domaine_slogan'];
-  $domaine_cover = $_FILES['domaine_cover'];
-  $domaine_thumbnail = $_FILES['domaine_thumbnail'];
+  $domaine_id = htmlspecialchars($_POST['domaine_id']);
+  $domaine_name = htmlspecialchars($_POST['domaine_name']);
+  $domaine_slogan = htmlspecialchars($_POST['domaine_slogan']);
+  $domaine_cover = isset($_FILES['domaine_cover']) ? $_FILES['domaine_cover'] : null;
+  $domaine_thumbnail = isset($_FILES['domaine_thumbnail']) ? $_FILES['domaine_thumbnail'] : null;
 
   //  VÉRIFIER SI UN FICHIER A ÉTÉ SOUMIS
   $isCoverSubmitted = isset($domaine_cover['error']) && $domaine_cover['error'] !== 4;

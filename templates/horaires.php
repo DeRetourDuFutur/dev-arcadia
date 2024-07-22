@@ -31,14 +31,14 @@ require_once '../app/admin/gestion_horaires.php';
             <tr>
               <td>Tickets</td>
               <td>
-                <p class="mb-2">+33 2 88 88 88 88</p>
-                <p class="mb-0">tickets@arcadia.com</p>
+                <p class="mb-2"><?= htmlspecialchars("+33 2 88 88 88 88"); ?></p>
+                <p class="mb-0"><?= htmlspecialchars("tickets@arcadia.com"); ?></p>
               </td>
             </tr>
             <tr>
               <td>Assistance</td>
               <td>
-                <p class="mb-0">support@arcadia.com</p>
+                <p class="mb-0"><?= htmlspecialchars("support@arcadia.com"); ?></p>
               </td>
             </tr>
           </tbody>

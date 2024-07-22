@@ -10,22 +10,22 @@ require_once '../app/admin/gestion_navlink_admin.php';
       <?php foreach ($navlinks_admin as $navlink_admin) : ?>
         <div class="col-lg-3 mb-4">
           <form action="" method="POST">
-            <input type="hidden" name="navlink_admin_id" value="<?= $navlink_admin['navlink_admin_id'] ?>">
+            <input type="hidden" name="navlink_admin_id" value="<?= htmlspecialchars($navlink_admin['navlink_admin_id']); ?>">
             <div class="alert alert-secondary my-0">
               <label for="navlink_admin_nom" class="ms-1">NOM</label>
-              <input type="text" class="form-control" id="navlink_admin_nom" name="navlink_admin_nom" value="<?= $navlink_admin['navlink_admin_nom']; ?>">
+              <input type="text" class="form-control" id="navlink_admin_nom" name="navlink_admin_nom" value="<?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?>">
             </div>
             <div class="alert alert-secondary my-0">
               <label for="navlink_admin_lien" class="ms-1">LIEN</label>
-              <input type="text" class="form-control" id="navlink_admin_lien" name="navlink_admin_lien" value="<?= $navlink_admin['navlink_admin_lien']; ?>">
+              <input type="text" class="form-control" id="navlink_admin_lien" name="navlink_admin_lien" value="<?= htmlspecialchars($navlink_admin['navlink_admin_lien']); ?>">
             </div>
             <div class="alert alert-secondary my-0">
               <label for="navlink_admin_title" class="ms-1">TITLE</label>
-              <input type="text" class="form-control" id="navlink_admin_title" name="navlink_admin_title" value="<?= $navlink_admin['navlink_admin_title']; ?>">
+              <input type="text" class="form-control" id="navlink_admin_title" name="navlink_admin_title" value="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>">
             </div>
             <div class="alert alert-secondary my-0">
               <label for="navlink_admin_ico" class="ms-1">ICO</label>
-              <input type="text" class="form-control" id="navlink_admin_ico" name="navlink_admin_ico" value="<?= $navlink_admin['navlink_admin_ico']; ?>">
+              <input type="text" class="form-control" id="navlink_admin_ico" name="navlink_admin_ico" value="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>">
             </div>
             <!-- CLASS CSS -->
             <div class="alert alert-secondary my-0">
@@ -61,7 +61,6 @@ require_once '../app/admin/gestion_navlink_admin.php';
                 </select>
               </div>
             </div>
-
             <button type="submit" class="btn btn-primary-color align-bottom mt-4" name="navlink_admin_action" value="update">MAJ</button>
           </form>
         </div>

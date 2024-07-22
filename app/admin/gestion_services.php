@@ -6,11 +6,11 @@ $db = Database::$pdo;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // RÉCUPÉRER LES DONNÉES DU FORMULAIRE
-  $service_id = $_POST['service_id'];
-  $service_statut = $_POST['service_statut'];
-  $service_contenu = $_POST['service_contenu'];
-  $service_nom = $_POST['service_nom'];
-  $service_main = $_POST['service_main'];
+  $service_id = htmlspecialchars($_POST['service_id']);
+  $service_statut = htmlspecialchars($_POST['service_statut']);
+  $service_contenu = htmlspecialchars($_POST['service_contenu']);
+  $service_nom = htmlspecialchars($_POST['service_nom']);
+  $service_main = htmlspecialchars($_POST['service_main']);
   $service_visuel = $_FILES['service_visuel'];
 
   //  VÉRIFIER SI UN FICHIER A ÉTÉ SOUMIS

@@ -9,11 +9,11 @@
     </div>
     <div class="jeux">
       <section class="memory">
-        <div class="jeux-title">Arcadia Memory</div>
-        <div class="jeux-subtitle">Cliquez sur les cartes pour les retourner et retrouver les paires !</div>
+        <div class="jeux-title"><?php echo htmlspecialchars("Arcadia Memory"); ?></div>
+        <div class="jeux-subtitle"><?php echo htmlspecialchars("Cliquez sur les cartes pour les retourner et retrouver les paires !"); ?></div>
         <div id="gameMemory"></div>
-        <div id="win-game" class="d-none text-center">Bravo, vous avez gagné !<br>
-          <button id="btn-restart" class="btn btn-primary-color">Rejouer</button>
+        <div id="win-game" class="d-none text-center"><?php echo htmlspecialchars("Bravo, vous avez gagné !"); ?><br>
+          <button id="btn-restart" class="btn btn-primary-color"><?php echo htmlspecialchars("Rejouer"); ?></button>
         </div>
       </section>
     </div>

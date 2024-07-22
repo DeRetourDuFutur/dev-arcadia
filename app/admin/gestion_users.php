@@ -11,13 +11,13 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Si le formulaire est soumis      
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Récupérer les données du formulaire
-  $user_id = $_POST['user_id'];
-  $user_role = $_POST['user_role'];
-  $user_prenom = $_POST['user_prenom'];
-  $user_nom = $_POST['user_nom'];
-  $user_email = $_POST['user_email'];
-  $user_date = $_POST['user_date'];
-  $user_statut = $_POST['user_statut'];
+  $user_id = htmlspecialchars($_POST['user_id']);
+  $user_role = htmlspecialchars($_POST['user_role']);
+  $user_prenom = htmlspecialchars($_POST['user_prenom']);
+  $user_nom = htmlspecialchars($_POST['user_nom']);
+  $user_email = htmlspecialchars($_POST['user_email']);
+  $user_date = htmlspecialchars($_POST['user_date']);
+  $user_statut = htmlspecialchars($_POST['user_statut']);
 
   // Requête pour mettre à jour les utilisateurs
   $sql = "UPDATE users SET user_role = :user_role, user_prenom = :user_prenom, user_nom = :user_nom, user_email = :user_email, user_date = :user_date, user_statut = :user_statut WHERE user_id = :user_id";

@@ -10,16 +10,16 @@ $horaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Vérifier si le formulaire de MAJ des horaires a été soumis
 if (isset($_POST['horaire_action'])) {
-  $horaire_id = $_POST['horaire_id'];
-  $horaire_jour = $_POST['horaire_jour'];
-  $horaire_ouverture = $_POST['horaire_ouverture'];
-  $horaire_fermeture = $_POST['horaire_fermeture'];
+  $horaire_id = htmlspecialchars($_POST['horaire_id']);
+  $horaire_jour = htmlspecialchars($_POST['horaire_jour']);
+  $horaire_ouverture = htmlspecialchars($_POST['horaire_ouverture']);
+  $horaire_fermeture = htmlspecialchars($_POST['horaire_fermeture']);
 
   // Récupérer les données du formulaire
-  $horaire_id = $_POST['horaire_id'];
-  $horaire_jour = $_POST['horaire_jour'];
-  $horaire_ouverture = $_POST['horaire_ouverture'];
-  $horaire_fermeture = $_POST['horaire_fermeture'];
+  $horaire_id = htmlspecialchars($_POST['horaire_id']);
+  $horaire_jour = htmlspecialchars($_POST['horaire_jour']);
+  $horaire_ouverture = htmlspecialchars($_POST['horaire_ouverture']);
+  $horaire_fermeture = htmlspecialchars($_POST['horaire_fermeture']);
 
   // Requête pour mettre à jour les horaires
   $sql = "UPDATE horaires SET horaire_jour = :horaire_jour, horaire_ouverture = :horaire_ouverture, horaire_fermeture = :horaire_fermeture WHERE horaire_id = :horaire_id";

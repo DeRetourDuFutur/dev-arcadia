@@ -27,13 +27,13 @@ require_once('inc/hero.php');
     <li>Savourez un moment de détente dans nos restaurants et boutiques, où vous pourrez déguster des produits locaux et trouver des souvenirs uniques de votre visite. </li>
   </ul>
   <span class="text-primary">Arcadia,</span> c'est bien plus qu'un simple Zoo, c'est une expérience inoubliable à partager en famille ou entre amis. <br><br>
-  Venez vous émerveiller, apprendre et surtout, vous reconnecter à la nature, nous vous attendons avec impatience !
+  Venez émerveiller, apprendre et surtout, vous reconnecter à la nature, nous vous attendons avec impatience !
   </p>
-  <p><a href="<?= BASE_URL . '/animaux' ?>" class="btn btn-primary-color ">Nos Animaux <i class="fa-solid fa-paw fa-sm ms-2"></i></a></p>
+  <p><a href="<?= htmlspecialchars(BASE_URL . '/animaux') ?>" class="btn btn-primary-color ">Nos Animaux <i class="fa-solid fa-paw fa-sm ms-2"></i></a></p>
   <br>
   <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
     <div class="img-border">
-      <img class="img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/arcadia.webp" alt="Zoo Arcadia" />
+      <img class="img-fluid" src="<?= htmlspecialchars(BASE_URL) ?>/public/assets/img/home-slider/arcadia.webp" alt="Zoo Arcadia" />
     </div>
   </div>
   <div class="mt-5">
@@ -47,7 +47,7 @@ require_once('inc/hero.php');
       <i class="far fa-check-circle text-primary me-3"></i>Un engagement fort pour la conservation de la biodiversité et le bien-être animal.
     </h6>
   </div>
-  <a class="btn btn-primary-color mt-4" href="<?= BASE_URL . '/label' ?>">En savoir +</a>
+  <a class="btn btn-primary-color mt-4" href="<?= htmlspecialchars(BASE_URL . '/label') ?>">En savoir +</a>
 </div>
 <!-- Contenu HOME | Fin -->
 

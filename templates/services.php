@@ -16,9 +16,9 @@ require_once('../app/process_services.php');
         <!-- Si aside est !== 0 et statut est !== 0, alors afficher les services -->
         <?php if ($service['service_main'] === 1 && $service['service_statut'] === 1) : ?>
           <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-            <a class="animal-item" href="<?= BASE_URL ?><?= ($service['service_visuel']); ?>" data-lightbox="animal"><img class="img-fluid mb-3 img-services" src="<?= BASE_URL ?><?= ($service['service_visuel']); ?>" alt="<?= ($service['service_nom']); ?>" /></a>
-            <h6 class="mb-3"><?= ($service['service_nom']); ?></h6>
-            <span><?= ($service['service_contenu']); ?></span>
+            <a class="animal-item" href="<?= htmlspecialchars(BASE_URL . $service['service_visuel']); ?>" data-lightbox="animal"><img class="img-fluid mb-3 img-services" src="<?= htmlspecialchars(BASE_URL . $service['service_visuel']); ?>" alt="<?= htmlspecialchars($service['service_nom']); ?>" /></a>
+            <h6 class="mb-3"><?= htmlspecialchars($service['service_nom']); ?></h6>
+            <span><?= htmlspecialchars($service['service_contenu']); ?></span>
           </div>
         <?php endif; ?>
       <?php endforeach; ?>

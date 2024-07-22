@@ -18,7 +18,7 @@ require_once '../app/admin/gestion_avis.php';
             <p class="mt-4"><?= $commentaire['commentaire_statut'] === 1 ? '<span class="text-primary">Statut actuel : validé</span>' : '<span class="text-danger">Statut en attente de validation</span>'; ?></p>
             <div class="align-text-bottom mt-2">
               <form action="" method="POST">
-                <input type="hidden" name="commentaire_id" value="<?= $commentaire['commentaire_id'] ?>">
+                <input type="hidden" name="commentaire_id" value="<?= htmlspecialchars($commentaire['commentaire_id']) ?>">
                 <button type="submit" class="btn btn-primary-color align-bottom mb-2" name="commentaire_statut" value="1">Valider</button>
                 <button type="submit" class="btn btn-secondary-color align-bottom mb-2" name="commentaire_statut" value="0">Masquer</button>
               </form>

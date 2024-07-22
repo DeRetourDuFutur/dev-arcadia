@@ -8,10 +8,10 @@ require_once '../app/admin/gestion_navlink_admin.php';
   <div class="container-fluid justify-content-center">
     <div class="navbar-item text-light">
       <span>
-        <?php echo $_SESSION['user_prenom'] . ' ' .  $_SESSION['user_nom'] ?> <i class="fa-solid fa-user-gear fa-lg ms-3 me-3 text-secondary" title="Vous êtes connecté(e) en tant que : <?php echo strtoupper($_SESSION['user_role']); ?>>"></i> <?php echo strtoupper($_SESSION['user_role']); ?>
+        <?php echo htmlspecialchars($_SESSION['user_prenom']) . ' ' .  htmlspecialchars($_SESSION['user_nom']) ?> <i class="fa-solid fa-user-gear fa-lg ms-3 me-3 text-secondary" title="Vous êtes connecté(e) en tant que : <?php echo strtoupper(htmlspecialchars($_SESSION['user_role'])) ?>>"></i> <?php echo strtoupper(htmlspecialchars($_SESSION['user_role'])) ?>
       </span>
       <span>
-        <a href="<?php echo BASE_URL . '/dashboard' ?>"><i class="fa-solid fa-sliders fa-lg ms-1 me-3 text-secondary" title="Retourner à l'accueil du Dashboard"></i></a>
+        <a href="<?php echo htmlspecialchars(BASE_URL . '/dashboard') ?>"><i class="fa-solid fa-sliders fa-lg ms-1 me-3 text-secondary" title="Retourner à l'accueil du Dashboard"></i></a>
       </span>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navlink_admin" aria-controls="navlink_admin" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@ require_once '../app/admin/gestion_navlink_admin.php';
                 <i class="fa-solid fa-stop fa-sm ps-2 mb-1 text-secondary"></i>
               </li>
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
+                <a href="<?= htmlspecialchars(BASE_URL . '/' . $navlink_admin['navlink_admin_lien']) ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
             </ul>
           <?php endif; ?>
@@ -41,7 +41,7 @@ require_once '../app/admin/gestion_navlink_admin.php';
           <?php if ($navlink_admin['navlink_admin_e'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
+                <a href="<?= htmlspecialchars(BASE_URL . '/' . $navlink_admin['navlink_admin_lien']) ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>
@@ -57,7 +57,7 @@ require_once '../app/admin/gestion_navlink_admin.php';
           <?php if ($navlink_admin['navlink_admin_v'] === 1) : ?>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="<?= BASE_URL . '/' . $navlink_admin['navlink_admin_lien'] ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
+                <a href="<?= htmlspecialchars(BASE_URL . '/' . $navlink_admin['navlink_admin_lien']) ?>" class="<?= htmlspecialchars($navlink_admin['navlink_admin_class']); ?>" title="<?= htmlspecialchars($navlink_admin['navlink_admin_title']); ?>"><?= htmlspecialchars($navlink_admin['navlink_admin_nom']); ?> <i class="<?= htmlspecialchars($navlink_admin['navlink_admin_ico']); ?>"></i></a>
               </li>
               <li class="nav-item-vertical">
                 <i class="fa-solid fa-stop fa-sm px-2 mb-1 text-secondary"></i>

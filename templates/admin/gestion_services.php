@@ -11,7 +11,7 @@ require_once '../app/admin/gestion_services.php';
         <div class="col-lg-3 mb-4">
           <form method="POST" class="container" enctype="multipart/form-data">
             <!-- ID (HIDDEN) -->
-            <input type="hidden" name="service_id" value="<?= $service['service_id'] ?>">
+            <input type="hidden" name="service_id" value="<?= htmlspecialchars($service['service_id']); ?>">
             <!-- TITRE SERVICE -->
             <div class="alert alert-secondary my-0">
               <label for="service_nom" class="mb-2 fw-bold">TITRE DU SERVICE</label> <br>
@@ -19,7 +19,7 @@ require_once '../app/admin/gestion_services.php';
             </div>
             <!-- IMAGE -->
             <div class="alert alert-secondary my-0 text-center">
-              <img src="<?= $service['service_visuel']; ?>" alt="<?= $service['service_nom']; ?>" class="img-fluid" style="max-height: 90px;" onmouseover="this.style.maxHeight='70%';" onmouseout="this.style.maxHeight='90px';">
+              <img src="<?= htmlspecialchars($service['service_visuel']); ?>" alt="<?= htmlspecialchars($service['service_nom']); ?>" class="img-fluid" style="max-height: 90px;" onmouseover="this.style.maxHeight='70%';" onmouseout="this.style.maxHeight='90px';">
               <div class="input-group">
                 <input id="service_visuel" type="file" name="service_visuel" accept="image/*" class="form-control form-control-sm">
               </div>

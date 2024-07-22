@@ -6,13 +6,13 @@ $db = Database::$pdo;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // RÉCUPÉRER LES DONNÉES DU FORMULAIRE
-  $rapport_id = $_POST['rapport_id'];
-  $rapport_animal_id = $_POST['rapport_animal_id'];
-  $rapport_date = $_POST['rapport_date'];
-  $rapport_etat_animal = $_POST['rapport_etat_animal'];
-  $rapport_food_type_id = $_POST['rapport_food_type_id'];
-  $rapport_food_unite_type_id = $_POST['rapport_food_unite_type_id'];
-  $rapport_food_quantite = $_POST['rapport_food_quantite'];
+  $rapport_id = htmlspecialchars($_POST['rapport_id']);
+  $rapport_animal_id = htmlspecialchars($_POST['rapport_animal_id']);
+  $rapport_date = htmlspecialchars($_POST['rapport_date']);
+  $rapport_etat_animal = htmlspecialchars($_POST['rapport_etat_animal']);
+  $rapport_food_type_id = htmlspecialchars($_POST['rapport_food_type_id']);
+  $rapport_food_unite_type_id = htmlspecialchars($_POST['rapport_food_unite_type_id']);
+  $rapport_food_quantite = htmlspecialchars($_POST['rapport_food_quantite']);
 
   // PRÉPARER LA REQUÊTE SQL
   $sqlFields = [

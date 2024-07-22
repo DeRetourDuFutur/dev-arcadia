@@ -5,6 +5,6 @@ $sql = "SELECT * FROM services";
 $stmt = $db->query($sql);
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Fermerture de la connexion
+// Fermeture de la connexion
 $db = null;
 $stmt = null;

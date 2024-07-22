@@ -61,7 +61,7 @@ require_once('../app/process_avis.php');
                 <label for="commentaire_avis" class="form-label">Votre avis</label>
                 <textarea name="commentaire_avis" rows="8" cols="55" id="commentaire_avis" placeholder="Rédigez votre avis ici"></textarea>
               </div>
-              <input type="hidden" name="commentaire_date" value="<?= date('Y-m-d H:i:s') ?>">
+              <input type="hidden" name="commentaire_date" value="<?= htmlspecialchars(date('Y-m-d H:i:s')) ?>">
               <button type="submit" class="btn btn-primary-color mt-3">Envoyer</button>
             </form>
           </div>

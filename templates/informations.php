@@ -1,34 +1,3 @@
-<!-- Page Informations | Début -->
-
-<!-- Section Chiffres | Début -->
-<div class="container-fluid bg-primary facts wow fadeInUp" data-wow-delay="0.1s" id="chiffres">
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-        <i class="fa fa-certificate fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">3</h1>
-        <p class="text-white mb-0">Domaines</p>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-        <i class="fa fa-paw fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">2742</h1>
-        <p class="text-white mb-0">Animaux</p>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-        <i class="fa-solid fa-train fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">3</h1>
-        <p class="text-white mb-0">Petits Trains</p>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-        <i class="fa fa-users fa-3x text-primary mb-3"></i>
-        <h1 class="text-white mb-2" data-toggle="counter-up">8600</h1>
-        <p class="text-white mb-0">Visiteurs /jour</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Section Chiffres | Fin -->
-
 <!-- Section Informations | Début -->
 <div class="informations-content">
   <p>
@@ -36,22 +5,21 @@
   </p>
   <h1>Guide pratique pour préparer votre<span class="text-primary"> visite</span></h1>
   <p>
-    Nous sommes ravis que vous ayez choisi de venir nous rendre visite et découvrir la beauté et la diversité du monde animal.
-    Afin de vous assurer une expérience optimale, voici un guide pour préparer votre visite au Zoo Arcadia.
+    <?php echo htmlspecialchars("Nous sommes ravis que vous ayez choisi de venir nous rendre visite et découvrir la beauté et la diversité du monde animal. Afin de vous assurer une expérience optimale, voici un guide pour préparer votre visite au Zoo Arcadia."); ?>
   </p>
   <p>
     <span class="text-primary">Accès :</span>
   <ul>
-    <li>En <a href="https://maps.app.goo.gl/ojcTEEnM7J2CCJ1f8" target="_blank">voiture</a></li>
-    <li>En <a href="https://maps.app.goo.gl/ojcTEEnM7J2CCJ1f8" target="_blank">transports</a></li>
+    <li>En <a href="<?php echo htmlspecialchars("https://maps.app.goo.gl/ojcTEEnM7J2CCJ1f8"); ?>" target="_blank">voiture</a></li>
+    <li>En <a href="<?php echo htmlspecialchars("https://maps.app.goo.gl/ojcTEEnM7J2CCJ1f8"); ?>" target="_blank">transports</a></li>
     <li>Parking gratuit</li>
   </ul>
   <span class="text-primary">Tarifs :</span>
   <ul>
-    <li>Adultes : [Prix du billet adulte]</li>
-    <li>Enfants (3-12 ans) : [Prix du billet enfant]</li>
+    <li>Adultes : <?php echo htmlspecialchars("[Prix du billet adulte]"); ?></li>
+    <li>Enfants (3-12 ans) : <?php echo htmlspecialchars("[Prix du billet enfant]"); ?></li>
     <li>Moins de 3 ans : Gratuit</li>
-    <li>Tarifs groupes et familles : [Informations sur les tarifs spéciaux]</li>
+    <li>Tarifs groupes et familles : <?php echo htmlspecialchars("[Informations sur les tarifs spéciaux]"); ?></li>
   </ul>
   <span class="text-primary">Restauration & Boutiques :</span><br>
   <ul>
@@ -73,18 +41,6 @@
     <li>N'oubliez pas votre appareil photo : vous allez immortaliser des moments inoubliables !</li>
     <li>Respectez les animaux et leur environnement : ne nourrissez pas les animaux, ne touchez pas les enclos et jetez vos déchets dans les poubelles prévues à cet effet.</li>
   </ul>
-  Profitez de votre visite ! Le Zoo Arcadia est un lieu unique où vous pourrez vous émerveiller devant la beauté du monde animal et apprendre à mieux connaître la faune et la flore de notre planète. <b>Nous vous attendons avec impatience !</b>
+  <?php echo htmlspecialchars("Profitez de votre visite ! Le Zoo Arcadia est un lieu unique où vous pourrez vous émerveiller devant la beauté du monde animal et apprendre à mieux connaître la faune et la flore de notre planète. <b>Nous vous attendons avec impatience !</b>"); ?>
   </p>
 </div>
-<!-- Section Informations | Fin -->
-
-<!-- Section Horaires | Début -->
-<?php include('horaires.php'); ?>
-<!-- Section Horaires | Fin -->
-</div>
-</div>
-<!-- Section Avis | Début -->
-<?php include('avis.php'); ?>
-<!-- Section Avis | Fin -->
-
-<!-- Page Informations | Fin -->

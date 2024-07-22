@@ -10,12 +10,12 @@ $navlinks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Vérifier si le formulaire de MAJ de la navbar a été soumis
 if (isset($_POST['navlink_action'])) {
-  $navlink_id = $_POST['navlink_id'];
-  $navlink_nom = $_POST['navlink_nom'];
-  $navlink_lien = $_POST['navlink_lien'];
-  $navlink_class = $_POST['navlink_class'];
-  $navlink_title = $_POST['navlink_title'];
-  $navlink_ico = $_POST['navlink_ico'];
+  $navlink_id = htmlspecialchars($_POST['navlink_id']);
+  $navlink_nom = htmlspecialchars($_POST['navlink_nom']);
+  $navlink_lien = htmlspecialchars($_POST['navlink_lien']);
+  $navlink_class = htmlspecialchars($_POST['navlink_class']);
+  $navlink_title = htmlspecialchars($_POST['navlink_title']);
+  $navlink_ico = htmlspecialchars($_POST['navlink_ico']);
 
   // Requête pour mettre à jour les liens de la navbar
   $sql = "UPDATE navlinks SET navlink_nom = :navlink_nom, navlink_lien = :navlink_lien, navlink_class = :navlink_class, navlink_title = :navlink_title, navlink_ico = :navlink_ico WHERE navlink_id = :navlink_id";

@@ -13,7 +13,7 @@ require_once '../app/admin/gestion_domaines.php';
       <div class="col-lg-3 mb-2">
         <form action="" method="POST" class="container" enctype="multipart/form-data">
           <!-- ID (HIDDEN) -->
-          <input type="hidden" name="domaine_id" value="<?= $domaine['domaine_id'] ?>">
+          <input type="hidden" name="domaine_id" value="<?= htmlspecialchars($domaine['domaine_id']) ?>">
           <!-- NOM -->
           <div class="alert alert-secondary my-0">
             <input type="text" name="domaine_name" class="form-control" value="<?= htmlspecialchars($domaine['domaine_name']); ?>">
@@ -25,7 +25,7 @@ require_once '../app/admin/gestion_domaines.php';
           <!-- IMAGE COVER -->
           <div class="alert alert-secondary my-0 text-center">
             <label for="domaine_cover">COVER SLIDER</label>
-            <img src="<?= BASE_URL . $domaine['domaine_cover'] ?>" class="img-fluid img-fiche-animal" style="max-height: 88px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='88px';"><br />
+            <img src="<?= htmlspecialchars(BASE_URL . $domaine['domaine_cover']) ?>" class="img-fluid img-fiche-animal" style="max-height: 88px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='88px';"><br />
             <div class="input-group">
               <input id="domaine_cover" type="file" name="domaine_cover" accept="image/*" class="form-control form-control-sm">
             </div>
@@ -33,7 +33,7 @@ require_once '../app/admin/gestion_domaines.php';
           <!-- IMAGE THUMBNAIL -->
           <div class="alert alert-secondary my-0 text-center">
             <label for="domaine_thumbnail">THUMBNAILS SLIDER</label>
-            <img src="<?= BASE_URL . $domaine['domaine_thumbnail'] ?>" class="img-fluid img-fiche-animal mx-auto" style="max-height: 88px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='88px';"><br />
+            <img src="<?= htmlspecialchars(BASE_URL . $domaine['domaine_thumbnail']) ?>" class="img-fluid img-fiche-animal mx-auto" style="max-height: 88px;" onmouseover="this.style.maxHeight='100%';" onmouseout="this.style.maxHeight='88px';"><br />
             <div class="input-group">
               <input id="domaine_thumbnail" type="file" name="domaine_thumbnail" accept="image/*" class="form-control form-control-sm">
             </div>

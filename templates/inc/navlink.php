@@ -14,14 +14,14 @@ require_once '../app/admin/gestion_navlink.php';
       <ul class="navbar-nav">
         <?php foreach ($navlinks as $navlink) : ?>
           <li class="nav-item">
-            <a href="<?= BASE_URL . '/' . $navlink['navlink_lien'] ?>" class="<?= htmlspecialchars($navlink['navlink_class']); ?>" title="<?= htmlspecialchars($navlink['navlink_title']); ?>"><?= htmlspecialchars($navlink['navlink_nom']); ?> <i class="<?= htmlspecialchars($navlink['navlink_ico']); ?>" style="--fa-rotate-angle: 45deg;"></i></a>
+            <a href="<?= htmlspecialchars(BASE_URL . '/' . $navlink['navlink_lien']) ?>" class="<?= htmlspecialchars($navlink['navlink_class']); ?>" title="<?= htmlspecialchars($navlink['navlink_title']); ?>"><?= htmlspecialchars($navlink['navlink_nom']); ?> <i class="<?= htmlspecialchars($navlink['navlink_ico']); ?>" style="--fa-rotate-angle: 45deg;"></i></a>
           </li>
         <?php endforeach; ?>
         <li class="nav-item">
           <?php if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) : ?>
-            <a href="<?= BASE_URL . '/logout' ?>" title="Déconnexion de l'interface d'administration Arcadia"><i class="fa-solid fa-user-xmark fa-xl ms-1 mt-3 text-secondary"></i></a>
+            <a href="<?= htmlspecialchars(BASE_URL . '/logout') ?>" title="Déconnexion de l'interface d'administration Arcadia"><i class="fa-solid fa-user-xmark fa-xl ms-1 mt-3 text-secondary"></i></a>
           <?php else : ?>
-            <a href="<?= BASE_URL . '/login' ?>" title="Espace réservé aux utilisateurs autorisés uniquement"><i class="fa-solid fa-user-lock fa-xl ms-1 mt-3 text-primary"></i></a>
+            <a href="<?= htmlspecialchars(BASE_URL . '/login') ?>" title="Espace réservé aux utilisateurs autorisés uniquement"><i class="fa-solid fa-user-lock fa-xl ms-1 mt-3 text-primary"></i></a>
           <?php endif; ?>
         </li>
       </ul>

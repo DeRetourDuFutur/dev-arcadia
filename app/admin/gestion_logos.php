@@ -6,13 +6,13 @@ $db = Database::$pdo;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // RÉCUPÉRER LES DONNÉES DU FORMULAIRE
-  $logo_id = isset($_POST['logo_id']) ? $_POST['logo_id'] : null;
-  $logo_txtg = isset($_POST['logo_txtg']) ? $_POST['logo_txtg'] : null;
-  $logo_txtd = isset($_POST['logo_txtd']) ? $_POST['logo_txtd'] : null;
-  $logo_ico = isset($_POST['logo_ico']) ? $_POST['logo_ico'] : null;
-  $logo_lien = isset($_POST['logo_lien']) ? $_POST['logo_lien'] : null;
-  $logo_title = isset($_POST['logo_title']) ? $_POST['logo_title'] : null;
-  $logo_attribut = isset($_POST['logo_attribut']) ? $_POST['logo_attribut'] : null;
+  $logo_id = isset($_POST['logo_id']) ? htmlspecialchars($_POST['logo_id']) : null;
+  $logo_txtg = isset($_POST['logo_txtg']) ? htmlspecialchars($_POST['logo_txtg']) : null;
+  $logo_txtd = isset($_POST['logo_txtd']) ? htmlspecialchars($_POST['logo_txtd']) : null;
+  $logo_ico = isset($_POST['logo_ico']) ? htmlspecialchars($_POST['logo_ico']) : null;
+  $logo_lien = isset($_POST['logo_lien']) ? htmlspecialchars($_POST['logo_lien']) : null;
+  $logo_title = isset($_POST['logo_title']) ? htmlspecialchars($_POST['logo_title']) : null;
+  $logo_attribut = isset($_POST['logo_attribut']) ? htmlspecialchars($_POST['logo_attribut']) : null;
   $logo_img = isset($_FILES['logo_img']) ? $_FILES['logo_img'] : null;
 
   //  VÉRIFIER SI UN FICHIER A ÉTÉ SOUMIS

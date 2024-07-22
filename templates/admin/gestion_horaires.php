@@ -15,8 +15,8 @@ require_once '../app/admin/gestion_horaires.php';
             <span class="py-3"><?= htmlspecialchars($horaire['horaire_ouverture']); ?></span> - <span class="py-3"><?= htmlspecialchars($horaire['horaire_fermeture']); ?></span>
             <div class="align-text-bottom mt-2">
               <form action="" method="POST">
-                <input type="hidden" name="horaire_id" value="<?= $horaire['horaire_id'] ?>">
-                <input type="hidden" name="horaire_jour" value="<?= $horaire['horaire_jour'] ?>">
+                <input type="hidden" name="horaire_id" value="<?= htmlspecialchars($horaire['horaire_id']) ?>">
+                <input type="hidden" name="horaire_jour" value="<?= htmlspecialchars($horaire['horaire_jour']) ?>">
                 <div class="alert alert-secondary my-0">
                   <div class="input-group mb-3">
                     <label for="horaire_ouverture" class="input-group-text">OUVERTURE</label>
@@ -28,7 +28,7 @@ require_once '../app/admin/gestion_horaires.php';
                       while ($current_time <= $end_time) {
                         $time = date('H:i', $current_time);
                         $selected = ($time == $horaire['horaire_ouverture']) ? 'selected' : '';
-                        echo "<option value=\"$time\" $selected>$time</option>";
+                        echo "<option value=\"" . htmlspecialchars($time) . "\" $selected>" . htmlspecialchars($time) . "</option>";
                         $current_time += 60 * 30; // increment by 30 minutes
                       }
                       ?>
@@ -44,7 +44,7 @@ require_once '../app/admin/gestion_horaires.php';
                       while ($current_time <= $end_time) {
                         $time = date('H:i', $current_time);
                         $selected = ($time == $horaire['horaire_fermeture']) ? 'selected' : '';
-                        echo "<option value=\"$time\" $selected>$time</option>";
+                        echo "<option value=\"" . htmlspecialchars($time) . "\" $selected>" . htmlspecialchars($time) . "</option>";
                         $current_time += 60 * 30; // increment by 30 minutes
                       }
                       ?>

@@ -8,11 +8,11 @@ require_once '../app/admin/new_user.php';
       <h6 class="text-left mb-3"><i class="fa-solid fa-square-caret-down fa-xl text-primary me-3"></i><span>DASHBOARD</span> | <span class="text-primary">AJOUT D'UTILISATEUR</span><i class="fa-solid fa-square-caret-right fa-xl text-secondary ms-4 me-2"></i> <a href="<?php echo BASE_URL . '/gestion-users' ?>">GESTION UTILISATEURS</a></h6>
       <div class="col-lg-3 mb-4">
         <form action="" method="POST" id="newUserForm" novalidate>
-          <input type="hidden" id="user_id" name="user_id" value="<?= $user['user_id'] ?>">
+          <input type="hidden" id="user_id" name="user_id" value="<?= htmlspecialchars($user['user_id']) ?>">
           <div class="alert alert-secondary pt-3">
             <!-- RÔLE -->
             <div class="input-group">
-              <label class="input-group-text" for=" user_role">RÔLE</label>
+              <label class="input-group-text" for="user_role">RÔLE</label>
               <select class="form-select" id="user_role" name="user_role">
                 <option selected value="">CHOISIR UN RÔLE</option>
                 <option value="admin" class="text-primary fw-bold">ADMINISTRATEUR</option>
@@ -47,7 +47,7 @@ require_once '../app/admin/new_user.php';
             </div>
             <!-- DATE (HIDDEN) -->
             <div class="form-group">
-              <input type="hidden" name="user_date" id="user_date" class="form-control" value="<?php echo date('Y-m-d H:i:s'); ?>">
+              <input type="hidden" name="user_date" id="user_date" class="form-control" value="<?php echo htmlspecialchars(date('Y-m-d H:i:s')); ?>">
             </div>
             <!-- STATUT (HIDDEN) PAR D&Eacute;FAUT SUR 0 -->
             <div class="form-group">

@@ -6,10 +6,10 @@ $db = Database::$pdo;
 $form_submited = false;
 
 if (isset($_POST['commentaire_pseudo']) && isset($_POST['commentaire_note']) && isset($_POST['commentaire_avis']) && isset($_POST['commentaire_date'])) {
-  $commentaire_pseudo = $_POST['commentaire_pseudo'];
-  $commentaire_note = $_POST['commentaire_note'];
-  $commentaire_avis = $_POST['commentaire_avis'];
-  $commentaire_date = $_POST['commentaire_date'];
+  $commentaire_pseudo = htmlspecialchars($_POST['commentaire_pseudo']);
+  $commentaire_note = htmlspecialchars($_POST['commentaire_note']);
+  $commentaire_avis = htmlspecialchars($_POST['commentaire_avis']);
+  $commentaire_date = htmlspecialchars($_POST['commentaire_date']);
 
   $sql = "INSERT INTO commentaires (commentaire_pseudo, commentaire_note, commentaire_avis, commentaire_date, commentaire_statut) VALUES (:commentaire_pseudo, :commentaire_note, :commentaire_avis, :commentaire_date, 0)";
   $stmt = $db->prepare($sql);
@@ -31,10 +31,10 @@ $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if ($form_submited) {
   $to = 'antonymasson.dev@gmail.com';
   $subject = 'Nouveau commentaire via Arcadia';
-  $message = "Pseudo : $commentaire_pseudo\n";
-  $message .= "Commentaire : $commentaire_avis\n";
-  $message .= "Note donnée : $commentaire_note\n";
-  $message .= "Posté le : $commentaire_date\n";
+  $message = "Pseudo : " . htmlspecialchars($commentaire_pseudo) . "\n";
+  $message .= "Commentaire : " . htmlspecialchars($commentaire_avis) . "\n";
+  $message .= "Note donnée : " . htmlspecialchars($commentaire_note) . "\n";
+  $message .= "Posté le : " . htmlspecialchars($commentaire_date) . "\n";
 
   $headers = "Content-Type: text/plain; charset=utf-8\r\n";
   $headers .= "From: Arcadia | Avis <contact@techno2main.fr>\r\n";
@@ -45,7 +45,6 @@ if ($form_submited) {
     echo "Le message n'a pas pu être envoyé, désolé !";
   }
 }
-
 
 $db = null;
 $stmt = null;

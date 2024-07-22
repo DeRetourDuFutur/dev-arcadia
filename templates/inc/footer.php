@@ -5,19 +5,19 @@
       <!-- Informations | Début -->
       <div class="col-lg-3 col-md-6 order-sm-2" id="informations">
         <h5 class="text-light mb-4">Informations pratiques</h5>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/informations' ?>" title="Retrouvez ici toutes les informations utiles pour préparer votre prochaine visite à Arcadia">Préparez votre visite</a>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/services' ?>" title="Découvrir tous les services que nous vous proposons à Arcadia">Nos Services</a>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/avis' ?>" title="N'hésitez pas à nous laisser un commentaire pour partager votre expérience à Arcadia.">Vos Avis</a>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/contact' ?>" title="Vous pouvez nous contacter via ce formulaire pour nous faire part de vos suggestions et remarques">Contactez-nous</a>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/label' ?>" title="Nous vous expliquons tout sur notre engagement écologique">Eco Label 2024</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/informations') ?>" title="Retrouvez ici toutes les informations utiles pour préparer votre prochaine visite à Arcadia">Préparez votre visite</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/services') ?>" title="Découvrir tous les services que nous vous proposons à Arcadia">Nos Services</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/avis') ?>" title="N'hésitez pas à nous laisser un commentaire pour partager votre expérience à Arcadia.">Vos Avis</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/contact') ?>" title="Vous pouvez nous contacter via ce formulaire pour nous faire part de vos suggestions et remarques">Contactez-nous</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/label') ?>" title="Nous vous expliquons tout sur notre engagement écologique">Eco Label 2024</a>
       </div>
       <!-- Informations | Fin -->
       <!-- Liens | Début -->
       <div class="col-lg-3 col-md-6 order-sm-3" id="liens">
         <h5 class="text-light mb-4">Liens rapides</h5>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/' ?>" title="Retourner sur l'accueil du site Arcadia">Accueil</a>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/animaux' ?>" title="Découvrir tous les animaux d'Arcadia à travers nos 3 domaines (Savane, Jungle et Marais)">Nos Animaux</a>
-        <a class="btn-footer btn-footer-link" href="<?= BASE_URL . '/jeux' ?>" title="Nous vous avons concocté un petit jeu de mémoire, avec quelques animaux de notre parc : à vous de jouer !">Espace Jeux</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/') ?>" title="Retourner sur l'accueil du site Arcadia">Accueil</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/animaux') ?>" title="Découvrir tous les animaux d'Arcadia à travers nos 3 domaines (Savane, Jungle et Marais)">Nos Animaux</a>
+        <a class="btn-footer btn-footer-link" href="<?= htmlspecialchars(BASE_URL . '/jeux') ?>" title="Nous vous avons concocté un petit jeu de mémoire, avec quelques animaux de notre parc : à vous de jouer !">Espace Jeux</a>
       </div>
       <!-- Liens | Fin -->
       <!-- Adresse | Début -->
@@ -84,24 +84,24 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?= BASE_URL ?>/lib/wow/wow.min.js"></script>
-<script src="<?= BASE_URL ?>/lib/counterup/counterup.min.js"></script>
-<script src="<?= BASE_URL ?>/lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="<?= BASE_URL ?>/lib/waypoints/waypoints.min.js"></script>
+<script src="<?= htmlspecialchars(BASE_URL) ?>/lib/wow/wow.min.js"></script>
+<script src="<?= htmlspecialchars(BASE_URL) ?>/lib/counterup/counterup.min.js"></script>
+<script src="<?= htmlspecialchars(BASE_URL) ?>/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="<?= htmlspecialchars(BASE_URL) ?>/lib/waypoints/waypoints.min.js"></script>
 <!-- Template Javascript -->
-<script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/main.js"></script>
+<script type="text/javascript" src="<?= htmlspecialchars(BASE_URL) ?>/public/assets/js/main.js"></script>
 <!-- Charger le JS concerné seulement si la page php relative est affichée -->
-<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/animaux') { ?>
-  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/animaux.js"></script>
+<?php if ($_SERVER['REQUEST_URI'] == htmlspecialchars(BASE_URL . '/animaux')) { ?>
+  <script type="text/javascript" src="<?= htmlspecialchars(BASE_URL) ?>/public/assets/js/animaux.js"></script>
 <?php } ?>
-<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/jeux') { ?>
-  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/memoryGame.js"></script>
+<?php if ($_SERVER['REQUEST_URI'] == htmlspecialchars(BASE_URL . '/jeux')) { ?>
+  <script type="text/javascript" src="<?= htmlspecialchars(BASE_URL) ?>/public/assets/js/memoryGame.js"></script>
 <?php } ?>
-<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/new-user') { ?>
-  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/checkFormNewUser.js"></script>
+<?php if ($_SERVER['REQUEST_URI'] == htmlspecialchars(BASE_URL . '/new-user')) { ?>
+  <script type="text/javascript" src="<?= htmlspecialchars(BASE_URL) ?>/public/assets/js/checkFormNewUser.js"></script>
 <?php } ?>
-<?php if ($_SERVER['REQUEST_URI'] == BASE_URL . '/contact') { ?>
-  <script type="text/javascript" src="<?= BASE_URL ?>/public/assets/js/checkFormContact.js"></script>
+<?php if ($_SERVER['REQUEST_URI'] == htmlspecialchars(BASE_URL . '/contact')) { ?>
+  <script type="text/javascript" src="<?= htmlspecialchars(BASE_URL) ?>/public/assets/js/checkFormContact.js"></script>
 <?php } ?>
 </body>
 

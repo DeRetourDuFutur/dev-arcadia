@@ -8,7 +8,7 @@
         <span class="mb-4">Ce code signifie que la page n'existe pas.</span>
         <br>
         Vous vous êtes donc égaré(e) ? <br>
-        <img src="<?= BASE_URL ?>/public/assets/img/home/404.jpg" style="width:170px" alt="Mauvaise direction">
+        <img src="<?= htmlspecialchars(BASE_URL) ?>/public/assets/img/home/404.jpg" style="width:170px" alt="Mauvaise direction">
         <p class="mb-4">
           <br>
 
@@ -17,7 +17,7 @@
         </p>
 
         <i class="fa-solid fa-shoe-prints fa-2x text-secondary" style="margin-right: 30px; padding-bottom: 18px;"></i><i class="fa-solid fa-shoe-prints fa-rotate-by fa-2x text-secondary" style="--fa-rotate-angle: -12deg;"></i><i class="fa-solid fa-shoe-prints fa-rotate-by fa-2x text-secondary" style="margin-left: 20px; margin-right: 15px;"></i>
-        <a class="ps-2 pe-4" href="<?= BASE_URL . '/' ?>"><i class="fa-solid fa-house-circle-check fa-4x"></i></a>
+        <a class="ps-2 pe-4" href="<?= htmlspecialchars(BASE_URL . '/') ?>"><i class="fa-solid fa-house-circle-check fa-4x"></i></a>
       </div>
     </div>
   </div>

@@ -14,26 +14,26 @@ require_once '../app/admin/gestion_rapports.php';
           <div class="col-lg-3 mb-4">
             <!-- FORMULAIRE DE GESTION DES RAPPORTS | DÉBUT -->
             <form action="" method="POST">
-              <input type="hidden" name="rapport_id" value="<?= $rapport['rapport_id'] ?>">
+              <input type="hidden" name="rapport_id" value="<?= htmlspecialchars($rapport['rapport_id']) ?>">
               <!-- ANIMAL -->
               <div class="alert alert-secondary my-0">
                 <div class="input-group">
                   <label for="rapport_animal_id" class="input-group-text input-group-text-sm">ANIMAL</label>
                   <select class="form-select form-select-sm" id="rapport_animal_id" name="rapport_animal_id">
                     <?php foreach ($animaux as $animal) : ?>
-                      <option value="<?= $animal['animal_id'] ?>" <?php if ($animal['animal_id'] === $rapport['rapport_animal_id']) : ?> selected <?php endif ?>><?= strtoupper($animal['animal_prenom']) ?></option>
+                      <option value="<?= htmlspecialchars($animal['animal_id']) ?>" <?php if ($animal['animal_id'] === $rapport['rapport_animal_id']) : ?> selected <?php endif ?>><?= strtoupper(htmlspecialchars($animal['animal_prenom'])) ?></option>
                     <?php endforeach ?>
                   </select>
                   <!-- DATE DE PASSAGE -->
                   <div class="input-group mt-2">
                     <label for="rapport_date" class="input-group-text input-group-text-sm">DATE</label>
-                    <input type="datetime-local" name="rapport_date" id="rapport_date" class="form-control" value="<?= date('Y-m-d H:i:s', strtotime($rapport['rapport_date'])) ?>">
+                    <input type="datetime-local" name="rapport_date" id="rapport_date" class="form-control" value="<?= date('Y-m-d H:i:s', strtotime(htmlspecialchars($rapport['rapport_date']))) ?>">
                     <!-- ÉTAT DE L'ANIMAL -->
                     <div class="input-group mt-2">
                       <label for="rapport_etat_animal" class="input-group-text input-group-text-sm">SANTÉ</label>
                       <select class="form-select form-select-sm" id="rapport_etat_animal" name="rapport_etat_animal">
                         <?php foreach ($etats as $etat) : ?>
-                          <option value="<?= $etat['etat_id'] ?>" <?php if ($etat['etat_id'] === $rapport['rapport_etat_animal']) : ?> selected <?php endif ?>><?= $etat['etat_type'] ?></option>
+                          <option value="<?= htmlspecialchars($etat['etat_id']) ?>" <?php if ($etat['etat_id'] === $rapport['rapport_etat_animal']) : ?> selected <?php endif ?>><?= htmlspecialchars($etat['etat_type']) ?></option>
                         <?php endforeach ?>
                       </select>
                       <!-- TYPE DE NOURRITURE -->

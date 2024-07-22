@@ -3,12 +3,11 @@ require_once('../config/db_config.php');
 $form_submited = false;
 
 if (isset($_POST['contact_prenom']) && isset($_POST['contact_nom']) && isset($_POST['contact_email']) && isset($_POST['contact_message']) && isset($_POST['contact_date'])) {
-  $contact_prenom = $_POST['contact_prenom'];
-  $contact_nom = $_POST['contact_nom'];
-  $contact_email = $_POST['contact_email'];
-  $contact_message = $_POST['contact_message'];
-  $contact_date = $_POST['contact_date'];
-
+  $contact_prenom = htmlspecialchars($_POST['contact_prenom']);
+  $contact_nom = htmlspecialchars($_POST['contact_nom']);
+  $contact_email = htmlspecialchars($_POST['contact_email']);
+  $contact_message = htmlspecialchars($_POST['contact_message']);
+  $contact_date = htmlspecialchars($_POST['contact_date']);
 
   $sql = "INSERT INTO contacts (contact_prenom, contact_nom, contact_email, contact_message, contact_date) VALUES (:contact_prenom, :contact_nom, :contact_email, :contact_message, :contact_date)";
   $stmt = $db->prepare($sql);

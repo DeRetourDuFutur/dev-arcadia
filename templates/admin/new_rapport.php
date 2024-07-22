@@ -6,7 +6,7 @@ require_once '../app/admin/new_rapport.php';
 <section id="ajout_rapport">
   <div class="container">
     <div class="fadeInUp row col-lg-12 pt-5" data-wow-delay="0.1s">
-      <h6 class="text-left mb-3"><i class="fa-solid fa-square-caret-down fa-xl text-primary me-3"></i><span>DASHBOARD</span> | <span class="text-primary">NEW RAP.</span><i class="fa-solid fa-square-caret-right fa-xl text-secondary ms-4 me-2"></i> <a href="<?php echo BASE_URL . '/gestion-rapports' ?>">LIST RAP.</a></h6>
+      <h6 class="text-left mb-3"><i class="fa-solid fa-square-caret-down fa-xl text-primary me-3"></i><span>DASHBOARD</span> | <span class="text-primary">NEW RAP.</span><i class="fa-solid fa-square-caret-right fa-xl text-secondary ms-4 me-2"></i> <a href="<?= htmlspecialchars(BASE_URL . '/gestion-rapports') ?>">LIST RAP.</a></h6>
       <!-- MENU DES DOMAINES | DEBUT -->
       <div class="mb-3">
         <?php foreach ($domaines as $domaine) : ?>
@@ -16,9 +16,9 @@ require_once '../app/admin/new_rapport.php';
             <i class="fa-solid fa-square-minus text-secondary ms-4 me-2"></i>
           <?php endif; ?>
           <?php if ($selected_domaine_id === $domaine['domaine_id']) : ?>
-            <a href="<?= BASE_URL . '/new-rapport?domaine_id=' . $domaine['domaine_id'] ?>" class="text-primary"><?= $domaine['domaine_name']; ?></a>
+            <a href="<?= htmlspecialchars(BASE_URL . '/new-rapport?domaine_id=' . $domaine['domaine_id']) ?>" class="text-primary"><?= htmlspecialchars($domaine['domaine_name']); ?></a>
           <?php else : ?>
-            <a href="<?= BASE_URL . '/new-rapport?domaine_id=' . $domaine['domaine_id'] ?>" class="text-secondary"><?= $domaine['domaine_name']; ?></a>
+            <a href="<?= htmlspecialchars(BASE_URL . '/new-rapport?domaine_id=' . $domaine['domaine_id']) ?>" class="text-secondary"><?= htmlspecialchars($domaine['domaine_name']); ?></a>
           <?php endif; ?>
         <?php endforeach; ?>
       </div>
@@ -28,12 +28,12 @@ require_once '../app/admin/new_rapport.php';
       <div class="input-group mb-3 ms-5 dropdown">
         <button class="input-group-text input-group-text-sm dropdown-toggle" type="button" id="animal_race_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <?php foreach ($races as $race) : ?>
-            <?php if ($race['race_id'] === $selected_race_id) echo ucwords($race['race_nom']); ?>
+            <?php if ($race['race_id'] === $selected_race_id) echo htmlspecialchars(ucwords($race['race_nom'])); ?>
           <?php endforeach ?>
         </button>
         <ul class="dropdown-menu" aria-labelledby="animal_race_dropdown">
           <?php foreach ($races as $race) : ?>
-            <li><a class="dropdown-item" href="?domaine_id=<?= $selected_domaine_id ?>&race_id=<?= $race['race_id'] ?>" value="<?= $race['race_id'] ?>" <?php if (isset($animal) && $animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= ucfirst($race['race_nom']) ?></a></li>
+            <li><a class="dropdown-item" href="?domaine_id=<?= htmlspecialchars($selected_domaine_id) ?>&race_id=<?= htmlspecialchars($race['race_id']) ?>" value="<?= htmlspecialchars($race['race_id']) ?>" <?php if (isset($animal) && $animal['animal_race_id'] === $race['race_id']) : ?> selected <?php endif; ?>><?= htmlspecialchars(ucfirst($race['race_nom'])) ?></a></li>
           <?php endforeach ?>
         </ul>
       </div>
@@ -43,26 +43,26 @@ require_once '../app/admin/new_rapport.php';
           <!-- FORMULAIRE D'AJOUT D'UN RAPPORT | DÉBUT -->
           <form method="POST" id="addRapportForm">
             <!-- ID (HIDDEN) -->
-            <input type="hidden" id="rapport_id" name="rapport_id" value="<?= $rapport['rapport_id'] ?>">
+            <input type="hidden" id="rapport_id" name="rapport_id" value="<?= htmlspecialchars($rapport['rapport_id']) ?>">
             <!-- ANIMAL -->
             <div class="alert alert-secondary my-0">
               <div class="input-group">
                 <label for="rapport_animal_id" class="input-group-text input-group-text-sm">ANIMAL</label>
                 <select class="form-select form-select-sm" id="rapport_animal_id" name="rapport_animal_id">
                   <?php foreach ($animaux as $animal) : ?>
-                    <option value="<?= $animal['animal_id'] ?>"><?= $animal['animal_prenom'] ?> - <?= $animal['race_nom'] ?> - <?= $animal['domaine_name'] ?></option>
+                    <option value="<?= htmlspecialchars($animal['animal_id']) ?>"><?= htmlspecialchars($animal['animal_prenom']) ?> - <?= htmlspecialchars($animal['race_nom']) ?> - <?= htmlspecialchars($animal['domaine_name']) ?></option>
                   <?php endforeach ?>
                 </select>
                 <!-- DATE DE PASSAGE -->
                 <div class="input-group mt-2">
                   <label for="rapport_date" class="input-group-text input-group-text-sm">DATE</label>
-                  <input type="datetime-local" name="rapport_date" id="rapport_date" class="form-control" value="<?= date('Y-m-d H:i:s') ?>">
+                  <input type="datetime-local" name="rapport_date" id="rapport_date" class="form-control" value="<?= htmlspecialchars(date('Y-m-d H:i:s')) ?>">
                   <!-- ÉTAT DE L'ANIMAL -->
                   <div class="input-group mt-2">
                     <label for="rapport_etat_animal" class="input-group-text input-group-text-sm">SANTÉ</label>
                     <select class="form-select form-select-sm" id="rapport_etat_animal" name="rapport_etat_animal">
                       <?php foreach ($etats as $etat) : ?>
-                        <option value="<?= $etat['etat_id'] ?>"><?= $etat['etat_type'] ?></option>
+                        <option value="<?= htmlspecialchars($etat['etat_id']) ?>"><?= htmlspecialchars($etat['etat_type']) ?></option>
                       <?php endforeach ?>
                     </select>
                     <!-- TYPE DE NOURRITURE -->
@@ -87,7 +87,7 @@ require_once '../app/admin/new_rapport.php';
                           <input type="number" name="rapport_food_quantite" id="rapport_food_quantite" class="form-control" min="0">
                           <!-- BOUTON -->
                           <div class="d-flex justify-content-evenly pt-3">
-                            <button type="submit" class="btn btn-primary-color my-4" name="new_rapport_action" value="add">Ajouter</button>
+                            <button type="submit" class="btn btn-primary-color my-4" name="new_rapport_action" value="add"><?= htmlspecialchars("Ajouter") ?></button>
                           </div>
                         </div>
                       </div>
