@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 22 juil. 2024 à 20:32
+-- Généré le : mar. 23 juil. 2024 à 02:00
 -- Version du serveur : 10.11.8-MariaDB-cll-lve
 -- Version de PHP : 7.2.34
 
@@ -441,7 +441,7 @@ CREATE TABLE `users` (
   `user_prenom` varchar(50) NOT NULL,
   `user_nom` varchar(50) NOT NULL,
   `user_email` varchar(255) NOT NULL,
-  `user_pwd` text NOT NULL,
+  `user_pwd` varchar(50) NOT NULL,
   `user_role` varchar(255) NOT NULL,
   `user_date` datetime NOT NULL,
   `user_statut` varchar(55) NOT NULL
@@ -452,9 +452,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_prenom`, `user_nom`, `user_email`, `user_pwd`, `user_role`, `user_date`, `user_statut`) VALUES
-(2, 'Tyson', 'NOMANSA', 'employe1@arcadia.fr', '4ug6.CsP*]Y8', 'employee', '2024-06-25 21:44:25', '1'),
-(3, 'Michael', 'JACKSON', 'veto1@arcadia.fr', '#XnL%85$a8rJ', 'veto', '2024-07-05 20:44:25', '1'),
-(5, 'Antony', 'MASSON', 'admin@arcadia.fr', 'AbZ84[5@uL)c', 'admin', '2024-07-06 17:11:45', '1');
+(2, 'Tyson', 'NOMANSA', 'employe1@arcadia.fr', '$2y$10$K/uS2r8UgFLZl68bQHpeWeXUCw9vFKqvnGarLIXquwx', 'employee', '2024-06-25 21:44:25', '1'),
+(3, 'Michael', 'JACKSON', 'veto1@arcadia.fr', '$2y$10$FZVe45.raYDSDkl/z5IQ0u/mnwhDOrbIU9Okdud4zE2', 'veto', '2024-07-05 20:44:25', '1'),
+(5, 'Antony', 'MASSON', 'admin@arcadia.fr', '$2y$10$b0vvpA1C6k.Ci5PlRwkDUuK9iyLPslNcBhhkscqGmPO', 'admin', '2024-07-06 17:11:45', '1');
 
 --
 -- Index pour les tables déchargées
@@ -642,7 +642,7 @@ ALTER TABLE `unites`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
