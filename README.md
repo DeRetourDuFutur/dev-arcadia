@@ -45,15 +45,9 @@ https://github.com/DeRetourDuFutur/dev-arcadia.git
 Télécharger VisualStudioCode (VSCode)
 Télécharger Xampp et configurer un serveur localhost
 Relier son server Xampp à un hébergeur de bases de données en local tel que phpMyAdmin (http://localhost/phpmyadmin/).
-
-Installation :
-
 Créez un dossier "arcadia_dev" dans "C:\xampp\htdocs"
-
 Clonez ce dépôt GitHub dans votre répertoire "C:\xampp\htdocs\aracadia_dev" en rentrant cette commmande dans GIT : "git clone https://github.com/DeRetourDuFutur/dev-arcadia.git main"
-
 Création d'un site en local :
-
 Dans le fichier C:\xampp\apache\conf\httpd.conf que vous aurez ouvert avec bloc-notes par ex, chercher la ligne suivante et modifier la comme suit :
 DocumentRoot "C:/xampp/htdocs/arcadia_dev"
 <Directory "C:/xampp/htdocs/arcadia_dev">
@@ -62,5 +56,16 @@ Création/Importation de la base de données SQL :
 Cf. Base SQL liée au repository
 u667243348_dev_arcadia.sql
 
-Une fois votre serveur web local opérationnel, rendez-vous sur localhost
+Dans le répêrtoire C:\xampp\htdocs\arcadia_dev\config,
+ajouter un ficher db_config.php comprenant ce code : 
+<?php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'votre nom de connexion');
+define('DB_PASSWORD', 'votre mot de passe de connexion');
+define('DB_NAME', 'le nom de votre base'); *
+define('DB_DSN', 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME);
+
+* l'idéal est de conservedr le nom existant pour la base : "u667243348_dev_arcadia"
+
+Une fois votre serveur web local configuré et opérationnel, vous pourrez alors accéder au site Arcadia en local.
 
