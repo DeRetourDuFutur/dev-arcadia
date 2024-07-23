@@ -44,8 +44,8 @@
           </a>
         </div>
         <div class="owl-carousel-item">
-          <a href="<?= (BASE_URL . '/animaux') ?>
-          <img class=" img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane2.webp" alt="Lions" />
+          <a href="<?= (BASE_URL . '/animaux') ?>">
+            <img class=" img-fluid" src="<?= BASE_URL ?>/public/assets/img/home-slider/savane2.webp" alt="Lions" />
           </a>
         </div>
         <div class="owl-carousel-item">

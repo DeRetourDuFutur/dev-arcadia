@@ -25,7 +25,7 @@ require_once '../app/admin/new_user.php';
               <label for="user_email" class="ms-1">IDENTIFIANT</label>
               <input type="email" class="form-control" name="user_email" id="user_email">
             </div>
-            <!-- PR&Eacute;NOM -->
+            <!-- PRÉNOM -->
             <div class="alert alert-secondary my-0">
               <label for="user_prenom" class="ms-1">PR&Eacute;NOM</label>
               <input type="text" class="form-control" name="user_prenom" id="user_prenom">
@@ -37,19 +37,19 @@ require_once '../app/admin/new_user.php';
             </div>
             <!-- MOT DE PASSE -->
             <div class="alert alert-secondary my-0">
-              <label for="user_pwd" c>PASSWORD</label>
+              <label for="user_pwd">PASSWORD</label>
               <input type="password" name="user_pwd" id="user_pwd" class="form-control">
             </div>
             <!-- CONFIRMATION MOT DE PASSE -->
             <div class="alert alert-secondary my-0">
-              <label for="user_confirm_pwd" class="ms-1">V&Eacute;RIF. PASSWORD</label>
+              <label for="user_confirm_pwd" class="ms-1">VÉRIF. PASSWORD</label>
               <input type="password" name="user_confirm_pwd" id="user_confirm_pwd" class="form-control">
             </div>
             <!-- DATE (HIDDEN) -->
             <div class="form-group">
               <input type="hidden" name="user_date" id="user_date" class="form-control" value="<?php echo htmlspecialchars(date('Y-m-d H:i:s')); ?>">
             </div>
-            <!-- STATUT (HIDDEN) PAR D&Eacute;FAUT SUR 0 -->
+            <!-- STATUT (HIDDEN) PAR DÉFAUT SUR 0 -->
             <div class="form-group">
               <input type="hidden" name="user_statut" id="user_statut" class="form-control" value="0">
             </div>
@@ -62,3 +62,6 @@ require_once '../app/admin/new_user.php';
         <div id="responseNewUser"></div>
       </div>
     </div>
+  </div>
+</section>
+<!-- FIN DE LA SECTION NEW_USERS -->

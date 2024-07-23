@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $user_prenom = htmlspecialchars($_POST['user_prenom']);
   $user_nom = htmlspecialchars($_POST['user_nom']);
   $user_email = htmlspecialchars($_POST['user_email']);
-  $user_pwd = htmlspecialchars($_POST['user_pwd']);
+  $user_pwd = password_hash($_POST['user_pwd'], PASSWORD_DEFAULT);
   $user_confirm_pwd = htmlspecialchars($_POST['user_confirm_pwd']);
   $user_date = htmlspecialchars($_POST['user_date']);
   $user_statut = htmlspecialchars($_POST['user_statut']);
